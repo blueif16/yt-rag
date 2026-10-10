@@ -1,8 +1,9 @@
 """
-Channel ingest: yt-dlp enumerate + VTT chunker → RAGStore.
+Ingest: yt-dlp captions + VTT chunker → RAGStore, into a topic collection.
 
-Top-level entry point:
-    ingest_channel(channel, n=30, namespace=None) -> dict
+Top-level entry points (both require an existing collection — see collections.py):
+    ingest_channel(channel, collection, n=30) -> dict
+    ingest_videos(urls, collection) -> dict
 
 All progress logging goes to stderr (so this is safe to call from an MCP
 server, which uses stdout for protocol traffic).
@@ -174,78 +175,84 @@ def build_items_for_video(info: dict, vtt_text: str, channel_handle: str | None)
 
 # ---------- channel/url helpers ----------
 
-def _resolve_target(target: str) -> tuple[str, str, str]:
-    """Returns (channel_url, channel_handle, default_namespace)."""
+def _resolve_target(target: str) -> tuple[str, str]:
+    """Returns (channel_url, channel_handle)."""
     t = target.strip()
     if t.startswith("@"):
-        return f"https://www.youtube.com/{t}", t, f"yt_{t.lstrip('@').lower()}"
+        return f"https://www.youtube.com/{t}", t
     if t.startswith("http"):
         tail = t.rstrip("/").split("/")[-1]
-        handle = tail if tail.startswith("@") else ""
-        ns = f"yt_{tail.lstrip('@').lower()}" if tail else "yt_channel"
-        return t, handle, ns
-    return f"https://www.youtube.com/@{t}", f"@{t}", f"yt_{t.lower()}"
+        return t, tail if tail.startswith("@") else ""
+    return f"https://www.youtube.com/@{t}", f"@{t}"
 
 
-# ---------- main entry point ----------
+def _open_collection(collection: str):
+    """Fail fast (before any yt-dlp traffic) unless `collection` is registered."""
+    from yt_rag import RAGStore  # lazy
+    from yt_rag.collections import CollectionRegistry, SupabaseBackend
 
-def ingest_channel(
-    channel: str,
-    n: int = 30,
-    namespace: str | None = None,
-    sub_langs: list[str] | None = None,
-    cookiefile: str | None = None,
-) -> dict:
-    """
-    Enumerate the latest n uploads from a channel, download English VTT subs,
-    chunk into ~90s windows with self-describing prefixes, and ingest into
-    RAGStore under `namespace` (default: `yt_<handle>`).
+    rag = RAGStore(namespace=collection)
+    CollectionRegistry(SupabaseBackend(rag.client)).require(collection)
+    return rag
 
-    Idempotent — RAGStore dedupes by content_hash.
-    """
-    from yt_rag import RAGStore  # lazy: only after yt-dlp validates
 
-    url, handle, default_ns = _resolve_target(channel)
-    ns = namespace or default_ns
-
-    _log(f"channel  : {url}")
-    _log(f"namespace: {ns}")
-    _log(f"n_videos : {n}")
-
-    _log("\nenumerating...")
-    videos = list_channel_videos(url, n)
-    _log(f"found {len(videos)} videos")
-
-    rag = RAGStore(namespace=ns)
+def _ingest_video_ids(rag, video_ids: list[str], sub_langs, cookiefile,
+                      channel_handle: str | None = None) -> dict:
     tmp = Path(tempfile.mkdtemp(prefix="yt_rag_"))
-    totals = {"videos": len(videos), "chunks": 0, "created": 0, "skipped": 0, "no_subs": 0}
-
-    for i, v in enumerate(videos, 1):
-        _log(f"\n[{i}/{len(videos)}] {v['id']}  {v['title'][:65]}")
-        res = download_video_subs(v["id"], tmp, sub_langs, cookiefile)
+    totals = {"videos": len(video_ids), "chunks": 0, "created": 0, "skipped": 0, "no_subs": 0}
+    for i, vid in enumerate(video_ids, 1):
+        _log(f"\n[{i}/{len(video_ids)}] {vid}")
+        res = download_video_subs(vid, tmp, sub_langs, cookiefile)
         if not res:
-            _log("  - no English subs, skipping")
+            _log("  - no matching subs, skipping")
             totals["no_subs"] += 1
             continue
         with open(res["vtt_path"]) as f:
             vtt_text = f.read()
-        items = build_items_for_video(res["info"], vtt_text, handle)
+        info = res["info"]
+        handle = channel_handle
+        if handle is None:
+            handle = info.get("uploader_id") or ""
+            if handle and not handle.startswith("@"):
+                handle = f"@{handle}"
+        items = build_items_for_video(info, vtt_text, handle)
         if not items:
             _log("  - 0 chunks after parsing, skipping")
             continue
-
         # Inline batch insert with rich metadata (RAGStore.ingest_batch only
         # accepts source/type — we need extra fields, so we go one level down).
-        rag_items = _batch_ingest_with_meta(rag, items)
+        r = _batch_ingest_with_meta(rag, items)
         totals["chunks"] += len(items)
-        totals["created"] += rag_items["created"]
-        totals["skipped"] += rag_items["skipped"]
-        _log(f"  - chunks={len(items)} created={rag_items['created']} skipped={rag_items['skipped']}")
-
-    _log(f"\nDONE  videos={len(videos)} no_subs={totals['no_subs']} "
+        totals["created"] += r["created"]
+        totals["skipped"] += r["skipped"]
+        _log(f"  - chunks={len(items)} created={r['created']} skipped={r['skipped']}")
+    _log(f"\nDONE  videos={totals['videos']} no_subs={totals['no_subs']} "
          f"chunks={totals['chunks']} created={totals['created']} skipped={totals['skipped']}")
-    totals["namespace"] = ns
+    totals["collection"] = rag.namespace
     return totals
+
+
+# ---------- main entry points ----------
+
+def ingest_channel(
+    channel: str,
+    collection: str,
+    n: int = 30,
+    sub_langs: list[str] | None = None,
+    cookiefile: str | None = None,
+) -> dict:
+    """
+    Pull the latest n uploads from a channel into an existing topic collection.
+    The channel is only a SOURCE; the collection decides the grouping.
+
+    Idempotent — RAGStore dedupes by content_hash.
+    """
+    rag = _open_collection(collection)
+    url, handle = _resolve_target(channel)
+    _log(f"channel   : {url}\ncollection: {collection}\nn_videos  : {n}\n\nenumerating...")
+    video_ids = [v["id"] for v in list_channel_videos(url, n)]
+    _log(f"found {len(video_ids)} videos")
+    return _ingest_video_ids(rag, video_ids, sub_langs, cookiefile, channel_handle=handle)
 
 
 VIDEO_ID_RE = re.compile(r"(?:v=|youtu\.be/|/shorts/|/embed/)([A-Za-z0-9_-]{11})")
@@ -262,66 +269,27 @@ def _extract_video_id(url_or_id: str) -> str:
     raise ValueError(f"Could not extract video_id from: {url_or_id}")
 
 
-def ingest_videos(urls: list[str], namespace: str) -> dict:
+def ingest_videos(
+    urls: list[str],
+    collection: str,
+    sub_langs: list[str] | None = None,
+    cookiefile: str | None = None,
+) -> dict:
     """
-    Cherry-pick specific YouTube videos by URL/ID into the given namespace.
-
-    Use when the videos you want are scattered across a creator's archive
-    or buried beyond the latest-N window. Reuses the same chunking and
-    metadata as ingest_channel.
+    Cherry-pick specific YouTube videos by URL/ID into an existing topic
+    collection. Reuses the same chunking and metadata as ingest_channel.
 
     Idempotent — RAGStore dedupes by content_hash.
     """
-    from yt_rag import RAGStore  # lazy
-
+    rag = _open_collection(collection)
     video_ids: list[str] = []
     for u in urls:
         try:
             video_ids.append(_extract_video_id(u))
         except ValueError as e:
             _log(f"  ! {e}")
-
-    _log(f"namespace: {namespace}")
-    _log(f"n_videos : {len(video_ids)}")
-
-    if not video_ids:
-        return {"videos": 0, "chunks": 0, "created": 0, "skipped": 0,
-                "no_subs": 0, "namespace": namespace}
-
-    rag = RAGStore(namespace=namespace)
-    tmp = Path(tempfile.mkdtemp(prefix="yt_rag_"))
-    totals = {"videos": len(video_ids), "chunks": 0, "created": 0,
-              "skipped": 0, "no_subs": 0}
-
-    for i, vid in enumerate(video_ids, 1):
-        _log(f"\n[{i}/{len(video_ids)}] {vid}")
-        res = download_video_subs(vid, tmp)
-        if not res:
-            _log("  - no English subs, skipping")
-            totals["no_subs"] += 1
-            continue
-        with open(res["vtt_path"]) as f:
-            vtt_text = f.read()
-        info = res["info"]
-        handle = info.get("uploader_id") or ""
-        if handle and not handle.startswith("@"):
-            handle = f"@{handle}"
-        items = build_items_for_video(info, vtt_text, handle)
-        if not items:
-            _log("  - 0 chunks after parsing, skipping")
-            continue
-        rag_items = _batch_ingest_with_meta(rag, items)
-        totals["chunks"] += len(items)
-        totals["created"] += rag_items["created"]
-        totals["skipped"] += rag_items["skipped"]
-        _log(f"  - chunks={len(items)} created={rag_items['created']} "
-             f"skipped={rag_items['skipped']}")
-
-    _log(f"\nDONE  videos={len(video_ids)} no_subs={totals['no_subs']} "
-         f"chunks={totals['chunks']} created={totals['created']} "
-         f"skipped={totals['skipped']}")
-    totals["namespace"] = namespace
-    return totals
+    _log(f"collection: {collection}\nn_videos  : {len(video_ids)}")
+    return _ingest_video_ids(rag, video_ids, sub_langs, cookiefile)
 
 
 def _batch_ingest_with_meta(rag, items: list[dict], batch_size: int = 50) -> dict:
