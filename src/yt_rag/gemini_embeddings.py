@@ -24,9 +24,13 @@ def _with_retry(call, attempts: int = 8):
         except errors.ClientError as e:
             if e.code != 429 or i == attempts - 1:
                 raise
+            if "PerDay" in str(e):  # a daily quota does not clear by waiting
+                raise RuntimeError("Gemini daily embedding quota exhausted — resume tomorrow "
+                                   "or use a paid key (ingest is idempotent)") from e
             m = RETRY_IN_RE.search(str(e))
             wait = min(float(m.group(1)) + 2, 90) if m else 30 * (i + 1)
-            print(f"  gemini 429: waiting {wait:.0f}s", file=sys.stderr)
+            quota = re.findall(r"quotaId': '([^']+)'", str(e))
+            print(f"  gemini 429 {quota or ''}: waiting {wait:.0f}s", file=sys.stderr)
             time.sleep(wait)
 
 
@@ -86,7 +90,17 @@ class GeminiEmbeddings:
         embedding = result.embeddings[0].values
         return self._normalize_embedding(embedding)
 
+    MAX_BATCH = 20  # texts per request: keeps one request under the per-minute token quota
+
     def embed_documents(self, texts: List[str]) -> List[List[float]]:
+        if len(texts) > self.MAX_BATCH:
+            out: List[List[float]] = []
+            for i in range(0, len(texts), self.MAX_BATCH):
+                out.extend(self.embed_documents(texts[i:i + self.MAX_BATCH]))
+            return out
+        return self._embed_documents(texts)
+
+    def _embed_documents(self, texts: List[str]) -> List[List[float]]:
         """
         为文档列表生成 embeddings
         使用配置的任务类型（默认 RETRIEVAL_DOCUMENT）

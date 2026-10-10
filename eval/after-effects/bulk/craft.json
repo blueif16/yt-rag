@@ -1,0 +1,762 @@
+[
+  {
+    "url": "https://www.youtube.com/watch?v=uDqjIdI4bF4",
+    "kind": "video",
+    "title": "12 Principles of Animation (Official Full Series)",
+    "author": "AlanBeckerTutorials",
+    "views": 16022357,
+    "likes": 794480,
+    "published": "2017-05-30",
+    "duration_sec": 1443,
+    "captions": "manual",
+    "tags": {
+      "topics": [
+        "design",
+        "easing"
+      ],
+      "scenarios": [
+        "character"
+      ],
+      "level": "basic",
+      "impact": "high",
+      "tools": []
+    },
+    "why": "Canonical 12 principles with concrete timing logic (0-10 in-betweens change a head turn's meaning; arcs = constant X + eased Y; ones vs twos); the shared vocabulary for every keyframe and host-animation decision."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=LcWJKYbYvi8",
+    "kind": "video",
+    "title": "The #1 Skill All Animators Need",
+    "author": "Ben Marriott",
+    "views": 334035,
+    "likes": 16633,
+    "published": "2021-09-16",
+    "duration_sec": 761,
+    "captions": "auto",
+    "tags": {
+      "topics": [
+        "design",
+        "easing"
+      ],
+      "scenarios": [],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": []
+    },
+    "why": "Applies anticipation (and a tour of all 12 principles) to abstract motion-graphics shapes, e.g. a 3-frame hold-key wind-up before a move; makes plain UI/shape moves read as energetic instead of robotic."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=E-sF_1FgpJw",
+    "kind": "video",
+    "title": "How to Keyframe Like a Pro! (Animation process for any software)",
+    "author": "Alex Grigg // Animation for Anyone",
+    "views": 771197,
+    "likes": 36441,
+    "published": "2022-09-29",
+    "duration_sec": 910,
+    "captions": "manual",
+    "tags": {
+      "topics": [
+        "design",
+        "easing"
+      ],
+      "scenarios": [
+        "character"
+      ],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": []
+    },
+    "why": "Pose-to-pose order a pro uses: storytelling poses, then extremes (anticipation/overshoot/settle), then breakdowns, then spacing; a repeatable method for animating the host and any hero move."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=oDdm2WYcXyk",
+    "kind": "video",
+    "title": "Main principles of Logo Animation",
+    "author": "Motion Design School",
+    "views": 93626,
+    "likes": 4576,
+    "published": "2020-11-18",
+    "duration_sec": 750,
+    "captions": "auto",
+    "tags": {
+      "topics": [
+        "design",
+        "easing"
+      ],
+      "scenarios": [
+        "logo-ident"
+      ],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": []
+    },
+    "why": "Shows each principle on real logo animations (overlapping letter offsets vs linear sequential reveals, arcs, volume-preserving squash/stretch); direct rules for channel idents and logo stings."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=ythBGTLjot8",
+    "kind": "video",
+    "title": "This Animation Technique Works Every Time",
+    "author": "Ben Marriott",
+    "views": 495620,
+    "likes": 24020,
+    "published": "2022-05-12",
+    "duration_sec": 482,
+    "captions": "manual",
+    "tags": {
+      "topics": [
+        "transitions",
+        "design"
+      ],
+      "scenarios": [
+        "explainer",
+        "edit-pacing"
+      ],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": []
+    },
+    "why": "Match cuts for motion graphics: match subject or carry motion direction/speed across the cut, with breakdowns of real scene changes; cheap transitions that look expensive."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=xMUn0LZp21o",
+    "kind": "video",
+    "title": "Why Your Motion Design Looks Cheap (5 Fixes In After Effects)",
+    "author": "Stephan Zammit",
+    "views": 57812,
+    "likes": 4130,
+    "published": "2026-03-16",
+    "duration_sec": 898,
+    "captions": "auto",
+    "tags": {
+      "topics": [
+        "design",
+        "transitions"
+      ],
+      "scenarios": [
+        "ui-promo",
+        "hero-fx"
+      ],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": []
+    },
+    "why": "Five studio habits: continuous flow that keeps content upright and legible while it moves, the kinetic cut that hides a scene switch at peak velocity, strategic 2D-to-3D, reactive environments, variable-weight type; each fixes a visible 'cheap' tell."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=a7Nyzqy9_I0",
+    "kind": "video",
+    "title": "10 Underrated Motion Design Techniques I LOVE",
+    "author": "Ben Marriott",
+    "views": 185525,
+    "likes": 10342,
+    "published": "2025-05-06",
+    "duration_sec": 1098,
+    "captions": "manual",
+    "tags": {
+      "topics": [
+        "design",
+        "color-finish"
+      ],
+      "scenarios": [],
+      "level": "intermediate",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "Finishing touches with exact values (gate weave = wiggle(12,3) on an adjustment layer + 101% scale, 12 fps posterized effects layer, choker to round edges); quick ways to add tactile character."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=Jccbzpicst8",
+    "kind": "video",
+    "title": "Master SaaS Motion Graphics in 30 Minutes (After Effects)",
+    "author": "TomsProject",
+    "views": 239868,
+    "likes": 8114,
+    "published": "2026-01-10",
+    "duration_sec": 2257,
+    "captions": "auto",
+    "tags": {
+      "topics": [
+        "design",
+        "shapes",
+        "camera-3d"
+      ],
+      "scenarios": [
+        "ui-promo"
+      ],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": []
+    },
+    "why": "Full SaaS promo build with stated craft rules: keep continuous camera motion, offset elements instead of simultaneous entrances, match cuts between UI scenes, button presses go darker and inward (not bigger/lighter)."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=jS1YMWkm4DQ",
+    "kind": "video",
+    "title": "5 Essential Type Animations in After Effects",
+    "author": "Ben Marriott",
+    "views": 194446,
+    "likes": 6949,
+    "published": "2020-10-31",
+    "duration_sec": 720,
+    "captions": "auto",
+    "tags": {
+      "topics": [
+        "text",
+        "design"
+      ],
+      "scenarios": [
+        "kinetic-type",
+        "titles"
+      ],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": []
+    },
+    "why": "Type that must be read should move little and deliberately: short travel with strong ease-out, subtle 104%->100% scale settle, masked reveals; restrained title motion that reads as premium."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=KfX64RcNWB4",
+    "kind": "video",
+    "title": "5 Tips for Amazing Storyboards | Motion Design & Animation",
+    "author": "Ben Marriott",
+    "views": 126729,
+    "likes": 6548,
+    "published": "2021-01-21",
+    "duration_sec": 850,
+    "captions": "auto",
+    "tags": {
+      "topics": [
+        "design",
+        "workflow"
+      ],
+      "scenarios": [
+        "explainer"
+      ],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": []
+    },
+    "why": "Thumbnail alternatives before animating (cheapest place to fix ideas), plan transitions between boards, worked example from a finished piece; fits our storyboard-first rule."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=NvifSxoYmEg",
+    "kind": "video",
+    "title": "Style Frames for Motion Design",
+    "author": "ECAbrams",
+    "views": 66575,
+    "likes": 1674,
+    "published": "2019-03-30",
+    "duration_sec": 779,
+    "captions": "manual",
+    "tags": {
+      "topics": [
+        "design",
+        "workflow"
+      ],
+      "scenarios": [],
+      "level": "intermediate",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "How to choose which moments become style frames (establishing shot, end/CTA, peak action, world changes, key interactions) from a beat outline; decides what to design before generation."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=HtFOnuH6c-Q",
+    "kind": "video",
+    "title": "How to Create Amazing Style Frames for Motion Design",
+    "author": "Ben Marriott",
+    "views": 92250,
+    "likes": 4424,
+    "published": "2020-08-06",
+    "duration_sec": 670,
+    "captions": "auto",
+    "tags": {
+      "topics": [
+        "design",
+        "color-finish"
+      ],
+      "scenarios": [],
+      "level": "intermediate",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "Mood board to frame: solve values in greyscale first for contrast and focus, then build a controllable global palette; frames that already read before any motion."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=IiyBo-qLDeM",
+    "kind": "video",
+    "title": "Ultimate Guide to Camera Movement — Every Camera Movement Technique Explained [The Shot List Ep6]",
+    "author": "StudioBinder",
+    "views": 6548105,
+    "likes": 246888,
+    "published": "2020-10-05",
+    "duration_sec": 1748,
+    "captions": "manual",
+    "tags": {
+      "topics": [
+        "camera-3d",
+        "design"
+      ],
+      "scenarios": [
+        "hero-fx"
+      ],
+      "level": "basic",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "What each move means (push-in = emphasis/realisation, pull-out = reveal/isolation, dolly zoom, tracking, whip) so AE camera moves are chosen for meaning, not decoration."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=xUK64UkTmW0",
+    "kind": "video",
+    "title": "How to Use Walter Murch's Eye Trace to \"Direct the Eye\" with Cinematic Editing",
+    "author": "StudioBinder",
+    "views": 126914,
+    "likes": 5430,
+    "published": "2019-04-15",
+    "duration_sec": 371,
+    "captions": "manual",
+    "tags": {
+      "topics": [
+        "design",
+        "transitions"
+      ],
+      "scenarios": [
+        "edit-pacing"
+      ],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": []
+    },
+    "why": "Eye trace: the three levers that steer the viewer's eye (motion, position where the eye already is, colour), analysed shot by shot; the rule behind readable fast cutting and focal-point continuity between shots."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=FVR8zz8ci2k",
+    "kind": "video",
+    "title": "6 Ways to Edit Any Scene — Essential Film & Video Editing Techniques Explained [Shot List Ep. 10]",
+    "author": "StudioBinder",
+    "views": 1854893,
+    "likes": 62870,
+    "published": "2022-02-14",
+    "duration_sec": 1128,
+    "captions": "manual",
+    "tags": {
+      "topics": [
+        "design",
+        "transitions"
+      ],
+      "scenarios": [
+        "edit-pacing"
+      ],
+      "level": "basic",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "Editor's core choices (what to show, when to cut, what to cut to): cutaways, cross-cutting, centre-framed subjects for sub-2 s shots, J/L split edits, montage, cutting on action; the cut grammar for scene flow."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=sLgHqZSe2o0",
+    "kind": "video",
+    "title": "How to edit SO good your viewers get addicted to your videos",
+    "author": "Learn By Leo",
+    "views": 5888390,
+    "likes": 315184,
+    "published": "2024-03-19",
+    "duration_sec": 872,
+    "captions": "auto",
+    "tags": {
+      "topics": [
+        "design"
+      ],
+      "scenarios": [
+        "edit-pacing",
+        "explainer"
+      ],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": []
+    },
+    "why": "YouTube editing as attention design: when to use A-roll vs B-roll vs motion graphics, change the visual every few seconds without overloading, animate what is hard to film; the retention logic behind each edit choice."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=CdyTIng0M8Q",
+    "kind": "video",
+    "title": "Pacing in Film Editing: Techniques Every High-End Editor Must Know",
+    "author": "Inside The Edit",
+    "views": 59297,
+    "likes": 2720,
+    "published": "2025-12-06",
+    "duration_sec": 785,
+    "captions": "manual",
+    "tags": {
+      "topics": [
+        "design"
+      ],
+      "scenarios": [
+        "edit-pacing"
+      ],
+      "level": "intermediate",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "High-end editor's pacing framework: five questions to plan a scene's tempo and its changes, and the four drivers of pace (cut rate, on-screen action speed, subject distance from camera, camera movement incl. crash zooms)."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=eNgD1kg3U14",
+    "kind": "video",
+    "title": "The MKBHD Method™ For Editing High Quality Videos",
+    "author": "The Studio",
+    "views": 1557202,
+    "likes": 57274,
+    "published": "2025-10-12",
+    "duration_sec": 2586,
+    "captions": "auto",
+    "tags": {
+      "topics": [
+        "design",
+        "easing"
+      ],
+      "scenarios": [
+        "edit-pacing",
+        "explainer"
+      ],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": []
+    },
+    "why": "Top tech channel's editors explain real decisions: re-cutting a slow intro, graphics landing exactly on the spoken word (no half-second lag), music beds under 20-30 s, whooshes sized to on-screen mass and easing."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=tzfzkTAQsnE",
+    "kind": "video",
+    "title": "3 Sound Design Secrets That Feel Like CHEATING",
+    "author": "Herman Huang",
+    "views": 1031671,
+    "likes": 74794,
+    "published": "2025-04-02",
+    "duration_sec": 442,
+    "captions": "auto",
+    "tags": {
+      "topics": [
+        "design"
+      ],
+      "scenarios": [
+        "edit-pacing"
+      ],
+      "level": "intermediate",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "Layer whooshes across frequency bands for weight, carve a mid pocket in music for dialogue, keep one coherent SFX palette, reverse the song start as a riser and end on a reverb tail of the last beat."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=JOm_EqBoW0M",
+    "kind": "video",
+    "title": "The ONLY 3 Sound Effects You Need to Tell Any Story",
+    "author": "Tim Runia",
+    "views": 286276,
+    "likes": 15009,
+    "published": "2026-03-04",
+    "duration_sec": 646,
+    "captions": "manual",
+    "tags": {
+      "topics": [
+        "design",
+        "transitions"
+      ],
+      "scenarios": [
+        "edit-pacing",
+        "hero-fx"
+      ],
+      "level": "basic",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "When to use whooshes (heavy vs light vs wind), risers (tension before reveals, into a smash cut to silence) and impacts; a decision table for scoring transitions and hero moments."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=ZbVmyH9NVnk",
+    "kind": "video",
+    "title": "How video editors cut MUSIC for perfect timing.",
+    "author": "Standard Story Company",
+    "views": 177671,
+    "likes": 7201,
+    "published": "2022-10-17",
+    "duration_sec": 597,
+    "captions": "auto",
+    "tags": {
+      "topics": [
+        "design"
+      ],
+      "scenarios": [
+        "edit-pacing"
+      ],
+      "level": "basic",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "Fit stock music to the edit: place the drop where speech ends and B-roll starts, loop bars to extend, cut on beats, pull the bed about 12 dB under VO; music that feels scored to the video."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=JkqxbUrxHCM",
+    "kind": "video",
+    "title": "The Role of Audio in Motion Design",
+    "author": "ECAbrams",
+    "views": 91121,
+    "likes": 1645,
+    "published": "2020-07-01",
+    "duration_sec": 498,
+    "captions": "auto",
+    "tags": {
+      "topics": [
+        "design"
+      ],
+      "scenarios": [
+        "explainer"
+      ],
+      "level": "basic",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "Same loop, different audio, different meaning; pick the music first and engineer beats into the motion, use ambience to imply a whole place with few drawn elements."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=sACZlG7z35Q",
+    "kind": "video",
+    "title": "How VOX breaks the Digital Feel with Motion Graphics",
+    "author": "Chris Moran",
+    "views": 174358,
+    "likes": 10708,
+    "published": "2026-01-17",
+    "duration_sec": 750,
+    "captions": "auto",
+    "tags": {
+      "topics": [
+        "color-finish",
+        "design"
+      ],
+      "scenarios": [
+        "explainer"
+      ],
+      "level": "intermediate",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "Why Vox-style explainers feel tactile: roughened edges and halftone textures, a repeatable screen treatment for screenshots with guided camera drift, consistent edge blur that pulls the eye to centre; useful for screen-recording-heavy tech explainers."
+  },
+  {
+    "url": "https://design.tutsplus.com/the-principles-of-motion-design--ytc-79c",
+    "kind": "page",
+    "title": "The Principles of Motion Design",
+    "author": "Jess Riley (Envato Tuts+)",
+    "type": "tutorial",
+    "approx_chars": 8957,
+    "published": "2024-06-14",
+    "tags": {
+      "topics": [
+        "design",
+        "easing"
+      ],
+      "scenarios": [],
+      "level": "basic",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "Design principles (hierarchy, balance and tension, contrast, negative space, repetition and rhythm) and the five animation principles that matter most in motion design, as a text lesson."
+  },
+  {
+    "url": "https://schoolofmotion.com/blog/tiny-typography-decisions-motion-graphics",
+    "kind": "page",
+    "title": "10 Tiny Typography Decisions That Make Motion Graphics Feel Designed",
+    "author": "School of Motion",
+    "type": "article",
+    "approx_chars": 9675,
+    "tags": {
+      "topics": [
+        "text",
+        "design"
+      ],
+      "scenarios": [
+        "kinetic-type",
+        "titles"
+      ],
+      "level": "basic",
+      "impact": "high",
+      "tools": []
+    },
+    "why": "Ten concrete type decisions for moving frames: decide the first read (squint test), extra room around key words, fit copy before styling, line breaks by meaning, check type on the real background, tie type to the motion."
+  },
+  {
+    "url": "https://partnerhelp.netflixstudios.com/hc/en-us/articles/360051554394-Timed-Text-Style-Guide-Subtitle-Timing-Guidelines",
+    "kind": "page",
+    "title": "Timed Text Style Guide: Subtitle Timing Guidelines",
+    "author": "Netflix",
+    "type": "doc",
+    "approx_chars": 9138,
+    "tags": {
+      "topics": [
+        "text",
+        "design"
+      ],
+      "scenarios": [
+        "titles"
+      ],
+      "level": "basic",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "Frame-exact rules for timing on-screen text to audio and cuts: in on the first audio frame, out about 0.5 s after speech, 2-frame minimum gaps, snap to or stay 12 frames clear of shot changes, minimum durations."
+  },
+  {
+    "url": "https://www.nngroup.com/articles/animation-duration/",
+    "kind": "page",
+    "title": "Executing UX Animations: Duration and Motion Characteristics",
+    "author": "Page Laubheimer (Nielsen Norman Group)",
+    "type": "article",
+    "approx_chars": 9744,
+    "published": "2020-02-09",
+    "tags": {
+      "topics": [
+        "easing",
+        "design"
+      ],
+      "scenarios": [
+        "ui-promo"
+      ],
+      "level": "basic",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "Research-backed UI durations: about 100 ms for feedback, 200-300 ms for larger screen changes, 100-500 ms overall, ease-out as the default with ease-in only for exits; keeps animated UI in promos feeling like a real product."
+  },
+  {
+    "url": "https://carbondesignsystem.com/elements/motion/overview/",
+    "kind": "page",
+    "title": "Motion",
+    "author": "IBM Carbon Design System",
+    "type": "doc",
+    "approx_chars": 7883,
+    "tags": {
+      "topics": [
+        "easing",
+        "design"
+      ],
+      "scenarios": [
+        "ui-promo"
+      ],
+      "level": "basic",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "Productive vs expressive motion with each curve given as cubic-bezier AND After Effects influence (e.g. productive standard = outgoing 20%, incoming 62%), plus duration tokens 70-700 ms scaled by distance and size; drop-in values for product UI moves."
+  },
+  {
+    "url": "https://www.ibm.com/design/language/animation/tips-and-techniques/",
+    "kind": "page",
+    "title": "Tips and techniques (IBM Design Language: Animation)",
+    "author": "IBM Design",
+    "type": "doc",
+    "approx_chars": 7572,
+    "tags": {
+      "topics": [
+        "design",
+        "camera-3d"
+      ],
+      "scenarios": [
+        "explainer",
+        "ui-promo"
+      ],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": []
+    },
+    "why": "Concrete motion-graphics rules: hand the focal point off seamlessly, single-axis camera moves feel confident, inverse complexity (dense designs get small motion), animate swatch colours not opacity, grow strokes from zero instead of crossfading."
+  },
+  {
+    "url": "https://medium.com/ux-in-motion/creating-usability-with-motion-the-ux-in-motion-manifesto-a87a4584ddc",
+    "kind": "page",
+    "title": "Creating Usability with Motion: The UX in Motion Manifesto",
+    "author": "Issara Willenskomer",
+    "type": "article",
+    "approx_chars": 30291,
+    "published": "2017-03-31",
+    "text_file": "/home/ran/yt-rag/eval/after-effects/bulk/texts/ux-in-motion-manifesto.md",
+    "tags": {
+      "topics": [
+        "design",
+        "transitions"
+      ],
+      "scenarios": [
+        "ui-promo"
+      ],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": []
+    },
+    "why": "The 12 principles of UI motion (easing, offset and delay, parenting, transformation, value change, masking, overlay, cloning, obscuration, parallax, dimensionality, dolly and zoom), each with when to use it; the grammar for animating product UI."
+  },
+  {
+    "url": "https://developer.apple.com/videos/play/wwdc2023/10158/",
+    "kind": "page",
+    "title": "Animate with springs (WWDC23)",
+    "author": "Apple",
+    "type": "doc",
+    "approx_chars": 22647,
+    "tags": {
+      "topics": [
+        "easing",
+        "design"
+      ],
+      "scenarios": [
+        "ui-promo"
+      ],
+      "level": "intermediate",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "Apple's spring model in designer terms (duration + bounce instead of mass/stiffness, continuous velocity vs linear and bezier, when bounce fits); the basis for Apple-like UI motion."
+  },
+  {
+    "url": "https://dev.underbelly.is/writing-about/an-introduction-to-logo-animation-principles",
+    "kind": "page",
+    "title": "An Introduction to Logo Animation Principles",
+    "author": "Drew Taylor (Underbelly)",
+    "type": "article",
+    "approx_chars": 8283,
+    "published": "2022-01-13",
+    "text_file": "/home/ran/yt-rag/eval/after-effects/bulk/texts/underbelly-logo-animation-principles.md",
+    "tags": {
+      "topics": [
+        "design"
+      ],
+      "scenarios": [
+        "logo-ident"
+      ],
+      "level": "basic",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "Logo animation planning rules: one clear message, 1-6 s length, keep motion contained in frame, never add elements the logo lacks, choose metaphor vs neutral vs illustrated story, then ease/arc/squash/anticipation/staging."
+  },
+  {
+    "url": "https://blogs.ischool.berkeley.edu/i290-viznarr-s12/the-rule-of-six-walter-murch/",
+    "kind": "page",
+    "title": "The Rule of Six – Walter Murch",
+    "author": "Walter Murch (excerpt from In the Blink of an Eye, UC Berkeley iSchool)",
+    "type": "article",
+    "approx_chars": 5234,
+    "tags": {
+      "topics": [
+        "design"
+      ],
+      "scenarios": [
+        "edit-pacing"
+      ],
+      "level": "intermediate",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "Murch's own ranking for judging a cut (emotion 51%, story 23%, rhythm 10%, eye-trace 7%, 2D plane 5%, 3D space 4%) and the rule to sacrifice from the bottom up; a decision order for every cut."
+  }
+]

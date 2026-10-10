@@ -15,3 +15,4 @@ eval/**/chunks*.jsonl
 eval/**/*_results*.json
 eval/**/*.log
 eval/**/bulk/texts/
+eval/**/bulk/ingest_*.json
