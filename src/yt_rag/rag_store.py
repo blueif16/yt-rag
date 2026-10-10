@@ -17,12 +17,17 @@ import json
 import hashlib
 from dataclasses import dataclass, field
 
-from dotenv import load_dotenv, find_dotenv
+from pathlib import Path
+
+from dotenv import load_dotenv
 from supabase import create_client, Client
 from .gemini_embeddings import GeminiEmbeddings
 
-# 确保加载 .env，从当前工作目录向上搜索
-load_dotenv(find_dotenv(usecwd=True))
+# Load THIS package's own .env by absolute path — never CWD-discovered. The MCP
+# client spawns this process with an arbitrary working directory (e.g. another
+# project's root), and a foreign .env there would otherwise shadow ours and point
+# us at the wrong Supabase project (→ 401 Invalid authentication credentials).
+load_dotenv(Path(__file__).resolve().parents[2] / ".env", override=True)
 
 
 @dataclass
