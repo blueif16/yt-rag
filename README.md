@@ -42,6 +42,7 @@ Ingest details:
   speech recognition). Sponsor reads are cut using SponsorBlock.
 - **Pages:** fetched as main-text Markdown and split on headings. Footers
   repeated across pages of the same site are dropped.
+- **PDFs:** converted to Markdown with headings (pymupdf4llm), page-tracked.
 - **Errors:** Gemini and YouTube rate limits are retried.
 
 ## Tools
@@ -51,7 +52,7 @@ Ingest details:
 | `list_repository()` | Every collection: purpose, counts by type, tag coverage, authors; plus the tag vocabulary. Call first. |
 | `search(query, collection?, top_k=5, scenario?, topic?, type?, tools_available?, per_source=2, context=0)` | Hybrid search with an absolute `relevance` score, tag filters, at most `per_source` chunks per video/page, and optional neighbouring chunks. |
 | `create_collection(name, purpose)` | Register a new topic (only when none fits). |
-| `ingest_urls(collection, urls, type?, tags?)` | Any links: YouTube → captions, everything else → page text. |
+| `ingest_urls(collection, urls, type?, tags?)` | Any links: YouTube → captions; web pages, PDFs (manuals, papers; chunks link to `#page=N`) and local files → text. |
 | `ingest_text(collection, text, title, source_url, ..., tags?)` | Text you already have (a JS-only page, a transcript from elsewhere, a note). |
 | `ingest_videos(collection, urls, tags?)` | Cherry-pick videos into a collection. |
 | `ingest_channels(collection, channels, n_videos=30)` | Pull the latest uploads of one or more channels into a collection. |

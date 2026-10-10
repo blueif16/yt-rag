@@ -213,3 +213,17 @@ def test_cap_per_source_keeps_order():
     rows = [{"id": i, "metadata": {"doc_id": d}} for i, d in enumerate("aaabca")]
     assert [r["id"] for r in cap_per_source(rows, 2)] == [0, 1, 3, 4]
     assert len(cap_per_source(rows, 0)) == 6
+
+
+# ---- PDFs ----
+
+def test_pdf_page_markers_give_page_links():
+    md = ("<!-- page 1 -->\n# **Manual**\n\n## **Emitter**\n\n" + "Emitter text. " * 80 +
+          "\n\n<!-- page 2 -->\n## **Particle**\n\n" + "Particle text. " * 80)
+    items = build_items_for_text(md, title="Manual", source_url="https://x.com/m.pdf", author="RG",
+                                 published_at="", type="doc", origin="web")
+    metas = [i["meta"] for i in items]
+    assert metas[0]["source"] == "https://x.com/m.pdf#page=1"
+    assert metas[0]["locator"] == "Emitter · p. 1"
+    assert metas[-1]["source"] == "https://x.com/m.pdf#page=2"
+    assert "<!-- page" not in items[-1]["content"]

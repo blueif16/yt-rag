@@ -436,6 +436,8 @@ def ingest_urls(collection: str, urls: list[str], type: str = "article",
     captions (same as ingest_videos); every other link is fetched, reduced to
     its main text, split on headings into ~1500-char chunks, and stored next to
     the captions with the same metadata (title, author, date, section, URL).
+    Web pages, PDFs (manuals, papers — chunks link to #page=N) and local files
+    (file:///abs/path or /abs/path: .pdf, .md, .txt, .html) all work.
 
     Args:
         collection: Name of an existing collection (see list_repository).

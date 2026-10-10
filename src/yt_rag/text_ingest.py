@@ -1,5 +1,5 @@
 """
-Text ingest: web pages and pasted text → the same chunks as captions.
+Text ingest: web pages, PDFs, local files and pasted text → the same chunks as captions.
 
 Entry points (all require an existing collection — see collections.py):
     ingest_urls(urls, collection, type="article")   YouTube → captions, else page
@@ -14,6 +14,7 @@ section and a video moment come back from search in the same shape.
 from __future__ import annotations
 import hashlib
 import re
+from pathlib import Path
 import sys
 from urllib.parse import quote, urlparse
 
@@ -27,6 +28,7 @@ MIN_PAGE_CHARS = 400   # less than this after extraction = error page / stub
 MAX_HEADING_CHARS = 90  # longer "headings" are figure captions, kept as text
 HEADING_RE = re.compile(r"^(#{1,6})\s+(.*\S)\s*$")
 HTML_HEADING_RE = re.compile(r"<(h[1-6])\b[^>]*>(.*?)</\1>", re.S | re.I)
+PAGE_MARK_RE = re.compile(r"^<!-- page (\d+) -->$")  # inserted between PDF pages
 # trafilatura's Markdown backslash-escapes these; in code (AE expressions) the
 # escapes break copy-paste, e.g. "nK.time \<= time".
 MD_ESCAPE_RE = re.compile(r"\\([<>*_\[\]#`|])")
@@ -39,8 +41,8 @@ def _log(*a) -> None:
 
 # ---------- markdown → sections → chunks ----------
 
-def _blocks(md: str) -> list[tuple[list[str], str]]:
-    """Split Markdown into (heading_path, paragraph) blocks.
+def _blocks(md: str) -> list[tuple[list[str], str, int | None]]:
+    """Split Markdown into (heading_path, paragraph, pdf_page) blocks.
 
     A heading line stays attached to the paragraph after it; fenced code
     blocks are never split. A page's single H1 is its title, so it is left out
@@ -50,10 +52,11 @@ def _blocks(md: str) -> list[tuple[list[str], str]]:
     h1s = [l for l in lines if l.startswith("# ")]
     skip_h1 = len(h1s) == 1
     path: list[tuple[int, str]] = []
-    blocks: list[tuple[list[str], str]] = []
+    blocks: list[tuple[list[str], str, int | None]] = []
     para: list[str] = []
     pending_heading = ""
     in_fence = False
+    page: int | None = None
 
     def flush():
         nonlocal pending_heading
@@ -62,7 +65,7 @@ def _blocks(md: str) -> list[tuple[list[str], str]]:
             if pending_heading:
                 text = pending_heading + "\n" + text
                 pending_heading = ""
-            blocks.append(([h for _, h in path], text))
+            blocks.append(([h for _, h in path], text, page))
         para.clear()
 
     for line in lines:
@@ -73,10 +76,15 @@ def _blocks(md: str) -> list[tuple[list[str], str]]:
         if in_fence:
             para.append(line)
             continue
+        pm = PAGE_MARK_RE.match(line.strip())
+        if pm:
+            flush()
+            page = int(pm.group(1))
+            continue
         m = HEADING_RE.match(line)
         if m and len(m.group(2)) <= MAX_HEADING_CHARS:
             flush()
-            level, title = len(m.group(1)), m.group(2).strip("# ").strip()
+            level, title = len(m.group(1)), m.group(2).strip("#* ").strip()
             pending_heading = line.strip()
             if level == 1 and skip_h1:
                 path.clear()
@@ -121,15 +129,16 @@ def split_markdown(md: str, max_chars: int = MAX_CHARS) -> list[dict]:
     every chunk reads on its own. A tiny last chunk joins the one before.
     """
     chunks: list[dict] = []
-    cur_text, cur_secs, cur_anchor = "", [], None
+    cur_text, cur_secs, cur_anchor, cur_page = "", [], None, None
 
     def close():
-        nonlocal cur_text, cur_secs, cur_anchor
+        nonlocal cur_text, cur_secs, cur_anchor, cur_page
         if cur_text.strip():
-            chunks.append({"sections": cur_secs, "anchor": cur_anchor, "text": cur_text.strip()})
-        cur_text, cur_secs, cur_anchor = "", [], None
+            chunks.append({"sections": cur_secs, "anchor": cur_anchor, "page": cur_page,
+                           "text": cur_text.strip()})
+        cur_text, cur_secs, cur_anchor, cur_page = "", [], None, None
 
-    for path, text in _blocks(md):
+    for path, text, page in _blocks(md):
         pieces = [text] if len(text) <= max_chars else _hard_split(text, max_chars)
         label = " › ".join(path[:2])
         for piece in pieces:
@@ -137,8 +146,10 @@ def split_markdown(md: str, max_chars: int = MAX_CHARS) -> list[dict]:
                 close()
             if not cur_text and path and not piece.lstrip().startswith("#"):
                 piece = "(" + " › ".join(path) + ")\n" + piece
-            if not cur_text and path:
-                cur_anchor = path[0]
+            if not cur_text:
+                cur_page = page
+                if path:
+                    cur_anchor = path[0]
             cur_text = f"{cur_text}\n\n{piece}" if cur_text else piece
             if label and label not in cur_secs:
                 cur_secs.append(label)
@@ -186,9 +197,14 @@ def build_items_for_text(md: str, *, title: str, source_url: str, author: str,
     items = []
     for i, c in enumerate(split_markdown(md)):
         locator = " / ".join(c["sections"][:3])
+        if c.get("page"):  # PDF: viewers jump to #page=N; text fragments don't work there
+            locator = f"{locator} · p. {c['page']}" if locator else f"p. {c['page']}"
+            link = f"{source_url.split('#', 1)[0]}#page={c['page']}"
+        else:
+            link = _deep_link(source_url, c["anchor"])
         meta = chunk_meta(
             type=type, origin=origin,
-            source=_deep_link(source_url, c["anchor"]),
+            source=link,
             doc_id=doc_id, title=title, author=author, published_at=published_at,
             locator=locator, chunk_index=i, url=source_url, **extra,
         )
@@ -200,39 +216,87 @@ def build_items_for_text(md: str, *, title: str, source_url: str, author: str,
 
 # ---------- fetching ----------
 
-def fetch_page(url: str) -> dict:
-    """Fetch a page and reduce it to main-text Markdown + metadata.
+def _pdf_date(raw: str | None) -> str:
+    """PDF dates look like D:20170612094532Z → 2017-06-12."""
+    m = re.match(r"D:(\d{4})(\d{2})(\d{2})", raw or "")
+    return f"{m.group(1)}-{m.group(2)}-{m.group(3)}" if m else ""
 
-    Raises ValueError for HTTP errors and pages with no real text."""
+
+def pdf_to_markdown(data: bytes, name: str = "") -> dict:
+    """PDF → Markdown with headings, a `<!-- page N -->` line before each page."""
+    import pymupdf
+    import pymupdf4llm
+
+    doc = pymupdf.open(stream=data, filetype="pdf")
+    pages = pymupdf4llm.to_markdown(doc, page_chunks=True, show_progress=False)
+    md = "\n\n".join(f"<!-- page {i} -->\n{p['text']}" for i, p in enumerate(pages, 1))
+    md = MD_ESCAPE_RE.sub(r"\1", md)
+    meta = doc.metadata or {}
+    first_h = next((l.lstrip("#* ").rstrip("* ").strip() for l in md.splitlines()
+                    if l.startswith("# ")), "")
+    return {"markdown": md, "title": meta.get("title") or first_h or name,
+            "author": meta.get("author") or "", "site": "",
+            "published_at": _pdf_date(meta.get("creationDate")), "pages": doc.page_count}
+
+
+def _html_to_page(html: str, url: str) -> dict:
     import trafilatura
-    from curl_cffi import requests
 
-    r = requests.get(url, impersonate="chrome", timeout=30, allow_redirects=True)
-    if r.status_code >= 400:
-        raise ValueError(f"HTTP {r.status_code}")
     # Reduce every <hN> to its bare text first: trafilatura drops headings
     # wrapped in anchors/spans (Adobe Help's <h2><span><a id=…></a>Title</span>),
     # which lost every section title on helpx.adobe.com.
     html = HTML_HEADING_RE.sub(
         lambda m: f"<{m.group(1)}>{re.sub(r'<[^>]+>', '', m.group(2)).strip()}</{m.group(1)}>",
-        r.text)
+        html)
     md = trafilatura.extract(
-        html, url=str(r.url), output_format="markdown", include_formatting=True,
+        html, url=url, output_format="markdown", include_formatting=True,
         include_tables=True, include_links=False, include_comments=False,
         favor_recall=True,
     ) or ""
-    md = MD_ESCAPE_RE.sub(r"\1", md)
-    if len(md) < MIN_PAGE_CHARS:
-        raise ValueError(f"only {len(md)} chars of main text (error page, stub, or JS-only)")
-    meta = trafilatura.extract_metadata(html, default_url=str(r.url))
+    meta = trafilatura.extract_metadata(html, default_url=url)
     return {
-        "markdown": md,
-        "url": str(r.url),
+        "markdown": MD_ESCAPE_RE.sub(r"\1", md),
         "title": (meta.title if meta else "") or "",
         "author": (meta.author if meta else "") or "",
         "site": (meta.sitename if meta else "") or "",
         "published_at": (meta.date if meta else "") or "",
     }
+
+
+def fetch_page(url: str) -> dict:
+    """Fetch a source and reduce it to main-text Markdown + metadata.
+
+    Handles web pages (HTML), PDFs (web or local — manuals, papers), and local
+    files (file:///path or /abs/path: .pdf, .md, .txt, .html).
+    Raises ValueError for HTTP errors and sources with no real text."""
+    local = url.startswith("file://") or url.startswith("/")
+    if local:
+        path = Path(url[7:] if url.startswith("file://") else url)
+        data, final_url = path.read_bytes(), url
+        is_pdf = path.suffix.lower() == ".pdf"
+    else:
+        from curl_cffi import requests
+        r = requests.get(url, impersonate="chrome", timeout=60, allow_redirects=True)
+        if r.status_code >= 400:
+            raise ValueError(f"HTTP {r.status_code}")
+        data, final_url = r.content, str(r.url)
+        is_pdf = ("pdf" in (r.headers.get("content-type") or "").lower()
+                  or urlparse(final_url).path.lower().endswith(".pdf"))
+
+    name = Path(urlparse(final_url).path).name
+    if is_pdf:
+        page = pdf_to_markdown(data, name)
+    elif local and Path(name).suffix.lower() in (".md", ".markdown", ".txt"):
+        md = data.decode("utf-8", errors="replace")
+        first_h = next((l.lstrip("# ").strip() for l in md.splitlines() if l.startswith("# ")), "")
+        page = {"markdown": md, "title": first_h or name, "author": "", "site": "",
+                "published_at": ""}
+    else:
+        page = _html_to_page(data.decode("utf-8", errors="replace"), final_url)
+    if len(page["markdown"]) < MIN_PAGE_CHARS:
+        raise ValueError(f"only {len(page['markdown'])} chars of main text "
+                         "(error page, stub, scanned PDF, or JS-only)")
+    return {**page, "url": final_url}
 
 
 # ---------- entry points ----------
