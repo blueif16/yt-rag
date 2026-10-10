@@ -28,12 +28,13 @@ from dotenv import load_dotenv
 # Load .env from the project root, regardless of cwd (this matters because the
 # MCP client spawns this process with an arbitrary working directory).
 _PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
-load_dotenv(_PROJECT_ROOT / ".env")
+load_dotenv(_PROJECT_ROOT / ".env", override=True)
 
 from mcp.server.fastmcp import FastMCP  # noqa: E402
 
 from yt_rag import RAGStore  # noqa: E402
 from yt_rag.ingest import ingest_channel as _ingest_channel  # noqa: E402
+from yt_rag.ingest import ingest_videos as _ingest_videos  # noqa: E402
 
 
 mcp = FastMCP("yt-rag")
@@ -188,32 +189,104 @@ def list_repository() -> dict:
 
 
 @mcp.tool()
-def ingest_channel(channel: str, n_videos: int = 30, namespace: str | None = None) -> dict:
+def ingest_channel(channel: str, n_videos: int = 30, namespace: str | None = None,
+                   sub_langs: list[str] | None = None, cookiefile: str | None = None) -> dict:
     """
     Ingest the latest N videos from a YouTube channel into the knowledge base.
 
-    Downloads English transcripts via yt-dlp, parses YouTube's auto-subtitle
-    format, chunks each video into ~90-second windows with a self-describing
-    prefix, and stores in Supabase with vector + BM25 indexes. Idempotent.
+    Pulls the STATIC source/manual subtitle track via yt-dlp (browser-impersonated;
+    translated/converted "X from Y" tracks are skipped to dodge YouTube's 429-prone
+    on-demand translation endpoint), parses the VTT, chunks each video into ~90-second
+    windows with a self-describing prefix, and stores in Supabase with vector + BM25
+    indexes. Idempotent (content_hash dedupe).
 
-    This is a synchronous, potentially slow operation: ~30s-2min for 30
-    videos depending on transcript length. Run once per channel; subsequent
-    runs will skip already-ingested chunks via content_hash dedupe.
+    Synchronous, potentially slow: ~30s-2min for 30 videos.
 
     Args:
-        channel: Channel handle ("@LewisWJackson"), URL
-            ("https://www.youtube.com/@LewisWJackson"), or bare name
-            ("LewisWJackson").
+        channel: Channel handle ("@LewisWJackson"), URL, or bare name.
         n_videos: How many most-recent videos to pull (default 30, cap 100).
         namespace: Optional Supabase namespace; defaults to "yt_<handle>".
-            Use a shared namespace across creators if you want a single
-            cross-creator search bucket.
+        sub_langs: yt-dlp subtitle-language patterns (exact-match/regex). Defaults to
+            ["en.*"] (English source/manual). For a NON-English channel, pass the
+            static source track so you skip the rate-limited translation endpoint, e.g.
+            ["zh-Hant-orig","zh-Hans-orig","zh-orig","zh-TW","zh-Hant","zh-Hans","zh"];
+            translate to English downstream if desired.
+        cookiefile: Optional path to a Netscape cookies.txt. Use a THROWAWAY Google
+            account (never your primary) for ~4-7x higher limits and to reach
+            auto-only channels whose only captions are on-demand conversions.
 
     Returns:
         {videos, no_subs, chunks, created, skipped, namespace}
     """
     n_videos = max(1, min(int(n_videos), 100))
-    return _ingest_channel(channel, n=n_videos, namespace=namespace)
+    return _ingest_channel(channel, n=n_videos, namespace=namespace,
+                           sub_langs=sub_langs, cookiefile=cookiefile)
+
+
+@mcp.tool()
+def ingest_channels(channels: list[dict]) -> dict:
+    """
+    Batch-ingest several channels in ONE call — paced and fault-tolerant.
+
+    Use this instead of looping ingest_channel from the client (no scripts needed).
+    Continues past per-channel errors; returns per-channel results plus totals.
+
+    Args:
+        channels: list of dicts, each:
+            {"channel": "@handle",                 # required
+             "n_videos": 30,                       # optional, cap 100
+             "sub_langs": ["zh-Hant-orig", ...],   # optional (see ingest_channel)
+             "namespace": "yt_handle",             # optional
+             "cookiefile": "/path/cookies.txt",    # optional
+             "sleep": 4}                           # optional gap (s) before next
+
+    Returns:
+        {"totals": {videos, chunks, created, skipped, no_subs}, "channels": [...]}
+    """
+    import time
+    results = []
+    for item in channels:
+        ch = item["channel"]
+        n = max(1, min(int(item.get("n_videos", 30)), 100))
+        rec = {"channel": ch}
+        try:
+            rec.update(_ingest_channel(ch, n=n, namespace=item.get("namespace"),
+                                       sub_langs=item.get("sub_langs"),
+                                       cookiefile=item.get("cookiefile")))
+        except Exception as e:  # one bad channel must not abort the batch
+            rec["error"] = str(e)
+        results.append(rec)
+        time.sleep(float(item.get("sleep", 4)))
+    totals = {k: sum(r.get(k, 0) for r in results)
+              for k in ("videos", "chunks", "created", "skipped", "no_subs")}
+    return {"totals": totals, "channels": results}
+
+
+@mcp.tool()
+def ingest_videos(urls: list[str], namespace: str) -> dict:
+    """
+    Cherry-pick specific YouTube videos by URL/ID into a namespace.
+
+    Use when the videos you want aren't in the most-recent-N window of a
+    channel — e.g. older standout episodes buried beyond the 100-cap, or a
+    curated subset across multiple creators. Pairs naturally with
+    ingest_channel: use ingest_channel for fresh tail, ingest_videos for
+    archival picks.
+
+    Args:
+        urls: List of YouTube video URLs or 11-char IDs. Accepts
+            "https://www.youtube.com/watch?v=XXX",
+            "https://youtu.be/XXX", "/embed/XXX", "/shorts/XXX",
+            or raw "XXX".
+        namespace: Supabase namespace to store under. Required (no channel
+            to derive a default from). Use the same yt_<handle> as the
+            channel if you want to group archival videos with an existing
+            ingest.
+
+    Returns:
+        {videos, no_subs, chunks, created, skipped, namespace}
+    """
+    return _ingest_videos(urls, namespace=namespace)
 
 
 def _namespace_of(rag, doc_id) -> str:

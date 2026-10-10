@@ -17,6 +17,7 @@ import tempfile
 from pathlib import Path
 
 from yt_dlp import YoutubeDL
+from yt_dlp.networking.impersonate import ImpersonateTarget
 
 
 def _log(*a, **kw) -> None:
@@ -36,23 +37,35 @@ def list_channel_videos(channel_url: str, n: int) -> list[dict]:
     return [{"id": e["id"], "title": e.get("title", "")} for e in info.get("entries", [])]
 
 
-def download_video_subs(video_id: str, out_dir: Path) -> dict | None:
+def download_video_subs(video_id: str, out_dir: Path, sub_langs: list[str] | None = None, cookiefile: str | None = None) -> dict | None:
+    langs = sub_langs or ["en.*"]
     opts = {
         **_yt_opts_base(),
         "skip_download": True,
         "writesubtitles": True,
         "writeautomaticsub": True,
-        "subtitleslangs": ["en", "en-US"],
+        "subtitleslangs": langs,
         "subtitlesformat": "vtt",
         "outtmpl": str(out_dir / "%(id)s.%(ext)s"),
+        # Politeness/robustness: YouTube 429-rate-limits rapid subtitle pulls.
+        "sleep_interval_requests": 1.5,
+        "retries": 5,
+        "extractor_retries": 3,
+        # Avoid the 429-prone on-demand translation endpoint (the tlang= path):
+        # skip translated/converted tracks so only static source/manual subs are
+        # pulled. Impersonate a real browser (needs curl_cffi) to dodge bot checks.
+        "extractor_args": {"youtube": {"skip": ["translated_subs"], "player_client": ["default", "-web"]}},
+        "impersonate": ImpersonateTarget.from_str("chrome"),
     }
+    if cookiefile:
+        opts["cookiefile"] = cookiefile
     try:
         with YoutubeDL(opts) as ydl:
             info = ydl.extract_info(f"https://www.youtube.com/watch?v={video_id}", download=True)
     except Exception as e:
         _log(f"  ! yt-dlp failed: {e}")
         return None
-    for path in sorted(out_dir.glob(f"{video_id}.en*.vtt")):
+    for path in sorted(out_dir.glob(f"{video_id}.*.vtt")):
         return {"info": info, "vtt_path": path}
     return None
 
@@ -180,6 +193,8 @@ def ingest_channel(
     channel: str,
     n: int = 30,
     namespace: str | None = None,
+    sub_langs: list[str] | None = None,
+    cookiefile: str | None = None,
 ) -> dict:
     """
     Enumerate the latest n uploads from a channel, download English VTT subs,
@@ -207,7 +222,7 @@ def ingest_channel(
 
     for i, v in enumerate(videos, 1):
         _log(f"\n[{i}/{len(videos)}] {v['id']}  {v['title'][:65]}")
-        res = download_video_subs(v["id"], tmp)
+        res = download_video_subs(v["id"], tmp, sub_langs, cookiefile)
         if not res:
             _log("  - no English subs, skipping")
             totals["no_subs"] += 1
@@ -230,6 +245,82 @@ def ingest_channel(
     _log(f"\nDONE  videos={len(videos)} no_subs={totals['no_subs']} "
          f"chunks={totals['chunks']} created={totals['created']} skipped={totals['skipped']}")
     totals["namespace"] = ns
+    return totals
+
+
+VIDEO_ID_RE = re.compile(r"(?:v=|youtu\.be/|/shorts/|/embed/)([A-Za-z0-9_-]{11})")
+
+
+def _extract_video_id(url_or_id: str) -> str:
+    """Pull the 11-char YouTube video ID from a URL or accept it raw."""
+    s = url_or_id.strip()
+    if re.fullmatch(r"[A-Za-z0-9_-]{11}", s):
+        return s
+    m = VIDEO_ID_RE.search(s)
+    if m:
+        return m.group(1)
+    raise ValueError(f"Could not extract video_id from: {url_or_id}")
+
+
+def ingest_videos(urls: list[str], namespace: str) -> dict:
+    """
+    Cherry-pick specific YouTube videos by URL/ID into the given namespace.
+
+    Use when the videos you want are scattered across a creator's archive
+    or buried beyond the latest-N window. Reuses the same chunking and
+    metadata as ingest_channel.
+
+    Idempotent — RAGStore dedupes by content_hash.
+    """
+    from yt_rag import RAGStore  # lazy
+
+    video_ids: list[str] = []
+    for u in urls:
+        try:
+            video_ids.append(_extract_video_id(u))
+        except ValueError as e:
+            _log(f"  ! {e}")
+
+    _log(f"namespace: {namespace}")
+    _log(f"n_videos : {len(video_ids)}")
+
+    if not video_ids:
+        return {"videos": 0, "chunks": 0, "created": 0, "skipped": 0,
+                "no_subs": 0, "namespace": namespace}
+
+    rag = RAGStore(namespace=namespace)
+    tmp = Path(tempfile.mkdtemp(prefix="yt_rag_"))
+    totals = {"videos": len(video_ids), "chunks": 0, "created": 0,
+              "skipped": 0, "no_subs": 0}
+
+    for i, vid in enumerate(video_ids, 1):
+        _log(f"\n[{i}/{len(video_ids)}] {vid}")
+        res = download_video_subs(vid, tmp)
+        if not res:
+            _log("  - no English subs, skipping")
+            totals["no_subs"] += 1
+            continue
+        with open(res["vtt_path"]) as f:
+            vtt_text = f.read()
+        info = res["info"]
+        handle = info.get("uploader_id") or ""
+        if handle and not handle.startswith("@"):
+            handle = f"@{handle}"
+        items = build_items_for_video(info, vtt_text, handle)
+        if not items:
+            _log("  - 0 chunks after parsing, skipping")
+            continue
+        rag_items = _batch_ingest_with_meta(rag, items)
+        totals["chunks"] += len(items)
+        totals["created"] += rag_items["created"]
+        totals["skipped"] += rag_items["skipped"]
+        _log(f"  - chunks={len(items)} created={rag_items['created']} "
+             f"skipped={rag_items['skipped']}")
+
+    _log(f"\nDONE  videos={len(video_ids)} no_subs={totals['no_subs']} "
+         f"chunks={totals['chunks']} created={totals['created']} "
+         f"skipped={totals['skipped']}")
+    totals["namespace"] = namespace
     return totals
 
 
