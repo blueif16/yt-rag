@@ -1,0 +1,266 @@
+[
+  {
+    "id": "n01",
+    "topic": "easing-graph-editor",
+    "query": "How do I type exact influence and speed values into the After Effects Keyframe Velocity dialog to reproduce a cubic-bezier ease like 0.05, 0.7, 0.1, 1?",
+    "must_contain": [
+      "Opens Keyframe Velocity (Animation > Keyframe Velocity / Ctrl+Shift+K) and explains Incoming vs Outgoing Velocity with Speed and Influence fields",
+      "Relates influence % to how far the bezier handle reaches in time and speed to the handle's slope (units/sec), i.e. how a bezier x/y maps onto those numbers",
+      "Notes that multi-dimensional non-spatial properties (Scale, color) carry a separate ease per dimension, while spatial Position has a single ease along the path"
+    ],
+    "why_we_need_it": "SML tokens are cubic-beziers and the assembler applies them as AE influence/speed through kumo keyframe.set_easing, so the mapping must be exact."
+  },
+  {
+    "id": "n02",
+    "topic": "easing-graph-editor",
+    "query": "In After Effects, how do I make a position move overshoot slightly and settle by separating dimensions and pulling bezier handles in the value graph?",
+    "must_contain": [
+      "Right-click Position > Separate Dimensions to get independent X/Y value curves (and why the combined speed graph cannot overshoot)",
+      "Value-graph technique: drag the outgoing/incoming bezier handles so the curve passes beyond the target value and returns, or add a settle keyframe",
+      "Keeping the overshoot small/felt rather than bouncy, and keeping X and Y timing in sync after separating"
+    ],
+    "why_we_need_it": "SML says overshooting tokens (ease.out, y1>1) must go on separated dimensions because AE clamps overshoot on spatial Position."
+  },
+  {
+    "id": "n03",
+    "topic": "easing-graph-editor",
+    "query": "Why does my layer's motion path curve or loop past the keyframes in After Effects, and how do I make spatial interpolation linear by default for UI and text moves?",
+    "must_contain": [
+      "Distinguishes spatial interpolation (path shape in the comp) from temporal interpolation (speed/ease in the graph editor)",
+      "Auto Bezier / Continuous Bezier spatial keys create curved or overshooting paths; fix via Keyframe Interpolation dialog (Spatial: Linear) or Preferences > General 'Default Spatial Interpolation to Linear'",
+      "Shows that linear spatial keys still keep their temporal easing"
+    ],
+    "why_we_need_it": "Our AE comp defaults require linear spatial keys for type and UI moves; drifting curved paths break card and chip layouts."
+  },
+  {
+    "id": "n04",
+    "topic": "text-kinetic-type",
+    "query": "How do I animate text per character in After Effects with a text animator and range selector so letters rise and fade in with a staggered, eased cascade?",
+    "must_contain": [
+      "Add Animator > Position + Opacity, then animate Range Selector Offset or Start; Based On characters/words",
+      "Advanced settings: Shape (Ramp Up / Smooth), Ease High / Ease Low, and how they control the per-letter ease and overlap",
+      "How the selector's duration relates to the stagger (e.g. total cascade length), optionally Randomize Order"
+    ],
+    "why_we_need_it": "AE-native titles must follow SML stagger tokens (stg.1 letters, stg.2 words, cascade cap 500 ms) so they cut with builder-made type."
+  },
+  {
+    "id": "n05",
+    "topic": "text-kinetic-type",
+    "query": "How do pros sync word-by-word kinetic typography to a voiceover in After Effects so each word lands on the spoken word and still looks premium, not template-like?",
+    "must_contain": [
+      "Practical sync method: audio waveform (LL), layer/comp markers on spoken words, then aligning word reveals to markers (separate layers or text animator Based On words)",
+      "Design guidance: one hero word with strong scale/weight contrast, restrained secondary words, readable hold times",
+      "Timing nuance such as having the graphic lead the word by a few frames rather than lag it"
+    ],
+    "why_we_need_it": "Our lectures and tech videos are VO-driven, and graphics must lead their keyword by 0.05–0.6 s per the tech-canvas style."
+  },
+  {
+    "id": "n06",
+    "topic": "shape-ui-animation",
+    "query": "How do I animate a rounded-rectangle UI card in After Effects so it resizes without distorting its corner radius or stroke width (shape Size vs layer Scale)?",
+    "must_contain": [
+      "Animate the Rectangle Path Size (and Position) inside the shape group instead of layer Scale, so Roundness and stroke stay in pixels",
+      "Keeping the card anchored to an edge or corner while it grows (anchor point / position offset or a simple expression)",
+      "Optional: linking a child layer (content, shadow, mask) to the card's size so they stay aligned"
+    ],
+    "why_we_need_it": "Presenter and screen cards morph between full, strip, large and corner states, and stretched corners look amateur."
+  },
+  {
+    "id": "n07",
+    "topic": "shape-ui-animation",
+    "query": "How do I make a clean line draw-on animation for connector lines, arrows or icons in After Effects with Trim Paths, rounded caps and good easing?",
+    "must_contain": [
+      "Trim Paths Start/End (and Offset) keyframing, plus Trim Multiple Shapes: Simultaneously vs Individually for staggered draws",
+      "Stroke settings: round line cap/join, stroke width, and adding an arrowhead or dot that follows the path end",
+      "Easing the draw (ease-out on the leading end) and avoiding a linear robotic look"
+    ],
+    "why_we_need_it": "Leader lines from muse's mitten, pipeline diagrams and rings are drawn as strokes in AE overlays."
+  },
+  {
+    "id": "n08",
+    "topic": "expressions",
+    "query": "What After Effects expression adds a damped spring or inertial bounce after the last keyframe, using the keyframe's incoming velocity?",
+    "must_contain": [
+      "Working expression code using nearestKey/numKeys, velocityAtTime and a decaying sine (amplitude, frequency, decay parameters)",
+      "Explanation of what each parameter does and how to tune for a subtle versus playful settle",
+      "Note on applying to multi-dimensional properties, and/or converting the expression to keyframes (Convert Expression to Keyframes)"
+    ],
+    "why_we_need_it": "SML spring tokens are built in AE as expressions, then converted to keyframes before handoff."
+  },
+  {
+    "id": "n09",
+    "topic": "expressions",
+    "query": "After Effects expression to move layers along a tilted elliptical orbit around a center null, scaling them up when in front and down when behind to fake depth",
+    "must_contain": [
+      "Expression using Math.cos/Math.sin with time, radius and period, with the y radius squashed by the tilt (R*sin(tilt)) and rotated by a roll angle",
+      "Tying scale, opacity or blur to sin(angle) so near items are bigger and far items smaller, plus a phase offset per layer (index or a slider)",
+      "How to pass items behind a subject: splitting into front/back copies, a matte, or true 3D layers with a camera"
+    ],
+    "why_we_need_it": "The approved memory-atom FX orbits muse on tilted rings that pass behind and in front of him."
+  },
+  {
+    "id": "n10",
+    "topic": "3d-camera-depth",
+    "query": "How do I set up depth of field with an After Effects 3D camera so foreground and background layers blur realistically, with focus linked to a layer?",
+    "must_contain": [
+      "Camera Settings: enable Depth of Field, Focus Distance, Aperture/F-Stop and Blur Level, and how they interact",
+      "Link Focus Distance to Layer (or an expression that measures the distance to a target layer) so focus follows the subject",
+      "Spacing layers in Z for believable falloff, plus a renderer note (Classic 3D vs Advanced 3D / Cinema 4D) or the performance cost"
+    ],
+    "why_we_need_it": "Premium AE looks (particle depth, bokeh behind the host, 3D worlds) depend on camera DOF that the browser builders cannot do."
+  },
+  {
+    "id": "n11",
+    "topic": "3d-camera-depth",
+    "query": "How do I make a smooth premium parallax camera push-in on 2.5D layers in After Effects using a null-parented camera, without a floaty or drifting feel?",
+    "must_contain": [
+      "Rig: one-node camera (or two-node camera with point of interest handled) parented to a null, animating the null rather than the camera",
+      "Z spacing for parallax and scaling distant layers to compensate their apparent size",
+      "Easing the push (strong ease-out with a long tail or ease-in-out) and avoiding sub-pixel jitter or uneven speed"
+    ],
+    "why_we_need_it": "Camera moves are hero motions that use ease.move.emph and dur.7, and AE owns 3D camera depth in our engine split."
+  },
+  {
+    "id": "n12",
+    "topic": "motion-blur",
+    "query": "Motion blur is not showing on my precomp or nested comp in After Effects; which switches need to be on inside and outside the precomp?",
+    "must_contain": [
+      "The layer motion blur switch must be on for the animated layers inside the precomp and for the precomp layer itself, with Enable Motion Blur on in each comp",
+      "How the shutter angle/phase and samples come from comp settings (Advanced tab), and how Collapse Transformations changes the behaviour",
+      "That footage or PNG sequences with motion baked in get no blur from the layer switch (that needs Pixel Motion Blur or RSMB)"
+    ],
+    "why_we_need_it": "The assembly nests slot comps inside the main comp, and our default is 180°/−90° blur on every comp."
+  },
+  {
+    "id": "n13",
+    "topic": "motion-blur",
+    "query": "How do I add motion blur to an already-rendered PNG sequence in After Effects with RSMB or Pixel Motion Blur, matching a 180-degree shutter and avoiding edge artifacts on alpha?",
+    "must_contain": [
+      "Applying RSMB (or stock Pixel Motion Blur) to footage and setting the blur amount or shutter so it equals 180° (e.g. 0.5 blur amount)",
+      "Handling transparent footage: RSMB Pro foreground/alpha settings or blurring in a precomp over transparency to avoid smearing the background",
+      "Fixing vector artifacts: tearing or warping on fast or overlapping motion, vector smoothing, motion-vector quality"
+    ],
+    "why_we_need_it": "Fast builder footage arrives without blur, and RSMB 6 is installed for exactly that case."
+  },
+  {
+    "id": "n14",
+    "topic": "glow-premium-fx",
+    "query": "What Deep Glow settings give a realistic, physically based glow on neon text or UI in After Effects without blowing out the whole frame?",
+    "must_contain": [
+      "What the main Deep Glow controls do (Radius, Exposure, Threshold, Falloff/Quality, Tint, Chromatic Aberration) with starting values",
+      "Isolating the glow source (glow on a duplicate or alpha-only layer, then composited back) so backgrounds and white text do not bloom",
+      "Bit depth note: 16 or 32 bpc for smooth falloff, and how exposure behaves in 32 bpc"
+    ],
+    "why_we_need_it": "Deep Glow 2 is our main premium plugin, and it only beats stock glow with an alpha-isolated source."
+  },
+  {
+    "id": "n15",
+    "topic": "glow-premium-fx",
+    "query": "Why does my glow disappear on a white or light background in After Effects, and how do I make a glow or halo read on light backgrounds?",
+    "must_contain": [
+      "Explains that additive or screen glow cannot brighten pixels that are already white, so the halo vanishes",
+      "Fix: a coloured, darker or saturated halo composited Normal (or Multiply/Color Burn variants) that extends the alpha, rather than an additive glow",
+      "Practical recipe: a glow pass on an isolated layer, tinted, with opacity or falloff tuned, possibly with a subtle shadow for contrast"
+    ],
+    "why_we_need_it": "Muse's lectures sit on a white keynote cyc, and the memory-atom FX needed halos that read on white."
+  },
+  {
+    "id": "n16",
+    "topic": "glow-premium-fx",
+    "query": "How do I make premium glowing particles orbit or trail around a character in After Effects with Trapcode Particular, with a stock CC Particle World fallback?",
+    "must_contain": [
+      "Particular setup: a light or layer emitter following a path or null, Particle size/opacity/color over life, and an Aux system for trails",
+      "Depth: using the comp camera for DOF and bokeh, and keeping particles out of the subject's face zone with masks or emitter placement",
+      "A stock fallback route (CC Particle World / CC Particle Systems II, or expression-driven shape layers plus glow)"
+    ],
+    "why_we_need_it": "The approved 'around muse' FX uses particles and orbits, and every plugin recipe needs a stock-AE fallback."
+  },
+  {
+    "id": "n17",
+    "topic": "transitions",
+    "query": "How do I build a smooth zoom or whip-pan transition between two scenes in After Effects with matched easing and directional blur, without plugins?",
+    "must_contain": [
+      "Structure: precompose each scene, animate scale or position across the cut with an ease-in into the cut and an ease-out after it",
+      "Hiding edges with Motion Tile (Mirror Edges) and adding Directional Blur or motion blur peaking at the cut frame",
+      "A typical duration in frames and keeping the move direction consistent between the outgoing and incoming shots"
+    ],
+    "why_we_need_it": "SML treats a transition as the scene's exit (one primary type plus 1–2 accents), and AE builds them at assembly."
+  },
+  {
+    "id": "n18",
+    "topic": "transitions",
+    "query": "How do I make a card-expand or shape-mask reveal transition in After Effects where the next scene appears inside a growing rounded rectangle, using track mattes?",
+    "must_contain": [
+      "Track matte setup (Alpha Matte / the newer track matte layer picker) with a shape layer as the matte above the incoming scene",
+      "Animating the matte's Size/Roundness (not Scale) with ease.move-style easing, and optionally moving the outgoing scene with it",
+      "Finishing touches: a soft shadow or stroke on the card edge, and avoiding a visible matte edge or aliasing"
+    ],
+    "why_we_need_it": "Layout morphs between presenter-card states and screen cards are our most common transition in the tech-canvas style."
+  },
+  {
+    "id": "n19",
+    "topic": "compositing-color-finishing",
+    "query": "How do I stop banding in dark gradients and glows after H.264 export from After Effects by working at 16 bpc and adding grain or noise dither?",
+    "must_contain": [
+      "Why 8 bpc and H.264's 4:2:0 compression cause banding, and that working at 16 or 32 bpc alone is not enough once you deliver 8-bit",
+      "Adding grain/noise (Add Grain, Noise, Fractal Noise overlay) at a size and amount that survives compression",
+      "Export tips: bitrate, avoiding a second lossy encode, and checking banding on the final file"
+    ],
+    "why_we_need_it": "The ident finish adds grain against banding in dark gradients, and all our comps are 16 bpc going to MP4."
+  },
+  {
+    "id": "n20",
+    "topic": "compositing-color-finishing",
+    "query": "How do I composite a cut-out character onto a clean studio backdrop in After Effects so it sits in the scene, with a contact shadow, cast shadow and light wrap?",
+    "must_contain": [
+      "Cast or contact shadow from the layer's alpha: a black fill, skew or corner pin onto the floor, blur increasing with distance, low opacity",
+      "Light wrap: blurred background composited onto the subject's edges through its alpha (a stock method or Light Wrap effect)",
+      "Edge and colour match: matte choke/feather and matching blacks, colour temperature and saturation to the plate"
+    ],
+    "why_we_need_it": "Muse is composited onto a white keynote cyc with cast shadow, reflection and light wrap in AE."
+  },
+  {
+    "id": "n21",
+    "topic": "footage-integration",
+    "query": "When importing a PNG sequence with alpha into After Effects, how do I set straight vs premultiplied alpha and the frame rate so there are no dark fringes or timing drift?",
+    "must_contain": [
+      "Import as an image sequence, then Interpret Footage: Alpha Straight vs Premultiplied (Matted With Color) and what Guess does",
+      "Symptoms of the wrong interpretation (dark or white halos on edges) and how to fix them",
+      "Setting 'Assume this frame rate' to the comp fps so frames map 1:1, and why a mismatch causes skipped or duplicated frames"
+    ],
+    "why_we_need_it": "Our footage contract is PNG sequence, straight alpha, same fps, and every builder clip enters AE this way."
+  },
+  {
+    "id": "n22",
+    "topic": "footage-integration",
+    "query": "Why does my imported ProRes 4444 or PNG footage look washed out or colour-shifted in After Effects compared with the source, and which colour management settings fix it?",
+    "must_contain": [
+      "Project working space and colour management settings (none vs sRGB/Rec.709, linearize working space) and their effect on blending",
+      "Interpret Footage > Color: embedded profile vs Preserve RGB / override input profile",
+      "Known ProRes gamma or matrix issues (Rec.601 vs Rec.709 tagging, QuickTime gamma) and how to verify a match"
+    ],
+    "why_we_need_it": "We require a non-linear working space and bt709/sRGB, and we have hit the ProRes 601 tagging bug before."
+  },
+  {
+    "id": "n23",
+    "topic": "workflow-precomps-render",
+    "query": "Why does my precomp look pixelated or soft when scaled above 100% in After Effects, and when should I use Collapse Transformations or Continuous Rasterization?",
+    "must_contain": [
+      "A precomp rasterizes at its own comp size, so upscaling it in the parent resamples pixels",
+      "Collapse Transformations (precomps) and Continuous Rasterization (shape, text, vector layers) keep vectors sharp, with their side effects on blend modes, effects order, masks and 3D",
+      "Alternatives: build the precomp at the needed resolution, or apply the zoom inside the precomp"
+    ],
+    "why_we_need_it": "Screen cards and boards get auto-zooms (×1.11–1.25 and ×2 pushes) on nested comps, and text in them must stay crisp."
+  },
+  {
+    "id": "n24",
+    "topic": "workflow-precomps-render",
+    "query": "How do I render a long After Effects comp reliably from the command line with aerender, using frame-range chunks, memory flags and output module templates, then join the parts?",
+    "must_contain": [
+      "aerender flags: -project, -comp, -s/-e frame range, -RStemplate/-OMtemplate, -output, -mem_usage, -mp/-continueOnMissingFootage",
+      "Splitting into chunks or separate processes to avoid memory growth and slowdowns, with an image sequence or intermediate codec for safety",
+      "Joining chunks without re-encoding or frame errors (e.g. image sequence then one encode, or a concat with matching settings)"
+    ],
+    "why_we_need_it": "Long 16 bpc renders with Deep Glow ran out of memory and slowed to 0.4 fps, so studio ae render needs chunked aerender runs."
+  }
+]

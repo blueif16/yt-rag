@@ -1,0 +1,291 @@
+{
+  "collection": "after-effects",
+  "videos": [
+    {
+      "url": "https://www.youtube.com/watch?v=7pOCtlrrE3Y",
+      "title": "The LAST graph editor tutorial you'll ever need. \\\\ After Effects Tutorial",
+      "author": "Jake In Motion",
+      "duration_sec": 1509,
+      "published": "2022-10-05",
+      "captions": "auto",
+      "topics": [
+        "easing-graph-editor"
+      ],
+      "why": "Value vs speed graph, when each wins, overshoot/bounce curves, re-easing many keyframes at once; the clearest long-form graph editor lesson."
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=c-Q06JnT6mE",
+      "title": "The Right Way to Animate Text | After Effects Text Animation Tutorial",
+      "author": "Stephan Zammit",
+      "duration_sec": 1507,
+      "published": "2024-11-07",
+      "captions": "manual",
+      "topics": [
+        "text-kinetic-type",
+        "easing-graph-editor"
+      ],
+      "why": "Brand-style text: range selector by characters/words/lines, expression selector for single words, retiming kinetic type for impact."
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=748l7DIU4bQ",
+      "title": "Crazy Trim Paths Tricks in After Effects | Tutorial",
+      "author": "Manuel does Motion",
+      "duration_sec": 560,
+      "published": "2022-05-11",
+      "captions": "auto",
+      "topics": [
+        "shape-ui-animation",
+        "text-kinetic-type"
+      ],
+      "why": "Trim paths from basics to multi-stroke type, repeater bursts, point-along-path and arrow draw-ons."
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=rsW4fwscwKI",
+      "title": "Top 10 After Effects Expressions for Amazing Motion Design",
+      "author": "Ben Marriott",
+      "duration_sec": 733,
+      "published": "2019-12-11",
+      "captions": "auto",
+      "topics": [
+        "expressions"
+      ],
+      "why": "The everyday set: loopOut, wiggle, time, value, posterizeTime, comp referencing, maintain stroke/scale; still current syntax."
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=PdHYC0gqIPA",
+      "title": "Smooth Camera Movement in After Effects (Tutorial)",
+      "author": "Bricks",
+      "duration_sec": 1382,
+      "published": "2025-03-15",
+      "captions": "auto",
+      "topics": [
+        "3d-camera-depth",
+        "shape-ui-animation",
+        "transitions"
+      ],
+      "why": "Top-brand UI promo built end to end: null-rigged 3D camera moves, UI scenes, spin transitions, motion blur; exactly our tech-promo domain."
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=VCAqnzFUTPg",
+      "title": "Your Motion Blur Looks Fake. Here's Why.",
+      "author": "SternFX (Eran Stern)",
+      "duration_sec": 740,
+      "published": "2026-08-03",
+      "captions": "manual",
+      "topics": [
+        "motion-blur"
+      ],
+      "why": "Shutter angle/phase/samples explained, then Pixel Motion Blur vs CC Force Motion Blur vs RSMB vs BCC ML, incl. Advanced 3D workaround."
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=HTn_HYnvKjg",
+      "title": "Elevate Your After Effects Workflow With These Expert Techniques",
+      "author": "Ben Marriott",
+      "duration_sec": 870,
+      "published": "2022-12-21",
+      "captions": "manual",
+      "topics": [
+        "glow-premium-fx",
+        "text-kinetic-type"
+      ],
+      "why": "Full build of soft-gradient neon light beams, layered stock glows and smooth type; premium light look with stock effects."
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=_vd8g7PaS_U",
+      "title": "Deep Glow 2: Quickstart Guide & What's New?",
+      "author": "Plugin Everything",
+      "duration_sec": 294,
+      "published": "2024-11-14",
+      "captions": "auto",
+      "topics": [
+        "glow-premium-fx"
+      ],
+      "why": "Official tour of every Deep Glow 2 control (saturation bias, gamma, aspect, CA, tint, tone mapping, lens dirt, iris); DG2 is installed here. Short (4:54) but dense."
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=rvAXZl8Ypus",
+      "title": "The GAME CHANGING New Track Matte System in After Effects 2023",
+      "author": "School of Motion",
+      "duration_sec": 467,
+      "published": "2022-11-14",
+      "captions": "auto",
+      "topics": [
+        "transitions",
+        "compositing-color-finishing"
+      ],
+      "why": "Masks vs mattes, the AE 2023+ selectable track matte system, alpha vs luma, creative matte uses."
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=Fj7woohZ0is",
+      "title": "10 Easy After Effects Transitions",
+      "author": "Olufemii",
+      "duration_sec": 736,
+      "published": "2023-02-27",
+      "captions": "auto",
+      "topics": [
+        "transitions"
+      ],
+      "why": "Ten YouTube-edit transitions built from scratch: wipe, RGB split, lens blur, punch zoom, Motion Tile, flash, film burn, echo."
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=y4fuhIPxmJg",
+      "title": "Lumetri Color | Effects of After Effects",
+      "author": "Jake In Motion",
+      "duration_sec": 1747,
+      "published": "2022-02-03",
+      "captions": "auto",
+      "topics": [
+        "compositing-color-finishing"
+      ],
+      "why": "Every Lumetri section in AE: basic correction, creative, RGB and hue/sat curves, wheels, HSL secondary, vignette."
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=Ns41v75th_I",
+      "title": "Understand Continuous Rasterization in After Effects \\\\ AE Tutorial",
+      "author": "Jake In Motion",
+      "duration_sec": 687,
+      "published": "2022-10-11",
+      "captions": "auto",
+      "topics": [
+        "workflow-precomps-render",
+        "shape-ui-animation"
+      ],
+      "why": "What the collapse/continuously-rasterize switch really does: crisp scaled vectors, 3D precomps, no precomp cropping, and its downsides."
+    }
+  ],
+  "pages": [
+    {
+      "url": "https://helpx.adobe.com/after-effects/desktop/animate-in-after-effects/speed-between-keyframes/speed.html",
+      "title": "Apply and control speed changes in After Effects",
+      "author_or_site": "Adobe Help Center",
+      "type": "doc",
+      "topics": [
+        "easing-graph-editor"
+      ],
+      "why": "Speed graph, influence, numeric Keyframe Velocity, Easy Ease 33.33%, bounce/peak, roving keys; maps onto kumo set_easing values.",
+      "approx_chars": 12277
+    },
+    {
+      "url": "https://helpx.adobe.com/after-effects/desktop/animating-text/text-animation/animating-text.html",
+      "title": "Animating text",
+      "author_or_site": "Adobe Help Center",
+      "type": "doc",
+      "topics": [
+        "text-kinetic-type"
+      ],
+      "why": "Full reference for animator properties and range/wiggly/expression selectors (Based On, Shape, Ease High/Low, Offset).",
+      "approx_chars": 24473
+    },
+    {
+      "url": "https://helpx.adobe.com/after-effects/desktop/drawing-painting-and-paths/shapes-and-shape-attributes/shape-attributes-paint-operations-path.html",
+      "title": "Shape attributes, paint operations, and path operations for shape layers",
+      "author_or_site": "Adobe Help Center",
+      "type": "doc",
+      "topics": [
+        "shape-ui-animation"
+      ],
+      "why": "Reference for strokes/fills/dashes/taper plus Trim Paths, Repeater, Merge Paths, Offset, Round Corners, Wiggle Paths.",
+      "approx_chars": 20475
+    },
+    {
+      "url": "https://helpx.adobe.com/after-effects/desktop/work-with-expressions/expression-examples/expression-examples.html",
+      "title": "Expression examples",
+      "author_or_site": "Adobe Help Center",
+      "type": "doc",
+      "topics": [
+        "expressions"
+      ],
+      "why": "Copyable wiggle + Slider Control, inertial-bounce overshoot, loopOut modes, orbit, parent-relative position and delay.",
+      "approx_chars": 13651
+    },
+    {
+      "url": "https://schoolofmotion.com/blog/cameras-after-effects",
+      "title": "Working with Cameras in After Effects",
+      "author_or_site": "School of Motion (Caleb Ward)",
+      "type": "article",
+      "topics": [
+        "3d-camera-depth"
+      ],
+      "why": "One- vs two-node cameras, null rigs, focal length, depth of field (aperture, blur level), camera tools in one readable guide.",
+      "approx_chars": 11627
+    },
+    {
+      "url": "https://www.provideocoalition.com/cmg_hidden_gems_chapter_8_motion_blur_and_more/",
+      "title": "CMG Hidden Gems: Chapter 8 - Motion Blur and More",
+      "author_or_site": "ProVideo Coalition (Chris & Trish Meyer)",
+      "type": "article",
+      "topics": [
+        "motion-blur"
+      ],
+      "why": "Classic, precise: the two switches, shutter angle/phase (-1/2 angle), samples per frame vs adaptive limit, Timewarp faux blur.",
+      "approx_chars": 7652
+    },
+    {
+      "url": "https://schoolofmotion.com/blog/glows-after-effects",
+      "title": "Tutorial: Make a Better Glow in After Effects",
+      "author_or_site": "School of Motion (Joey Korenman)",
+      "type": "tutorial",
+      "topics": [
+        "glow-premium-fx"
+      ],
+      "why": "Why stock Glow is hard to control and how to build a custom glow (Levels threshold, blur, Add, CC Composite, 32-bit caveat).",
+      "approx_chars": 5659
+    },
+    {
+      "url": "https://helpx.adobe.com/after-effects/desktop/work-with-transparency-and-compositing/work-with-track-mattes-and-traveling-mattes/track-mattes-and-traveling-mattes.html",
+      "title": "Track Mattes and Traveling Mattes",
+      "author_or_site": "Adobe Help Center",
+      "type": "doc",
+      "topics": [
+        "transitions",
+        "compositing-color-finishing"
+      ],
+      "why": "Current (AE 23+) matte model: any layer as matte, alpha/luma/invert toggles, traveling mattes, preserve underlying transparency.",
+      "approx_chars": 5013
+    },
+    {
+      "url": "https://helpx.adobe.com/after-effects/desktop/adjust-colors/color-basics/color-basics.html",
+      "title": "Color basics",
+      "author_or_site": "Adobe Help Center",
+      "type": "doc",
+      "topics": [
+        "compositing-color-finishing"
+      ],
+      "why": "8/16/32 bpc trade-offs, banding and dithering, HDR values, correction vs grading, histograms and Lumetri scopes.",
+      "approx_chars": 17219
+    },
+    {
+      "url": "https://helpx.adobe.com/after-effects/desktop/work-with-compositions/precomposing-and-nesting/precomposing-nesting-pre-rendering.html",
+      "title": "Precomposing, nesting, and pre-rendering",
+      "author_or_site": "Adobe Help Center",
+      "type": "doc",
+      "topics": [
+        "workflow-precomps-render"
+      ],
+      "why": "Precompose options, nested render order, collapse transformations, pre-rendering and proxies.",
+      "approx_chars": 18226
+    },
+    {
+      "url": "https://helpx.adobe.com/after-effects/desktop/render-and-export/automate-rendering/automated-rendering-network-rendering.html",
+      "title": "Automated rendering and network rendering",
+      "author_or_site": "Adobe Help Center",
+      "type": "doc",
+      "topics": [
+        "workflow-precomps-render"
+      ],
+      "why": "aerender command-line arguments and examples, watch folders, render-farm considerations; how our studio CLI renders.",
+      "approx_chars": 20571
+    },
+    {
+      "url": "https://helpx.adobe.com/after-effects/desktop/work-with-footage-items/import-and-interpret-footage-items/importing-interpreting-footage-items.html",
+      "title": "Importing and interpreting footage items",
+      "author_or_site": "Adobe Help Center",
+      "type": "doc",
+      "topics": [
+        "footage-integration"
+      ],
+      "why": "Interpret Footage: straight vs premultiplied alpha, frame-rate conform, image sequences, pixel aspect, looping.",
+      "approx_chars": 36672
+    }
+  ]
+}

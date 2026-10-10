@@ -9,3 +9,9 @@ data/
 .DS_Store
 dist/
 build/
+
+# eval data dumps: copies of third-party transcripts/pages — keep local
+eval/**/chunks*.jsonl
+eval/**/*_results*.json
+eval/**/*.log
+eval/**/bulk/texts/

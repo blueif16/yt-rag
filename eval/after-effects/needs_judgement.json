@@ -1,0 +1,341 @@
+{
+ "per_question": [
+  {
+   "id": "n01",
+   "score": 1,
+   "best_rank": 1,
+   "best_id": 152,
+   "cause": "coverage",
+   "better_id": null,
+   "notes": "152 gives the Keyframe Velocity steps (Animation > Keyframe Velocity, in/out Speed + Influence, Easy Ease = 0 speed / 33.33%). Nothing in the corpus maps cubic-bezier x/y to influence/speed, gives Ctrl+Shift+K, or covers per-dimension eases (309 only shows the speed graph in px/s)."
+  },
+  {
+   "id": "n02",
+   "score": 1,
+   "best_rank": 5,
+   "best_id": 306,
+   "cause": "ranking",
+   "better_id": 104,
+   "notes": "306 = Separate Dimensions, 308 = shaping value-graph handles, 316 = value graph for overshoots, but no hit makes the curve pass the target and settle. That recipe is 104 (settle key + middle key nudged in the value graph, right after 103 separates dims); it misses the top 5 but 'any' keyword mode returns it at rank 5."
+  },
+  {
+   "id": "n03",
+   "score": 0,
+   "best_rank": null,
+   "best_id": null,
+   "cause": "coverage",
+   "better_id": null,
+   "notes": "No spatial-interpolation content anywhere: no Keyframe Interpolation > Spatial Linear, no 'Default Spatial Interpolation to Linear' preference, no Auto Bezier path overshoot. The hits cover roving keys and Exponential Scale; 310 only shows that motion-path handles are independent of speed."
+  },
+  {
+   "id": "n04",
+   "score": 2,
+   "best_rank": 1,
+   "best_id": 43,
+   "cause": null,
+   "better_id": null,
+   "notes": "43: Animate > Position + Opacity, keyframe Range Selector Offset, Advanced > Based On words. 166 (rank 2): Shape (Ramp/Smooth) and Ease High/Low. The link between stagger and selector duration is only implied, and the Randomize Order text is cut at the chunk end."
+  },
+  {
+   "id": "n05",
+   "score": 1,
+   "best_rank": 5,
+   "best_id": 46,
+   "cause": "coverage",
+   "better_id": null,
+   "notes": "No VO-sync method anywhere (no audio waveform/LL, no word markers, no graphic-leads-the-word rule). Only Zammit's hero-word emphasis (46: null + slider + expression selector; 51: timing parts of a sentence) is relevant."
+  },
+  {
+   "id": "n06",
+   "score": 0,
+   "best_rank": null,
+   "best_id": null,
+   "cause": "coverage",
+   "better_id": null,
+   "notes": "The corpus never animates Rectangle Path Size/Roundness. Hits use layer Scale with the anchor moved to an edge (100), which is the method the question rules out, and a 'maintain stroke width' expression whose code lives in a Google Doc, not the transcript (65). 98 only sets Size once."
+  },
+  {
+   "id": "n07",
+   "score": 2,
+   "best_rank": 3,
+   "best_id": 59,
+   "cause": null,
+   "better_id": null,
+   "notes": "59: Start/End/Offset with eased keys and stroke order for multi-path draws. 61 (rank 1): round cap, dot that follows the path end. 63/64: arrowhead rig. Trim Multiple Shapes Simultaneously/Individually is in doc 183 (not top-5)."
+  },
+  {
+   "id": "n08",
+   "score": 2,
+   "best_rank": 1,
+   "best_id": 192,
+   "cause": null,
+   "better_id": null,
+   "notes": "The inertial-bounce code (amp/freq/decay, nearestKey, velocityAtTime, sin/exp) is split across 192 and 193 and is only usable because both came back at ranks 1-2. No tuning guidance and no Convert Expression to Keyframes."
+  },
+  {
+   "id": "n09",
+   "score": 1,
+   "best_rank": 2,
+   "best_id": 192,
+   "cause": "coverage",
+   "better_id": null,
+   "notes": "192 has the basic sin/cos circular orbit. Nothing covers tilted-ellipse squash, depth-driven scale, or per-layer phase. Passing behind a subject only appears tangentially (114 matte trick, 199 3D fade by camera distance)."
+  },
+  {
+   "id": "n10",
+   "score": 2,
+   "best_rank": 1,
+   "best_id": 288,
+   "cause": null,
+   "better_id": null,
+   "notes": "288 + 289: Enable DOF, Aperture/F-Stop/Blur Level, Set and Link Focus Distance to Layer (expression). No Z-spacing or renderer/performance note; doc 200 holds a focus-match expression."
+  },
+  {
+   "id": "n11",
+   "score": 2,
+   "best_rank": 1,
+   "best_id": 76,
+   "cause": null,
+   "better_id": null,
+   "notes": "Bricks gives a usable smooth-push recipe: nested 3D nulls, keyframe the next null before the previous move ends, easy ease + graph editor. 286 (rank 4) parents the camera to a null. Parallax from Z spacing is only in 82 (not top-5); no scale compensation."
+  },
+  {
+   "id": "n12",
+   "score": 2,
+   "best_rank": 1,
+   "best_id": 292,
+   "cause": null,
+   "better_id": null,
+   "notes": "292 + 291 answer it fully: switch needed in two places, enable blur inside the precomp or Collapse Transformations, Advanced tab settings, and the switch does not blur rendered footage."
+  },
+  {
+   "id": "n13",
+   "score": 1,
+   "best_rank": 4,
+   "best_id": 95,
+   "cause": "coverage",
+   "better_id": null,
+   "notes": "95: RSMB with an animatable Blur Amount. 294: Timewarp/Pixel MB samples. 293: shutter angle/phase math. Missing: the 180 deg = 0.5 mapping, RSMB foreground/alpha handling for transparent footage, and fixes for vector artifacts."
+  },
+  {
+   "id": "n14",
+   "score": 1,
+   "best_rank": 1,
+   "best_id": 110,
+   "cause": "coverage",
+   "better_id": null,
+   "notes": "The DG2 source is a 'what's new for DG1 users' tour (108/110): it names threshold, smoothness, saturation bias, gamma, exposure and quality but gives no starting values and no alpha-isolated source workflow. Middle chunk 109 (aberration, tint, tone mapping) ranks out. The Korenman stock-glow steps fill slots 2-4."
+  },
+  {
+   "id": "n15",
+   "score": 1,
+   "best_rank": 2,
+   "best_id": 300,
+   "cause": "coverage",
+   "better_id": null,
+   "notes": "Korenman's duplicate > levels > blur > tint glow pass (299-301) is an adaptable isolated, tinted pass. But it composites with Add, which is exactly what fails on white, and nothing explains why glows vanish on light backgrounds."
+  },
+  {
+   "id": "n16",
+   "score": 0,
+   "best_rank": null,
+   "best_id": null,
+   "cause": "coverage",
+   "better_id": null,
+   "notes": "No particle content at all (no Particular, CC Particle World or emitters). Retrieval returned glow tutorials with the same rank-only score as real answers."
+  },
+  {
+   "id": "n17",
+   "score": 2,
+   "best_rank": 3,
+   "best_id": 121,
+   "cause": null,
+   "better_id": null,
+   "notes": "121 punch zoom: scale 100->150 / 80->100, Motion Tile Mirror Edges, graph-editor ramp up and down, motion blur. 122 (rank 1) finishes the whip pan that starts at the end of 121. No frame durations; no Directional Blur."
+  },
+  {
+   "id": "n18",
+   "score": 2,
+   "best_rank": 1,
+   "best_id": 113,
+   "cause": null,
+   "better_id": null,
+   "notes": "113/112: the 2023 track-matte picker, invert, and why a matte beats a mask. 118: a mask-expand wipe with eased keys. The card part (animating Size/Roundness, shadowed edge) is missing, the same gap as n06."
+  },
+  {
+   "id": "n19",
+   "score": 1,
+   "best_rank": 1,
+   "best_id": 208,
+   "cause": "coverage",
+   "better_id": null,
+   "notes": "208: 16 bpc reduces banding and AE dithers when it converts to 8-bpc output. No grain/noise anti-banding recipe or H.264 export advice; 124 has a generic noise adjustment layer in a transition context."
+  },
+  {
+   "id": "n20",
+   "score": 0,
+   "best_rank": null,
+   "best_id": null,
+   "cause": "coverage",
+   "better_id": null,
+   "notes": "No cast/contact shadow, light wrap, or matte choke/edge match anywhere. Hits were Preserve Underlying Transparency and collapse-transformation docs. The Lumetri chunks (126-145) could only help the colour-match sub-point."
+  },
+  {
+   "id": "n21",
+   "score": 2,
+   "best_rank": 2,
+   "best_id": 268,
+   "cause": null,
+   "better_id": null,
+   "notes": "268/269/267: straight vs premultiplied, Guess, halo symptom, File > Interpret Footage > Main. The frame-rate half ('Conform to frame rate', 271-273) ranks out of the top 5; 'any' mode returns 271/273."
+  },
+  {
+   "id": "n22",
+   "score": 1,
+   "best_rank": 1,
+   "best_id": 264,
+   "cause": "coverage",
+   "better_id": null,
+   "notes": "264: the Interpret Footage colour section matters mainly when no profile is embedded. No working-space settings, Preserve RGB, or ProRes gamma/601 info. 216 (linearize) and 218 (Compensate for Scene-referred Profiles, a common washed-out cause) exist but rank out."
+  },
+  {
+   "id": "n23",
+   "score": 2,
+   "best_rank": 3,
+   "best_id": 324,
+   "cause": null,
+   "better_id": null,
+   "notes": "321-325 + 231: continuous rasterization vs collapse, crisp scaling above 100%, comp-bounds removal, and side effects on effect point controls and 3D. Missing the 'build the precomp at the needed resolution' alternative."
+  },
+  {
+   "id": "n24",
+   "score": 2,
+   "best_rank": 1,
+   "best_id": 235,
+   "cause": null,
+   "better_id": null,
+   "notes": "235-238: full aerender syntax (-project/-comp/-s/-e, -RStemplate/-OMtemplate, -output, -mem_usage, -mfr). The flag table spans 235-239, so -continueOnMissingFootage (239) is cut off. No chunk-and-join guidance."
+  }
+ ],
+ "verdict": {
+  "counts": {
+   "score_2": 11,
+   "score_1": 9,
+   "score_0": 4
+  },
+  "cause_breakdown_below_2": {
+   "coverage": 12,
+   "ranking": 1,
+   "chunk": 0
+  },
+  "helps_today": "Partly. 11/24 questions get an actionable answer and 9 a partial one, so the library is a useful second source for core AE mechanics: motion-blur switches, alpha interpretation, aerender flags, the DOF camera, track mattes, rasterization, trim paths, punch/whip transitions, text animators. It fails on our premium and exact needs: bezier-to-influence mapping, spatial interpolation, particles, Deep Glow settings, glow on white, compositing a character (shadow, light wrap), VO-synced type, colour management. 12 of the 13 sub-2 scores are coverage gaps, not retrieval problems: the 24-source pilot is too small and too generic for these questions.",
+  "strength_by_topic": {
+   "strong": [
+    "motion-blur basics",
+    "3d-camera-depth",
+    "transitions",
+    "workflow-precomps-render",
+    "footage alpha"
+   ],
+   "weak": [
+    "glow-premium-fx (1,1,0)",
+    "compositing-color-finishing (1,0)",
+    "easing exactness (1,1,0)",
+    "shape/UI cards (0)"
+   ]
+  },
+  "transcripts_vs_pages": "About even, but they answer different kinds of question. Of the 11 scores of 2, transcripts carried 6 (n04, n07, n11, n17, n18, n23) and pages 5 (n08, n10, n12, n21, n24). Pages win reference questions: dialogs, flags, option lists, expression code. Transcripts win craft/technique questions: easing feel, transition recipes, rig tricks. Transcripts never contain code or exact values: the n06 expression is 'in a Google Doc', and the Top-10 expressions video has no code at all. Use pages for code and transcripts for method. Per source, the Korenman glow page was retrieved 11 times (4 chunks), a magnet for any light/glow/particle query. The 20-chunk Lumetri video (7% of the corpus) was never retrieved.",
+  "caption_noise": "Not the main obstacle. An LLM reads unpunctuated auto-captions fine, and auto-captioned videos produced 2s (Olufemii, Manuel, School of Motion, Jake, Bricks). What hurts: (1) mis-heard terms and product names ('post driers'/'he returned abated' for posterizeTime in 69, 'tool crates shapes' 99, 'Illustrator Trader' 321, 'mass path' 123, 'trends positions' 125, 'mobar' for Motion Bro); (2) visual references with no values ('drag this handle here'); (3) sponsor reads and plugs taking chunk space (60, 65, 81, 92, 120, 319/320); (4) steps split across chunk boundaries (121|122, 103|104). Manual-caption videos (Zammit, SternFX, Marriott 'Elevate') read best. Prefer manual-caption videos and videos whose description or blog post carries the code.",
+  "source_next": [
+   "Plugin vendor manuals and in-depth tutorials for our installed set: Deep Glow 2 manual + in-depth tutorial (settings, alpha source, 32 bpc), RE:Vision RSMB/RSMB Pro manual (alpha/foreground, vector tuning, blur 0.5 = 180 deg), Trapcode Particular docs and particle-orbit/trail tutorials plus a CC Particle World fallback (n13, n14, n16)",
+   "Expression libraries with real code: Dan Ebberts motionscript.com (inertia, orbits, fake 3D), Adobe expression language reference, sourceRectAtTime responsive-box tutorials (n06, n08, n09, n18)",
+   "Missing Adobe helpx pages: Keyframe interpolation (spatial vs temporal, default spatial linear), Separate Dimensions, Color management + Interpret Footage colour (Preserve RGB, working space), Render settings/output modules and H.264 export, Layer/comp markers and audio waveform (n01, n03, n05, n19, n22)",
+   "Exact easing mapping write-ups: cubic-bezier to AE influence/speed (Flow/Ease Copy docs, motion-design blog posts) (n01)",
+   "Compositing integration: cast/contact shadows from alpha, light wrap (stock method), matte choke and colour match onto a plate; Video Copilot / Action Movie Kid / SoM compositing articles (n20)",
+   "Glow and halo on light backgrounds, design-led: Normal/Multiply halos and shadows for white UI (n15)",
+   "Kinetic type synced to VO: marker-driven workflows, graphic-leads-word timing, UI-card/morph tutorials (Ben Marriott, Jake In Motion, SoM UI animation) (n05, n06, n18)",
+   "Banding and grain for 8-bit delivery: grain size/amount that survives H.264, and avoiding double encodes (n19)"
+  ],
+  "skip": [
+   "Long general-grading walkthroughs like the 20-chunk Lumetri video (never retrieved)",
+   "'What's new in version N' launch videos aimed at existing users (the DG2 quickstart gave names, not values)",
+   "Beginner listicles that restate basics, beyond one per topic",
+   "Legacy and irrelevant Adobe sections: network rendering/watch folders/render farms (240-250), D1/DV pixel aspect and pulldown (274-278), field rendering; filter them at ingest",
+   "Videos that keep their code off-transcript ('link in description') unless that linked doc is ingested too"
+  ],
+  "retrieval_improvements": [
+   {
+    "change": "Make the keyword half actually contribute: in 'all' mode, 120/120 hits had both_retrievers=false and every top-5 scored exactly 1/(60+rank), so hybrid == vector for these long questions. Take a wider candidate pool (e.g. top-20 vector + top-20 'any' BM25), then rerank, instead of raw RRF top-5. 'any' alone is mixed: it gains n02 (104), n07 (183), n21 (271/273), n24 (239) but loses n08 (193, the second half of the code), n13 (95 RSMB), n14 (108/110 DG2).",
+    "evidence": [
+     "n02",
+     "n07",
+     "n08",
+     "n13",
+     "n14",
+     "n21",
+     "n24"
+    ]
+   },
+   {
+    "change": "Expand neighbouring chunks or merge adjacent same-source hits into one passage (±1 chunk, or the whole section for doc tables and code). Answers routinely straddle boundaries.",
+    "evidence": [
+     "n08 (192|193 code)",
+     "n24 (235-239 flag table)",
+     "n17 (121|122 whip pan)",
+     "n02 (103|104 separate dims then bounce)",
+     "n21 (267-273 alpha then frame rate)",
+     "n14 (108-111)"
+    ]
+   },
+   {
+    "change": "Per-source diversity (cap or MMR) once adjacent chunks are merged: six questions spent all 5 slots on one source and two more spent 4 on the Korenman page. The freed slots would surface cross-source answers like 104 for n02.",
+    "evidence": [
+     "n01",
+     "n09",
+     "n10",
+     "n21",
+     "n22",
+     "n24",
+     "n15",
+     "n16",
+     "n02"
+    ]
+   },
+   {
+    "change": "Return an absolute relevance signal (cosine similarity or reranker score) with a no-answer threshold. Today off-topic results look exactly as confident as real ones, so the agent cannot tell the library has nothing.",
+    "evidence": [
+     "n16 (particles -> glow tutorials)",
+     "n20 (shadow/light wrap -> preserve transparency)",
+     "n03 (spatial interpolation -> roving keys)",
+     "n06"
+    ]
+   },
+   {
+    "change": "Do not hard-filter by type; both types produced 2s. Optionally boost pages for 'which setting/flag/option/expression' phrasing and transcripts for 'how do pros / make it feel' phrasing.",
+    "evidence": [
+     "n08",
+     "n12",
+     "n21",
+     "n24 (pages)",
+     "n07",
+     "n11",
+     "n17",
+     "n23 (transcripts)"
+    ]
+   },
+   {
+    "change": "Clean chunks at ingest: strip sponsor reads and channel plugs, drop tail fragments, strip doc footers and nav. This was never the primary failure (0 'chunk' causes) but wastes tokens in hits.",
+    "evidence": [
+     "65",
+     "81",
+     "92",
+     "120",
+     "319/320 sponsor reads",
+     "97 ('time.' tail chunk)",
+     "154/200/204/218/233 'Create stunning 3D animations' footer",
+     "291 'Filmtools ... Shop Now'"
+    ]
+   }
+  ]
+ }
+}

@@ -15,10 +15,14 @@ from __future__ import annotations
 import re
 import sys
 import tempfile
+import time
 from pathlib import Path
 
 from yt_dlp import YoutubeDL
 from yt_dlp.networking.impersonate import ImpersonateTarget
+
+from yt_rag.chunks import chunk_meta, header
+from yt_rag.taxonomy import validate_tags
 
 
 def _log(*a, **kw) -> None:
@@ -38,36 +42,76 @@ def list_channel_videos(channel_url: str, n: int) -> list[dict]:
     return [{"id": e["id"], "title": e.get("title", "")} for e in info.get("entries", [])]
 
 
+def pick_caption_track(info: dict, patterns: list[str]) -> tuple[str, str] | None:
+    """Choose ONE caption track: the uploader's (manual) track if one matches,
+    else YouTube's original-language speech recognition (`<lang>-orig`), else
+    any matching auto track. Returns (lang, "manual" | "auto") or None.
+
+    The plain auto track (e.g. "en" next to "en-orig") is served through the
+    translation endpoint (tlang=), which YouTube rate-limits hard — asking for
+    it is what made whole videos fail with HTTP 429.
+    """
+    manual = {k: v for k, v in (info.get("subtitles") or {}).items() if k != "live_chat"}
+    auto = info.get("automatic_captions") or {}
+    rxs = [re.compile(f"(?:{p})$") for p in patterns]
+    for rx in rxs:
+        for lang in sorted(manual):
+            if rx.match(lang):
+                return lang, "manual"
+    for rx in rxs:
+        for lang in sorted(auto):
+            if lang.endswith("-orig") and rx.match(lang[:-5]):
+                return lang, "auto"
+    for rx in rxs:
+        for lang in sorted(auto):
+            if rx.match(lang):
+                return lang, "auto"
+    return None
+
+
 def download_video_subs(video_id: str, out_dir: Path, sub_langs: list[str] | None = None, cookiefile: str | None = None) -> dict | None:
-    langs = sub_langs or ["en.*"]
-    opts = {
+    """Returns {"info", "vtt_path", "captions": "manual" | "auto"} or None."""
+    patterns = sub_langs or ["en.*"]
+    base = {
         **_yt_opts_base(),
         "skip_download": True,
-        "writesubtitles": True,
-        "writeautomaticsub": True,
-        "subtitleslangs": langs,
-        "subtitlesformat": "vtt",
-        "outtmpl": str(out_dir / "%(id)s.%(ext)s"),
         # Politeness/robustness: YouTube 429-rate-limits rapid subtitle pulls.
         "sleep_interval_requests": 1.5,
         "retries": 5,
         "extractor_retries": 3,
-        # Avoid the 429-prone on-demand translation endpoint (the tlang= path):
-        # skip translated/converted tracks so only static source/manual subs are
-        # pulled. Impersonate a real browser (needs curl_cffi) to dodge bot checks.
+        # Skip translated/converted tracks (the 429-prone tlang= endpoint).
+        # Impersonate a real browser (needs curl_cffi) to dodge bot checks.
         "extractor_args": {"youtube": {"skip": ["translated_subs"], "player_client": ["default", "-web"]}},
         "impersonate": ImpersonateTarget.from_str("chrome"),
     }
     if cookiefile:
-        opts["cookiefile"] = cookiefile
-    try:
-        with YoutubeDL(opts) as ydl:
-            info = ydl.extract_info(f"https://www.youtube.com/watch?v={video_id}", download=True)
-    except Exception as e:
-        _log(f"  ! yt-dlp failed: {e}")
-        return None
+        base["cookiefile"] = cookiefile
+    url = f"https://www.youtube.com/watch?v={video_id}"
+    for attempt in range(1, 4):
+        try:
+            with YoutubeDL(base) as ydl:
+                info = ydl.extract_info(url, download=False)
+            track = pick_caption_track(info, patterns)
+            if not track:
+                return None
+            lang, kind = track
+            opts = {**base, "writesubtitles": kind == "manual",
+                    "writeautomaticsub": kind == "auto", "subtitleslangs": [lang],
+                    "subtitlesformat": "vtt", "outtmpl": str(out_dir / "%(id)s.%(ext)s")}
+            with YoutubeDL(opts) as ydl:
+                ydl.process_ie_result(info, download=True)
+            break
+        except Exception as e:
+            # YouTube 429s subtitle pulls in bursts; yt-dlp's own retries don't
+            # cover the subtitle download, so back off and try again.
+            if "429" in str(e) and attempt < 3:
+                _log(f"  ! YouTube 429 on subtitles, waiting {60 * attempt}s")
+                time.sleep(60 * attempt)
+                continue
+            _log(f"  ! yt-dlp failed: {e}")
+            return None
     for path in sorted(out_dir.glob(f"{video_id}.*.vtt")):
-        return {"info": info, "vtt_path": path}
+        return {"info": info, "vtt_path": path, "captions": kind}
     return None
 
 
@@ -116,7 +160,8 @@ def parse_vtt(text: str) -> list[tuple[float, float, str]]:
     return out
 
 
-def chunk_cues(cues, window_sec: int = 90, max_chars: int = 1800) -> list[dict]:
+def chunk_cues(cues, window_sec: int = 90, max_chars: int = 1800,
+               min_tail_chars: int = 300) -> list[dict]:
     chunks, cur_text = [], []
     cur_start = cur_end = None
     for start, end, text in cues:
@@ -128,8 +173,42 @@ def chunk_cues(cues, window_sec: int = 90, max_chars: int = 1800) -> list[dict]:
             chunks.append({"start": cur_start, "end": cur_end, "text": " ".join(cur_text)})
             cur_text, cur_start, cur_end = [], None, None
     if cur_text:
-        chunks.append({"start": cur_start, "end": cur_end, "text": " ".join(cur_text)})
+        tail = " ".join(cur_text)
+        if chunks and len(tail) < min_tail_chars:  # e.g. a lone "time." at the end
+            chunks[-1]["end"] = cur_end
+            chunks[-1]["text"] += " " + tail
+        else:
+            chunks.append({"start": cur_start, "end": cur_end, "text": tail})
     return chunks
+
+
+# ---------- SponsorBlock ----------
+
+SKIP_CATEGORIES = ("sponsor", "selfpromo", "interaction")
+
+
+def sponsor_segments(video_id: str) -> list[tuple[float, float]]:
+    """Crowd-sourced sponsor / self-promo / "like and subscribe" ranges from
+    SponsorBlock (sponsor.ajay.app). [] when the video has none or the API is
+    unreachable — skipping is best-effort, never a reason to fail an ingest."""
+    import json
+    import urllib.error
+    import urllib.parse
+    import urllib.request
+    q = urllib.parse.urlencode({"videoID": video_id, "categories": json.dumps(SKIP_CATEGORIES)})
+    try:
+        with urllib.request.urlopen(f"https://sponsor.ajay.app/api/skipSegments?{q}", timeout=10) as r:
+            return [tuple(s["segment"]) for s in json.load(r)]
+    except (urllib.error.URLError, ValueError, KeyError, TimeoutError):
+        return []
+
+
+def drop_segments(cues, segments):
+    """Remove cues whose midpoint falls inside any (start, end) segment."""
+    if not segments:
+        return cues
+    return [c for c in cues
+            if not any(a <= (c[0] + c[1]) / 2 <= b for a, b in segments)]
 
 
 # ---------- prefix + build ----------
@@ -145,30 +224,32 @@ def _fmt_date(yyyymmdd: str | None) -> str:
     return yyyymmdd or ""
 
 
-def build_items_for_video(info: dict, vtt_text: str, channel_handle: str | None) -> list[dict]:
-    cues = parse_vtt(vtt_text)
+def build_items_for_video(info: dict, vtt_text: str, channel_handle: str | None,
+                          captions: str = "", skip: list[tuple[float, float]] | None = None,
+                          tags: dict | None = None) -> list[dict]:
+    cues = drop_segments(parse_vtt(vtt_text), skip)
     raw_chunks = chunk_cues(cues)
     channel = info.get("channel") or info.get("uploader") or ""
     title = info.get("title") or ""
     date = _fmt_date(info.get("upload_date"))
     vid = info.get("id") or ""
     items = []
-    for c in raw_chunks:
-        prefix = f'[{channel} — "{title}" — {date} — {_fmt_time(c["start"])}]\n'
+    for i, c in enumerate(raw_chunks):
+        start, end = int(c["start"]), int(c["end"])
+        meta = chunk_meta(
+            type="transcript", origin="youtube",
+            source=f"https://youtu.be/{vid}?t={start}",
+            doc_id=vid, title=title, author=channel, published_at=date,
+            locator=f"{_fmt_time(start)}–{_fmt_time(end)}", chunk_index=i,
+            # YouTube-specific extras (list_repository counts videos/channels)
+            video_id=vid, channel=channel, channel_handle=channel_handle or "",
+            chunk_start_sec=start, chunk_end_sec=end, captions=captions,
+            views=info.get("view_count"), likes=info.get("like_count"),
+            **(tags or {}),
+        )
         items.append({
-            "content": prefix + c["text"],
-            "source": f"https://youtu.be/{vid}?t={int(c['start'])}",
-            "type": "yt_transcript",
-            # rich metadata enables list_repository without prefix-parsing
-            "extra_meta": {
-                "video_id": vid,
-                "channel": channel,
-                "channel_handle": channel_handle or "",
-                "title": title,
-                "published_at": date,
-                "chunk_start_sec": int(c["start"]),
-                "chunk_end_sec": int(c["end"]),
-            },
+            "content": header(channel, title, date, _fmt_time(start)) + "\n" + c["text"],
+            "meta": meta,
         })
     return items
 
@@ -197,7 +278,7 @@ def _open_collection(collection: str):
 
 
 def _ingest_video_ids(rag, video_ids: list[str], sub_langs, cookiefile,
-                      channel_handle: str | None = None) -> dict:
+                      channel_handle: str | None = None, tags: dict | None = None) -> dict:
     tmp = Path(tempfile.mkdtemp(prefix="yt_rag_"))
     totals = {"videos": len(video_ids), "chunks": 0, "created": 0, "skipped": 0, "no_subs": 0}
     for i, vid in enumerate(video_ids, 1):
@@ -215,7 +296,11 @@ def _ingest_video_ids(rag, video_ids: list[str], sub_langs, cookiefile,
             handle = info.get("uploader_id") or ""
             if handle and not handle.startswith("@"):
                 handle = f"@{handle}"
-        items = build_items_for_video(info, vtt_text, handle)
+        skip = sponsor_segments(vid)
+        if skip:
+            _log(f"  - SponsorBlock: skipping {len(skip)} segment(s), {sum(b - a for a, b in skip):.0f}s")
+        items = build_items_for_video(info, vtt_text, handle, captions=res.get("captions", ""),
+                                      skip=skip, tags=tags)
         if not items:
             _log("  - 0 chunks after parsing, skipping")
             continue
@@ -240,6 +325,7 @@ def ingest_channel(
     n: int = 30,
     sub_langs: list[str] | None = None,
     cookiefile: str | None = None,
+    tags: dict | None = None,
 ) -> dict:
     """
     Pull the latest n uploads from a channel into an existing topic collection.
@@ -247,12 +333,14 @@ def ingest_channel(
 
     Idempotent — RAGStore dedupes by content_hash.
     """
+    tags = validate_tags(tags)
     rag = _open_collection(collection)
     url, handle = _resolve_target(channel)
     _log(f"channel   : {url}\ncollection: {collection}\nn_videos  : {n}\n\nenumerating...")
     video_ids = [v["id"] for v in list_channel_videos(url, n)]
     _log(f"found {len(video_ids)} videos")
-    return _ingest_video_ids(rag, video_ids, sub_langs, cookiefile, channel_handle=handle)
+    return _ingest_video_ids(rag, video_ids, sub_langs, cookiefile, channel_handle=handle,
+                             tags=tags)
 
 
 VIDEO_ID_RE = re.compile(r"(?:v=|youtu\.be/|/shorts/|/embed/)([A-Za-z0-9_-]{11})")
@@ -274,6 +362,7 @@ def ingest_videos(
     collection: str,
     sub_langs: list[str] | None = None,
     cookiefile: str | None = None,
+    tags: dict | None = None,
 ) -> dict:
     """
     Cherry-pick specific YouTube videos by URL/ID into an existing topic
@@ -281,6 +370,7 @@ def ingest_videos(
 
     Idempotent — RAGStore dedupes by content_hash.
     """
+    tags = validate_tags(tags)
     rag = _open_collection(collection)
     video_ids: list[str] = []
     for u in urls:
@@ -289,13 +379,14 @@ def ingest_videos(
         except ValueError as e:
             _log(f"  ! {e}")
     _log(f"collection: {collection}\nn_videos  : {len(video_ids)}")
-    return _ingest_video_ids(rag, video_ids, sub_langs, cookiefile)
+    return _ingest_video_ids(rag, video_ids, sub_langs, cookiefile, tags=tags)
 
 
 def _batch_ingest_with_meta(rag, items: list[dict], batch_size: int = 50) -> dict:
     """
-    Batch ingest preserving the rich extra_meta fields. Mirrors RAGStore.ingest_batch
-    but merges extra_meta into the metadata JSONB column.
+    Batch ingest of {"content", "meta"} items (meta = chunks.chunk_meta envelope).
+    Mirrors RAGStore.ingest_batch, but stores the whole envelope in the
+    metadata JSONB column. Dedupes by content hash within the collection.
     """
     created, skipped = 0, 0
     for i in range(0, len(items), batch_size):
@@ -317,16 +408,13 @@ def _batch_ingest_with_meta(rag, items: list[dict], batch_size: int = 50) -> dic
             continue
 
         embeddings = rag._embeddings.embed_documents([it["content"] for it in new])
-        records = []
-        for it, emb, h in zip(new, embeddings, new_hashes):
-            meta = {"source": it["source"], "type": it["type"], **it["extra_meta"]}
-            records.append({
-                "content": it["content"],
-                "content_hash": h,
-                "embedding": emb,
-                "metadata": meta,
-                "namespace": rag.namespace,
-            })
+        records = [{
+            "content": it["content"],
+            "content_hash": h,
+            "embedding": emb,
+            "metadata": it["meta"],
+            "namespace": rag.namespace,
+        } for it, emb, h in zip(new, embeddings, new_hashes)]
         result = rag.client.table("documents").insert(records).execute()
         created += len(result.data)
     return {"created": created, "skipped": skipped}

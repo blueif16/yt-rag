@@ -2,8 +2,9 @@
 yt-rag MCP server.
 
 The corpus is organized into topic COLLECTIONS — one per utility (what the
-videos teach / what they're for), never one per channel. See collections.py
-for the rules.
+material teaches / what it's for), never one per channel or site. A collection
+mixes video captions, web pages and pasted text: everything is a text chunk
+with the same metadata envelope (see chunks.py). See collections.py for the rules.
 
 Tools:
   - list_repository()                 collections + purposes + stats (call first)
@@ -11,12 +12,15 @@ Tools:
   - create_collection(name, purpose)  register a new topic (only if none fits)
   - ingest_channels(collection, channels, n_videos?)  latest uploads → collection
   - ingest_videos(collection, urls)   cherry-picked videos → collection
+  - ingest_urls(collection, urls, type?)  any links: YouTube → captions, else page text
+  - ingest_text(collection, text, title, source_url, ...)  text you already have
 
 Run via:
     python -m yt_rag.mcp_server
 """
 from __future__ import annotations
 from collections import defaultdict
+from functools import lru_cache
 from pathlib import Path
 from typing import Any
 
@@ -33,80 +37,170 @@ from yt_rag import RAGStore  # noqa: E402
 from yt_rag.collections import CollectionError, CollectionRegistry, SupabaseBackend  # noqa: E402
 from yt_rag.ingest import ingest_channel as _ingest_channel  # noqa: E402
 from yt_rag.ingest import ingest_videos as _ingest_videos  # noqa: E402
+from yt_rag.text_ingest import ingest_text as _ingest_text  # noqa: E402
+from yt_rag.text_ingest import ingest_urls as _ingest_urls  # noqa: E402
+from yt_rag.taxonomy import IMPACTS, LEVELS, SCENARIOS, TOPICS, TagError  # noqa: E402
 
 
 mcp = FastMCP("yt-rag")
 
 
-@mcp.tool()
-def search(query: str, collection: str | None = None, top_k: int = 5) -> list[dict]:
-    """
-    Search ingested YouTube transcripts via hybrid RRF (BM25 + vector) + graph traversal.
+@lru_cache(maxsize=32)
+def _store(namespace: str) -> RAGStore:
+    """One RAGStore (Supabase + Gemini clients) per collection, reused across
+    calls — building the clients costs more than a search."""
+    return RAGStore(namespace=namespace)
 
-    Use this to find moments in videos that match a question, theme, or
-    keyword. Each result is a ~90-second chunk with a self-describing
-    prefix ([Channel — "Title" — date — MM:SS]) and a deep-link URL
-    that jumps the viewer to the exact second.
+
+@mcp.tool()
+def search(query: str, collection: str | None = None, top_k: int = 5,
+           scenario: str | None = None, topic: str | None = None,
+           type: str | None = None, tools_available: list[str] | None = None,
+           per_source: int = 2, context: int = 0) -> list[dict]:
+    """
+    Search the corpus (video captions + web pages + notes): hybrid BM25 +
+    vector (RRF) + graph traversal.
+
+    Each result is one chunk: a ~90-second stretch of a video or a ~1500-char
+    section of a page, starting with a self-describing header
+    ([author — "title" — date — locator]). `source_url` deep-links to the exact
+    second (videos) or section (pages).
+
+    `relevance` is the cosine similarity to your query. Read it as absolute
+    (measured on the after-effects collection): best hit below ~0.70 = the
+    library most likely has nothing on this — say so instead of forcing an
+    answer; ~0.70-0.74 = often partial; 0.74+ = usually a real answer.
 
     Args:
-        query: What to search for. Semantic, keyword, or both — RRF handles
-            mixed queries well. Be specific ("Bittensor TAO staking yield"
-            beats "crypto").
-        collection: Scope to one topic collection (e.g. "agentic-rag"). Pick it
+        query: What to search for — a full natural-language question works
+            best ("why does my glow disappear on a white background"); short
+            exact names work too ("CC Force Motion Blur", "loopOut").
+        collection: Scope to one topic collection (e.g. "after-effects"). Pick it
             by matching your question to each collection's `purpose` from
             list_repository(). Omit to search the entire corpus.
         top_k: Number of chunks to return (default 5, cap 25).
+        scenario: Only sources tagged for this kind of shot/video, e.g.
+            "ui-promo", "logo-ident", "hero-fx" (vocabulary: list_repository).
+        topic: Only sources tagged with this technique, e.g. "easing",
+            "light-glow", "expressions".
+        type: Only this kind of text: transcript | article | tutorial | doc | note.
+            "doc" for exact settings/code, "transcript" for technique and feel.
+        tools_available: Plugins you can use, e.g. ["deep-glow-2", "rsmb",
+            "trapcode-particular"]; sources that need anything else are left
+            out. [] = stock After Effects only.
+        per_source: At most this many chunks from one video/page (default 2),
+            so one long tutorial cannot fill every slot. 0 = no cap.
+        context: 1 = also return the chunk before and after each hit
+            (context_before / context_after), for steps or code that run
+            across a chunk boundary. Default 0.
 
     Returns:
-        List of {content, source_url, channel, title, published_at,
-        chunk_start_sec, video_id, collection}. `content` includes the prefix
-        and the cleaned transcript; `source_url` is the deep-link.
+        List of {content, relevance, source_url, type, title, author,
+        published_at, locator, collection, tags} (+ video_id, chunk_start_sec,
+        views for videos; + context_before, context_after when context=1).
+        `tags` = {topics, scenarios, level, impact, tools} when the source is tagged.
     """
-    namespace = collection
     top_k = max(1, min(int(top_k), 25))
-    rag = RAGStore(namespace=namespace or "default")
-    if namespace is None:
-        # cross-namespace search via direct RPC (no namespace filter)
-        embedding = rag._embeddings.embed_query(query)
-        try:
-            result = rag.client.rpc("search_context_mesh", {
-                "query_text": query,
-                "query_embedding": embedding,
-                "match_count": top_k,
-                "rrf_k": rag.config.rrf_k,
-                "graph_depth": rag.config.graph_depth,
-                "filter_namespace": None,
-            }).execute()
-            rows = result.data
-        except Exception as e:
-            return [{
-                "error": f"Cross-namespace search failed: {e}. "
-                         "Apply migrations/002_fix_search_namespace_null.sql in the Supabase "
-                         "SQL editor, or pass a specific `collection` to scope the search."
-            }]
-    else:
-        rows = rag.search(query, top_k=top_k)
+    filter_meta: dict = {}
+    if scenario:
+        filter_meta["scenarios"] = [scenario]
+    if topic:
+        filter_meta["topics"] = [topic]
+    if type:
+        filter_meta["type"] = type
+    rag = _store(collection or "*")
+    pool = top_k * 4 if per_source else top_k
+    try:
+        rows = rag.search(query, top_k=min(pool, 100), filter_meta=filter_meta or None,
+                          tools_available=tools_available)
+    except Exception as e:
+        return [{"error": f"search failed: {e}"}]
+    rows = cap_per_source(rows, per_source)[:top_k]
 
     out = []
     for r in rows:
         meta = r.get("metadata") or {}
-        out.append({
+        hit = {
             "content": r.get("content", ""),
+            "relevance": round(r["similarity"], 3) if r.get("similarity") is not None else None,
             "source_url": meta.get("source", ""),
-            "channel": meta.get("channel", ""),
+            "type": meta.get("type", ""),
             "title": meta.get("title", ""),
+            "author": meta.get("author") or meta.get("channel", ""),
             "published_at": meta.get("published_at", ""),
-            "chunk_start_sec": meta.get("chunk_start_sec"),
-            "video_id": meta.get("video_id", ""),
-            "collection": namespace or _namespace_of(rag, r.get("id")),
-        })
+            "locator": meta.get("locator", ""),
+            "collection": r.get("namespace") or collection or "",
+        }
+        tags = {k: meta[k] for k in TAG_FIELDS if k in meta}
+        if tags:
+            hit["tags"] = tags
+        if meta.get("video_id"):
+            hit["video_id"] = meta["video_id"]
+            hit["chunk_start_sec"] = meta.get("chunk_start_sec")
+            if meta.get("views") is not None:
+                hit["views"] = meta["views"]
+        out.append(hit)
+    if context:
+        _attach_neighbours(rag, rows, out)
     return out
+
+
+TAG_FIELDS = ("topics", "scenarios", "level", "impact", "tools")
+
+
+def cap_per_source(rows: list[dict], per_source: int) -> list[dict]:
+    """Keep rows best-first, at most `per_source` per video/page (doc_id)."""
+    if not per_source:
+        return rows
+    seen: dict[str, int] = {}
+    kept = []
+    for r in rows:
+        meta = r.get("metadata") or {}
+        doc = meta.get("doc_id") or meta.get("video_id") or meta.get("source") or str(r.get("id"))
+        if seen.get(doc, 0) < per_source:
+            seen[doc] = seen.get(doc, 0) + 1
+            kept.append(r)
+    return kept
+
+
+def _body(content: str) -> str:
+    """Chunk text without its [author — "title" — ...] header line."""
+    return content.split("\n", 1)[1] if content.startswith("[") and "\n" in content else content
+
+
+def _attach_neighbours(rag, rows: list[dict], hits: list[dict]) -> None:
+    """Add context_before / context_after: the previous and next chunk of the
+    same video or page (same doc_id, chunk_index ± 1), in one query."""
+    keys, clauses = [], []
+    for r, hit in zip(rows, hits):
+        meta = r.get("metadata") or {}
+        doc, idx = meta.get("doc_id"), meta.get("chunk_index")
+        if doc is None or idx is None:
+            keys.append(None)
+            continue
+        keys.append((hit["collection"], doc, int(idx)))
+        clauses.append(f'and(namespace.eq."{hit["collection"]}",metadata->>doc_id.eq."{doc}",'
+                       f'metadata->>chunk_index.in.({int(idx) - 1},{int(idx) + 1}))')
+    if not clauses:
+        return
+    found = rag.client.table("documents").select("namespace, content, metadata").or_(
+        ",".join(clauses)).execute().data
+    by_key = {(f["namespace"], f["metadata"].get("doc_id"), int(f["metadata"].get("chunk_index"))): f["content"]
+              for f in found}
+    for key, hit in zip(keys, hits):
+        if key:
+            ns, doc, idx = key
+            if (ns, doc, idx - 1) in by_key:
+                hit["context_before"] = _body(by_key[(ns, doc, idx - 1)])
+            if (ns, doc, idx + 1) in by_key:
+                hit["context_after"] = _body(by_key[(ns, doc, idx + 1)])
 
 
 @mcp.tool()
 def list_repository() -> dict:
     """
-    Inventory of the corpus: every topic collection with its purpose and stats.
+    Inventory of the corpus: every topic collection with its purpose and stats
+    (items = distinct videos/pages/notes, by_type = items per type).
 
     ALWAYS call this before search() (to pick the collection whose purpose
     matches the question) and before any ingest (to reuse an existing
@@ -116,9 +210,12 @@ def list_repository() -> dict:
         {
           total_chunks, total_videos, total_collections,
           collections: [
-            {name, purpose, chunks, videos, channels, channel_handles,
+            {name, purpose, chunks, items, by_type: {transcript: n, article: n, ...},
+             tags: {topics: {easing: n, ...}, scenarios: {...}, impact: {...}, ...},
+             videos, channels, channel_handles, authors,
              date_range: [earliest, latest], sample_titles}
           ],
+          tag_vocabulary: {topics, scenarios, level, impact, tools}  # filter values for search()
           unregistered: [ same shape, purpose=null ]   # legacy data with no
               # registered collection (e.g. old per-channel "yt_<handle>")
         }
@@ -142,6 +239,10 @@ def list_repository() -> dict:
         "videos": set(),
         "channels": set(),
         "channel_handles": set(),
+        "authors": set(),
+        "items": set(),
+        "by_type": defaultdict(set),
+        "tags": defaultdict(lambda: defaultdict(set)),
         "titles": set(),
         "earliest": None,
         "latest": None,
@@ -160,6 +261,19 @@ def list_repository() -> dict:
             b["channel_handles"].add(meta["channel_handle"])
         if meta.get("title"):
             b["titles"].add(meta["title"])
+        doc = meta.get("doc_id") or meta.get("video_id") or meta.get("source")
+        if doc:
+            b["items"].add(doc)
+            b["by_type"][meta.get("type") or "unknown"].add(doc)
+        if meta.get("author") or meta.get("channel"):
+            b["authors"].add(meta.get("author") or meta["channel"])
+        if doc:
+            for field in ("topics", "scenarios", "tools"):
+                for v in meta.get(field) or []:
+                    b["tags"][field][v].add(doc)
+            for field in ("level", "impact"):
+                if meta.get(field):
+                    b["tags"][field][meta[field]].add(doc)
         d = meta.get("published_at")
         if d:
             if b["earliest"] is None or d < b["earliest"]:
@@ -175,9 +289,15 @@ def list_repository() -> dict:
             "name": ns,
             "purpose": purposes.get(ns),
             "chunks": b["chunks"],
+            "items": len(b["items"]),
+            "by_type": {t: len(d) for t, d in sorted(b["by_type"].items())},
+            # items per tag value — what the collection covers, and how well
+            "tags": {f: dict(sorted(((v, len(d)) for v, d in vals.items()), key=lambda x: -x[1]))
+                     for f, vals in b["tags"].items()},
             "videos": len(b["videos"]),
             "channels": sorted(b["channels"]),
             "channel_handles": sorted(b["channel_handles"]),
+            "authors": sorted(b["authors"]),
             "date_range": [b["earliest"], b["latest"]],
             "sample_titles": sorted(b["titles"])[:5],
         }
@@ -185,10 +305,14 @@ def list_repository() -> dict:
 
     return {
         "total_chunks": sum(b["chunks"] for b in by_ns.values()),
+        "total_items": sum(len(b["items"]) for b in by_ns.values()),
         "total_videos": sum(len(b["videos"]) for b in by_ns.values()),
         "total_collections": len(collections),
         "collections": collections,
         "unregistered": unregistered,
+        "tag_vocabulary": {"topics": TOPICS, "scenarios": SCENARIOS,
+                           "level": list(LEVELS), "impact": list(IMPACTS),
+                           "tools": "required plugins, kebab-case; [] = stock AE"},
     }
 
 
@@ -198,8 +322,9 @@ def create_collection(name: str, purpose: str) -> dict:
     Register a new topic collection. Do this ONLY after list_repository()
     shows no existing collection whose purpose already covers these videos.
 
-    A collection = one utility: videos that teach the same thing / serve the
-    same job, from any number of channels. NEVER one collection per channel.
+    A collection = one utility: videos, pages and notes that teach the same
+    thing / serve the same job, from any number of channels or sites. NEVER one
+    collection per channel or site.
 
     Args:
         name: Topic slug, lowercase kebab-case, 3-40 chars (e.g. "agentic-rag",
@@ -274,7 +399,7 @@ def ingest_channels(collection: str, channels: list[str], n_videos: int = 30,
 @mcp.tool()
 def ingest_videos(collection: str, urls: list[str],
                   sub_langs: list[str] | None = None,
-                  cookiefile: str | None = None) -> dict:
+                  cookiefile: str | None = None, tags: dict | None = None) -> dict:
     """
     Cherry-pick specific YouTube videos into ONE existing topic collection.
     The preferred ingest: pick only videos that serve the collection's purpose,
@@ -287,29 +412,86 @@ def ingest_videos(collection: str, urls: list[str],
             "/embed/", "/shorts/", or raw ID).
         sub_langs: Same as ingest_channels (default ["en.*"]).
         cookiefile: Same as ingest_channels.
+        tags: What these videos are good for, applied to every chunk:
+            {topics, scenarios, level, impact, tools} from list_repository's
+            tag_vocabulary. Tag one source per call when tags differ.
 
     Returns:
         {videos, no_subs, chunks, created, skipped, collection}
         or {error} if the collection does not exist.
     """
     try:
-        return _ingest_videos(urls, collection, sub_langs=sub_langs, cookiefile=cookiefile)
-    except CollectionError as e:
+        return _ingest_videos(urls, collection, sub_langs=sub_langs, cookiefile=cookiefile,
+                              tags=tags)
+    except (CollectionError, TagError) as e:
+        return {"error": str(e)}
+
+
+@mcp.tool()
+def ingest_urls(collection: str, urls: list[str], type: str = "article",
+                sub_langs: list[str] | None = None,
+                cookiefile: str | None = None, tags: dict | None = None) -> dict:
+    """
+    Add any mix of links to ONE existing collection. YouTube links go through
+    captions (same as ingest_videos); every other link is fetched, reduced to
+    its main text, split on headings into ~1500-char chunks, and stored next to
+    the captions with the same metadata (title, author, date, section, URL).
+
+    Args:
+        collection: Name of an existing collection (see list_repository).
+        urls: YouTube and/or web page URLs.
+        type: What the web pages are: "tutorial" (step-by-step how-to),
+            "doc" (reference/manual), or "article" (default; essays, explainers).
+            Videos are always "transcript".
+        sub_langs, cookiefile: Same as ingest_videos (YouTube links only).
+        tags: Same as ingest_videos, applied to every link in this call.
+
+    Returns:
+        {collection, videos?: {...}, pages?: {pages, failed, chunks, created,
+         skipped, errors}} or {error}. Pages that fail (HTTP error, paywall,
+        JS-only) are listed in pages.errors — pass their text via ingest_text.
+    """
+    try:
+        return _ingest_urls(urls, collection, type=type, sub_langs=sub_langs,
+                            cookiefile=cookiefile, tags=tags)
+    except (CollectionError, ValueError) as e:
+        return {"error": str(e)}
+
+
+@mcp.tool()
+def ingest_text(collection: str, text: str, title: str, source_url: str,
+                author: str = "", published_at: str = "", type: str = "note",
+                tags: dict | None = None) -> dict:
+    """
+    Store text you already have in ONE existing collection: an extract you
+    fetched yourself, a page ingest_urls could not read, a transcript from
+    another platform, or your own research note. Markdown headings are used to
+    split it; each chunk keeps the source.
+
+    Args:
+        collection: Name of an existing collection.
+        text: The text (Markdown welcome). Keep it faithful to the source;
+            say so in the title if it is your own summary.
+        title: Title of the source.
+        source_url: Where it came from (required) — a URL, or file:///path.
+        author: Author, channel or site.
+        published_at: YYYY-MM-DD if known.
+        type: transcript | article | tutorial | doc | note (default).
+        tags: Same as ingest_videos.
+
+    Returns:
+        {collection, chunks, created, skipped} or {error}.
+    """
+    try:
+        return _ingest_text(collection, text, title, source_url, author=author,
+                            published_at=published_at, type=type, tags=tags)
+    except (CollectionError, ValueError) as e:
         return {"error": str(e)}
 
 
 def _registry(rag=None) -> CollectionRegistry:
     rag = rag or RAGStore(namespace="_meta")
     return CollectionRegistry(SupabaseBackend(rag.client))
-
-
-def _namespace_of(rag, doc_id) -> str:
-    """Look up the namespace of a single document (only used when search() is
-    called without a namespace filter, so we can attach it per-result)."""
-    if doc_id is None:
-        return ""
-    r = rag.client.table("documents").select("namespace").eq("id", doc_id).execute()
-    return r.data[0]["namespace"] if r.data else ""
 
 
 if __name__ == "__main__":

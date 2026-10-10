@@ -2,10 +2,32 @@
 Gemini Embeddings 封装类
 兼容 LangChain Embeddings 接口
 """
+import re
+import sys
+import time
 from typing import List
 import numpy as np
 from google import genai
-from google.genai import types
+from google.genai import errors, types
+
+RETRY_IN_RE = re.compile(r"retry in ([\d.]+)s", re.I)
+
+
+def _with_retry(call, attempts: int = 8):
+    """Run a Gemini call, waiting out 429 rate limits.
+
+    The free tier counts every text in a batch as one request (100/min), so
+    bulk ingest hits it routinely; the error says how long to wait."""
+    for i in range(attempts):
+        try:
+            return call()
+        except errors.ClientError as e:
+            if e.code != 429 or i == attempts - 1:
+                raise
+            m = RETRY_IN_RE.search(str(e))
+            wait = min(float(m.group(1)) + 2, 90) if m else 30 * (i + 1)
+            print(f"  gemini 429: waiting {wait:.0f}s", file=sys.stderr)
+            time.sleep(wait)
 
 
 class GeminiEmbeddings:
@@ -52,14 +74,14 @@ class GeminiEmbeddings:
         为查询文本生成 embedding
         使用 RETRIEVAL_QUERY 任务类型优化查询
         """
-        result = self.client.models.embed_content(
+        result = _with_retry(lambda: self.client.models.embed_content(
             model=self.model,
             contents=text,
             config=types.EmbedContentConfig(
                 task_type="RETRIEVAL_QUERY",
                 output_dimensionality=self.output_dimensionality
             )
-        )
+        ))
 
         embedding = result.embeddings[0].values
         return self._normalize_embedding(embedding)
@@ -69,14 +91,14 @@ class GeminiEmbeddings:
         为文档列表生成 embeddings
         使用配置的任务类型（默认 RETRIEVAL_DOCUMENT）
         """
-        result = self.client.models.embed_content(
+        result = _with_retry(lambda: self.client.models.embed_content(
             model=self.model,
             contents=texts,
             config=types.EmbedContentConfig(
                 task_type=self.task_type,
                 output_dimensionality=self.output_dimensionality
             )
-        )
+        ))
 
         embeddings = [emb.values for emb in result.embeddings]
         return [self._normalize_embedding(emb) for emb in embeddings]
