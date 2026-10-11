@@ -1,7 +1,16 @@
 """
-Gemini Embeddings 封装类
-兼容 LangChain Embeddings 接口
+Gemini embeddings (LangChain-compatible interface: embed_query / embed_documents).
+
+Two model generations, chosen by EMBEDDING_MODEL (default gemini-embedding-2):
+- gemini-embedding-2: no task_type; the task goes into the text itself —
+  queries as "task: search result | query: …", documents as
+  "title: … | text: …". Several strings in one `contents` would be merged into
+  ONE embedding, so each document is sent as its own Content.
+- gemini-embedding-001: task_type RETRIEVAL_QUERY / RETRIEVAL_DOCUMENT.
+The two models' vectors are incompatible: a collection must be embedded with
+one model throughout (scripts/reembed.py converts a store).
 """
+import os
 import re
 import sys
 import time
@@ -10,6 +19,7 @@ import numpy as np
 from google import genai
 from google.genai import errors, types
 
+DEFAULT_MODEL = "gemini-embedding-2"
 RETRY_IN_RE = re.compile(r"retry in ([\d.]+)s", re.I)
 
 
@@ -34,85 +44,77 @@ def _with_retry(call, attempts: int = 8):
             time.sleep(wait)
 
 
-class GeminiEmbeddings:
-    """
-    Gemini embeddings 封装，兼容 LangChain 接口
+def is_v2(model: str) -> bool:
+    return model.startswith("gemini-embedding-2")
 
-    使用 gemini-embedding-001 模型
-    默认输出维度: 768 (推荐值，平衡性能和质量)
-    """
+
+def format_query_v2(text: str) -> str:
+    return f"task: search result | query: {text}"
+
+
+def format_doc_v2(text: str, title: str | None = None) -> str:
+    return f"title: {title or 'none'} | text: {text}"
+
+
+class GeminiEmbeddings:
+    MAX_BATCH = 20  # texts per request: keeps one request under the per-minute token quota
 
     def __init__(
         self,
-        model: str = "gemini-embedding-001",
+        model: str | None = None,
         output_dimensionality: int = 768,
         task_type: str = "RETRIEVAL_DOCUMENT",
         api_key: str | None = None
     ):
-        self.model = model
+        self.model = model or os.getenv("EMBEDDING_MODEL") or DEFAULT_MODEL
         self.output_dimensionality = output_dimensionality
-        self.task_type = task_type
-
-        # 初始化 Gemini 客户端
-        if api_key:
-            self.client = genai.Client(api_key=api_key)
-        else:
-            self.client = genai.Client()
+        self.task_type = task_type  # gemini-embedding-001 only
+        self.client = genai.Client(api_key=api_key) if api_key else genai.Client()
 
     def _normalize_embedding(self, embedding: List[float]) -> List[float]:
-        """
-        归一化 embedding 向量
-        对于非 3072 维度的 embeddings，需要归一化以确保语义相似度计算准确
-        """
+        """Truncated (non-3072) vectors must be unit length for cosine search.
+        gemini-embedding-2 already normalizes; doing it again is harmless."""
         if self.output_dimensionality == 3072:
             return embedding
-
         embedding_np = np.array(embedding)
         norm = np.linalg.norm(embedding_np)
         if norm == 0:
             return embedding
         return (embedding_np / norm).tolist()
 
+    def _config(self, task_type: str | None) -> types.EmbedContentConfig:
+        if is_v2(self.model):
+            return types.EmbedContentConfig(output_dimensionality=self.output_dimensionality)
+        return types.EmbedContentConfig(task_type=task_type,
+                                        output_dimensionality=self.output_dimensionality)
+
     def embed_query(self, text: str) -> List[float]:
-        """
-        为查询文本生成 embedding
-        使用 RETRIEVAL_QUERY 任务类型优化查询
-        """
+        contents = format_query_v2(text) if is_v2(self.model) else text
         result = _with_retry(lambda: self.client.models.embed_content(
-            model=self.model,
-            contents=text,
-            config=types.EmbedContentConfig(
-                task_type="RETRIEVAL_QUERY",
-                output_dimensionality=self.output_dimensionality
-            )
-        ))
+            model=self.model, contents=contents, config=self._config("RETRIEVAL_QUERY")))
+        return self._normalize_embedding(result.embeddings[0].values)
 
-        embedding = result.embeddings[0].values
-        return self._normalize_embedding(embedding)
+    def embed_documents(self, texts: List[str],
+                        titles: List[str | None] | None = None) -> List[List[float]]:
+        """One vector per text. `titles` (optional, same length) are used by
+        gemini-embedding-2's "title: … | text: …" document format."""
+        titles = titles or [None] * len(texts)
+        out: List[List[float]] = []
+        for i in range(0, len(texts), self.MAX_BATCH):
+            out.extend(self._embed_documents(texts[i:i + self.MAX_BATCH],
+                                             titles[i:i + self.MAX_BATCH]))
+        return out
 
-    MAX_BATCH = 20  # texts per request: keeps one request under the per-minute token quota
-
-    def embed_documents(self, texts: List[str]) -> List[List[float]]:
-        if len(texts) > self.MAX_BATCH:
-            out: List[List[float]] = []
-            for i in range(0, len(texts), self.MAX_BATCH):
-                out.extend(self.embed_documents(texts[i:i + self.MAX_BATCH]))
-            return out
-        return self._embed_documents(texts)
-
-    def _embed_documents(self, texts: List[str]) -> List[List[float]]:
-        """
-        为文档列表生成 embeddings
-        使用配置的任务类型（默认 RETRIEVAL_DOCUMENT）
-        """
+    def _embed_documents(self, texts: List[str], titles: List[str | None]) -> List[List[float]]:
+        if is_v2(self.model):
+            # each text its own Content — a list of plain strings would be
+            # merged into a single embedding by gemini-embedding-2
+            contents = [types.Content(parts=[types.Part(text=format_doc_v2(t, ti))])
+                        for t, ti in zip(texts, titles)]
+        else:
+            contents = texts
         result = _with_retry(lambda: self.client.models.embed_content(
-            model=self.model,
-            contents=texts,
-            config=types.EmbedContentConfig(
-                task_type=self.task_type,
-                output_dimensionality=self.output_dimensionality
-            )
-        ))
-
-        embeddings = [emb.values for emb in result.embeddings]
-        return [self._normalize_embedding(emb) for emb in embeddings]
+            model=self.model, contents=contents, config=self._config(self.task_type)))
+        if len(result.embeddings) != len(texts):
+            raise RuntimeError(f"asked for {len(texts)} embeddings, got {len(result.embeddings)}")
+        return [self._normalize_embedding(e.values) for e in result.embeddings]

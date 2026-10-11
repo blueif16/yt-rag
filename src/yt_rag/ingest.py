@@ -407,12 +407,13 @@ def _batch_ingest_with_meta(rag, items: list[dict], batch_size: int = 50) -> dic
         if not new:
             continue
 
-        embeddings = rag._embeddings.embed_documents([it["content"] for it in new])
+        embeddings = rag._embeddings.embed_documents([it["content"] for it in new],
+                                                     titles=[it["meta"].get("title") for it in new])
         records = [{
             "content": it["content"],
             "content_hash": h,
             "embedding": emb,
-            "metadata": it["meta"],
+            "metadata": {**it["meta"], "embed_model": rag._embeddings.model},
             "namespace": rag.namespace,
         } for it, emb, h in zip(new, embeddings, new_hashes)]
         result = rag.client.table("documents").insert(records).execute()

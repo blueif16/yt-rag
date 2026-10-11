@@ -84,7 +84,7 @@ cp .env.example .env   # fill in the keys below
 | `SUPABASE_URL` | yes | Supabase → Project Settings → API |
 | `SUPABASE_SECRET_KEY` | yes | same page (secret / service-role key) |
 | `GEMINI_API_KEY` | yes | https://aistudio.google.com/apikey |
-| `EMBEDDING_MODEL`, `EMBEDDING_DIM` | no | defaults `gemini-embedding-001`, `768` |
+| `EMBEDDING_MODEL`, `EMBEDDING_DIM` | no | defaults `gemini-embedding-2`, `768`. Models are not interchangeable: switching means `scripts/reembed.py` |
 
 **Database:** run the files in `migrations/` in order (`001` … `008`) in the
 Supabase SQL editor.

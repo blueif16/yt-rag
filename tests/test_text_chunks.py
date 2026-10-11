@@ -227,3 +227,50 @@ def test_pdf_page_markers_give_page_links():
     assert metas[0]["locator"] == "Emitter · p. 1"
     assert metas[-1]["source"] == "https://x.com/m.pdf#page=2"
     assert "<!-- page" not in items[-1]["content"]
+
+
+# ---- embedding model formats ----
+
+from yt_rag.gemini_embeddings import GeminiEmbeddings, format_doc_v2, format_query_v2  # noqa: E402
+
+
+class _FakeModels:
+    def __init__(self):
+        self.calls = []
+
+    def embed_content(self, model, contents, config):
+        self.calls.append((model, contents, config))
+        n = len(contents) if isinstance(contents, list) else 1
+        return type("R", (), {"embeddings": [type("E", (), {"values": [1.0] + [0.0] * 767})()] * n})()
+
+
+def _fake(model):
+    e = GeminiEmbeddings.__new__(GeminiEmbeddings)
+    e.model, e.output_dimensionality, e.task_type = model, 768, "RETRIEVAL_DOCUMENT"
+    e.client = type("C", (), {"models": _FakeModels()})()
+    return e
+
+
+def test_v2_formats():
+    assert format_query_v2("glow on white") == "task: search result | query: glow on white"
+    assert format_doc_v2("body", None) == "title: none | text: body"
+
+
+def test_v2_sends_one_content_per_document_and_no_task_type():
+    e = _fake("gemini-embedding-2")
+    out = e.embed_documents(["a", "b", "c"], titles=["T", None, "U"])
+    assert len(out) == 3
+    _, contents, config = e.client.models.calls[0]
+    assert [c.parts[0].text for c in contents] == [
+        "title: T | text: a", "title: none | text: b", "title: U | text: c"]
+    assert config.task_type is None and config.output_dimensionality == 768
+    e.embed_query("q")
+    assert e.client.models.calls[-1][1] == "task: search result | query: q"
+
+
+def test_v1_keeps_task_types():
+    e = _fake("gemini-embedding-001")
+    e.embed_query("q")
+    assert e.client.models.calls[-1][2].task_type == "RETRIEVAL_QUERY"
+    e.embed_documents(["a"])
+    assert e.client.models.calls[-1][1] == ["a"]

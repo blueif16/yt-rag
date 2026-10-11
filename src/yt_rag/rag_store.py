@@ -21,7 +21,7 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 from supabase import create_client, Client
-from .gemini_embeddings import GeminiEmbeddings
+from .gemini_embeddings import DEFAULT_MODEL, GeminiEmbeddings
 
 # Load THIS package's own .env by absolute path — never CWD-discovered. The MCP
 # client spawns this process with an arbitrary working directory (e.g. another
@@ -34,7 +34,7 @@ load_dotenv(Path(__file__).resolve().parents[2] / ".env", override=True)
 class RAGConfig:
     supabase_url: str = field(default_factory=lambda: os.getenv("SUPABASE_URL", ""))
     supabase_key: str = field(default_factory=lambda: os.getenv("SUPABASE_SECRET_KEY") or os.getenv("SUPABASE_KEY", ""))
-    embedding_model: str = "gemini-embedding-001"
+    embedding_model: str = field(default_factory=lambda: os.getenv("EMBEDDING_MODEL", DEFAULT_MODEL))
     embedding_dim: int = 768
 
     # Search defaults
@@ -125,8 +125,8 @@ class RAGStore:
         # Embed
         embedding = self._embeddings.embed_query(content)
         
-        # Minimal metadata
-        metadata = {}
+        # Minimal metadata (+ which model embedded it — models are incompatible)
+        metadata = {"embed_model": self._embeddings.model}
         if source:
             metadata["source"] = source
         if type:
@@ -200,7 +200,7 @@ class RAGStore:
             # Build records
             records = []
             for n, emb, h in zip(new_items, embeddings, new_hashes):
-                metadata = {}
+                metadata = {"embed_model": self._embeddings.model}
                 if n.get("source"):
                     metadata["source"] = n["source"]
                 if n.get("type"):
