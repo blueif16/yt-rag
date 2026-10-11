@@ -274,3 +274,44 @@ def test_v1_keeps_task_types():
     assert e.client.models.calls[-1][2].task_type == "RETRIEVAL_QUERY"
     e.embed_documents(["a"])
     assert e.client.models.calls[-1][1] == ["a"]
+
+
+# ---- caption styles ----
+
+from yt_rag.ingest import parse_vtt  # noqa: E402
+
+AUTO_VTT = """WEBVTT
+
+00:00:01.000 --> 00:00:03.000
+so today we're
+going<00:00:02.000><c> to</c><00:00:02.500><c> animate</c>
+
+00:00:03.000 --> 00:00:03.010
+going to animate
+
+00:00:03.010 --> 00:00:05.000
+going to animate
+the graph editor
+"""
+
+MANUAL_VTT = """WEBVTT
+
+00:00:01.000 --> 00:00:04.000
+The text animator gives you
+per-character control.
+
+00:00:04.000 --> 00:00:07.000
+Add a range selector
+and offset it.
+"""
+
+
+def test_auto_captions_rolling_lines_once():
+    words = " ".join(c[2] for c in parse_vtt(AUTO_VTT)).split()
+    assert words == "so today we're going to animate the graph editor".split()
+
+
+def test_manual_two_line_captions_keep_both_lines():
+    text = " ".join(c[2] for c in parse_vtt(MANUAL_VTT))
+    assert text == ("The text animator gives you per-character control. "
+                    "Add a range selector and offset it.")

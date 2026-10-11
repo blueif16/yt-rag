@@ -66,10 +66,11 @@ def search(query: str, collection: str | None = None, top_k: int = 5,
     ([author — "title" — date — locator]). `source_url` deep-links to the exact
     second (videos) or section (pages).
 
-    `relevance` is the cosine similarity to your query. Read it as absolute
-    (measured on the after-effects collection): best hit below ~0.70 = the
-    library most likely has nothing on this — say so instead of forcing an
-    answer; ~0.70-0.74 = often partial; 0.74+ = usually a real answer.
+    `relevance` is the cosine similarity to your query (gemini-embedding-2,
+    calibrated on the after-effects collection). Read it as absolute: best hit
+    0.77+ = a real answer; 0.70-0.77 = often partial, read and cross-check;
+    below ~0.70 = the library most likely has nothing on this — say so
+    instead of forcing an answer.
 
     Args:
         query: What to search for — a full natural-language question works
@@ -109,9 +110,13 @@ def search(query: str, collection: str | None = None, top_k: int = 5,
     if type:
         filter_meta["type"] = type
     rag = _store(collection or "*")
-    pool = top_k * 4 if per_source else top_k
+    # A big source (a manual, the expression reference) can fill a small pool on
+    # its own; capping that pool then left agents with 3-4 hits. Draw a wide
+    # pool so the cap still leaves top_k (the vector half is an exact scan, so
+    # this costs a few ms).
+    pool = min(100, max(top_k * 10, 30)) if per_source else top_k
     try:
-        rows = rag.search(query, top_k=min(pool, 100), filter_meta=filter_meta or None,
+        rows = rag.search(query, top_k=pool, filter_meta=filter_meta or None,
                           tools_available=tools_available)
     except Exception as e:
         return [{"error": f"search failed: {e}"}]

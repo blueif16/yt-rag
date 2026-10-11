@@ -3,6 +3,10 @@ Ingest a curated manifest into one collection, each source with its own tags.
 
     .venv/bin/python scripts/ingest_manifest.py COLLECTION MANIFEST.json [MANIFEST.json ...]
     .venv/bin/python scripts/ingest_manifest.py --retag-only COLLECTION MANIFEST.json [...]
+    .venv/bin/python scripts/ingest_manifest.py --refresh=written|manual-captions|ID,ID COLLECTION MANIFEST.json [...]
+
+--refresh clears the chosen sources' chunks first, so they are rebuilt with the
+current parsers (e.g. after a chunking or caption fix).
 
 A manifest is a list of entries:
     {"url", "kind": "video"|"page", "type": "tutorial"|"doc"|"article" (pages),
@@ -86,10 +90,44 @@ def retag(collection: str, entries: list[dict]) -> int:
     return found
 
 
+def refresh_targets(collection: str, entries: list[dict], which: str) -> list[dict]:
+    if which == "written":
+        return [e for e in entries if e["kind"] == "page"]
+    if which == "manual-captions":
+        rag = RAGStore(namespace=collection)
+        manual, off = set(), 0
+        while True:
+            rows = rag.client.table("documents").select("metadata->>doc_id").eq(
+                "namespace", collection).eq("metadata->>captions", "manual").range(
+                off, off + 999).execute().data
+            manual |= {r["doc_id"] for r in rows}
+            off += 1000
+            if len(rows) < 1000:
+                break
+        return [e for e in entries if e["kind"] == "video" and doc_id(e) in manual]
+    ids = set(which.split(","))
+    return [e for e in entries if doc_id(e) in ids]
+
+
+def clear(collection: str, targets: list[dict]) -> set[str]:
+    """Delete every chunk of the target sources (under any alias URL)."""
+    rag = RAGStore(namespace=collection)
+    cleared = set()
+    for e in targets:
+        for url in e.get("aliases") or [e["url"]]:
+            d = doc_id({**e, "url": url})
+            rag.client.table("documents").delete().eq("namespace", collection).eq(
+                "metadata->>doc_id", d).execute()
+            cleared.add(d)
+    return cleared
+
+
 def main() -> None:
-    args = sys.argv[1:]
-    retag_only = args[0] == "--retag-only"
-    collection, paths = (args[1], args[2:]) if retag_only else (args[0], args[1:])
+    flags = [a for a in sys.argv[1:] if a.startswith("--")]
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    retag_only = "--retag-only" in flags
+    refresh = next((f.split("=", 1)[1] for f in flags if f.startswith("--refresh=")), None)
+    collection, paths = args[0], args[1:]
     raw = [e for p in paths for e in json.loads(Path(p).read_text())]
     entries = merge(raw)
     print(f"{len(raw)} entries → {len(entries)} unique sources", file=sys.stderr)
@@ -99,6 +137,11 @@ def main() -> None:
 
     state_path = Path(paths[0]).parent / f"ingest_state_{collection}.json"
     done = set(json.loads(state_path.read_text())) if state_path.exists() else set()
+    if refresh:
+        targets = refresh_targets(collection, entries, refresh)
+        done -= clear(collection, targets)
+        state_path.write_text(json.dumps(sorted(done)))
+        print(f"refresh={refresh}: cleared {len(targets)} sources", file=sys.stderr)
 
     def mark(e):
         done.add(doc_id(e))

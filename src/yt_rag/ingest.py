@@ -133,9 +133,17 @@ def _clean(line: str) -> str:
 
 
 def parse_vtt(text: str) -> list[tuple[float, float, str]]:
-    """Returns deduped (start_sec, end_sec, caption_text)."""
+    """Returns (start_sec, end_sec, new_text) per cue, for both caption styles.
+
+    YouTube auto-captions roll: each cue repeats the previous line and adds one
+    (plus ~10 ms cues that only repeat). Manual captions show one or two NEW
+    lines per cue. Keeping only lines the previous cue did not show handles
+    both — keeping just the last line (the old rule) dropped about half the
+    words of every two-line manual caption.
+    """
     lines = text.splitlines()
-    cues = []
+    out = []
+    prev: list[str] = []
     i = 0
     while i < len(lines):
         m = TIMESTAMP_RE.match(lines[i])
@@ -151,12 +159,11 @@ def parse_vtt(text: str) -> list[tuple[float, float, str]]:
             if t:
                 text_lines.append(t)
             i += 1
+        new = [t for t in text_lines if t not in prev]
         if text_lines:
-            cues.append((start, end, text_lines[-1]))
-    out = []
-    for c in cues:
-        if not out or out[-1][2] != c[2]:
-            out.append(c)
+            prev = text_lines
+        if new:
+            out.append((start, end, " ".join(new)))
     return out
 
 

@@ -51,6 +51,10 @@ def _blocks(md: str) -> list[tuple[list[str], str, int | None]]:
     lines = md.splitlines()
     h1s = [l for l in lines if l.startswith("# ")]
     skip_h1 = len(h1s) == 1
+    # An odd number of ``` lines means the extractor dropped one; trusting the
+    # fences would swallow every later heading (it did on the 174k-char
+    # expression reference), so ignore them.
+    fences_ok = sum(l.lstrip().startswith("```") for l in lines) % 2 == 0
     path: list[tuple[int, str]] = []
     blocks: list[tuple[list[str], str, int | None]] = []
     para: list[str] = []
@@ -69,7 +73,7 @@ def _blocks(md: str) -> list[tuple[list[str], str, int | None]]:
         para.clear()
 
     for line in lines:
-        if line.lstrip().startswith("```"):
+        if fences_ok and line.lstrip().startswith("```"):
             in_fence = not in_fence
             para.append(line)
             continue
@@ -84,7 +88,7 @@ def _blocks(md: str) -> list[tuple[list[str], str, int | None]]:
         m = HEADING_RE.match(line)
         if m and len(m.group(2)) <= MAX_HEADING_CHARS:
             flush()
-            level, title = len(m.group(1)), m.group(2).strip("#* ").strip()
+            level, title = len(m.group(1)), m.group(2).strip("#*¶ ").strip()
             pending_heading = line.strip()
             if level == 1 and skip_h1:
                 path.clear()
@@ -122,8 +126,9 @@ def split_markdown(md: str, max_chars: int = MAX_CHARS) -> list[dict]:
     """Pack heading-aware blocks into chunks of at most ~max_chars.
 
     Returns [{"sections": [...], "anchor": str | None, "text": str}]:
-    `sections` are the chunk's sections as "H2 › H3" labels (two levels, so an
-    image label like "After" reads as "Control speed › After"); `anchor` is the
+    `sections` are the chunk's sections as labels of the two deepest heading
+    levels (so an image label like "After" reads as "Control speed › After",
+    and a manual's parameter as "Effect Controls › Radius"); `anchor` is the
     top-level heading the chunk starts in, for the deep link. A chunk that
     continues a section mid-way repeats the heading path on its first line, so
     every chunk reads on its own. A tiny last chunk joins the one before.
@@ -140,7 +145,7 @@ def split_markdown(md: str, max_chars: int = MAX_CHARS) -> list[dict]:
 
     for path, text, page in _blocks(md):
         pieces = [text] if len(text) <= max_chars else _hard_split(text, max_chars)
-        label = " › ".join(path[:2])
+        label = " › ".join(path[-2:])  # the two deepest levels: most specific
         for piece in pieces:
             if cur_text and len(cur_text) + 2 + len(piece) > max_chars:
                 close()
@@ -195,8 +200,11 @@ def build_items_for_text(md: str, *, title: str, source_url: str, author: str,
                          doc_id: str | None = None, **extra) -> list[dict]:
     doc_id = doc_id or page_doc_id(source_url)
     items = []
-    for i, c in enumerate(split_markdown(md)):
+    chunks = split_markdown(md)
+    for i, c in enumerate(chunks):
         locator = " / ".join(c["sections"][:3])
+        if not locator and not c.get("page") and len(chunks) > 1:
+            locator = f"part {i + 1}/{len(chunks)}"  # a page without headings
         if c.get("page"):  # PDF: viewers jump to #page=N; text fragments don't work there
             locator = f"{locator} · p. {c['page']}" if locator else f"p. {c['page']}"
             link = f"{source_url.split('#', 1)[0]}#page={c['page']}"

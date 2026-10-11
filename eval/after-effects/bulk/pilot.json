@@ -1,0 +1,406 @@
+[
+ {
+  "url": "https://www.youtube.com/watch?v=7pOCtlrrE3Y",
+  "kind": "video",
+  "title": "The LAST graph editor tutorial you'll ever need. \\\\ After Effects Tutorial",
+  "author": "Jake In Motion",
+  "tags": {
+   "topics": [
+    "easing"
+   ],
+   "scenarios": [
+    "kinetic-type",
+    "ui-promo"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": []
+  }
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=c-Q06JnT6mE",
+  "kind": "video",
+  "title": "The Right Way to Animate Text | After Effects Text Animation Tutorial",
+  "author": "Stephan Zammit",
+  "tags": {
+   "topics": [
+    "easing",
+    "text"
+   ],
+   "scenarios": [
+    "kinetic-type",
+    "titles"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": []
+  }
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=748l7DIU4bQ",
+  "kind": "video",
+  "title": "Crazy Trim Paths Tricks in After Effects | Tutorial",
+  "author": "Manuel does Motion",
+  "tags": {
+   "topics": [
+    "shapes"
+   ],
+   "scenarios": [
+    "explainer",
+    "kinetic-type",
+    "logo-ident"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  }
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=rsW4fwscwKI",
+  "kind": "video",
+  "title": "Top 10 After Effects Expressions for Amazing Motion Design",
+  "author": "Ben Marriott",
+  "tags": {
+   "topics": [
+    "expressions"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  }
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=PdHYC0gqIPA",
+  "kind": "video",
+  "title": "Smooth Camera Movement in After Effects (Tutorial)",
+  "author": "Bricks",
+  "tags": {
+   "topics": [
+    "camera-3d",
+    "transitions"
+   ],
+   "scenarios": [
+    "ui-promo"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": []
+  }
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=VCAqnzFUTPg",
+  "kind": "video",
+  "title": "Your Motion Blur Looks Fake. Here's Why.",
+  "author": "SternFX (Eran Stern)",
+  "tags": {
+   "topics": [
+    "motion-blur"
+   ],
+   "scenarios": [
+    "kinetic-type",
+    "ui-promo"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": []
+  }
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=HTn_HYnvKjg",
+  "kind": "video",
+  "title": "Elevate Your After Effects Workflow With These Expert Techniques",
+  "author": "Ben Marriott",
+  "tags": {
+   "topics": [
+    "light-glow",
+    "text"
+   ],
+   "scenarios": [
+    "hero-fx",
+    "kinetic-type",
+    "logo-ident"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": []
+  }
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=_vd8g7PaS_U",
+  "kind": "video",
+  "title": "Deep Glow 2: Quickstart Guide & What's New?",
+  "author": "Plugin Everything",
+  "tags": {
+   "topics": [
+    "light-glow"
+   ],
+   "scenarios": [
+    "hero-fx",
+    "logo-ident"
+   ],
+   "level": "basic",
+   "impact": "high",
+   "tools": [
+    "deep-glow-2"
+   ]
+  }
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=rvAXZl8Ypus",
+  "kind": "video",
+  "title": "The GAME CHANGING New Track Matte System in After Effects 2023",
+  "author": "School of Motion",
+  "tags": {
+   "topics": [
+    "mattes-masks"
+   ],
+   "scenarios": [
+    "kinetic-type",
+    "ui-promo"
+   ],
+   "level": "basic",
+   "impact": "medium",
+   "tools": []
+  }
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=Fj7woohZ0is",
+  "kind": "video",
+  "title": "10 Easy After Effects Transitions",
+  "author": "Olufemii",
+  "tags": {
+   "topics": [
+    "transitions"
+   ],
+   "scenarios": [
+    "edit-pacing",
+    "ui-promo"
+   ],
+   "level": "basic",
+   "impact": "medium",
+   "tools": []
+  }
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=y4fuhIPxmJg",
+  "kind": "video",
+  "title": "Lumetri Color | Effects of After Effects",
+  "author": "Jake In Motion",
+  "tags": {
+   "topics": [
+    "color-finish"
+   ],
+   "level": "basic",
+   "impact": "low",
+   "tools": []
+  }
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=Ns41v75th_I",
+  "kind": "video",
+  "title": "Understand Continuous Rasterization in After Effects \\\\ AE Tutorial",
+  "author": "Jake In Motion",
+  "tags": {
+   "topics": [
+    "shapes",
+    "workflow"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  }
+ },
+ {
+  "url": "https://helpx.adobe.com/after-effects/desktop/animate-in-after-effects/speed-between-keyframes/speed.html",
+  "kind": "page",
+  "type": "doc",
+  "title": "Apply and control speed changes in After Effects",
+  "author": "Adobe Help Center",
+  "tags": {
+   "topics": [
+    "easing"
+   ],
+   "level": "intermediate",
+   "impact": "low",
+   "tools": []
+  }
+ },
+ {
+  "url": "https://helpx.adobe.com/after-effects/desktop/animating-text/text-animation/animating-text.html",
+  "kind": "page",
+  "type": "doc",
+  "title": "Animating text",
+  "author": "Adobe Help Center",
+  "tags": {
+   "topics": [
+    "text"
+   ],
+   "scenarios": [
+    "kinetic-type",
+    "titles"
+   ],
+   "level": "intermediate",
+   "impact": "low",
+   "tools": []
+  }
+ },
+ {
+  "url": "https://helpx.adobe.com/after-effects/desktop/drawing-painting-and-paths/shapes-and-shape-attributes/shape-attributes-paint-operations-path.html",
+  "kind": "page",
+  "type": "doc",
+  "title": "Shape attributes, paint operations, and path operations for shape layers",
+  "author": "Adobe Help Center",
+  "tags": {
+   "topics": [
+    "shapes"
+   ],
+   "level": "intermediate",
+   "impact": "low",
+   "tools": []
+  }
+ },
+ {
+  "url": "https://helpx.adobe.com/after-effects/desktop/work-with-expressions/expression-examples/expression-examples.html",
+  "kind": "page",
+  "type": "doc",
+  "title": "Expression examples",
+  "author": "Adobe Help Center",
+  "tags": {
+   "topics": [
+    "expressions"
+   ],
+   "level": "intermediate",
+   "impact": "low",
+   "tools": []
+  }
+ },
+ {
+  "url": "https://schoolofmotion.com/blog/cameras-after-effects",
+  "kind": "page",
+  "type": "article",
+  "title": "Working with Cameras in After Effects",
+  "author": "School of Motion (Caleb Ward)",
+  "tags": {
+   "topics": [
+    "camera-3d"
+   ],
+   "scenarios": [
+    "hero-fx",
+    "ui-promo"
+   ],
+   "level": "basic",
+   "impact": "medium",
+   "tools": []
+  }
+ },
+ {
+  "url": "https://www.provideocoalition.com/cmg_hidden_gems_chapter_8_motion_blur_and_more/",
+  "kind": "page",
+  "type": "article",
+  "title": "CMG Hidden Gems: Chapter 8 - Motion Blur and More",
+  "author": "ProVideo Coalition (Chris & Trish Meyer)",
+  "tags": {
+   "topics": [
+    "motion-blur"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  }
+ },
+ {
+  "url": "https://schoolofmotion.com/blog/glows-after-effects",
+  "kind": "page",
+  "type": "tutorial",
+  "title": "Tutorial: Make a Better Glow in After Effects",
+  "author": "School of Motion (Joey Korenman)",
+  "tags": {
+   "topics": [
+    "light-glow"
+   ],
+   "scenarios": [
+    "hero-fx",
+    "logo-ident"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": []
+  }
+ },
+ {
+  "url": "https://helpx.adobe.com/after-effects/desktop/work-with-transparency-and-compositing/work-with-track-mattes-and-traveling-mattes/track-mattes-and-traveling-mattes.html",
+  "kind": "page",
+  "type": "doc",
+  "title": "Track Mattes and Traveling Mattes",
+  "author": "Adobe Help Center",
+  "tags": {
+   "topics": [
+    "mattes-masks"
+   ],
+   "level": "basic",
+   "impact": "low",
+   "tools": []
+  }
+ },
+ {
+  "url": "https://helpx.adobe.com/after-effects/desktop/adjust-colors/color-basics/color-basics.html",
+  "kind": "page",
+  "type": "doc",
+  "title": "Color basics",
+  "author": "Adobe Help Center",
+  "tags": {
+   "topics": [
+    "color-finish",
+    "render-export"
+   ],
+   "level": "intermediate",
+   "impact": "low",
+   "tools": []
+  }
+ },
+ {
+  "url": "https://helpx.adobe.com/after-effects/desktop/work-with-compositions/precomposing-and-nesting/precomposing-nesting-pre-rendering.html",
+  "kind": "page",
+  "type": "doc",
+  "title": "Precomposing, nesting, and pre-rendering",
+  "author": "Adobe Help Center",
+  "tags": {
+   "topics": [
+    "workflow"
+   ],
+   "level": "intermediate",
+   "impact": "low",
+   "tools": []
+  }
+ },
+ {
+  "url": "https://helpx.adobe.com/after-effects/desktop/render-and-export/automate-rendering/automated-rendering-network-rendering.html",
+  "kind": "page",
+  "type": "doc",
+  "title": "Automated rendering and network rendering",
+  "author": "Adobe Help Center",
+  "tags": {
+   "topics": [
+    "render-export"
+   ],
+   "level": "intermediate",
+   "impact": "low",
+   "tools": []
+  }
+ },
+ {
+  "url": "https://helpx.adobe.com/after-effects/desktop/work-with-footage-items/import-and-interpret-footage-items/importing-interpreting-footage-items.html",
+  "kind": "page",
+  "type": "doc",
+  "title": "Importing and interpreting footage items",
+  "author": "Adobe Help Center",
+  "tags": {
+   "topics": [
+    "render-export"
+   ],
+   "level": "basic",
+   "impact": "low",
+   "tools": []
+  }
+ }
+]
