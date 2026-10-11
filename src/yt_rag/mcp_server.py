@@ -53,10 +53,10 @@ def _store(namespace: str) -> RAGStore:
 
 
 @mcp.tool()
-def search(query: str, collection: str | None = None, top_k: int = 5,
+def search(query: str, collection: str | None = None, top_k: int = 10,
            scenario: str | None = None, topic: str | None = None,
            type: str | None = None, tools_available: list[str] | None = None,
-           per_source: int = 2, context: int = 0) -> list[dict]:
+           per_source: int = 3, context: int = 0) -> list[dict]:
     """
     Search the corpus (video captions + web pages + notes): hybrid BM25 +
     vector (RRF) + graph traversal.
@@ -70,7 +70,8 @@ def search(query: str, collection: str | None = None, top_k: int = 5,
     calibrated on the after-effects collection). Read it as absolute: best hit
     0.77+ = a real answer; 0.70-0.77 = often partial, read and cross-check;
     below ~0.70 = the library most likely has nothing on this — say so
-    instead of forcing an answer.
+    instead of forcing an answer. Weak or partial? Search again, rephrased with
+    the exact After Effects / plugin terms (effect, property and menu names).
 
     Args:
         query: What to search for — a full natural-language question works
@@ -79,7 +80,8 @@ def search(query: str, collection: str | None = None, top_k: int = 5,
         collection: Scope to one topic collection (e.g. "after-effects"). Pick it
             by matching your question to each collection's `purpose` from
             list_repository(). Omit to search the entire corpus.
-        top_k: Number of chunks to return (default 5, cap 25).
+        top_k: Number of chunks to return (default 10, cap 25). The best chunk
+            often ranks 6-10, so read all of them before concluding.
         scenario: Only sources tagged for this kind of shot/video, e.g.
             "ui-promo", "logo-ident", "hero-fx" (vocabulary: list_repository).
         topic: Only sources tagged with this technique, e.g. "easing",
@@ -89,8 +91,8 @@ def search(query: str, collection: str | None = None, top_k: int = 5,
         tools_available: Plugins you can use, e.g. ["deep-glow-2", "rsmb",
             "trapcode-particular"]; sources that need anything else are left
             out. [] = stock After Effects only.
-        per_source: At most this many chunks from one video/page (default 2),
-            so one long tutorial cannot fill every slot. 0 = no cap.
+        per_source: At most this many chunks from one video/page (default 3),
+            so one long tutorial or manual cannot fill every slot. 0 = no cap.
         context: 1 = also return the chunk before and after each hit
             (context_before / context_after), for steps or code that run
             across a chunk boundary. Default 0.
