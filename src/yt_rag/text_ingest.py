@@ -33,10 +33,147 @@ PAGE_MARK_RE = re.compile(r"^<!-- page (\d+) -->$")  # inserted between PDF page
 # escapes break copy-paste, e.g. "nK.time \<= time".
 MD_ESCAPE_RE = re.compile(r"\\([<>*_\[\]#`|])")
 YOUTUBE_RE = re.compile(r"(?:youtube\.com/(?:watch|shorts/|embed/|live/)|youtu\.be/)")
+HR_RE = re.compile(r"^\s*(?:[-*_]\s*){3,}$")  # a horizontal rule: no content
+# A markdown table's separator row: | --- | :---: | (outer pipes optional).
+TABLE_SEP_RE = re.compile(r"^\s*\|?\s*:?-{3,}:?\s*(?:\|\s*:?-{3,}:?\s*)*\|?\s*$")
+MIN_CHUNK_TEXT = 40  # a chunk with less text than this (headings aside) is dropped
+
+# ---- boilerplate: site menus, tables of contents, account and cookie lines ----
+NAV_RUN_MIN = 8    # menu-like lines in a row before a run can be a menu
+NAV_RUN_LONG = 20  # this many in a row is a site menu or table of contents on its own
+LIST_MARK_RE = re.compile(r"^\s*(?:[-*+•]|\d+[.)])\s+")
+NUMBERED_RE = re.compile(r"^\s*\d+[.)]\s+")
+CODEISH_RE = re.compile(r"[(){}=;<>\[\]`$|]|\w\.[A-Za-z_]|//")
+SENT_END_RE = re.compile(r"[.!?:;…\"”'’]\s*$")
+LINK_ONLY_RE = re.compile(r"^\s*(?:[-*+•]\s+)?\[[^\]]+\]\([^)]*\)\s*$")
+BOILERPLATE_RE = re.compile(
+    r"you are logged in|send you notifications|notification settings|"
+    r"cookie (?:policy|settings|preferences|consent)|accept (?:all )?cookies|"
+    r"subscribe to (?:our|the) newsletter|all rights reserved|"
+    r"^\W*(?:isbn|ean)\b|©\s*(?:\d{4}|[a-z])", re.I)
 
 
 def _log(*a) -> None:
     print(*a, file=sys.stderr)
+
+
+# ---------- boilerplate ----------
+
+def _nav_key(line: str) -> str | None:
+    """A line as a menu entry: its normalised text if it is short and reads like
+    a link label (no sentence end, no code), "" for a blank line or bare bullet,
+    None for anything that reads as text."""
+    s = LIST_MARK_RE.sub("", line.strip()).strip("*_ ").strip()
+    if not s or s in "-*+•":
+        return ""
+    if line.lstrip().startswith(("#", "|")) or CODEISH_RE.search(s) or NUMBERED_RE.match(line):
+        return None  # headings, tables, code and numbered steps are content
+    if len(s) > 60 or len(s.split()) > 6 or SENT_END_RE.search(s):
+        return None
+    return s.lower()
+
+
+def _bridge(line: str) -> bool:
+    """A longer label that can sit inside a menu: one line, at most 12 words,
+    no sentence end, not a heading, table row or numbered step."""
+    s = LIST_MARK_RE.sub("", line.strip()).strip("*_ ").strip()
+    return (bool(s) and len(s) <= 100 and len(s.split()) <= 12 and not SENT_END_RE.search(s)
+            and not line.lstrip().startswith(("#", "|")) and not NUMBERED_RE.match(line))
+
+
+def _code_lines(lines: list[str]) -> list[bool]:
+    """True for the lines of fenced code blocks (fences included)."""
+    fences_ok = sum(l.lstrip().startswith("```") for l in lines) % 2 == 0
+    out, in_fence = [], False
+    for line in lines:
+        fence = fences_ok and line.lstrip().startswith("```")
+        out.append(in_fence or fence)
+        if fence:
+            in_fence = not in_fence
+    return out
+
+
+def _line_keys(lines: list[str], code: list[bool]) -> list[str | None]:
+    """_nav_key per line; code always counts as text."""
+    return [None if c else _nav_key(line) for line, c in zip(lines, code)]
+
+
+def nav_keys(md: str) -> set[str]:
+    """The menu-like lines of a page, for spotting the menus that pages of one
+    site share (pass them to strip_boilerplate as `elsewhere`)."""
+    lines = md.splitlines()
+    return {k for k in _line_keys(lines, _code_lines(lines)) if k}
+
+
+def strip_boilerplate(md: str, elsewhere: set[str] | None = None) -> str:
+    """Drop navigation and boilerplate lines from extracted page text.
+
+    - Menus and tables of contents: a run of at least NAV_RUN_MIN short,
+      link-label-like lines (blank lines and bare bullets may sit between) that
+      is very long (NAV_RUN_LONG+), repeats its own entries (CineD's
+      "Language / Info / Language"), or whose entries mostly appear on other
+      pages of the same site (`elsewhere`, from nav_keys). A short list of
+      blend modes or menu items in the body has none of these, so it stays.
+    - Link lists: four or more lines that are nothing but a Markdown link.
+    - Account, cookie, newsletter, copyright and ISBN lines.
+    Code fences are never touched.
+    """
+    lines = md.splitlines()
+    code = _code_lines(lines)
+    keys = _line_keys(lines, code)
+    drop: set[int] = set()
+    i, n = 0, len(lines)
+    while i < n:
+        if not keys[i]:
+            i += 1
+            continue
+        # A run goes on through blank lines and through the odd longer label
+        # ("Work with Track Mattes and Traveling Mattes", "Frame.io") as long as
+        # menu entries outnumber those 3 to 1.
+        j, navs, bridges = i, [], 0
+        while j < n:
+            if keys[j] is None:
+                if code[j] or not _bridge(lines[j]) or (bridges + 1) * 3 > len(navs):
+                    break
+                bridges += 1
+            elif keys[j]:
+                navs.append(j)
+            j += 1
+        j = max(j, navs[-1] + 1)
+        if len(navs) >= NAV_RUN_MIN:
+            entries = [keys[k] for k in navs]
+            distinct = set(entries)
+            repeats = len(entries) - len(distinct)
+            shared = len(distinct & elsewhere) / len(distinct) if elsewhere else 0.0
+            if len(navs) >= NAV_RUN_LONG or repeats >= 2 or shared >= 0.5:
+                drop.update(range(i, navs[-1] + 1))
+        i = j
+    run: list[int] = []
+    for k, line in enumerate(lines + [""]):
+        if k < n and not code[k] and LINK_ONLY_RE.match(line):
+            run.append(k)
+        elif k < n and not line.strip() and run:
+            continue
+        else:
+            if len(run) >= 4:
+                drop.update(run)
+            run = []
+    for k, line in enumerate(lines):
+        if not code[k] and len(line.split()) <= 25 and BOILERPLATE_RE.search(line):
+            drop.add(k)
+    if not drop:
+        return md
+    return "\n".join(l for k, l in enumerate(lines) if k not in drop)
+
+
+def strip_site_boilerplate(pages: list[str]) -> list[str]:
+    """strip_boilerplate for pages of ONE site, so menus they share are found."""
+    keysets = [nav_keys(md) for md in pages]
+    out = []
+    for k, md in enumerate(pages):
+        elsewhere = set().union(*(ks for j, ks in enumerate(keysets) if j != k)) if len(pages) > 1 else None
+        out.append(strip_boilerplate(md, elsewhere))
+    return out
 
 
 # ---------- markdown → sections → chunks ----------
@@ -65,6 +202,8 @@ def _blocks(md: str) -> list[tuple[list[str], str, int | None]]:
     def flush():
         nonlocal pending_heading
         text = "\n".join(para).strip()
+        if text and HR_RE.match(text):  # a rule alone carries nothing; keep the heading
+            text = ""
         if text:
             if pending_heading:
                 text = pending_heading + "\n" + text
@@ -122,6 +261,111 @@ def _hard_split(text: str, max_chars: int) -> list[str]:
     return parts
 
 
+def _cells(row: str) -> list[str]:
+    s = row.strip()
+    s = s[1:] if s.startswith("|") else s
+    s = s[:-1] if s.endswith("|") else s
+    return [c.strip() for c in s.split("|")]
+
+
+def _row_record(header: str, row: str, max_chars: int) -> list[str]:
+    """A table row too long for one chunk, as `column: value` lines packed into
+    pieces; every piece starts with the row's first cell, so it reads on its own."""
+    names, cells = _cells(header), _cells(row)
+    if len(cells) > len(names) and names:  # a stray "|" inside a cell
+        cells = cells[:len(names) - 1] + [" | ".join(cells[len(names) - 1:])]
+    fields = [f"{(names[k] if k < len(names) else '').strip('* ') or f'column {k + 1}'}: {c}"
+              for k, c in enumerate(cells) if c]
+    if not fields:
+        return _hard_split(row, max_chars)
+    label, pieces, cur = fields[0], [], fields[0]
+    for f in fields[1:]:
+        for part in ([f] if len(label) + 1 + len(f) <= max_chars
+                     else _hard_split(f, max_chars - len(label) - 1)):
+            if len(cur) + 1 + len(part) > max_chars:
+                pieces.append(cur)
+                cur = label
+            cur += "\n" + part
+    pieces.append(cur)
+    return pieces
+
+
+def _table_pieces(header: str, sep: str, rows: list[str], max_chars: int) -> list[str]:
+    """Rows packed into pieces of at most max_chars, never splitting a row; every
+    piece starts with the header row, so a row's columns stay named."""
+    head = header + "\n" + sep
+    pieces, cur = [], []
+    for row in rows:
+        if len(head) + 1 + len(row) > max_chars:
+            if cur:
+                pieces.append(head + "\n" + "\n".join(cur))
+                cur = []
+            pieces += _row_record(header, row, max_chars)
+            continue
+        if cur and len(head) + sum(len(r) + 1 for r in cur) + 1 + len(row) > max_chars:
+            pieces.append(head + "\n" + "\n".join(cur))
+            cur = []
+        cur.append(row)
+    if cur:
+        pieces.append(head + "\n" + "\n".join(cur))
+    return pieces
+
+
+def _split_block(text: str, max_chars: int) -> list[str]:
+    """Split one oversized block: Markdown tables by row (header repeated),
+    everything else at sentence ends."""
+    lines = text.split("\n")
+    segs: list[tuple] = []
+    buf: list[str] = []
+    i = 0
+    while i < len(lines):
+        if i + 1 < len(lines) and "|" in lines[i] and TABLE_SEP_RE.match(lines[i + 1]):
+            if buf:
+                segs.append(("text", "\n".join(buf)))
+                buf = []
+            j, rows = i + 2, []
+            while j < len(lines) and "|" in lines[j]:
+                rows.append(lines[j])
+                j += 1
+            segs.append(("table", lines[i], lines[i + 1], rows))
+            i = j
+        else:
+            buf.append(lines[i])
+            i += 1
+    if buf:
+        segs.append(("text", "\n".join(buf)))
+    if not any(s[0] == "table" for s in segs):
+        return _hard_split(text, max_chars)
+    pieces: list[str] = []
+    lead = ""  # a short line just before a table (its heading) travels with it
+    for k, seg in enumerate(segs):
+        if seg[0] == "text":
+            nxt = segs[k + 1] if k + 1 < len(segs) else None
+            if nxt and nxt[0] == "table" and len(seg[1]) < 200:
+                lead = seg[1]
+                continue
+            pieces += [seg[1]] if len(seg[1]) <= max_chars else _hard_split(seg[1], max_chars)
+        else:
+            tp = _table_pieces(*seg[1:], max_chars - (len(lead) + 1 if lead else 0))
+            if lead:
+                tp[0] = lead + "\n" + tp[0]
+                lead = ""
+            pieces += tp
+    return pieces
+
+
+def _text_chars(chunk: str) -> int:
+    """Characters of real text: headings, the "(section path)" line and rules aside."""
+    lines = chunk.strip().splitlines()
+    if lines and lines[0].startswith("(") and lines[0].endswith(")"):
+        lines = lines[1:]
+    def heading(line: str) -> bool:  # over-long "headings" are text, as in _blocks
+        m = HEADING_RE.match(line)
+        return bool(m) and len(m.group(2)) <= MAX_HEADING_CHARS
+    return sum(len(l.strip()) for l in lines
+               if l.strip() and not heading(l) and not HR_RE.match(l))
+
+
 def split_markdown(md: str, max_chars: int = MAX_CHARS) -> list[dict]:
     """Pack heading-aware blocks into chunks of at most ~max_chars.
 
@@ -138,13 +382,18 @@ def split_markdown(md: str, max_chars: int = MAX_CHARS) -> list[dict]:
 
     def close():
         nonlocal cur_text, cur_secs, cur_anchor, cur_page
-        if cur_text.strip():
+        if _text_chars(cur_text):  # headings or rules alone carry nothing
+            if chunks and _text_chars(chunks[-1]["text"]) < MIN_CHUNK_TEXT:
+                prev = chunks.pop()  # a scrap (a heading and a line) joins the next chunk
+                cur_text = prev["text"] + "\n\n" + cur_text.strip()
+                cur_secs = prev["sections"] + [s for s in cur_secs if s not in prev["sections"]]
+                cur_anchor, cur_page = prev["anchor"], prev["page"]
             chunks.append({"sections": cur_secs, "anchor": cur_anchor, "page": cur_page,
                            "text": cur_text.strip()})
         cur_text, cur_secs, cur_anchor, cur_page = "", [], None, None
 
     for path, text, page in _blocks(md):
-        pieces = [text] if len(text) <= max_chars else _hard_split(text, max_chars)
+        pieces = [text] if len(text) <= max_chars else _split_block(text, max_chars)
         label = " › ".join(path[-2:])  # the two deepest levels: most specific
         for piece in pieces:
             if cur_text and len(cur_text) + 2 + len(piece) > max_chars:
@@ -331,15 +580,19 @@ def ingest_pages(urls: list[str], collection: str, type: str | dict[str, str] = 
             totals["failed"] += 1
             errors.append({"url": url, "error": str(e)})
 
-    # Same-site boilerplate (footers, promos) repeats across pages: drop it.
+    # Boilerplate: menus, tables of contents, account lines; plus what pages of
+    # one site repeat (footers, promos, shared menus). Local files are not a
+    # site: two notes may share a paragraph on purpose.
     by_site: dict[str, list[int]] = {}
     for k, (url, _) in enumerate(pages):
-        by_site.setdefault(urlparse(url).netloc, []).append(k)
+        site = urlparse(url).netloc
+        by_site.setdefault(site or f"local:{k}", []).append(k)
     for idx in by_site.values():
+        cleaned = strip_site_boilerplate([pages[k][1]["markdown"] for k in idx])
         if len(idx) > 1:
-            cleaned = strip_repeated_paragraphs([pages[k][1]["markdown"] for k in idx])
-            for k, md in zip(idx, cleaned):
-                pages[k][1]["markdown"] = md
+            cleaned = strip_repeated_paragraphs(cleaned)
+        for k, md in zip(idx, cleaned):
+            pages[k][1]["markdown"] = md
 
     for url, page in pages:
         author = page["author"] or page["site"]
@@ -381,7 +634,8 @@ def ingest_text(collection: str, text: str, title: str, source_url: str,
         raise ValueError("source_url is required — every chunk must lead back to its source.")
     tags = validate_tags(tags)
     rag = _open_collection(collection)
-    items = build_items_for_text(text, title=title, source_url=source_url, author=author,
-                                 published_at=published_at, type=type, origin="text", **tags)
+    items = build_items_for_text(strip_boilerplate(text), title=title, source_url=source_url,
+                                 author=author, published_at=published_at, type=type,
+                                 origin="text", **tags)
     r = _batch_ingest_with_meta(rag, items)
     return {"collection": collection, "chunks": len(items), **r}
