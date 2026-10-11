@@ -22,6 +22,7 @@ run early; run it again after the reset.
 """
 from __future__ import annotations
 import json
+import re
 import sys
 from collections import defaultdict
 from pathlib import Path
@@ -37,15 +38,27 @@ def doc_id(e: dict) -> str:
     return _extract_video_id(e["url"]) if e["kind"] == "video" else page_doc_id(e["url"])
 
 
+def source_key(e: dict) -> str:
+    """Same source despite http/https, www. or a trailing slash."""
+    if e["kind"] == "video":
+        return _extract_video_id(e["url"])
+    u = re.sub(r"^https?://(www\.)?", "", e["url"].strip()).rstrip("/")
+    return u.split("#", 1)[0]
+
+
 def merge(entries: list[dict]) -> list[dict]:
-    """One entry per source; tags unioned, highest impact kept."""
+    """One entry per source; tags unioned, highest impact kept. `aliases` keeps
+    every URL the source was listed under (its chunks are stored under one)."""
     out: dict[str, dict] = {}
     for e in entries:
         e["tags"] = validate_tags(e.get("tags"))  # fail fast, before any network traffic
-        key = doc_id(e)
+        key = source_key(e)
         if key not in out:
             out[key] = e
+            e["aliases"] = [e["url"]]
             continue
+        if e["url"] not in out[key]["aliases"]:
+            out[key]["aliases"].append(e["url"])
         a, b = out[key]["tags"], e["tags"]
         for f in ("topics", "scenarios", "tools"):
             if f in a or f in b:
@@ -64,8 +77,11 @@ def retag(collection: str, entries: list[dict]) -> int:
     rag = RAGStore(namespace=collection)
     found = 0
     for e in entries:
-        n = rag.client.rpc("set_doc_tags", {"p_namespace": collection, "p_doc_id": doc_id(e),
-                                            "p_tags": e["tags"]}).execute().data
+        n = 0
+        for url in e.get("aliases") or [e["url"]]:
+            n += rag.client.rpc("set_doc_tags", {
+                "p_namespace": collection, "p_doc_id": doc_id({**e, "url": url}),
+                "p_tags": e["tags"]}).execute().data or 0
         found += 1 if n else 0
     return found
 
@@ -91,7 +107,8 @@ def main() -> None:
     def quota_hit(ex) -> bool:
         return "daily embedding quota" in str(ex)
 
-    todo = [e for e in entries if doc_id(e) not in done]
+    todo = [e for e in entries
+            if not any(doc_id({**e, "url": u}) in done for u in e["aliases"])]
     print(f"{len(entries) - len(todo)} already complete, {len(todo)} to go", file=sys.stderr)
     report = {"videos": 0, "video_chunks": 0, "no_subs": 0, "pages": 0, "page_chunks": 0,
               "texts": 0, "text_chunks": 0, "errors": [], "stopped_on_daily_quota": False}

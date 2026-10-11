@@ -7,8 +7,10 @@ gold chunk ids when the question set has them (`gold_ids`).
     .venv/bin/python eval/run_queries.py QUESTIONS.json OUT.json --collection after-effects
 
 QUESTIONS.json: [{"id", "query", ...}]  (extra fields are copied through)
-OUT.json: per question, the top-k hits for two modes — "hybrid" (BM25 + vector
-RRF via search_hybrid, --keyword-mode all|any) and "vector" (vector only) — with
+OUT.json: per question, the top-k hits for three modes — "agent" (the MCP
+search tool exactly as agents call it: search_chunks, per-source cap,
+relevance), "hybrid" (search_hybrid, --keyword-mode all|any) and "vector"
+(vector only) — with
 timings: embed_ms (Gemini query embedding) and rpc_ms (Supabase search).
 """
 from __future__ import annotations
@@ -19,6 +21,7 @@ import time
 from pathlib import Path
 
 from yt_rag import RAGStore
+from yt_rag.mcp_server import search as agent_search
 
 
 # An RRF hit found by only one retriever scores at most 1/(rrf_k+1) = 1/61.
@@ -42,6 +45,8 @@ def main() -> None:
     ap.add_argument("out")
     ap.add_argument("--collection", required=True)
     ap.add_argument("--top-k", type=int, default=5)
+    ap.add_argument("--filter-meta", default=None,
+                    help='JSON containment filter for the vector run, e.g. {"batch": "pilot"}')
     ap.add_argument("--keyword-mode", choices=["all", "any"], default="all",
                     help="BM25 half: all query words must match (all) or any (any)")
     a = ap.parse_args()
@@ -59,12 +64,23 @@ def main() -> None:
             "filter_namespace": a.collection, "keyword_mode": a.keyword_mode,
         }).execute().data
         t2 = time.perf_counter()
-        vector = rag.client.rpc("search_vector", {
-            "query_embedding": emb, "match_count": a.top_k, "filter_namespace": a.collection,
-        }).execute().data
+        if a.filter_meta:  # vector-only over a subset (search_chunks without its keyword half)
+            vector = rag.client.rpc("search_chunks", {
+                "query_text": "", "query_embedding": emb, "match_count": a.top_k,
+                "filter_namespace": a.collection, "filter_meta": json.loads(a.filter_meta),
+            }).execute().data
+        else:
+            vector = rag.client.rpc("search_vector", {
+                "query_embedding": emb, "match_count": a.top_k, "filter_namespace": a.collection,
+            }).execute().data
         hybrid = hybrid[:a.top_k]  # best-first since migration 006
+        t3 = time.perf_counter()
+        # exactly what an agent's MCP search() call returns (per-source cap, relevance)
+        agent = agent_search(q["query"], collection=a.collection, top_k=a.top_k)
         rec = {**q,
                "embed_ms": round((t1 - t0) * 1000), "rpc_ms": round((t2 - t1) * 1000),
+               "agent_ms": round((time.perf_counter() - t3) * 1000),
+               "agent": [{"rank": i + 1, **h} for i, h in enumerate(agent)],
                "hybrid": [_hit(r, i + 1) for i, r in enumerate(hybrid)],
                "vector": [_hit(r, i + 1) for i, r in enumerate(vector)]}
         if q.get("gold_ids"):
