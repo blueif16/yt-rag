@@ -1,0 +1,4122 @@
+{
+ "meta": {
+  "judged": "2026-10-10",
+  "library": "after-effects: 201 sources per caller (199 distinct title/author pairs in chunks_full.jsonl), 3,006 chunks; the 27 targeted sources are chunk ids 4962-5327 (366 chunks)",
+  "search": "agent search_chunks, top_k 10, per_source 3 (was 5 / 2)",
+  "rubric": "2 = an actionable answer somewhere in the 10 agent hits, readable enough to apply; 1 = partial; 0 = nothing. Causes for scores under 2: coverage / ranking / chunk. change_cause says why a score moved: new source (answer comes from the 27 added sources), wider results (answer was already in the library and now fits in ranks 6-10 or the 3-per-source cap), or both.",
+  "method": "Agent hits mapped to chunks_full ids by exact content (720/720 matched). Every previously-2 question still contains its previous best chunk, so all 41 stay 2; their new hits were skimmed for reinforcement. All 31 previously sub-2 questions were judged from the full text of every hit not in the old top 5, against must_contain and the previous notes. Coverage claims re-checked by regex over chunks_full.jsonl. Vector ranks for better_ids re-measured with eval/run_queries.py at top_k 40 for 16 questions (hybrid order equalled vector order in all 16). better_vector_ranks for questions outside those 16 are carried over from coverage_judgement.json.",
+  "borderline_2s": [
+   "p04",
+   "p31",
+   "p35",
+   "p48",
+   "n14",
+   "n16"
+  ],
+  "remeasured_vector_ranks": [
+   "p04",
+   "p07",
+   "p09",
+   "p15",
+   "p16",
+   "p20",
+   "p25",
+   "p31",
+   "p33",
+   "p36",
+   "p40",
+   "p42",
+   "p48",
+   "n05",
+   "n14",
+   "n15"
+  ]
+ },
+ "scores": [
+  {
+   "id": "p01",
+   "set": "probe",
+   "area": "easing-graph-editor",
+   "kind": "premium",
+   "query": "How do pros shape the speed graph in After Effects so a hero move launches crisply and then glides into a long, luxurious deceleration tail instead of a symmetric Easy Ease?",
+   "score": 2,
+   "prev_score": 2,
+   "change": "same",
+   "change_cause": null,
+   "agent_ids": [
+    748,
+    332,
+    339,
+    3240,
+    329,
+    747,
+    3239,
+    751,
+    3242,
+    3203
+   ],
+   "top1_relevance": 0.785,
+   "best_ids": [
+    339
+   ],
+   "best_ranks": {
+    "339": 3
+   },
+   "answering_sources": [
+    "Jake In Motion — The LAST graph editor tutorial",
+    "helpx — Speed",
+    "MotionXP — After Effects Easing...like a pro"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "No explicit influence numbers (80-100% incoming) and no description of where the speed-graph peak should sit; the agent must infer values.",
+   "fill": "",
+   "notes": "Previous answer still in the hits (best chunk 339 at rank 3)."
+  },
+  {
+   "id": "p02",
+   "set": "probe",
+   "area": "easing-graph-editor",
+   "kind": "howto",
+   "query": "How do I ease a shape or mask path morph in After Effects when path keyframes have no value graph, only a speed graph?",
+   "score": 2,
+   "prev_score": 2,
+   "change": "same",
+   "change_cause": null,
+   "agent_ids": [
+    3242,
+    751,
+    3012,
+    3241,
+    3579,
+    333,
+    336,
+    747,
+    335,
+    3029
+   ],
+   "top1_relevance": 0.79,
+   "best_ids": [
+    3012
+   ],
+   "best_ranks": {
+    "3012": 3
+   },
+   "answering_sources": [
+    "Ben Marriott — Perfect Shape Morphs",
+    "helpx — Speed",
+    "helpx — Managing and animating shape paths and masks",
+    "MotionXP — Easing like a pro"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "Matching vertex count is not in the hits (only First Vertex); 4124 has it but ranks out.",
+   "fill": "",
+   "notes": "Previous answer still in the hits (best chunk 3012 at rank 3)."
+  },
+  {
+   "id": "p03",
+   "set": "probe",
+   "area": "easing-graph-editor",
+   "kind": "troubleshoot",
+   "query": "Why does my After Effects animation hitch or stall at a middle keyframe, and how do I make a three-key move flow through it as one continuous motion?",
+   "score": 2,
+   "prev_score": 2,
+   "change": "same",
+   "change_cause": null,
+   "agent_ids": [
+    3864,
+    984,
+    672,
+    674,
+    3859,
+    3025,
+    3242,
+    671,
+    660,
+    852
+   ],
+   "top1_relevance": 0.764,
+   "best_ids": [
+    3864
+   ],
+   "best_ranks": {
+    "3864": 1
+   },
+   "answering_sources": [
+    "Joey Korenman — Kinetic Typography Part 1",
+    "Jake In Motion — Unlock the power of Keyframes"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "'Continuous Bezier' and 'speed drops to zero' are not named outright; Korenman uses Auto Bezier.",
+   "fill": "",
+   "notes": "Previous answer still in the hits (best chunk 3864 at rank 1)."
+  },
+  {
+   "id": "p04",
+   "set": "probe",
+   "area": "text-kinetic-type",
+   "kind": "premium",
+   "query": "How do pros make a big headline reveal in After Effects feel premium, using line-by-line masked rises, a slow tracking settle and weight contrast instead of a generic fade-up preset?",
+   "score": 2,
+   "prev_score": 1,
+   "change": "improved",
+   "change_cause": "new source + wider results",
+   "agent_ids": [
+    836,
+    2976,
+    2981,
+    2973,
+    5150,
+    840,
+    1033,
+    991,
+    838,
+    5152
+   ],
+   "top1_relevance": 0.736,
+   "best_ids": [
+    5152,
+    1033,
+    991
+   ],
+   "best_ranks": {
+    "5152": 10,
+    "1033": 7,
+    "991": 8
+   },
+   "answering_sources": [
+    "In-house catalog (techniques.md) B4 masked line reveal",
+    "Ben Marriott - Elevate Your AE Workflow (1033)",
+    "Stephan Zammit - Why Your Motion Design Looks Cheap (991)"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "5152 is a terse table row (alpha track matte per line, Y 100%->0 on ease.out dur.5, lines at stg.2) whose technique name sits in 5151; no hard-edge vs feather choice. Ben Marriott's own masked line rise (1031/1032) is still at vector rank 12-13.",
+   "fill": "",
+   "notes": "Borderline 2. Masked line rise with stagger (5152, rank 10), slow settle 104->100 plus tracking drift (1033, rank 7), weight contrast via a variable-font weight animator on a range selector (991, rank 8). All three answering chunks sit at ranks 7-10, so the wider window was needed."
+  },
+  {
+   "id": "p05",
+   "set": "probe",
+   "area": "text-kinetic-type",
+   "kind": "howto",
+   "query": "How do I build a stat counter in After Effects that eases up to a number with thousands separators and decimals from a slider and a Source Text expression, without the digits jittering?",
+   "score": 2,
+   "prev_score": 2,
+   "change": "same",
+   "change_cause": null,
+   "agent_ids": [
+    914,
+    913,
+    4127,
+    915,
+    4128,
+    372,
+    4067,
+    4068,
+    371,
+    844
+   ],
+   "top1_relevance": 0.798,
+   "best_ids": [
+    4128
+   ],
+   "best_ranks": {
+    "4128": 5
+   },
+   "answering_sources": [
+    "Dan Ebberts — Expressioneering Design Guide (counter)",
+    "Validation — Animate Numbers (commas, decimals)",
+    "Ben Marriott — Top 10 Expressions"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "The eased slider is shown in Validation, Ebberts uses linear() over a duration; tabular-figure fonts are covered only as 'use a monospaced font'.",
+   "fill": "",
+   "notes": "Previous answer still in the hits (best chunk 4128 at rank 5)."
+  },
+  {
+   "id": "p06",
+   "set": "probe",
+   "area": "text-kinetic-type",
+   "kind": "troubleshoot",
+   "query": "Why do my letters scale or rotate around the baseline or layer anchor instead of each character's center in an After Effects text animator, and how do I fix the pivot?",
+   "score": 2,
+   "prev_score": 2,
+   "change": "same",
+   "change_cause": null,
+   "agent_ids": [
+    3259,
+    3251,
+    824,
+    3260,
+    825,
+    821,
+    844,
+    610,
+    848,
+    609
+   ],
+   "top1_relevance": 0.819,
+   "best_ids": [
+    3259
+   ],
+   "best_ranks": {
+    "3259": 1
+   },
+   "answering_sources": [
+    "helpx — Animating text",
+    "Jake In Motion — Text Animators are an After Effects superpower"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "",
+   "fill": "",
+   "notes": "Previous answer still in the hits (best chunk 3259 at rank 1)."
+  },
+  {
+   "id": "p07",
+   "set": "probe",
+   "area": "shape-ui-animation",
+   "kind": "premium",
+   "query": "How do pros stagger a UI card cascade in After Effects so a grid of cards enters as one coherent gesture rather than a row of separate pops?",
+   "score": 1,
+   "prev_score": 1,
+   "change": "same",
+   "change_cause": null,
+   "agent_ids": [
+    922,
+    809,
+    815,
+    813,
+    890,
+    1009,
+    383,
+    380,
+    379,
+    3201
+   ],
+   "top1_relevance": 0.729,
+   "best_ids": [
+    890,
+    380
+   ],
+   "best_ranks": {
+    "890": 5,
+    "380": 8
+   },
+   "answering_sources": [
+    "Mapal - Motion Tools sequence (890)",
+    "Bricks - Smooth Camera Movement (379/380)"
+   ],
+   "cause": "ranking",
+   "secondary_cause": "coverage",
+   "better_ids": [
+    4466,
+    4467,
+    4211,
+    3286
+   ],
+   "better_vector_ranks": {
+    "4466": ">40",
+    "4467": ">40",
+    "4211": ">40",
+    "3286": ">40"
+   },
+   "missing": "Still only mechanical staggering (Motion Tools 10-frame sequence, Bricks 'drag each one out by 2-3 frames'). No ordering by position/importance, shared direction, or one index-driven control.",
+   "fill": "",
+   "notes": "New 379/380 (Bricks) add small 2-3 frame offsets on UI elements, which is closer but not a coherent gesture. The choreography sources (UX in Motion offset & delay 4466/4467, Carbon stagger 4211, helpx index delay 3286) are all beyond vector rank 40: vocabulary mismatch, not coverage."
+  },
+  {
+   "id": "p08",
+   "set": "probe",
+   "area": "shape-ui-animation",
+   "kind": "howto",
+   "query": "How do I animate a realistic cursor click on a UI button in After Effects, with the press-down scale, ripple and state change timed like a real product demo?",
+   "score": 2,
+   "prev_score": 2,
+   "change": "same",
+   "change_cause": null,
+   "agent_ids": [
+    1013,
+    816,
+    663,
+    664,
+    1012,
+    813,
+    812,
+    1014,
+    781,
+    786
+   ],
+   "top1_relevance": 0.763,
+   "best_ids": [
+    1013
+   ],
+   "best_ranks": {
+    "1013": 1
+   },
+   "answering_sources": [
+    "TomsProject — Master SaaS Motion Graphics",
+    "Jake In Motion — You NEED to understand spatial interpolation",
+    "Cameron Perry — Mockup UI Animations"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "No ripple, no explicit 95-97% value or spring; Cameron uses a small scale-down + fade.",
+   "fill": "",
+   "notes": "Previous answer still in the hits (best chunk 1013 at rank 1)."
+  },
+  {
+   "id": "p09",
+   "set": "probe",
+   "area": "shape-ui-animation",
+   "kind": "troubleshoot",
+   "query": "Why do thin strokes, hairlines and rounded UI corners shimmer or crawl when shape layers drift slowly in After Effects, and how do I keep them crisp?",
+   "score": 1,
+   "prev_score": 0,
+   "change": "improved",
+   "change_cause": "new source",
+   "agent_ids": [
+    5296,
+    4125,
+    4124,
+    3933,
+    4120,
+    4539,
+    3720,
+    3702,
+    4987,
+    3028
+   ],
+   "top1_relevance": 0.759,
+   "best_ids": [
+    5296
+   ],
+   "best_ranks": {
+    "5296": 1
+   },
+   "answering_sources": [
+    "Adobe Community - How to animate a line in one pixel increments (5296)"
+   ],
+   "cause": "coverage",
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "Nothing for curved/rounded strokes or angled drifts (the source says these will flicker); motion blur as the calming fix and a minimum stroke width at output size are absent library-wide; helpx sub-pixel positioning is only a link (3486).",
+   "fill": "A hands-on AE test note: 1 vs 2 px strokes, rest positions snapped with Math.round, motion blur on/off, Best vs Draft quality, frame-stepped at output size. Cheaper and more reliable than another source.",
+   "notes": "0 -> 1. 5296 (rank 1) explains the anti-aliasing flicker and gives the straight-line fix: align thin lines to the pixel grid (even stroke -> whole-pixel positions, odd -> .5), move in whole pixels per frame. 3933 covers Continuous Rasterization. Rounded UI corners, the main case, have no fix."
+  },
+  {
+   "id": "p10",
+   "set": "probe",
+   "area": "expressions-rigs",
+   "kind": "premium",
+   "query": "How do pros use expressions in After Effects to add follow-through and lag between linked elements, like a label trailing its card, so a rig feels hand-animated rather than rigidly parented?",
+   "score": 2,
+   "prev_score": 2,
+   "change": "same",
+   "change_cause": null,
+   "agent_ids": [
+    3744,
+    3745,
+    3950,
+    3287,
+    2989,
+    2987,
+    3282,
+    2988,
+    3285,
+    643
+   ],
+   "top1_relevance": 0.749,
+   "best_ids": [
+    2989
+   ],
+   "best_ranks": {
+    "2989": 5
+   },
+   "answering_sources": [
+    "ECAbrams — ValueAtTime Expression",
+    "ae-expressions docs — Create a trail of images",
+    "helpx — Expression examples",
+    "Zack Lovatt — Everything About Expressions Part 1"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "Index-scaled delay and the parented follower form (3286) rank out; 'followers settle after the leader lands' is implied only.",
+   "fill": "",
+   "notes": "Previous answer still in the hits (best chunk 2989 at rank 5)."
+  },
+  {
+   "id": "p11",
+   "set": "probe",
+   "area": "expressions-rigs",
+   "kind": "howto",
+   "query": "What After Effects expression sizes a rounded backplate to its text layer with sourceRectAtTime, with padding, so chips and lower thirds resize automatically when the text changes?",
+   "score": 2,
+   "prev_score": 2,
+   "change": "same",
+   "change_cause": null,
+   "agent_ids": [
+    612,
+    611,
+    621,
+    799,
+    797,
+    798,
+    3788,
+    3787,
+    3772,
+    372
+   ],
+   "top1_relevance": 0.776,
+   "best_ids": [
+    611
+   ],
+   "best_ranks": {
+    "611": 2
+   },
+   "answering_sources": [
+    "Jake In Motion — sourceRectAtTime()",
+    "Ryan Plummer — Anchor Point Expressions"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "Text-layer scale/toComp is not covered; parenting the box to the text is the method used.",
+   "fill": "",
+   "notes": "Previous answer still in the hits (best chunk 611 at rank 2)."
+  },
+  {
+   "id": "p12",
+   "set": "probe",
+   "area": "expressions-rigs",
+   "kind": "troubleshoot",
+   "query": "Which After Effects expression patterns make previews and renders crawl, such as loops over every layer, sampleImage or sourceRectAtTime on many layers, and how do I speed them up?",
+   "score": 1,
+   "prev_score": 1,
+   "change": "same",
+   "change_cause": null,
+   "agent_ids": [
+    3718,
+    3720,
+    3723,
+    369,
+    3946,
+    3770,
+    3772,
+    643,
+    3282,
+    3771
+   ],
+   "top1_relevance": 0.754,
+   "best_ids": [
+    3770,
+    369
+   ],
+   "best_ranks": {
+    "3770": 6,
+    "369": 4
+   },
+   "answering_sources": [
+    "Zack Lovatt - Everything About Expressions (posterizeTime)",
+    "Ben Marriott (posterizeTime)"
+   ],
+   "cause": "coverage",
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "No source names costly patterns (per-frame loops over layers, sampleImage, deep valueAtTime chains) or the fixes (Convert Expression to Keyframes, JavaScript engine, caching). 'Convert Expression to Keyframes' appears only in our catalog as a kumo step (5147/5177).",
+   "fill": "",
+   "notes": "New 3723 (helpx: put one effect on an adjustment layer) and 3771/3772 (Zack: looping over every layer, without its cost) do not change the score. Low importance: kumo can bake keys and our rigs are light."
+  },
+  {
+   "id": "p13",
+   "set": "probe",
+   "area": "3d-camera-depth",
+   "kind": "premium",
+   "query": "How do pros make a premium 3D product turntable of a phone or laptop inside After Effects with an imported GLB model, environment lighting and the Advanced 3D renderer?",
+   "score": 2,
+   "prev_score": 2,
+   "change": "same",
+   "change_cause": "new source (reinforcement only)",
+   "agent_ids": [
+    1278,
+    1293,
+    5155,
+    1291,
+    1279,
+    3606,
+    1298,
+    1292,
+    3607,
+    5178
+   ],
+   "top1_relevance": 0.774,
+   "best_ids": [
+    1278
+   ],
+   "best_ranks": {
+    "1278": 1
+   },
+   "answering_sources": [
+    "Jake In Motion — Professional 3D Renders in After Effects",
+    "Motion Nations — Advanced 3D Feature (GLB, HDRI)",
+    "helpx — Advanced 3D renderer"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "Nothing on putting live screen content on the device's screen (a 3D layer aligned to the screen plane or a material swap); the orbit is a Y-rotation/rotating-environment key rather than an eased camera orbit.",
+   "fill": "",
+   "notes": "Previous answer still in the hits (best chunk 1278 at rank 1). Reinforced by new sources: catalog C1 (5155): turntable/orbit with an HDRI environment light; 5178 maps A3D extrusion/bevel/material to kumo steps."
+  },
+  {
+   "id": "p14",
+   "set": "probe",
+   "area": "3d-camera-depth",
+   "kind": "howto",
+   "query": "How do I fake depth of field on flat 2D layers in After Effects without the 3D camera renderer, using Camera Lens Blur with a gradient or depth map?",
+   "score": 2,
+   "prev_score": 1,
+   "change": "improved",
+   "change_cause": "new source",
+   "agent_ids": [
+    5302,
+    5298,
+    3736,
+    5303,
+    3622,
+    3621,
+    3627,
+    3206,
+    1061,
+    3188
+   ],
+   "top1_relevance": 0.768,
+   "best_ids": [
+    5302,
+    5298,
+    5303
+   ],
+   "best_ranks": {
+    "5302": 1,
+    "5298": 2,
+    "5303": 4
+   },
+   "answering_sources": [
+    "Made By Loop - Ultimate guide to Camera Lens Blur"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "Iris shape/roundness/highlight threshold details are in 5299-5301, not in the hits (5298 only names Iris Properties).",
+   "fill": "",
+   "notes": "1 -> 2. Adjustment layer + Camera Lens Blur, Blur Map = a gradient-ramp solid set to Effects & Masks and hidden, lighter = more blur, Blur Focal Distance, tilt-shift, depth pass from 3D with alpha ignored (ranks 1, 2, 4)."
+  },
+  {
+   "id": "p15",
+   "set": "probe",
+   "area": "3d-camera-depth",
+   "kind": "troubleshoot",
+   "query": "Why do 3D layers in After Effects sort in the wrong order, z-fight or flicker when they pass near each other, and how do Classic 3D and Advanced 3D handle intersections differently?",
+   "score": 1,
+   "prev_score": 1,
+   "change": "same",
+   "change_cause": null,
+   "agent_ids": [
+    3606,
+    3640,
+    3610,
+    3645,
+    3322,
+    3634,
+    3623,
+    3609,
+    3621,
+    5280
+   ],
+   "top1_relevance": 0.717,
+   "best_ids": [
+    3322
+   ],
+   "best_ranks": {
+    "3322": 5
+   },
+   "answering_sources": [
+    "helpx - Precomposing, nesting, and pre-rendering (3322)"
+   ],
+   "cause": "coverage",
+   "secondary_cause": "ranking",
+   "better_ids": [
+    3323,
+    4871
+   ],
+   "better_vector_ranks": {
+    "3323": 18,
+    "4871": 38
+   },
+   "missing": "Classic 3D distance sorting, coplanar z-fighting and the small-Z-offset fix: 0 matches for z-fight/coplanar in 3,006 chunks. The 2D-layer split rule (3323) is at vector rank 18, 4871 at 38.",
+   "fill": "",
+   "notes": "Unchanged. New hits are Advanced 3D DOF/lights/views pages. Low-medium importance because Advanced 3D is our default."
+  },
+  {
+   "id": "p16",
+   "set": "probe",
+   "area": "motion-blur",
+   "kind": "premium",
+   "query": "How do pros use motion blur in After Effects to make fast UI and type moves feel premium, and when do they deliberately exaggerate it or turn it off?",
+   "score": 1,
+   "prev_score": 1,
+   "change": "same",
+   "change_cause": null,
+   "agent_ids": [
+    2965,
+    3876,
+    2968,
+    1180,
+    2966,
+    676,
+    1061,
+    3409,
+    5171,
+    3411
+   ],
+   "top1_relevance": 0.751,
+   "best_ids": [
+    2965,
+    2966,
+    5171
+   ],
+   "best_ranks": {
+    "2965": 1,
+    "2966": 5,
+    "5171": 9
+   },
+   "answering_sources": [
+    "SternFX - Your Motion Blur Looks Fake",
+    "In-house catalog F5 motion blur"
+   ],
+   "cause": "coverage",
+   "secondary_cause": "ranking",
+   "better_ids": [
+    2967
+   ],
+   "better_vector_ranks": {
+    "2967": 30
+   },
+   "missing": "No rule that blur peaks on transitional/impact frames while read text stays crisp, and none on keeping shutter consistent across AE, HF/Remotion and footage. 2967 at vector 30, 4433/4434 beyond 40.",
+   "fill": "An SML rule, not a source.",
+   "notes": "New 2966 (raise shutter angle to make slow layers smear on purpose) and 5171 (180/-90 comp default, CC Force Motion Blur on A3D precomps, RSMB 0.5 on footage) add stylised and default settings; the 'when and how much' judgement is still missing."
+  },
+  {
+   "id": "p17",
+   "set": "probe",
+   "area": "motion-blur",
+   "kind": "howto",
+   "query": "What Samples Per Frame and Adaptive Sample Limit values should I set in After Effects comp settings so fast rotations and scale pops get smooth motion blur instead of stepped copies?",
+   "score": 2,
+   "prev_score": 2,
+   "change": "same",
+   "change_cause": null,
+   "agent_ids": [
+    1186,
+    3411,
+    1185,
+    2967,
+    3877,
+    2968,
+    3876,
+    3430,
+    3878,
+    3410
+   ],
+   "top1_relevance": 0.773,
+   "best_ids": [
+    3877
+   ],
+   "best_ranks": {
+    "3877": 5
+   },
+   "answering_sources": [
+    "Chris & Trish Meyer — CMG Hidden Gems ch.8 Motion Blur",
+    "helpx.adobe.com — Assorted animation tools",
+    "SternFX — Your Motion Blur Looks Fake",
+    "Jake In Motion — CC Force Motion Blur"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "",
+   "fill": "",
+   "notes": "Previous answer still in the hits (best chunk 3877 at rank 5)."
+  },
+  {
+   "id": "p18",
+   "set": "probe",
+   "area": "motion-blur",
+   "kind": "troubleshoot",
+   "query": "Why doesn't animation driven by an effect, like the Transform effect, Turbulent Displace or a wiggled effect property, get motion blur in After Effects, and how do I add it?",
+   "score": 2,
+   "prev_score": 2,
+   "change": "same",
+   "change_cause": null,
+   "agent_ids": [
+    3878,
+    1184,
+    3409,
+    3876,
+    2965,
+    1185,
+    2969,
+    2968,
+    3412,
+    3411
+   ],
+   "top1_relevance": 0.756,
+   "best_ids": [
+    1184
+   ],
+   "best_ranks": {
+    "1184": 2
+   },
+   "answering_sources": [
+    "Chris & Trish Meyer — CMG Hidden Gems ch.8 Motion Blur",
+    "Jake In Motion — CC Force Motion Blur",
+    "helpx.adobe.com — Assorted animation tools"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "That the Transform effect has its own Shutter Angle / 'Use Composition's Shutter Angle' toggle is not in the hits or anywhere in the library (minor).",
+   "fill": "",
+   "notes": "Previous answer still in the hits (best chunk 1184 at rank 2)."
+  },
+  {
+   "id": "p19",
+   "set": "probe",
+   "area": "glow-light",
+   "kind": "premium",
+   "query": "How do pros create a premium glossy light sweep or specular shine across a logo or device mockup in After Effects so it reads as real light on a surface?",
+   "score": 2,
+   "prev_score": 1,
+   "change": "improved",
+   "change_cause": "new source",
+   "agent_ids": [
+    5295,
+    5294,
+    5293,
+    4987,
+    4981,
+    4984,
+    4980,
+    4986,
+    1309,
+    5171
+   ],
+   "top1_relevance": 0.769,
+   "best_ids": [
+    5294,
+    5295,
+    4987,
+    4981
+   ],
+   "best_ranks": {
+    "5294": 2,
+    "5295": 1,
+    "4987": 4,
+    "4981": 5
+   },
+   "answering_sources": [
+    "Ledet Training - Cinematic Light Sweep on Text",
+    "MDMZ - Apple Liquid Glass",
+    "Motion Nations - Advanced 3D Shiny Logo Reveal"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "Timing the sweep to the logo settle is implied, not stated.",
+   "fill": "",
+   "notes": "1 -> 2. 5294: white solid with a narrow mask, Add/Screen, Gaussian ~20 px, mask eased across in 1-2 s, opacity 60-70%, track-matted to a duplicate of the logo, secondary mini-sweep offset a few frames; 5295: glint tied to the crossing. Surface-shaped shine: CC Light Sweep edge shine (edge intensity 60, thickness 0.8, Add, duplicated for the opposite edge; 4987) and A3D specular 80-88 with an angular bevel and a rotating environment light (4980/4981)."
+  },
+  {
+   "id": "p20",
+   "set": "probe",
+   "area": "glow-light",
+   "kind": "howto",
+   "query": "How do I build a stock After Effects glow that looks physically based by stacking several blur or Glow passes at increasing radii, as a fallback when Deep Glow isn't available?",
+   "score": 2,
+   "prev_score": 1,
+   "change": "improved",
+   "change_cause": "new source",
+   "agent_ids": [
+    3741,
+    5313,
+    5311,
+    3739,
+    3740,
+    5029,
+    5310,
+    1174,
+    5219,
+    1175
+   ],
+   "top1_relevance": 0.758,
+   "best_ids": [
+    5311,
+    5313,
+    5029,
+    3741
+   ],
+   "best_ranks": {
+    "5311": 3,
+    "5313": 2,
+    "5029": 6,
+    "3741": 1
+   },
+   "answering_sources": [
+    "OlafMotion - neon glow effect",
+    "Ben Marriott - Make ANYTHING Retro",
+    "Joey Korenman - Make a Better Glow"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [
+    5204,
+    5205
+   ],
+   "better_vector_ranks": {
+    "5204": 14,
+    "5205": 13
+   },
+   "missing": "Jerald Blackstock's tripling stack 20/60/180/540 (5204/5205) is at vector rank 13-14, just outside.",
+   "fill": "",
+   "notes": "1 -> 2. 5311: tight pass (threshold 60-80%, radius 10-40, intensity 0.6-1.2) then halo pass (threshold 10-40%, radius 60-200, intensity 0.2-0.8); 5313: core/bloom/halo/spill duplicates on Screen/Add, 16/32 bpc against banding; 5029: stack stock Glows with increasing radius as the DG fallback; 3741: Levels-crush isolation in 32 bpc."
+  },
+  {
+   "id": "p21",
+   "set": "probe",
+   "area": "glow-light",
+   "kind": "troubleshoot",
+   "query": "Why does my glow wash saturated brand colors out to white or muddy them in After Effects, and how do I keep the core colored while only the falloff blooms?",
+   "score": 2,
+   "prev_score": 2,
+   "change": "same",
+   "change_cause": "new source (reinforcement only)",
+   "agent_ids": [
+    5316,
+    5312,
+    1176,
+    5311,
+    3741,
+    1175,
+    1177,
+    3740,
+    3739,
+    5327
+   ],
+   "top1_relevance": 0.798,
+   "best_ids": [
+    1176
+   ],
+   "best_ranks": {
+    "1176": 3
+   },
+   "answering_sources": [
+    "Jake In Motion — Glow | Effects of After Effects",
+    "Joey Korenman — Make a Better Glow",
+    "Ben Marriott — Elevate Your Workflow"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "The mechanism (additive glow pushes channels past 1.0 so saturated hues clip to white, worse in 8 bpc) is not stated; the fixes are.",
+   "fill": "",
+   "notes": "Previous answer still in the hits (best chunk 1176 at rank 3). Reinforced by new sources: OlafMotion neon recipe (5311/5312/5316) and Creative COW glow mechanics (5327) add numbers and colour control."
+  },
+  {
+   "id": "p22",
+   "set": "probe",
+   "area": "particles",
+   "kind": "premium",
+   "query": "How do pros keep particles in After Effects from looking template-y, so a particle field reads as a designed element through size variation, depth, motion and density?",
+   "score": 1,
+   "prev_score": 1,
+   "change": "same",
+   "change_cause": null,
+   "agent_ids": [
+    3155,
+    1197,
+    1191,
+    1190,
+    3081,
+    1243,
+    3165,
+    983,
+    5022,
+    3158
+   ],
+   "top1_relevance": 0.746,
+   "best_ids": [
+    3155,
+    3081
+   ],
+   "best_ranks": {
+    "3155": 1,
+    "3081": 5
+   },
+   "answering_sources": [
+    "Maxon - Dancer to Dust",
+    "Ben Marriott (particles matched to design)"
+   ],
+   "cause": "coverage",
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "Art direction: many tiny/few large, depth layering with DOF, palette-locked colour, restrained density, beat-driven emission.",
+   "fill": "Judgement for a style preset; no strong public source exists.",
+   "notes": "Unchanged. New 5022 (Particular light-emitter intensity keyed to 0 just before the text settles) is the one beat-aware cue."
+  },
+  {
+   "id": "p23",
+   "set": "probe",
+   "area": "particles",
+   "kind": "howto",
+   "query": "How do I make Trapcode Particular emit from a logo or text layer so the logo dissolves into particles or assembles out of them, colored by the layer's pixels?",
+   "score": 2,
+   "prev_score": 2,
+   "change": "same",
+   "change_cause": "new source (reinforcement only)",
+   "agent_ids": [
+    1242,
+    1244,
+    1245,
+    4663,
+    5019,
+    4664,
+    5022,
+    4654,
+    5021,
+    3160
+   ],
+   "top1_relevance": 0.811,
+   "best_ids": [
+    1242
+   ],
+   "best_ranks": {
+    "1242": 1
+   },
+   "answering_sources": [
+    "Maxon Red Giant — Particular 3 Training 05: Layer Emitters",
+    "Trapcode Particular User Guide",
+    "Maxon Red Giant — Dancer to Dust"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "Layer RGB colouring is shown for the Text/Mask emitter (4664), not the Layer emitter; the reverse 'assemble from particles' (time-reversed precomp or Form) is not in the hits.",
+   "fill": "",
+   "notes": "Previous answer still in the hits (best chunk 1242 at rank 1). Reinforced by new sources: Particular light-emitter training (5019/5021/5022)."
+  },
+  {
+   "id": "p24",
+   "set": "probe",
+   "area": "particles",
+   "kind": "troubleshoot",
+   "query": "Why do Trapcode Particular particles pop on at the first frame, flicker, or leave dotted gaps in fast trails, and how do I fix it with pre-run, random seed and sub-frame emission?",
+   "score": 2,
+   "prev_score": 2,
+   "change": "same",
+   "change_cause": "new source (reinforcement only)",
+   "agent_ids": [
+    4647,
+    4731,
+    3159,
+    4654,
+    3155,
+    1246,
+    3160,
+    1247,
+    5022,
+    5018
+   ],
+   "top1_relevance": 0.733,
+   "best_ids": [
+    4731
+   ],
+   "best_ranks": {
+    "4731": 2
+   },
+   "answering_sources": [
+    "Trapcode Particular User Guide",
+    "Maxon Red Giant — Dancer to Dust"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "No 'Position Subframe' / sub-frame emission control is named; Simulation Samples/frame covers jagged fast trails instead.",
+   "fill": "",
+   "notes": "Previous answer still in the hits (best chunk 4731 at rank 2). Reinforced by new sources: Particular light-emitter training (5018/5022)."
+  },
+  {
+   "id": "p25",
+   "set": "probe",
+   "area": "masks-mattes-reveals",
+   "kind": "premium",
+   "query": "How do pros design an elegant masked reveal in After Effects where text or a product slides out from behind an invisible edge with layered parallax inside the mask?",
+   "score": 1,
+   "prev_score": 1,
+   "change": "same",
+   "change_cause": null,
+   "agent_ids": [
+    2976,
+    2973,
+    382,
+    811,
+    3205,
+    3208,
+    818,
+    2983,
+    3218,
+    846
+   ],
+   "top1_relevance": 0.732,
+   "best_ids": [
+    811,
+    3208
+   ],
+   "best_ranks": {
+    "811": 4,
+    "3208": 6
+   },
+   "answering_sources": [
+    "Cameron Perry - UI mockups (811)",
+    "Manu Mercurial - parallax (3208)"
+   ],
+   "cause": "coverage",
+   "secondary_cause": "ranking",
+   "better_ids": [
+    1032,
+    5152
+   ],
+   "better_vector_ranks": {
+    "1032": 14,
+    "5152": ">40"
+   },
+   "missing": "No source states content travelling at different rates inside one matte, the hard vs feathered edge choice, or staggered layers on one ease. Ben Marriott 1032 is at vector 14; our catalog B4 (5151/5152) beyond 40.",
+   "fill": "A tested reveal preset/recipe note; ranking would surface the partial chunks but not the craft.",
+   "notes": "Unchanged. 811 (static matte, content moves) + 3208 (parallax: further layers move less) can be combined by the agent, but nothing designs the reveal."
+  },
+  {
+   "id": "p26",
+   "set": "probe",
+   "area": "masks-mattes-reveals",
+   "kind": "howto",
+   "query": "How do I use one matte layer to reveal several layers in After Effects with the new track matte picker or Set Matte, without duplicating the matte?",
+   "score": 2,
+   "prev_score": 2,
+   "change": "same",
+   "change_cause": null,
+   "agent_ids": [
+    412,
+    411,
+    3293,
+    3292,
+    3291,
+    413,
+    1032,
+    873,
+    3226,
+    3657
+   ],
+   "top1_relevance": 0.789,
+   "best_ids": [
+    412
+   ],
+   "best_ranks": {
+    "412": 1
+   },
+   "answering_sources": [
+    "School of Motion — New Track Matte System AE 2023",
+    "helpx.adobe.com — Track Mattes and Traveling Mattes",
+    "Ben Marriott — 5 Essential Type Animations"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "Set Matte is not explained as an alternative (only named in passing in 3314, which ranks out).",
+   "fill": "",
+   "notes": "Previous answer still in the hits (best chunk 412 at rank 1)."
+  },
+  {
+   "id": "p27",
+   "set": "probe",
+   "area": "masks-mattes-reveals",
+   "kind": "troubleshoot",
+   "query": "Why does a thin seam, fringe or light line appear where two matted or masked layers meet edge to edge in After Effects, and how do I make the join seamless?",
+   "score": 2,
+   "prev_score": 1,
+   "change": "improved",
+   "change_cause": "new source",
+   "agent_ids": [
+    3178,
+    5273,
+    3223,
+    3650,
+    3648,
+    3270,
+    5220,
+    3210,
+    3649,
+    3226
+   ],
+   "top1_relevance": 0.747,
+   "best_ids": [
+    5273,
+    3178
+   ],
+   "best_ranks": {
+    "5273": 2,
+    "3178": 1
+   },
+   "answering_sources": [
+    "helpx - Blending modes and layer styles (Alpha Add)",
+    "Ben Marriott - choke the under layer"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "'One matte plus its inverted copy' is not stated.",
+   "fill": "",
+   "notes": "1 -> 2. 5273 (rank 2) is the exact answer: abutting anti-aliased edges composite 50%+50% to 75%; use Alpha Add so the alphas add to a seamless join. 3178 adds the Simple Choker ~0.8 px workaround."
+  },
+  {
+   "id": "p28",
+   "set": "probe",
+   "area": "transitions",
+   "kind": "premium",
+   "query": "How do pros make scene transitions in a tech video feel motivated and invisible, using match cuts, shape-continuity morphs and object-led wipes instead of stock transitions?",
+   "score": 2,
+   "prev_score": 2,
+   "change": "same",
+   "change_cause": "new source (reinforcement only)",
+   "agent_ids": [
+    5165,
+    5166,
+    5168,
+    884,
+    877,
+    3048,
+    3051,
+    879,
+    3049,
+    984
+   ],
+   "top1_relevance": 0.791,
+   "best_ids": [
+    884
+   ],
+   "best_ranks": {
+    "884": 4
+   },
+   "answering_sources": [
+    "MotionXP — Morph transition with match cuts",
+    "Ben Marriott — This Animation Technique Works Every Time",
+    "Stephan Zammit — Why Your Motion Design Looks Cheap"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "Timing the cut to the VO or an audio hit is only implied (Newton's-cradle cut on the hit in 3051).",
+   "fill": "",
+   "notes": "Previous answer still in the hits (best chunk 884 at rank 4). Reinforced by new sources: catalog E transitions (5165/5166/5168): whip, mask-pass, liquid and bar wipes with SFX pairing."
+  },
+  {
+   "id": "p29",
+   "set": "probe",
+   "area": "transitions",
+   "kind": "howto",
+   "query": "How do I build a short glitch or RGB-split digital transition in After Effects with stock effects so it hits for only a few frames and stays clean enough for a tech channel?",
+   "score": 2,
+   "prev_score": 2,
+   "change": "same",
+   "change_cause": "new source (reinforcement only)",
+   "agent_ids": [
+    417,
+    5142,
+    5167,
+    416,
+    5170,
+    1384,
+    1385,
+    1387,
+    422,
+    1170
+   ],
+   "top1_relevance": 0.775,
+   "best_ids": [
+    417
+   ],
+   "best_ranks": {
+    "417": 1
+   },
+   "answering_sources": [
+    "Olufemii — 10 Easy After Effects Transitions",
+    "Ben Marriott — RGB Split / Chromatic Aberration"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "Blocky displacement noise (Fractal Noise Block + Displacement Map) and an explicit 4-8 frame duration with a sound hit are absent.",
+   "fill": "",
+   "notes": "Previous answer still in the hits (best chunk 417 at rank 1). Reinforced by new sources: catalog A/E rows (5142/5167/5170)."
+  },
+  {
+   "id": "p30",
+   "set": "probe",
+   "area": "transitions",
+   "kind": "troubleshoot",
+   "query": "Why does my transition flash a black frame, a gap or a doubled frame at the cut in After Effects, and how do I fix off-by-one in/out points between overlapping precomps?",
+   "score": 0,
+   "prev_score": 0,
+   "change": "same",
+   "change_cause": null,
+   "agent_ids": [
+    3028,
+    3194,
+    3313,
+    422,
+    3312,
+    1020,
+    801,
+    3431,
+    384,
+    1025
+   ],
+   "top1_relevance": 0.728,
+   "best_ids": [],
+   "best_ranks": {},
+   "answering_sources": [],
+   "cause": "coverage",
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "Everything: in/out off-by-one, comp start frame, footage one frame short, fps mismatch, overlap handles. 0 matches for black frame/off-by-one/one frame short.",
+   "fill": "No public source states these mechanics. A studio validate check plus a short in-house note (timeline.json owns time) is the real fix.",
+   "notes": "Unchanged. New hits are transition tutorials and frame blending."
+  },
+  {
+   "id": "p31",
+   "set": "probe",
+   "area": "compositing-character-footage",
+   "kind": "premium",
+   "query": "How do pros composite a screen recording or app UI into a device mockup in After Effects so the screen looks like real glass, with reflections, a slight screen glow and correct perspective?",
+   "score": 2,
+   "prev_score": 1,
+   "change": "improved",
+   "change_cause": "new source",
+   "agent_ids": [
+    5215,
+    5219,
+    5211,
+    817,
+    5217,
+    818,
+    4987,
+    5213,
+    5210,
+    4989
+   ],
+   "top1_relevance": 0.752,
+   "best_ids": [
+    5219,
+    5211,
+    5213,
+    817,
+    818
+   ],
+   "best_ranks": {
+    "5219": 2,
+    "5211": 3,
+    "5213": 8,
+    "817": 4,
+    "818": 6
+   },
+   "answering_sources": [
+    "Evan Abrams (PremiumBeat) - Cell Phone & Tablet Screen Replacement",
+    "Jason Boone (PremiumBeat) - Basic Screen Replacements (with Reflections)",
+    "Cameron Perry - UI mockups"
+   ],
+   "cause": null,
+   "secondary_cause": "ranking",
+   "better_ids": [
+    5214,
+    5221
+   ],
+   "better_vector_ranks": {
+    "5214": 17,
+    "5221": 6
+   },
+   "missing": "The reflection-isolation step (5214, vector 17) and light streaks over the screen (5221, vector 6) are dropped by the per-source cap: both sources already hold 3 slots, two of them intros (5210, 5215). Black-level matching is absent.",
+   "fill": "",
+   "notes": "1 -> 2, borderline. Screen glow: content copy blurred 2 px to match, a 25 px blurred copy at 50%, an Add copy at ~10% (5219); Mocha AE planar track exported as Corner Pin with Motion Blur (5211/5213); perspective corner-pin tracker (5217); phone-shaped alpha matte (817/818)."
+  },
+  {
+   "id": "p32",
+   "set": "probe",
+   "area": "compositing-character-footage",
+   "kind": "howto",
+   "query": "How do I make a character or product cast a soft reflection on a glossy studio floor in After Effects that fades and blurs with distance from the contact point?",
+   "score": 2,
+   "prev_score": 2,
+   "change": "same",
+   "change_cause": null,
+   "agent_ids": [
+    3162,
+    3161,
+    3646,
+    4292,
+    3179,
+    3178,
+    4274,
+    3615,
+    3177,
+    4273
+   ],
+   "top1_relevance": 0.736,
+   "best_ids": [
+    3179
+   ],
+   "best_ranks": {
+    "3179": 5
+   },
+   "answering_sources": [
+    "Ben Marriott — Advanced Lighting",
+    "Maxon Red Giant — Dancer to Dust",
+    "Jonathan Lam — Soft Shadow Effects (Envato Tuts+)"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "Blur that grows with distance is only shown indirectly (Compound Blur driven by a blur map); tint matching to the floor is not explicit.",
+   "fill": "",
+   "notes": "Previous answer still in the hits (best chunk 3179 at rank 5)."
+  },
+  {
+   "id": "p33",
+   "set": "probe",
+   "area": "compositing-character-footage",
+   "kind": "troubleshoot",
+   "query": "Why does my tracked graphic drift, slip or jitter on handheld footage in After Effects, and how do I fix it with better track points, Mocha planar tracking or smoothing?",
+   "score": 2,
+   "prev_score": 0,
+   "change": "improved",
+   "change_cause": "new source",
+   "agent_ids": [
+    5251,
+    5252,
+    5224,
+    5216,
+    5218,
+    1286,
+    2966,
+    1020,
+    5211,
+    988
+   ],
+   "top1_relevance": 0.773,
+   "best_ids": [
+    5251,
+    5252,
+    5211,
+    5218
+   ],
+   "best_ranks": {
+    "5251": 1,
+    "5252": 2,
+    "5211": 9,
+    "5218": 5
+   },
+   "answering_sources": [
+    "helpx - Tracking and stabilizing motion",
+    "Jason Boone - Mocha AE planar",
+    "Evan Abrams - tracker options"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [
+    3413
+   ],
+   "better_vector_ranks": {
+    "3413": ">40"
+   },
+   "missing": "Smoothing jitter in the track data (Smoother 3413 beyond vector 40, smooth()) is not in the hits.",
+   "fill": "",
+   "notes": "0 -> 2. Correct drift by re-placing feature/search regions, tracking in sections, editing the motion path (5251/5252, ranks 1-2); Mocha AE planar with Perspective (5211); confidence stop at 80%, Enhance, Warp Stabilizer 25% (5216/5218)."
+  },
+  {
+   "id": "p34",
+   "set": "probe",
+   "area": "color-finishing",
+   "kind": "premium",
+   "query": "How do pros give clean motion graphics a filmic finish in After Effects with subtle grain, halation, vignette and chromatic aberration, without it looking like a cheap overlay?",
+   "score": 2,
+   "prev_score": 1,
+   "change": "improved",
+   "change_cause": "new source + wider results",
+   "agent_ids": [
+    1167,
+    5170,
+    1168,
+    1172,
+    5031,
+    5172,
+    3216,
+    5032,
+    5171,
+    3167
+   ],
+   "top1_relevance": 0.759,
+   "best_ids": [
+    5172,
+    5031,
+    5032,
+    1167,
+    1168
+   ],
+   "best_ranks": {
+    "5172": 6,
+    "5031": 5,
+    "5032": 8,
+    "1167": 1,
+    "1168": 3
+   },
+   "answering_sources": [
+    "In-house catalog F10 halation",
+    "Ben Marriott - Make ANYTHING Retro",
+    "Chris Moran - How VOX breaks the Digital Feel"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "No explicit 'no CA on read type' rule; Marsgohome's halation video is not in the hits.",
+   "fill": "",
+   "notes": "1 -> 2. Halation on highlights: Levels on highlights -> blur -> red-orange tint -> Add (5172, rank 6). 'Feel it, don't see it': CA 0.15 (5031, rank 5); grain Noise HLS Auto lightness 5 / size 2, gate weave wiggle(6,2), scale 101 (5032, rank 8); Moran's ordered adjustment-layer stack with CA pulled back (1167/1168/1172)."
+  },
+  {
+   "id": "p35",
+   "set": "probe",
+   "area": "color-finishing",
+   "kind": "howto",
+   "query": "How do I apply one consistent grade across every scene of an After Effects video with a top adjustment layer, Lumetri or a LUT, while keeping brand and UI colors exact?",
+   "score": 2,
+   "prev_score": 1,
+   "change": "improved",
+   "change_cause": "wider results",
+   "agent_ids": [
+    425,
+    702,
+    3182,
+    424,
+    3197,
+    428,
+    3196,
+    3301,
+    3215,
+    3300
+   ],
+   "top1_relevance": 0.742,
+   "best_ids": [
+    3196,
+    3215,
+    425
+   ],
+   "best_ranks": {
+    "3196": 7,
+    "3215": 9,
+    "425": 1
+   },
+   "answering_sources": [
+    "Manu Mercurial - adjustment layer placement and LUT",
+    "Jake In Motion - Lumetri + scopes"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "Brand/UI colours are not named; HSL-qualifier protection (436) ranks out.",
+   "fill": "",
+   "notes": "1 -> 2, borderline. 3196 (rank 7): an adjustment layer affects only layers below, so move it under the layers to protect; 3215 (rank 9): LUT on an adjustment layer at ~30% opacity; 425: Lumetri + Lumetri Scopes. The agent infers 'graphics above the grade layer'."
+  },
+  {
+   "id": "p36",
+   "set": "probe",
+   "area": "color-finishing",
+   "kind": "troubleshoot",
+   "query": "Why does my paper, noise or dust texture overlay in After Effects look like a static dirty screen or visibly tile and loop, and how do I make it feel organic?",
+   "score": 1,
+   "prev_score": 1,
+   "change": "same",
+   "change_cause": null,
+   "agent_ids": [
+    1167,
+    3814,
+    3812,
+    1166,
+    3222,
+    832,
+    3820,
+    3224,
+    1165,
+    3695
+   ],
+   "top1_relevance": 0.747,
+   "best_ids": [
+    3814,
+    1167,
+    3695
+   ],
+   "best_ranks": {
+    "3814": 2,
+    "1167": 1,
+    "3695": 10
+   },
+   "answering_sources": [
+    "Joey Korenman - seamless textures",
+    "Chris Moran - grunge on Overlay",
+    "helpx - Noise and Grain"
+   ],
+   "cause": "ranking",
+   "secondary_cause": "coverage",
+   "better_ids": [
+    724,
+    722,
+    3225
+   ],
+   "better_vector_ranks": {
+    "724": ">40",
+    "722": ">40",
+    "3225": 22
+   },
+   "missing": "Per-frame/stepped texture change (posterizeTime + random offset 724/722 beyond vector 40; Ben's grain on twos 3225 at vector 22).",
+   "fill": "",
+   "notes": "Unchanged. New 3695 (animate Random Seed for flashing noise; Noise HLS Auto) and 832 (looping texture precomps, posterize 12 fps) are partial."
+  },
+  {
+   "id": "p37",
+   "set": "probe",
+   "area": "workflow-precomps-performance",
+   "kind": "premium",
+   "query": "How do professional motion designers structure a large After Effects project for a long video, with a master comp, scene precomps, shared controllers and reusable modules, so changes propagate and it stays fast?",
+   "score": 1,
+   "prev_score": 1,
+   "change": "same",
+   "change_cause": null,
+   "agent_ids": [
+    983,
+    1004,
+    3718,
+    3194,
+    814,
+    3809,
+    4137,
+    810,
+    4075,
+    3823
+   ],
+   "top1_relevance": 0.711,
+   "best_ids": [
+    3718,
+    4075
+   ],
+   "best_ranks": {
+    "3718": 3,
+    "4075": 9
+   },
+   "answering_sources": [
+    "helpx - Improve performance",
+    "Dan Ebberts - Expressioneering Design Guide"
+   ],
+   "cause": "coverage",
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "Master > scene > module hierarchy with naming and a global control comp.",
+   "fill": "",
+   "notes": "Unchanged. New 4075 (marker-driven action precomps = reusable modules), 4137 (edit one precomp, the master updates) and 3823 (_PC folder naming). Low importance: the studio CLI already fixes project structure."
+  },
+  {
+   "id": "p38",
+   "set": "probe",
+   "area": "workflow-precomps-performance",
+   "kind": "howto",
+   "query": "How do I use Essential Properties (master properties) in After Effects so one reusable precomp, like a lower third or card, shows different text and colors in each instance?",
+   "score": 2,
+   "prev_score": 2,
+   "change": "same",
+   "change_cause": null,
+   "agent_ids": [
+    721,
+    722,
+    720,
+    3542,
+    3551,
+    3544,
+    4132,
+    1036,
+    3853,
+    4137
+   ],
+   "top1_relevance": 0.812,
+   "best_ids": [
+    721
+   ],
+   "best_ranks": {
+    "721": 1
+   },
+   "answering_sources": [
+    "Jake In Motion — Essential Properties Explained",
+    "helpx — Work with Motion Graphics templates",
+    "Oscar Estrada — Network Animations"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "Pushing overrides back to the master or resetting them is not covered anywhere (minor).",
+   "fill": "",
+   "notes": "Previous answer still in the hits (best chunk 721 at rank 1)."
+  },
+  {
+   "id": "p39",
+   "set": "probe",
+   "area": "workflow-precomps-performance",
+   "kind": "troubleshoot",
+   "query": "Why are RAM previews in my heavy After Effects comp slow or constantly re-rendering, and which cache, GPU, preview and pre-render settings speed up iteration?",
+   "score": 2,
+   "prev_score": 2,
+   "change": "same",
+   "change_cause": null,
+   "agent_ids": [
+    3718,
+    3720,
+    3713,
+    3722,
+    3559,
+    3712,
+    3561,
+    3560,
+    3319,
+    3715
+   ],
+   "top1_relevance": 0.792,
+   "best_ids": [
+    3718
+   ],
+   "best_ranks": {
+    "3718": 1
+   },
+   "answering_sources": [
+    "helpx — Improve performance",
+    "helpx — Preview and render with Multi-Frame Rendering",
+    "helpx — Memory and storage"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "Disabling heavy effects while editing (3723, ranked out) and Draft 3D; all from one publisher (Adobe).",
+   "fill": "",
+   "notes": "Previous answer still in the hits (best chunk 3718 at rank 1)."
+  },
+  {
+   "id": "p40",
+   "set": "probe",
+   "area": "render-export-color-management",
+   "kind": "premium",
+   "query": "How do pros export a final master from After Effects for YouTube at maximum quality, with an intermediate codec first, then encode settings, bitrate and BT.709 tagging?",
+   "score": 1,
+   "prev_score": 1,
+   "change": "same",
+   "change_cause": null,
+   "agent_ids": [
+    3219,
+    3191,
+    3476,
+    5320,
+    2998,
+    3497,
+    5170,
+    3000,
+    3212,
+    3463
+   ],
+   "top1_relevance": 0.744,
+   "best_ids": [
+    2998,
+    5320,
+    3219
+   ],
+   "best_ranks": {
+    "2998": 5,
+    "5320": 4,
+    "3219": 1
+   },
+   "answering_sources": [
+    "SternFX - ProRes 422 HQ pre-render",
+    "OlafMotion - export settings",
+    "Manu Mercurial - AME preset"
+   ],
+   "cause": "ranking",
+   "secondary_cause": null,
+   "better_ids": [
+    4440,
+    4441,
+    4442,
+    4443
+   ],
+   "better_vector_ranks": {
+    "4440": 15,
+    "4441": 20,
+    "4442": ">40",
+    "4443": ">40"
+   },
+   "missing": "BT.709 tagging, full vs limited range, bitrate targets and the 4K-upload trick. YouTube's own spec page is in the library: 4440 vector 15, 4441 vector 20, 4442/4443 beyond 40.",
+   "fill": "",
+   "notes": "Unchanged. New 5320 adds a ProRes/DNxHR master, ProRes 4444 for alpha and 16 bpc."
+  },
+  {
+   "id": "p41",
+   "set": "probe",
+   "area": "render-export-color-management",
+   "kind": "howto",
+   "query": "How do I render an MP4 straight from the After Effects Render Queue with the native H.264 output module, which bitrate settings matter, and when is Media Encoder still better?",
+   "score": 2,
+   "prev_score": 2,
+   "change": "same",
+   "change_cause": null,
+   "agent_ids": [
+    3504,
+    3503,
+    2999,
+    3502,
+    3476,
+    3497,
+    3000,
+    3528,
+    3219,
+    2993
+   ],
+   "top1_relevance": 0.81,
+   "best_ids": [
+    3504
+   ],
+   "best_ranks": {
+    "3504": 1
+   },
+   "answering_sources": [
+    "helpx — Exporting H.264 from the AE Render Queue",
+    "SternFX — Render Settings and Output Module",
+    "helpx — Basics of rendering and exporting"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "Audio settings and an explicit 'use AME for 2-pass/watch-folder' rationale are thin.",
+   "fill": "",
+   "notes": "Previous answer still in the hits (best chunk 3504 at rank 1)."
+  },
+  {
+   "id": "p42",
+   "set": "probe",
+   "area": "render-export-color-management",
+   "kind": "troubleshoot",
+   "query": "Why does my After Effects H.264 export look darker, lifted or gamma-shifted compared with the comp viewer once played in QuickTime, a browser or YouTube, and how do I fix it?",
+   "score": 1,
+   "prev_score": 1,
+   "change": "same",
+   "change_cause": null,
+   "agent_ids": [
+    4084,
+    4089,
+    4095,
+    3308,
+    3503,
+    3443,
+    3433,
+    4105,
+    3504,
+    3502
+   ],
+   "top1_relevance": 0.753,
+   "best_ids": [
+    4095,
+    3433,
+    3308
+   ],
+   "best_ranks": {
+    "4095": 3,
+    "3433": 7,
+    "3308": 4
+   },
+   "answering_sources": [
+    "CineD - QuickTime Gamma Shift Bug",
+    "helpx - Color management"
+   ],
+   "cause": "ranking",
+   "secondary_cause": "chunk",
+   "better_ids": [
+    4097,
+    4096,
+    3459
+   ],
+   "better_vector_ranks": {
+    "4097": 4,
+    "4096": 10,
+    "3459": 40
+   },
+   "missing": "The fixes (4097: Rec709-A tag, viewer gamma 1.96; vector rank 4) are cut by the per-source cap because nav-only chunk 4084 (rank 1) and 4089 hold CineD's slots; range fix 3459 at vector 40; 3502 is another nav-menu chunk.",
+   "fill": "",
+   "notes": "Diagnosis improved: 4095 (rank 3) explains macOS dropping the dim-surround boost against the 2.4 target, and 3433 explains Simulate Output and output-module profiles. Still no actionable fix in the hits."
+  },
+  {
+   "id": "p43",
+   "set": "probe",
+   "area": "design-layout-hierarchy-timing",
+   "kind": "premium",
+   "query": "How do pros lay out graphics around an on-screen presenter or character host, with headroom, look room and graphics placed where the host gazes and gestures?",
+   "score": 1,
+   "prev_score": 1,
+   "change": "same",
+   "change_cause": null,
+   "agent_ids": [
+    5195,
+    5193,
+    5197,
+    938,
+    1173,
+    4368,
+    929,
+    5291,
+    3057,
+    3870
+   ],
+   "top1_relevance": 0.717,
+   "best_ids": [
+    5195,
+    5193,
+    3057
+   ],
+   "best_ranks": {
+    "5195": 1,
+    "5193": 2,
+    "3057": 9
+   },
+   "answering_sources": [
+    "In-house lecture-craft note",
+    "Alan Becker - staging"
+   ],
+   "cause": "coverage",
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "Headroom, look room, gutters between host frame and graphics, never crop at joints (0 matches for headroom/look room).",
+   "fill": "An in-house note from our host-staging rules (envelope-sized cards, full body or head avatar, graphics around measured hands), with measured frames from hf-pilot-muse / memory-lecture.",
+   "notes": "Same score, better material: frame the pointing target toward the host with the leader <= 0.8 h, look at the viewer while explaining (5195); 3b1b geometry, screen 4/8 of frame height upper left, teacher lower right (5193); more space in the facing direction (3057)."
+  },
+  {
+   "id": "p44",
+   "set": "probe",
+   "area": "design-layout-hierarchy-timing",
+   "kind": "howto",
+   "query": "How do I set up title-safe overlays, guides and a column grid in After Effects so every scene shares the same margins and alignment?",
+   "score": 2,
+   "prev_score": 1,
+   "change": "improved",
+   "change_cause": "new source",
+   "agent_ids": [
+    5290,
+    5291,
+    5289,
+    3844,
+    2963,
+    2973,
+    374,
+    3845,
+    897,
+    1218
+   ],
+   "top1_relevance": 0.781,
+   "best_ids": [
+    5290,
+    5291,
+    5289,
+    3844
+   ],
+   "best_ranks": {
+    "5290": 1,
+    "5291": 2,
+    "5289": 3,
+    "3844": 4
+   },
+   "answering_sources": [
+    "helpx - Modifying and using views",
+    "Joey Korenman - guide layer"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "Saving/importing guide presets is only linked.",
+   "fill": "",
+   "notes": "1 -> 2. Safe zones (action 90%, title 80%), standard vs proportional grids, Grids & Guides preferences, non-rendering guides (5289-5291, ranks 1-3); guide layer for a reference path (3844)."
+  },
+  {
+   "id": "p45",
+   "set": "probe",
+   "area": "design-layout-hierarchy-timing",
+   "kind": "troubleshoot",
+   "query": "Why does my motion-graphics scene feel cluttered and confusing even when each element looks good, and how do I fix the visual hierarchy and limit how many things move at once?",
+   "score": 2,
+   "prev_score": 2,
+   "change": "same",
+   "change_cause": null,
+   "agent_ids": [
+    4213,
+    3873,
+    3868,
+    3088,
+    988,
+    340,
+    1020,
+    985,
+    1021,
+    1126
+   ],
+   "top1_relevance": 0.713,
+   "best_ids": [
+    3868
+   ],
+   "best_ranks": {
+    "3868": 3
+   },
+   "answering_sources": [
+    "IBM — Tips and techniques (complexity)",
+    "School of Motion — 10 Typography Decisions",
+    "Ben Marriott — 10 Underrated Motion Design Techniques (hierarchy)"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "'One hero motion, stagger the rest' is implied rather than stated in the hits.",
+   "fill": "",
+   "notes": "Previous answer still in the hits (best chunk 3868 at rank 3)."
+  },
+  {
+   "id": "p46",
+   "set": "probe",
+   "area": "video-pacing-edit-rhythm",
+   "kind": "premium",
+   "query": "How do top tech YouTubers pace a video's edit rhythm, including how often the visual changes, when to hold on the host, and how energy builds toward a payoff?",
+   "score": 2,
+   "prev_score": 1,
+   "change": "improved",
+   "change_cause": "new source",
+   "agent_ids": [
+    5060,
+    5059,
+    5101,
+    5065,
+    5044,
+    5131,
+    5103,
+    5183,
+    5042,
+    5161
+   ],
+   "top1_relevance": 0.803,
+   "best_ids": [
+    5059,
+    5060,
+    5065,
+    5044
+   ],
+   "best_ranks": {
+    "5059": 2,
+    "5060": 1,
+    "5065": 4,
+    "5044": 5
+   },
+   "answering_sources": [
+    "In-house hook-science note",
+    "In-house video-rhythm synthesis",
+    "In-house channel-anatomy note"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "When to hold on the host is thin in these hits.",
+   "fill": "",
+   "notes": "1 -> 2. Measured pace curve: ~19 visual changes/min in the cold open, then 14.5, 12.5, 8.2; front-loaded pace that relaxes; interrupt-interval rules tagged as opinion; save big transitions for big moments (5059/5060). Opening blueprint: >= 2 shots in the first 5 s, a new visual every <= 3-4 s to 0:30 (5065)."
+  },
+  {
+   "id": "p47",
+   "set": "probe",
+   "area": "video-pacing-edit-rhythm",
+   "kind": "howto",
+   "query": "How do I cut motion graphics and B-roll to the beat of a music track in After Effects using beat markers or Convert Audio to Keyframes?",
+   "score": 2,
+   "prev_score": 2,
+   "change": "same",
+   "change_cause": "new source (reinforcement only)",
+   "agent_ids": [
+    689,
+    5175,
+    3417,
+    688,
+    690,
+    3806,
+    1154,
+    3805,
+    1155,
+    3841
+   ],
+   "top1_relevance": 0.749,
+   "best_ids": [
+    689
+   ],
+   "best_ranks": {
+    "689": 1
+   },
+   "answering_sources": [
+    "ukramedia — Sync Animation With Audio",
+    "helpx — Assorted animation tools (Convert Audio to Keyframes)",
+    "Joey Korenman — Kinetic Typography Part 1 (tap * for markers)",
+    "Standard Story Company — How editors cut music"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "'Hit downbeats and phrase starts, not every beat' is only implied (Standard Story: choose where the beat hits make an impact).",
+   "fill": "",
+   "notes": "Previous answer still in the hits (best chunk 689 at rank 1). Reinforced by new sources: catalog G sound pairing (5175): beats as comp markers, Convert Audio to Keyframes."
+  },
+  {
+   "id": "p48",
+   "set": "probe",
+   "area": "video-pacing-edit-rhythm",
+   "kind": "troubleshoot",
+   "query": "Why does an explainer video feel slow and draggy even with lots of animation, and how do editors find and fix dead air, over-long holds and monotonous rhythm?",
+   "score": 2,
+   "prev_score": 1,
+   "change": "improved",
+   "change_cause": "new source",
+   "agent_ids": [
+    3137,
+    1098,
+    5060,
+    5192,
+    1096,
+    3143,
+    3140,
+    3049,
+    3860,
+    1117
+   ],
+   "top1_relevance": 0.714,
+   "best_ids": [
+    5192,
+    5060,
+    3137,
+    1096
+   ],
+   "best_ranks": {
+    "5192": 4,
+    "5060": 3,
+    "3137": 1,
+    "1096": 5
+   },
+   "answering_sources": [
+    "In-house lecture-craft note (measured wpm and gaps)",
+    "In-house hook-science note",
+    "Inside The Edit - pacing",
+    "Leo - editing styles"
+   ],
+   "cause": null,
+   "secondary_cause": "ranking",
+   "better_ids": [
+    5199,
+    5200,
+    1126
+   ],
+   "better_vector_ranks": {
+    "5199": ">40",
+    "5200": ">40",
+    "1126": 26
+   },
+   "missing": "J/L cuts (3131-3133) and the retention-graph doc (5199-5201) are beyond vector 40; sync-to-emphasis (1126) at 26.",
+   "fill": "",
+   "notes": "1 -> 2, borderline. Diagnose drag by measuring wpm and gaps: top explainers 167-194 wpm, few gaps >= 1.5 s/min, our v001 118 wpm (5192); front-loaded pace (5060); vary cut speed/action/distance/camera (3137/3140/3143); switch A-roll/B-roll/graphics every few seconds (1096)."
+  },
+  {
+   "id": "n01",
+   "set": "need",
+   "area": "easing-graph-editor",
+   "kind": "need",
+   "query": "How do I type exact influence and speed values into the After Effects Keyframe Velocity dialog to reproduce a cubic-bezier ease like 0.05, 0.7, 0.1, 1?",
+   "score": 2,
+   "prev_score": 2,
+   "change": "same",
+   "change_cause": null,
+   "agent_ids": [
+    3241,
+    4457,
+    4456,
+    668,
+    812,
+    670,
+    3242,
+    916,
+    3240,
+    3861
+   ],
+   "top1_relevance": 0.793,
+   "best_ids": [
+    4456
+   ],
+   "best_ranks": {
+    "4456": 3
+   },
+   "answering_sources": [
+    "helpx.adobe.com — Speed",
+    "bodymovin/UQg, Adobe Community — Real keyframes speed and influence of spatial properties",
+    "Cameron Perry — How I Mockup UI Animations"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "",
+   "fill": "",
+   "notes": "Previous answer still in the hits (best chunk 4456 at rank 3)."
+  },
+  {
+   "id": "n02",
+   "set": "need",
+   "area": "easing-graph-editor",
+   "kind": "need",
+   "query": "In After Effects, how do I make a position move overshoot slightly and settle by separating dimensions and pulling bezier handles in the value graph?",
+   "score": 2,
+   "prev_score": 2,
+   "change": "same",
+   "change_cause": null,
+   "agent_ids": [
+    747,
+    332,
+    3030,
+    4069,
+    4066,
+    3397,
+    748,
+    961,
+    673,
+    330
+   ],
+   "top1_relevance": 0.778,
+   "best_ids": [
+    747
+   ],
+   "best_ranks": {
+    "747": 1
+   },
+   "answering_sources": [
+    "MotionXP — After Effects Easing...like a pro",
+    "Jake In Motion — The LAST graph editor tutorial",
+    "Ben Marriott — Perfect Shape Morphs",
+    "Dan Ebberts — Realistic Bounce and Overshoot"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "Why combined (spatial) Position cannot overshoot in the speed graph is not stated in the hits; the explicit 'extra settle key 3 frames later, nudged past target' recipe ranks out.",
+   "fill": "",
+   "notes": "Previous answer still in the hits (best chunk 747 at rank 1)."
+  },
+  {
+   "id": "n03",
+   "set": "need",
+   "area": "easing-graph-editor",
+   "kind": "need",
+   "query": "Why does my layer's motion path curve or loop past the keyframes in After Effects, and how do I make spatial interpolation linear by default for UI and text moves?",
+   "score": 2,
+   "prev_score": 2,
+   "change": "same",
+   "change_cause": null,
+   "agent_ids": [
+    662,
+    3387,
+    3388,
+    672,
+    660,
+    661,
+    3390,
+    751,
+    673,
+    1026
+   ],
+   "top1_relevance": 0.817,
+   "best_ids": [
+    662
+   ],
+   "best_ranks": {
+    "662": 1
+   },
+   "answering_sources": [
+    "Jake In Motion — You NEED to understand spatial interpolation",
+    "helpx.adobe.com — Keyframe interpolation",
+    "Jake In Motion — Unlock the power of Keyframes"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "",
+   "fill": "",
+   "notes": "Previous answer still in the hits (best chunk 662 at rank 1)."
+  },
+  {
+   "id": "n04",
+   "set": "need",
+   "area": "text-kinetic-type",
+   "kind": "need",
+   "query": "How do I animate text per character in After Effects with a text animator and range selector so letters rise and fade in with a staggered, eased cascade?",
+   "score": 2,
+   "prev_score": 2,
+   "change": "same",
+   "change_cause": null,
+   "agent_ids": [
+    3248,
+    844,
+    2949,
+    822,
+    823,
+    842,
+    820,
+    4067,
+    3256,
+    3252
+   ],
+   "top1_relevance": 0.795,
+   "best_ids": [
+    822
+   ],
+   "best_ranks": {
+    "822": 4
+   },
+   "answering_sources": [
+    "helpx.adobe.com — Animating text",
+    "Lambodar Motion — The SECRET to Smooth Text Animation",
+    "Stephan Zammit — The Right Way to Animate Text",
+    "Jake In Motion — Text Animators are an After Effects superpower"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "How selector length/offset duration maps to total cascade length is implied, not stated; Randomize Order not in the hits (exists in 3256/991).",
+   "fill": "",
+   "notes": "Previous answer still in the hits (best chunk 822 at rank 4)."
+  },
+  {
+   "id": "n05",
+   "set": "need",
+   "area": "text-kinetic-type",
+   "kind": "need",
+   "query": "How do pros sync word-by-word kinetic typography to a voiceover in After Effects so each word lands on the spoken word and still looks premium, not template-like?",
+   "score": 1,
+   "prev_score": 1,
+   "change": "same",
+   "change_cause": null,
+   "agent_ids": [
+    3806,
+    3796,
+    3805,
+    836,
+    834,
+    840,
+    2955,
+    5150,
+    1004,
+    2957
+   ],
+   "top1_relevance": 0.758,
+   "best_ids": [
+    3806,
+    2955,
+    2957
+   ],
+   "best_ranks": {
+    "3806": 1,
+    "2955": 7,
+    "2957": 10
+   },
+   "answering_sources": [
+    "Joey Korenman - markers while audio plays",
+    "Stephan Zammit - special-word layer"
+   ],
+   "cause": "coverage",
+   "secondary_cause": "ranking",
+   "better_ids": [
+    3868,
+    3869,
+    2952
+   ],
+   "better_vector_ranks": {
+    "3868": ">40",
+    "3869": ">40",
+    "2952": ">40"
+   },
+   "missing": "No readable hold times and no 'graphic leads the word by a few frames' rule anywhere (the only lead/lag numbers are audio-hit tolerances in 5044, beyond vector 40). Hero-word hierarchy chunks 3868/3869/2952 are beyond 40.",
+   "fill": "An SML rule (lead by N frames, hold >= reading time), not a source.",
+   "notes": "Unchanged. New 2955/2957 (isolate a special word on its own layer to emphasise it) and 5150 (per-word stagger stg.2) are partial."
+  },
+  {
+   "id": "n06",
+   "set": "need",
+   "area": "shape-ui-animation",
+   "kind": "need",
+   "query": "How do I animate a rounded-rectangle UI card in After Effects so it resizes without distorting its corner radius or stroke width (shape Size vs layer Scale)?",
+   "score": 2,
+   "prev_score": 2,
+   "change": "same",
+   "change_cause": "new source (reinforcement only)",
+   "agent_ids": [
+    4120,
+    4121,
+    779,
+    4122,
+    778,
+    4992,
+    609,
+    781,
+    1008,
+    1011
+   ],
+   "top1_relevance": 0.79,
+   "best_ids": [
+    4120
+   ],
+   "best_ranks": {
+    "4120": 1
+   },
+   "answering_sources": [
+    "Exportlab Team — Shape Morph in After Effects: Apple-Style UI Animation",
+    "NaughtyyJuan — Apple Style UI Shape Morphing",
+    "Jake In Motion — sourceRectAtTime()"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "That stroke width stays in pixels is implied, not stated.",
+   "fill": "",
+   "notes": "Previous answer still in the hits (best chunk 4120 at rank 1). Reinforced by new sources: MDMZ liquid glass (4992): linked size/roundness rig."
+  },
+  {
+   "id": "n07",
+   "set": "need",
+   "area": "shape-ui-animation",
+   "kind": "need",
+   "query": "How do I make a clean line draw-on animation for connector lines, arrows or icons in After Effects with Trim Paths, rounded caps and good easing?",
+   "score": 2,
+   "prev_score": 2,
+   "change": "same",
+   "change_cause": "new source (reinforcement only)",
+   "agent_ids": [
+    1031,
+    361,
+    359,
+    871,
+    925,
+    364,
+    927,
+    5296,
+    891,
+    872
+   ],
+   "top1_relevance": 0.767,
+   "best_ids": [
+    359
+   ],
+   "best_ranks": {
+    "359": 3
+   },
+   "answering_sources": [
+    "Ben Marriott — 5 Essential Type Animations",
+    "Manuel does Motion — Crazy Trim Paths Tricks",
+    "Animation Explained — How to Animate a Logo",
+    "Chris Moran — How VOX Directs Your Attention"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "Arrowhead rig and the literal 'Trim Multiple Shapes: Simultaneously/Individually' option are not in the hits (both exist in the library).",
+   "fill": "",
+   "notes": "Previous answer still in the hits (best chunk 359 at rank 3). Reinforced by new sources: Adobe Community one-pixel line (5296)."
+  },
+  {
+   "id": "n08",
+   "set": "need",
+   "area": "expressions",
+   "kind": "need",
+   "query": "What After Effects expression adds a damped spring or inertial bounce after the last keyframe, using the keyframe's incoming velocity?",
+   "score": 2,
+   "prev_score": 2,
+   "change": "same",
+   "change_cause": null,
+   "agent_ids": [
+    4069,
+    4072,
+    4066,
+    3282,
+    370,
+    3283,
+    369,
+    617,
+    4080,
+    890
+   ],
+   "top1_relevance": 0.802,
+   "best_ids": [
+    4069
+   ],
+   "best_ranks": {
+    "4069": 1
+   },
+   "answering_sources": [
+    "Dan Ebberts — Realistic Bounce and Overshoot",
+    "helpx.adobe.com — Expression examples"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "Convert Expression to Keyframes is not mentioned anywhere in the library (trivial menu fact). Subtle-vs-playful tuning guidance is thin in the top 5 (in 4066, pool).",
+   "fill": "",
+   "notes": "Previous answer still in the hits (best chunk 4069 at rank 1)."
+  },
+  {
+   "id": "n09",
+   "set": "need",
+   "area": "expressions",
+   "kind": "need",
+   "query": "After Effects expression to move layers along a tilted elliptical orbit around a center null, scaling them up when in front and down when behind to fake depth",
+   "score": 2,
+   "prev_score": 1,
+   "change": "improved",
+   "change_cause": "new source",
+   "agent_ids": [
+    4995,
+    3282,
+    5006,
+    4996,
+    5010,
+    4994,
+    5013,
+    803,
+    5001,
+    362
+   ],
+   "top1_relevance": 0.745,
+   "best_ids": [
+    4995,
+    4996,
+    5010,
+    5006
+   ],
+   "best_ranks": {
+    "4995": 1,
+    "4996": 4,
+    "5010": 5,
+    "5006": 3
+   },
+   "answering_sources": [
+    "ECAbrams - Simple Shape Orbits",
+    "ukramedia - 3D Carousel with Expressions",
+    "SonduckFilm - Apple-Style Carousel"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "The 2D math route (Ry = R*sin(tilt), scale/opacity from sin(angle)) is absent; the true-3D route covers depth and passing behind.",
+   "fill": "",
+   "notes": "1 -> 2. 3D null 'spinner' with Y-rotation loopOut, tilt via its orientation, the orbiter passes behind the planet, Auto-Orient towards camera (4995/4996, ranks 1 and 4); even spacing by index/numObjects = per-layer phase (5010); pointOnPath + toComp (5006); camera DOF on a carousel (5001)."
+  },
+  {
+   "id": "n10",
+   "set": "need",
+   "area": "3d-camera-depth",
+   "kind": "need",
+   "query": "How do I set up depth of field with an After Effects 3D camera so foreground and background layers blur realistically, with focus linked to a layer?",
+   "score": 2,
+   "prev_score": 2,
+   "change": "same",
+   "change_cause": "new source (reinforcement only)",
+   "agent_ids": [
+    3622,
+    3737,
+    3621,
+    3736,
+    3627,
+    5298,
+    3629,
+    3645,
+    5303,
+    3623
+   ],
+   "top1_relevance": 0.813,
+   "best_ids": [
+    3622
+   ],
+   "best_ranks": {
+    "3622": 1
+   },
+   "answering_sources": [
+    "helpx.adobe.com — Enable in-engine Depth of Field in Advanced 3D",
+    "Caleb Ward — Working with Cameras in After Effects",
+    "helpx.adobe.com — Cameras, lights, and points of interest"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "No advice on spacing layers in Z for believable falloff, and no explicit performance-cost note.",
+   "fill": "",
+   "notes": "Previous answer still in the hits (best chunk 3622 at rank 1). Reinforced by new sources: Made By Loop Camera Lens Blur (5298/5303)."
+  },
+  {
+   "id": "n11",
+   "set": "need",
+   "area": "3d-camera-depth",
+   "kind": "need",
+   "query": "How do I make a smooth premium parallax camera push-in on 2.5D layers in After Effects using a null-parented camera, without a floaty or drifting feel?",
+   "score": 2,
+   "prev_score": 2,
+   "change": "same",
+   "change_cause": null,
+   "agent_ids": [
+    3208,
+    380,
+    376,
+    381,
+    1286,
+    3733,
+    1283,
+    3734,
+    3730,
+    1282
+   ],
+   "top1_relevance": 0.76,
+   "best_ids": [
+    376
+   ],
+   "best_ranks": {
+    "376": 3
+   },
+   "answering_sources": [
+    "Bricks — Smooth Camera Movement in After Effects",
+    "Caleb Ward — Working with Cameras in After Effects",
+    "Jake In Motion — Professional 3D Renders in After Effects",
+    "Manu Mercurial — Animation Post Production Like a PRO"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "Z spacing for parallax and scale compensation of distant layers are not in the hits (the compensation expression 3986 and Bricks' Z parallax 382 exist but rank out); no sub-pixel jitter advice anywhere.",
+   "fill": "",
+   "notes": "Previous answer still in the hits (best chunk 376 at rank 3)."
+  },
+  {
+   "id": "n12",
+   "set": "need",
+   "area": "motion-blur",
+   "kind": "need",
+   "query": "Motion blur is not showing on my precomp or nested comp in After Effects; which switches need to be on inside and outside the precomp?",
+   "score": 2,
+   "prev_score": 2,
+   "change": "same",
+   "change_cause": null,
+   "agent_ids": [
+    3876,
+    3410,
+    3312,
+    3411,
+    3412,
+    3313,
+    3315,
+    3875,
+    445,
+    3878
+   ],
+   "top1_relevance": 0.772,
+   "best_ids": [
+    3876
+   ],
+   "best_ranks": {
+    "3876": 1
+   },
+   "answering_sources": [
+    "Chris & Trish Meyer — CMG Hidden Gems Ch. 8 Motion Blur",
+    "helpx.adobe.com — Assorted animation tools (Motion blur)",
+    "helpx.adobe.com — Precomposing, nesting, and pre-rendering"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "RSMB/Pixel Motion Blur as the fix for baked-in motion is referenced only indirectly ('workaround below', 'fake motion blur').",
+   "fill": "",
+   "notes": "Previous answer still in the hits (best chunk 3876 at rank 1)."
+  },
+  {
+   "id": "n13",
+   "set": "need",
+   "area": "motion-blur",
+   "kind": "need",
+   "query": "How do I add motion blur to an already-rendered PNG sequence in After Effects with RSMB or Pixel Motion Blur, matching a 180-degree shutter and avoiding edge artifacts on alpha?",
+   "score": 2,
+   "prev_score": 1,
+   "change": "improved",
+   "change_cause": "wider results",
+   "agent_ids": [
+    3594,
+    3877,
+    3878,
+    2966,
+    2969,
+    2971,
+    4585,
+    3412,
+    4565,
+    4575
+   ],
+   "top1_relevance": 0.73,
+   "best_ids": [
+    3594,
+    4575,
+    4585,
+    2971
+   ],
+   "best_ranks": {
+    "3594": 1,
+    "4575": 10,
+    "4585": 7,
+    "2971": 6
+   },
+   "answering_sources": [
+    "helpx - Pixel Motion Blur",
+    "RE:Vision - RSMB manual",
+    "SternFX - Your Motion Blur Looks Fake"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [
+    4570,
+    4573,
+    4580
+   ],
+   "better_vector_ranks": {
+    "4570": 29,
+    "4573": ">40",
+    "4580": 27
+   },
+   "missing": "Blur Amt 0.5 = 180 deg and the vector-artifact fixes (4570/4573/4580-4582) still rank out.",
+   "fill": "",
+   "notes": "1 -> 2. Pixel Motion Blur with Manual shutter 180 deg (3594, rank 1); RSMB foreground-matte split against spill (4575, rank 10); transparent source blurs correctly, vector alpha rules (4585, rank 7); how RSMB tracks (4565, rank 9); frame-step check for artifacts (2971, rank 6). The answering RSMB chunks sit at ranks 7-10."
+  },
+  {
+   "id": "n14",
+   "set": "need",
+   "area": "glow-premium-fx",
+   "kind": "need",
+   "query": "What Deep Glow settings give a realistic, physically based glow on neon text or UI in After Effects without blowing out the whole frame?",
+   "score": 2,
+   "prev_score": 1,
+   "change": "improved",
+   "change_cause": "new source + wider results",
+   "agent_ids": [
+    5311,
+    5312,
+    5316,
+    4537,
+    4519,
+    4533,
+    408,
+    5030,
+    1175,
+    5203
+   ],
+   "top1_relevance": 0.773,
+   "best_ids": [
+    5030,
+    4533,
+    4537,
+    408
+   ],
+   "best_ranks": {
+    "5030": 8,
+    "4533": 6,
+    "4537": 4,
+    "408": 7
+   },
+   "answering_sources": [
+    "Ben Marriott - Make ANYTHING Retro (Deep Glow values)",
+    "Deep Glow 2 manual",
+    "OlafMotion - neon glow"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [
+    4962,
+    4963,
+    4512
+   ],
+   "better_vector_ranks": {
+    "4962": ">40",
+    "4963": ">40",
+    "4512": 17
+   },
+   "missing": "No threshold/falloff starting values or bpc note in the hits. DG2's tone-mapping video (4962-4967), the direct answer to 'without blowing out', is beyond vector rank 40.",
+   "fill": "",
+   "notes": "1 -> 2, borderline. DG2 radius 500 -> 250, exposure 1 -> 0.4, Curves before DG to hold highlights, subtle CA (5030, rank 8); Unmult/composite back for an isolated source (4533, rank 6); Add vs Screen (4537); gamma isolation and quality (408); curves before glow, saturation control (5312/5316)."
+  },
+  {
+   "id": "n15",
+   "set": "need",
+   "area": "glow-premium-fx",
+   "kind": "need",
+   "query": "Why does my glow disappear on a white or light background in After Effects, and how do I make a glow or halo read on light backgrounds?",
+   "score": 1,
+   "prev_score": 1,
+   "change": "same",
+   "change_cause": null,
+   "agent_ids": [
+    5327,
+    5326,
+    5325,
+    3740,
+    1175,
+    1174,
+    3739,
+    1177,
+    5316,
+    5319
+   ],
+   "top1_relevance": 0.784,
+   "best_ids": [
+    5326,
+    5319,
+    3741
+   ],
+   "best_ranks": {
+    "5326": 2,
+    "5319": 10,
+    "3741": null
+   },
+   "answering_sources": [
+    "Creative COW - Glow effect and transparent background mechanics",
+    "OlafMotion - background contrast",
+    "Joey Korenman - isolated glow pass"
+   ],
+   "cause": "coverage",
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "No light-background halo method (tinted/darker halo composited Normal or Multiply, coloured soft shadow as glow, DG2 input masking over a light plate).",
+   "fill": "No public source exists. Run the AE test (tinted Normal/Multiply halo, coloured soft shadow, DG2 over a light plate), record settings and frames, ingest as a note.",
+   "notes": "Same score, better 'why': glow pixels carry tiny alpha and only read over a dark or added background; 32 bpc superbrights (5325-5327). OlafMotion 5319: on a bright background glow reads as coloured fog; darken behind or add a soft shadow behind the tube."
+  },
+  {
+   "id": "n16",
+   "set": "need",
+   "area": "glow-premium-fx",
+   "kind": "need",
+   "query": "How do I make premium glowing particles orbit or trail around a character in After Effects with Trapcode Particular, with a stock CC Particle World fallback?",
+   "score": 2,
+   "prev_score": 1,
+   "change": "improved",
+   "change_cause": "new source",
+   "agent_ids": [
+    5022,
+    1217,
+    5019,
+    3154,
+    1195,
+    3157,
+    3165,
+    1191,
+    5021,
+    4997
+   ],
+   "top1_relevance": 0.707,
+   "best_ids": [
+    5019,
+    5021,
+    5022,
+    1191,
+    4997
+   ],
+   "best_ranks": {
+    "5019": 3,
+    "5021": 9,
+    "5022": 1,
+    "1191": 8,
+    "4997": 10
+   },
+   "answering_sources": [
+    "Maxon Red Giant - Particular 3 Training 04: Light Emitters",
+    "Jake In Motion - CC Particle Systems II / World",
+    "ECAbrams - Simple Shape Orbits (Echo trails)"
+   ],
+   "cause": null,
+   "secondary_cause": "ranking",
+   "better_ids": [
+    4624,
+    4745
+   ],
+   "better_vector_ranks": {
+    "4624": ">40",
+    "4745": ">40"
+   },
+   "missing": "Aux trails / Stroke from Parent (4624) and Particular DOF (4745) rank out; nothing anywhere on keeping particles out of the face zone.",
+   "fill": "",
+   "notes": "1 -> 2, borderline. Point light named 'Emitter...' parented to the subject for a swirl, intensity = particles/s keyed to 0 before rest, Obscuration Layer so particles pass behind (5019/5021/5022); stock fallback trails from producer motion (1191) and Echo (4997); CC Particle World follows the 3D camera (1217); Optical Glow 300/3 (3165)."
+  },
+  {
+   "id": "n17",
+   "set": "need",
+   "area": "transitions",
+   "kind": "need",
+   "query": "How do I build a smooth zoom or whip-pan transition between two scenes in After Effects with matched easing and directional blur, without plugins?",
+   "score": 2,
+   "prev_score": 2,
+   "change": "same",
+   "change_cause": "new source (reinforcement only)",
+   "agent_ids": [
+    420,
+    419,
+    384,
+    5165,
+    418,
+    386,
+    1014,
+    881,
+    984,
+    3206
+   ],
+   "top1_relevance": 0.767,
+   "best_ids": [
+    419
+   ],
+   "best_ranks": {
+    "419": 2
+   },
+   "answering_sources": [
+    "Olufemii — 10 Easy After Effects Transitions",
+    "Bricks — Smooth Camera Movement",
+    "TomsProject — Master SaaS Motion Graphics"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "",
+   "fill": "",
+   "notes": "Previous answer still in the hits (best chunk 419 at rank 2). Reinforced by new sources: catalog E transitions (5165)."
+  },
+  {
+   "id": "n18",
+   "set": "need",
+   "area": "transitions",
+   "kind": "need",
+   "query": "How do I make a card-expand or shape-mask reveal transition in After Effects where the next scene appears inside a growing rounded rectangle, using track mattes?",
+   "score": 2,
+   "prev_score": 2,
+   "change": "same",
+   "change_cause": null,
+   "agent_ids": [
+    811,
+    790,
+    416,
+    800,
+    789,
+    1025,
+    878,
+    877,
+    881,
+    421
+   ],
+   "top1_relevance": 0.734,
+   "best_ids": [
+    790
+   ],
+   "best_ranks": {
+    "790": 2
+   },
+   "answering_sources": [
+    "Jake In Motion — BEST seamless transition rig",
+    "Cameron Perry — How I Mockup UI Animations",
+    "Olufemii — 10 Easy After Effects Transitions"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "Card-edge finishing (soft shadow/stroke, matte-edge aliasing) not in the hits.",
+   "fill": "",
+   "notes": "Previous answer still in the hits (best chunk 790 at rank 2)."
+  },
+  {
+   "id": "n19",
+   "set": "need",
+   "area": "compositing-color-finishing",
+   "kind": "need",
+   "query": "How do I stop banding in dark gradients and glows after H.264 export from After Effects by working at 16 bpc and adding grain or noise dither?",
+   "score": 2,
+   "prev_score": 2,
+   "change": "same",
+   "change_cause": "new source (reinforcement only)",
+   "agent_ids": [
+    3882,
+    3298,
+    3881,
+    3883,
+    5318,
+    5320,
+    2978,
+    3219,
+    3503,
+    5317
+   ],
+   "top1_relevance": 0.803,
+   "best_ids": [
+    3882
+   ],
+   "best_ranks": {
+    "3882": 1
+   },
+   "answering_sources": [
+    "Rich Young — Remove banding (ProVideo Coalition)",
+    "helpx.adobe.com — Color basics",
+    "Ben Marriott — Elevate Your AE Workflow",
+    "Manu Mercurial — Animation Post Production"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "4:2:0 chroma and concrete bitrate figures are not named.",
+   "fill": "",
+   "notes": "Previous answer still in the hits (best chunk 3882 at rank 1). Reinforced by new sources: OlafMotion finishing/export notes (5317/5318/5320)."
+  },
+  {
+   "id": "n20",
+   "set": "need",
+   "area": "compositing-color-finishing",
+   "kind": "need",
+   "query": "How do I composite a cut-out character onto a clean studio backdrop in After Effects so it sits in the scene, with a contact shadow, cast shadow and light wrap?",
+   "score": 2,
+   "prev_score": 2,
+   "change": "same",
+   "change_cause": null,
+   "agent_ids": [
+    4292,
+    4243,
+    1366,
+    4291,
+    3646,
+    4274,
+    3173,
+    3199,
+    3169,
+    4290
+   ],
+   "top1_relevance": 0.74,
+   "best_ids": [
+    4292
+   ],
+   "best_ranks": {
+    "4292": 1
+   },
+   "answering_sources": [
+    "Jonathan Lam — Soft Shadow Effects (Envato Tuts+)",
+    "flylib.com — Backlighting, Flares, Light Volume (light wrap)",
+    "Daniel Gies — How To Light a Set",
+    "helpx — Shadow catchers"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "Edge choke and colour match to the plate are not in the hits (they exist in the library); cast-shadow blur-with-distance not stated.",
+   "fill": "",
+   "notes": "Previous answer still in the hits (best chunk 4292 at rank 1)."
+  },
+  {
+   "id": "n21",
+   "set": "need",
+   "area": "footage-integration",
+   "kind": "need",
+   "query": "When importing a PNG sequence with alpha into After Effects, how do I set straight vs premultiplied alpha and the frame rate so there are no dark fringes or timing drift?",
+   "score": 2,
+   "prev_score": 2,
+   "change": "same",
+   "change_cause": null,
+   "agent_ids": [
+    3358,
+    3357,
+    3193,
+    3356,
+    3192,
+    3225,
+    3003,
+    4291,
+    3488,
+    3194
+   ],
+   "top1_relevance": 0.801,
+   "best_ids": [
+    3357
+   ],
+   "best_ranks": {
+    "3357": 2
+   },
+   "answering_sources": [
+    "helpx.adobe.com — Importing and interpreting footage items",
+    "Manu Mercurial — Animation Post Production"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "The 'Assume this frame rate' / conform half is only gestured at (3358's Frame rate heading is about comp fps; Manu shows Interpret Footage > Main).",
+   "fill": "",
+   "notes": "Previous answer still in the hits (best chunk 3357 at rank 2)."
+  },
+  {
+   "id": "n22",
+   "set": "need",
+   "area": "footage-integration",
+   "kind": "need",
+   "query": "Why does my imported ProRes 4444 or PNG footage look washed out or colour-shifted in After Effects compared with the source, and which colour management settings fix it?",
+   "score": 2,
+   "prev_score": 2,
+   "change": "same",
+   "change_cause": null,
+   "agent_ids": [
+    3439,
+    4105,
+    702,
+    4104,
+    3446,
+    3443,
+    3308,
+    3708,
+    696,
+    3353
+   ],
+   "top1_relevance": 0.765,
+   "best_ids": [
+    3439
+   ],
+   "best_ranks": {
+    "3439": 1
+   },
+   "answering_sources": [
+    "helpx.adobe.com — Color management",
+    "Frame.io — Video Post-Production Workflow Guide",
+    "ECAbrams — Color Management in AE"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "Linearize Working Space/blending effects are not in the hits; nothing anywhere on ProRes Rec.601 vs 709 matrix tagging or a verification step.",
+   "fill": "",
+   "notes": "Previous answer still in the hits (best chunk 3439 at rank 1)."
+  },
+  {
+   "id": "n23",
+   "set": "need",
+   "area": "workflow-precomps-render",
+   "kind": "need",
+   "query": "Why does my precomp look pixelated or soft when scaled above 100% in After Effects, and when should I use Collapse Transformations or Continuous Rasterization?",
+   "score": 2,
+   "prev_score": 2,
+   "change": "same",
+   "change_cause": null,
+   "agent_ids": [
+    3933,
+    3928,
+    447,
+    3932,
+    446,
+    444,
+    3321,
+    3322,
+    3320,
+    4534
+   ],
+   "top1_relevance": 0.818,
+   "best_ids": [
+    3933
+   ],
+   "best_ranks": {
+    "3933": 1
+   },
+   "answering_sources": [
+    "Chris & Trish Meyer — CMG Hidden Gems ch.20 Collapsing Transformations",
+    "Jake In Motion — Understand Continuous Rasterization",
+    "helpx.adobe.com — Precomposing, nesting, and pre-rendering"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "Building the precomp at final resolution / zooming inside the precomp is not stated.",
+   "fill": "",
+   "notes": "Previous answer still in the hits (best chunk 3933 at rank 1)."
+  },
+  {
+   "id": "n24",
+   "set": "need",
+   "area": "workflow-precomps-render",
+   "kind": "need",
+   "query": "How do I render a long After Effects comp reliably from the command line with aerender, using frame-range chunks, memory flags and output module templates, then join the parts?",
+   "score": 2,
+   "prev_score": 2,
+   "change": "same",
+   "change_cause": null,
+   "agent_ids": [
+    3325,
+    3327,
+    3339,
+    3480,
+    3557,
+    3481,
+    3482,
+    3000,
+    2993,
+    3718
+   ],
+   "top1_relevance": 0.751,
+   "best_ids": [
+    3327
+   ],
+   "best_ranks": {
+    "3327": 2
+   },
+   "answering_sources": [
+    "helpx.adobe.com — Automated rendering and network rendering"
+   ],
+   "cause": null,
+   "secondary_cause": null,
+   "better_ids": [],
+   "better_vector_ranks": {},
+   "missing": "-mem_usage and -continueOnMissingFootage rank out; nothing anywhere on why to chunk long renders or how to join chunks (image sequence then one encode / concat).",
+   "fill": "",
+   "notes": "Previous answer still in the hits (best chunk 3327 at rank 2)."
+  }
+ ],
+ "areas": {
+  "probe_areas": [
+   {
+    "area": "easing-graph-editor",
+    "questions": {
+     "p01": 2,
+     "p02": 2,
+     "p03": 2,
+     "n01": 2,
+     "n02": 2,
+     "n03": 2
+    },
+    "prev_questions": {
+     "p01": 2,
+     "p02": 2,
+     "p03": 2,
+     "n01": 2,
+     "n02": 2,
+     "n03": 2
+    },
+    "prev_status": "saturated",
+    "status": "saturated",
+    "importance_for_premium": "high",
+    "independent_good_sources": [
+     "Jake In Motion",
+     "MotionXP",
+     "helpx Speed / Keyframe interpolation",
+     "Ben Marriott",
+     "Joey Korenman",
+     "Dan Ebberts"
+    ],
+    "sub_gaps": [],
+    "residual": "None. Numeric eases live in the SML skill.",
+    "more_sources_help": "No."
+   },
+   {
+    "area": "text-kinetic-type",
+    "questions": {
+     "p04": 2,
+     "p05": 2,
+     "p06": 2,
+     "n04": 2,
+     "n05": 1
+    },
+    "prev_questions": {
+     "p04": 1,
+     "p05": 2,
+     "p06": 2,
+     "n04": 2,
+     "n05": 1
+    },
+    "prev_status": "saturated",
+    "status": "saturated",
+    "importance_for_premium": "high",
+    "independent_good_sources": [
+     "helpx Animating text",
+     "Jake In Motion",
+     "Stephan Zammit",
+     "Ben Marriott",
+     "SonduckFilm",
+     "School of Motion",
+     "in-house catalog (B rows)"
+    ],
+    "sub_gaps": [
+     {
+      "topic": "VO-synced type timing: graphic leads the spoken word, reading-time holds, hero-word hierarchy",
+      "status": "gap",
+      "importance": "medium-high",
+      "note": "n05. No public source states the lead rule; hero-word chunks (3868/3869/2952) exist but sit beyond vector 40. Fix: an SML rule measured on our own renders."
+     }
+    ],
+    "residual": "p04 now 2 via the catalog masked line reveal plus Ben Marriott and Zammit at ranks 7-10.",
+    "more_sources_help": "No."
+   },
+   {
+    "area": "shape-ui-animation",
+    "questions": {
+     "p07": 1,
+     "p08": 2,
+     "p09": 1,
+     "n06": 2,
+     "n07": 2
+    },
+    "prev_questions": {
+     "p07": 1,
+     "p08": 2,
+     "p09": 0,
+     "n06": 2,
+     "n07": 2
+    },
+    "prev_status": "saturated",
+    "status": "saturated",
+    "importance_for_premium": "high",
+    "independent_good_sources": [
+     "Exportlab",
+     "NaughtyyJuan",
+     "TomsProject",
+     "Cameron Perry",
+     "Manuel does Motion",
+     "MDMZ liquid glass",
+     "Adobe Community one-pixel line"
+    ],
+    "sub_gaps": [
+     {
+      "topic": "pixel-crisp hairlines and rounded corners in slow drifts",
+      "status": "thin",
+      "importance": "medium",
+      "note": "p09 0 -> 1: straight lines on the pixel grid are covered (5296); curves, motion blur as a remedy and minimum stroke width are not. Fix: a short hands-on AE test note."
+     }
+    ],
+    "residual": "p07 is ranking: UX in Motion offset/delay, Carbon stagger and helpx index delay are beyond vector 40.",
+    "more_sources_help": "No; one test note for hairlines."
+   },
+   {
+    "area": "expressions-rigs",
+    "questions": {
+     "p10": 2,
+     "p11": 2,
+     "p12": 1,
+     "n08": 2,
+     "n09": 2
+    },
+    "prev_questions": {
+     "p10": 2,
+     "p11": 2,
+     "p12": 1,
+     "n08": 2,
+     "n09": 1
+    },
+    "prev_status": "saturated",
+    "status": "saturated",
+    "importance_for_premium": "medium",
+    "independent_good_sources": [
+     "Dan Ebberts",
+     "Zack Lovatt",
+     "Jake In Motion",
+     "ECAbrams (valueAtTime, orbits)",
+     "ukramedia 3D carousel",
+     "helpx Expression examples",
+     "docsforadobe reference"
+    ],
+    "sub_gaps": [
+     {
+      "topic": "orbit / ring rigs",
+      "status": "closed",
+      "importance": "high",
+      "note": "n09 1 -> 2 via 3D-null orbits (ECAbrams), index spacing on a path (ukramedia) and a DOF carousel (SonduckFilm). The 2D sin/cos tilted-ellipse maths is still absent but not needed."
+     },
+     {
+      "topic": "expression performance",
+      "status": "gap",
+      "importance": "low",
+      "note": "p12; kumo can bake keys and our rigs are light."
+     }
+    ],
+    "residual": "",
+    "more_sources_help": "No."
+   },
+   {
+    "area": "3d-camera-depth",
+    "questions": {
+     "p13": 2,
+     "p14": 2,
+     "p15": 1,
+     "n10": 2,
+     "n11": 2
+    },
+    "prev_questions": {
+     "p13": 2,
+     "p14": 1,
+     "p15": 1,
+     "n10": 2,
+     "n11": 2
+    },
+    "prev_status": "thin",
+    "status": "saturated",
+    "importance_for_premium": "medium",
+    "independent_good_sources": [
+     "helpx Advanced 3D / DOF / cameras",
+     "Jake In Motion",
+     "Motion Nations (A3D, shiny logo)",
+     "Bricks",
+     "Made By Loop Camera Lens Blur",
+     "Caleb Ward"
+    ],
+    "sub_gaps": [
+     {
+      "topic": "fake DOF with Camera Lens Blur",
+      "status": "closed",
+      "importance": "medium",
+      "note": "p14 1 -> 2 (Made By Loop)."
+     },
+     {
+      "topic": "Classic 3D sorting and z-fighting",
+      "status": "gap",
+      "importance": "low-medium",
+      "note": "p15; 0 matches library-wide; Advanced 3D is our default. Skip, or one helpx 3D-layers page if a project hits it."
+     }
+    ],
+    "residual": "",
+    "more_sources_help": "No."
+   },
+   {
+    "area": "motion-blur",
+    "questions": {
+     "p16": 1,
+     "p17": 2,
+     "p18": 2,
+     "n12": 2,
+     "n13": 2
+    },
+    "prev_questions": {
+     "p16": 1,
+     "p17": 2,
+     "p18": 2,
+     "n12": 2,
+     "n13": 1
+    },
+    "prev_status": "saturated",
+    "status": "saturated",
+    "importance_for_premium": "medium",
+    "independent_good_sources": [
+     "SternFX",
+     "Mark Christiansen / Meyer",
+     "helpx motion blur + Pixel Motion Blur",
+     "RSMB manual",
+     "in-house catalog F5"
+    ],
+    "sub_gaps": [
+     {
+      "topic": "motion-design blur judgement (peak on transitional frames, read text crisp, stylised whips)",
+      "status": "thin",
+      "importance": "low-medium",
+      "note": "p16. Judgement; put it in SML next to the 180/-90 rule."
+     }
+    ],
+    "residual": "n13 now 2 because the RSMB manual chunks fit ranks 7-10.",
+    "more_sources_help": "No."
+   },
+   {
+    "area": "glow-light",
+    "questions": {
+     "p19": 2,
+     "p20": 2,
+     "p21": 2,
+     "n14": 2,
+     "n15": 1
+    },
+    "prev_questions": {
+     "p19": 1,
+     "p20": 1,
+     "p21": 2,
+     "n14": 1,
+     "n15": 1
+    },
+    "prev_status": "thin",
+    "status": "saturated",
+    "importance_for_premium": "high",
+    "independent_good_sources": [
+     "Joey Korenman custom glow",
+     "Jake In Motion Glow",
+     "OlafMotion neon",
+     "Jerald Blackstock neon",
+     "Ben Marriott (Retro, DG2 values)",
+     "Deep Glow 2 manual + tone-mapping/iris videos",
+     "Ledet light sweep",
+     "MDMZ / Motion Nations shine",
+     "Creative COW glow mechanics"
+    ],
+    "sub_gaps": [
+     {
+      "topic": "glow / halo on white and light backgrounds",
+      "status": "gap",
+      "importance": "high",
+      "note": "n15. COW explains why glow needs a dark or added background; OlafMotion suggests a soft shadow behind. No light-background halo method exists publicly. Fix: our own tested AE note (white keynote stage is the host default)."
+     },
+     {
+      "topic": "light sweep / specular sheen",
+      "status": "closed",
+      "importance": "high",
+      "note": "p19 1 -> 2."
+     },
+     {
+      "topic": "stacked stock glow and DG2 starting values",
+      "status": "closed",
+      "importance": "high",
+      "note": "p20 and n14 1 -> 2."
+     }
+    ],
+    "residual": "DG2 tone mapping (the real answer to blown-out glows) ranks beyond 40 for n14.",
+    "more_sources_help": "No; one tested note."
+   },
+   {
+    "area": "particles",
+    "questions": {
+     "p22": 1,
+     "p23": 2,
+     "p24": 2,
+     "n16": 2
+    },
+    "prev_questions": {
+     "p22": 1,
+     "p23": 2,
+     "p24": 2,
+     "n16": 1
+    },
+    "prev_status": "thin",
+    "status": "saturated",
+    "importance_for_premium": "medium",
+    "independent_good_sources": [
+     "Maxon Dancer to Dust",
+     "Particular 3 Training: Light Emitters",
+     "Jake In Motion CC Particle Systems/World",
+     "Ben Marriott",
+     "Particular manual"
+    ],
+    "sub_gaps": [
+     {
+      "topic": "orbit / light-emitter trails around a subject",
+      "status": "closed",
+      "importance": "medium-high",
+      "note": "n16 1 -> 2 (light emitter parented to the subject, obscuration layer, stock fallbacks)."
+     },
+     {
+      "topic": "particle art direction (size distribution, depth, palette, restraint, beat-driven emission, face-zone keep-out)",
+      "status": "gap",
+      "importance": "medium",
+      "note": "p22. Judgement; no strong public source. Encode in style presets."
+     }
+    ],
+    "residual": "Aux trails and Particular DOF rank out for n16.",
+    "more_sources_help": "No."
+   },
+   {
+    "area": "masks-mattes-reveals",
+    "questions": {
+     "p25": 1,
+     "p26": 2,
+     "p27": 2
+    },
+    "prev_questions": {
+     "p25": 1,
+     "p26": 2,
+     "p27": 1
+    },
+    "prev_status": "thin",
+    "status": "thin",
+    "importance_for_premium": "high",
+    "independent_good_sources": [
+     "Ben Marriott",
+     "Cameron Perry",
+     "helpx Blending modes (Alpha Add)",
+     "Manu Mercurial",
+     "Animation Explained"
+    ],
+    "sub_gaps": [
+     {
+      "topic": "edge seams between abutting matted layers",
+      "status": "closed",
+      "importance": "medium",
+      "note": "p27 1 -> 2 (Alpha Add)."
+     },
+     {
+      "topic": "premium masked reveal: layered parallax inside one matte, edge choice, shared-ease stagger",
+      "status": "thin",
+      "importance": "medium-high",
+      "note": "p25. Partial chunks exist (Ben 1032 at vector 14, catalog B4 beyond 40) but nothing designs the reveal. Fix: a tested reveal preset; more sources would not add the craft."
+     }
+    ],
+    "residual": "Mechanics saturated; the premium question still fails.",
+    "more_sources_help": "No."
+   },
+   {
+    "area": "transitions",
+    "questions": {
+     "p28": 2,
+     "p29": 2,
+     "p30": 0,
+     "n17": 2,
+     "n18": 2
+    },
+    "prev_questions": {
+     "p28": 2,
+     "p29": 2,
+     "p30": 0,
+     "n17": 2,
+     "n18": 2
+    },
+    "prev_status": "saturated",
+    "status": "saturated",
+    "importance_for_premium": "high",
+    "independent_good_sources": [
+     "Jake In Motion seamless rig",
+     "Ben Marriott",
+     "Olufemii",
+     "TomsProject",
+     "in-house catalog E rows"
+    ],
+    "sub_gaps": [
+     {
+      "topic": "black / doubled frames at cuts (off-by-one, fps mismatch)",
+      "status": "gap",
+      "importance": "low",
+      "note": "p30 stays 0; no public source. timeline.json owns time, so a studio validate check is the fix."
+     }
+    ],
+    "residual": "",
+    "more_sources_help": "No."
+   },
+   {
+    "area": "compositing-character-footage",
+    "questions": {
+     "p31": 2,
+     "p32": 2,
+     "p33": 2,
+     "n19": 2,
+     "n20": 2,
+     "n21": 2,
+     "n22": 2
+    },
+    "prev_questions": {
+     "p31": 1,
+     "p32": 2,
+     "p33": 0,
+     "n19": 2,
+     "n20": 2,
+     "n21": 2,
+     "n22": 2
+    },
+    "prev_status": "saturated",
+    "status": "saturated",
+    "importance_for_premium": "high",
+    "independent_good_sources": [
+     "Evan Abrams screen replacement",
+     "Jason Boone screen replacement",
+     "helpx Tracking and stabilizing",
+     "Cameron Perry",
+     "helpx keying / interpretation",
+     "flylib light wrap"
+    ],
+    "sub_gaps": [
+     {
+      "topic": "device-screen compositing",
+      "status": "closed",
+      "importance": "high",
+      "note": "p31 1 -> 2 (borderline; reflection and light-streak chunks are cut by the per-source cap)."
+     },
+     {
+      "topic": "tracking",
+      "status": "closed",
+      "importance": "medium-high",
+      "note": "p33 0 -> 2."
+     }
+    ],
+    "residual": "Track smoothing (Smoother) ranks out.",
+    "more_sources_help": "No."
+   },
+   {
+    "area": "color-finishing",
+    "questions": {
+     "p34": 2,
+     "p35": 2,
+     "p36": 1,
+     "n19": 2
+    },
+    "prev_questions": {
+     "p34": 1,
+     "p35": 1,
+     "p36": 1,
+     "n19": 2
+    },
+    "prev_status": "thin",
+    "status": "saturated",
+    "importance_for_premium": "high",
+    "independent_good_sources": [
+     "Chris Moran (Vox look)",
+     "Ben Marriott Retro",
+     "in-house catalog F rows (halation, CA, grain)",
+     "Jake In Motion Lumetri",
+     "Manu Mercurial",
+     "Joey Korenman textures",
+     "helpx Color basics"
+    ],
+    "sub_gaps": [
+     {
+      "topic": "film finish with halation",
+      "status": "closed",
+      "importance": "high",
+      "note": "p34 1 -> 2."
+     },
+     {
+      "topic": "grade footage while protecting brand/UI colours",
+      "status": "closed (borderline)",
+      "importance": "medium",
+      "note": "p35 1 -> 2 via adjustment-layer placement at ranks 7-9."
+     }
+    ],
+    "residual": "p36 is ranking: posterizeTime random-offset texture chunks beyond 40.",
+    "more_sources_help": "No."
+   },
+   {
+    "area": "workflow-precomps-performance",
+    "questions": {
+     "p37": 1,
+     "p38": 2,
+     "p39": 2,
+     "n23": 2,
+     "n24": 2
+    },
+    "prev_questions": {
+     "p37": 1,
+     "p38": 2,
+     "p39": 2,
+     "n23": 2,
+     "n24": 2
+    },
+    "prev_status": "saturated",
+    "status": "saturated",
+    "importance_for_premium": "low",
+    "independent_good_sources": [
+     "helpx performance / precomposing",
+     "Zack Lovatt",
+     "Dan Ebberts",
+     "SternFX"
+    ],
+    "sub_gaps": [
+     {
+      "topic": "long-video project architecture",
+      "status": "gap",
+      "importance": "low",
+      "note": "p37; the studio CLI already defines the structure."
+     }
+    ],
+    "residual": "",
+    "more_sources_help": "No."
+   },
+   {
+    "area": "render-export-color-management",
+    "questions": {
+     "p40": 1,
+     "p41": 2,
+     "p42": 1,
+     "n22": 2
+    },
+    "prev_questions": {
+     "p40": 1,
+     "p41": 2,
+     "p42": 1,
+     "n22": 2
+    },
+    "prev_status": "saturated",
+    "status": "saturated",
+    "importance_for_premium": "medium",
+    "independent_good_sources": [
+     "helpx render/export/color management",
+     "SternFX",
+     "CineD gamma bug",
+     "YouTube upload encoding settings",
+     "Frame.io workflow guide"
+    ],
+    "sub_gaps": [],
+    "residual": "Both misses are ranking: YouTube encode spec (4440 at vector 15, 4442/4443 beyond 40) for p40; CineD fix 4097 at vector 4 cut by the cap behind nav chunk 4084 for p42.",
+    "more_sources_help": "No."
+   },
+   {
+    "area": "design-layout-hierarchy-timing",
+    "questions": {
+     "p43": 1,
+     "p44": 2,
+     "p45": 2
+    },
+    "prev_questions": {
+     "p43": 1,
+     "p44": 1,
+     "p45": 2
+    },
+    "prev_status": "thin",
+    "status": "thin",
+    "importance_for_premium": "high",
+    "independent_good_sources": [
+     "School of Motion typography decisions",
+     "Alan Becker staging",
+     "helpx safe zones/grids/guides",
+     "in-house lecture-craft note",
+     "EBU safe areas"
+    ],
+    "sub_gaps": [
+     {
+      "topic": "layout around a presenter / character host (headroom, look room, graphics on the gesture side, gutters, no crop at joints)",
+      "status": "gap",
+      "importance": "high",
+      "note": "p43. 0 matches for headroom/look room; the lecture note adds pointing geometry. Our host-staging rules already exist in memory and skills; write them up as a tested note with measured frames."
+     },
+     {
+      "topic": "safe zones, grids, guides",
+      "status": "closed",
+      "importance": "medium",
+      "note": "p44 1 -> 2."
+     }
+    ],
+    "residual": "",
+    "more_sources_help": "No; an in-house note."
+   },
+   {
+    "area": "video-pacing-edit-rhythm",
+    "questions": {
+     "p46": 2,
+     "p47": 2,
+     "p48": 2
+    },
+    "prev_questions": {
+     "p46": 1,
+     "p47": 2,
+     "p48": 1
+    },
+    "prev_status": "thin",
+    "status": "saturated",
+    "importance_for_premium": "high",
+    "independent_good_sources": [
+     "in-house video-rhythm synthesis",
+     "in-house hook-science note",
+     "in-house channel anatomy",
+     "in-house lecture-craft note",
+     "Inside The Edit",
+     "Leo editing styles",
+     "The Studio (MKBHD method)",
+     "YouTube Help retention"
+    ],
+    "sub_gaps": [
+     {
+      "topic": "tech-YouTube cadence, hooks, re-hooks",
+      "status": "closed",
+      "importance": "high",
+      "note": "p46 and p48 1 -> 2 from our own research notes."
+     }
+    ],
+    "residual": "YouTube retention doc and J/L cut chunks rank beyond 40 for p48.",
+    "more_sources_help": "No."
+   }
+  ],
+  "status_counts": {
+   "before": {
+    "saturated": 9,
+    "thin": 7,
+    "gap": 0
+   },
+   "after": {
+    "saturated": 14,
+    "thin": 2,
+    "gap": 0
+   }
+  }
+ },
+ "verdict": {
+  "counts": {
+   "probes": {
+    "before": {
+     "2": 23,
+     "1": 22,
+     "0": 3
+    },
+    "after": {
+     "2": 35,
+     "1": 12,
+     "0": 1
+    }
+   },
+   "needs": {
+    "before": {
+     "2": 18,
+     "1": 6,
+     "0": 0
+    },
+    "after": {
+     "2": 22,
+     "1": 2,
+     "0": 0
+    }
+   },
+   "all": {
+    "before": {
+     "2": 41,
+     "1": 28,
+     "0": 3
+    },
+    "after": {
+     "2": 57,
+     "1": 14,
+     "0": 1
+    }
+   },
+   "areas": {
+    "before": {
+     "saturated": 9,
+     "thin": 7,
+     "gap": 0
+    },
+    "after": {
+     "saturated": 14,
+     "thin": 2,
+     "gap": 0
+    }
+   },
+   "worse": [],
+   "prediction_check": "The previous round predicted 18-22 of the 31 sub-2 questions would reach 2 (41 -> ~60) after ingest plus retrieval fixes. Ingest plus the wider window gave 16 (41 -> 57); the cap/rerank fixes were not part of this round."
+  },
+  "improved": {
+   "total": 17,
+   "to_2": 16,
+   "by_cause": {
+    "new source": [
+     "p09 (0->1)",
+     "p14",
+     "p19",
+     "p20",
+     "p27",
+     "p31",
+     "p33",
+     "p44",
+     "p46",
+     "p48",
+     "n09",
+     "n16"
+    ],
+    "new source + wider results": [
+     "p04",
+     "p34",
+     "n14"
+    ],
+    "wider results only": [
+     "p35",
+     "n13"
+    ]
+   },
+   "why": "The 27 targeted sources answered 15 of the 17 lifts, mostly at ranks 1-3 (Made By Loop, Ledet, OlafMotion, helpx Alpha Add, helpx Tracking, helpx Views, the two PremiumBeat screen-replacement tutorials, ECAbrams/ukramedia orbits, Particular light emitters, our rhythm/hook/lecture notes). The 10-hit, 3-per-source window mattered for 5: the answering chunk sat at ranks 6-10 (p04, p34, p35, n13, n14).",
+   "sources_that_did_not_surface": "DG2 tone-mapping and iris videos (beyond vector 40 for n14), Jerald Blackstock neon (vector 13-23 for p20), Marsgohome halation, YouTube retention doc (beyond 40 for p48). Present, not yet earning hits.",
+   "previously_2": "All 41 kept their answering chunk; 12 gained reinforcing chunks from the new sources, none needed them."
+  },
+  "diminishing_returns": {
+   "answer": "yes",
+   "evidence": [
+    "14 of 16 areas are now saturated (was 9); no area is a gap. The 2 thin areas (masks-mattes-reveals, design-layout) are thin on judgement, not on mechanics.",
+    "Of the 15 questions still under 2, 4 are ranking (p07, p36, p40, p42): the answer is already in the library.",
+    "6 of the 11 coverage misses are house rules or design judgement with no good public source (p43 host layout, n15 glow on white, n05 VO lead, p25 premium reveal, p22 particle art direction, p16 blur judgement). More ingestion cannot fill them; tested notes and presets can.",
+    "The other 5 coverage misses are low-importance mechanics (p09 curved hairlines, p12 expression performance, p15 z-fighting, p30 off-by-one frames, p37 long-video architecture). Each would need one narrow page or a hands-on test, not broad ingestion.",
+    "Yield: 27 targeted sources -> 15 lifts. The same effort on broad ingestion now reaches at most those 5 low-importance items, and the 41 already-answered questions gained nothing they needed."
+   ],
+   "recommendation": "Stop broad ingestion. Add single pages only on demand when a project hits p12/p15/p30-type problems. Spend the next effort on three tested in-house notes and two retrieval fixes (below)."
+  },
+  "remaining_gaps": [
+   {
+    "rank": 1,
+    "gap": "Glow / halo on white and light backgrounds",
+    "questions": [
+     "n15"
+    ],
+    "importance": "high (white keynote stage is the host default)",
+    "public_source": "none found; Creative COW explains the mechanics, OlafMotion only hints at a soft shadow behind",
+    "fix": "Hands-on tested note: run the AE test (tinted Normal/Multiply halo, coloured soft shadow as glow, DG2 input masking over a light plate), record settings and frames, ingest as a note. Better than any source."
+   },
+   {
+    "rank": 2,
+    "gap": "Layout around a character host: headroom, look room, graphics on the gesture side, gutters, no crop at joints",
+    "questions": [
+     "p43"
+    ],
+    "importance": "high",
+    "public_source": "only cinematography framing primers; nothing for motion graphics around a presenter",
+    "fix": "In-house note from our host-staging rules (envelope-sized cards, full body or head avatar, graphics around measured hands) with measured frames from hf-pilot-muse / memory-lecture. Better than sources."
+   },
+   {
+    "rank": 3,
+    "gap": "VO-synced type timing: graphic leads the spoken word, reading-time holds, hero-word hierarchy",
+    "questions": [
+     "n05"
+    ],
+    "importance": "medium-high",
+    "public_source": "none states the lead rule; hero-word chunks exist but rank out",
+    "fix": "An SML rule measured on our own renders (lead in frames, minimum hold), plus a tested note; fix ranking for the hero-word chunks."
+   },
+   {
+    "rank": 4,
+    "gap": "Premium masked reveal with layered parallax inside one matte",
+    "questions": [
+     "p25"
+    ],
+    "importance": "medium-high",
+    "public_source": "partial (Ben Marriott 1032, catalog B4) and ranked out",
+    "fix": "A tested reveal preset in the style library; retrieval fixes would surface the partial chunks."
+   },
+   {
+    "rank": 5,
+    "gap": "Pixel-crisp hairlines and rounded corners in slow drifts",
+    "questions": [
+     "p09"
+    ],
+    "importance": "medium (UI promos)",
+    "public_source": "straight lines only (Adobe Community)",
+    "fix": "A short hands-on AE test note: 1 vs 2 px strokes, Math.round rest positions, motion blur on/off, Best quality, frame-stepped at output size."
+   },
+   {
+    "rank": 6,
+    "gap": "Particle art direction and motion-blur judgement",
+    "questions": [
+     "p22",
+     "p16"
+    ],
+    "importance": "medium / low-medium",
+    "public_source": "none strong",
+    "fix": "Encode in style presets and SML (blur peaks on transitional frames, read text crisp; size distribution, depth layering, restrained density)."
+   },
+   {
+    "rank": 7,
+    "gap": "Low-importance mechanics: z-fighting / Classic 3D sorting, expression performance, black or doubled frames at cuts, long-video project architecture",
+    "questions": [
+     "p15",
+     "p12",
+     "p30",
+     "p37"
+    ],
+    "importance": "low",
+    "public_source": "p15/p12 one helpx or community page each; p30/p37 none useful",
+    "fix": "Do nothing now. p30 belongs in a studio validate check; p37 is owned by the studio CLI; fetch a single page for p15/p12 only if a project hits them."
+   }
+  ],
+  "retrieval_issues": [
+   {
+    "problem": "The per-source cap still keeps the wrong chunks of the right source.",
+    "evidence": "p42: CineD nav-only chunk 4084 is rank 1 and, with 4089 and 4095, fills the source's 3 slots, so the fix chunk 4097 (vector rank 4) is dropped. p31: intro chunks 5210 and 5215 take slots while the reflection step 5214 (vector 17) and light streaks 5221 (vector 6) are dropped.",
+    "fix": "Drop nav-only chunks at ingest; within a source prefer distinct sections over intros, or merge adjacent same-source hits into one passage; agents can also call with context=1."
+   },
+   {
+    "problem": "The keyword half of hybrid search is inert for sentence-length questions, so vocabulary mismatch is unmitigated.",
+    "evidence": "search_chunks uses keyword_mode 'all' (plainto_tsquery ANDs every word). In a 16-question depth-40 re-run, hybrid order equalled vector order in all 16 and keyword+vector never co-fired. Misses beyond vector 40: UX in Motion offset/delay, Carbon stagger, helpx index delay (p07); posterizeTime textures (p36); DG2 tone-mapping video (n14); hero-word chunks (n05); YouTube retention doc and J/L cuts (p48); YouTube BT.709/range rows (p40); catalog B4 masked line reveal (p25).",
+    "fix": "Make a second, term-based query a rule in the ae-library skill (effect, plugin and menu names); try an OR-mode keyword pass over extracted product terms or a HyDE rewrite, and plugin/topic boosts. Re-test on this question set."
+   },
+   {
+    "problem": "Chunk hygiene.",
+    "evidence": "Nav boilerplate is still indexed (CineD 4084, helpx H.264 page menu 3502). Our catalog note's markdown tables are split mid-row, so a row's technique name sits in the previous chunk (5152 begins inside B4 masked line reveal; 5170-5172 begin mid-row).",
+    "fix": "Drop nav-only chunks; chunk tables by row with the header row repeated."
+   },
+   {
+    "problem": "Relevance does not separate partial from nothing in this range.",
+    "evidence": "Top-1 relevance: score 2 = 0.707-0.819 (median 0.773); score 1 = 0.711-0.784 (median 0.746); the only 0 (p30) = 0.728. n16 scored 2 at 0.707, the lowest top-1.",
+    "fix": "Keep the docstring advice to read every hit; do not gate on the 0.70 line."
+   }
+  ],
+  "expected_after_fixes": "Retrieval fixes (cap + term query) should lift p07, p36, p40, p42 and firm up the borderline 2s (p31, p48, n13, n14): about 61/72. The three tested notes (glow on light backgrounds, host layout, VO-sync timing) plus the hairline test should add p43, n15, n05, p09: about 65/72. p16, p22 and p25 belong in SML and style presets."
+ }
+}

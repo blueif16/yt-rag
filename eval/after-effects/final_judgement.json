@@ -1,0 +1,1077 @@
+{
+ "needs": [
+  {
+   "id": "n01",
+   "topic": "easing-graph-editor",
+   "pilot_score": 1,
+   "score": 2,
+   "best_rank": 3,
+   "best_id": 2442,
+   "top1_id": 456,
+   "top1_relevance": 0.793,
+   "n_hits": 5,
+   "agent_ids": [
+    456,
+    2443,
+    2442,
+    668,
+    812
+   ],
+   "cause": null,
+   "better_id": 2441,
+   "notes": "456 (rank 1, helpx Speed) gives Animation > Keyframe Velocity with Incoming/Outgoing Speed + Influence and the Continuous lock. 2442 (rank 3, bodymovin/UQg Adobe Community thread) gives the mapping: bezierOut.x = influence/100, bezierOut.y = speed/averageSpeed * x, so influence = 100*x1 and speed = averageSpeed*y1/x1 (incoming uses 1-x2, 1-y2); spatial properties take averageSpeed from the path length. The per-dimension rule for Color/1D/2D/3D ('for each dimension I get the averageSpeed') is in 2441, which ranks out; 2443 (rank 2) is the influence-clamp code for spatial keys. Ctrl+Shift+K appears nowhere in the library (trivial)."
+  },
+  {
+   "id": "n02",
+   "topic": "easing-graph-editor",
+   "pilot_score": 1,
+   "score": 2,
+   "best_rank": 1,
+   "best_id": 747,
+   "top1_id": 747,
+   "top1_relevance": 0.778,
+   "n_hits": 5,
+   "agent_ids": [
+    747,
+    332,
+    736,
+    1546,
+    748
+   ],
+   "cause": null,
+   "better_id": 746,
+   "notes": "Borderline 2. 747 (rank 1, MotionXP): separating dimensions unlocks the value graph; reshape handles, break one with Convert Vertex so the middle key hits hard, then ease into the last key. 748 (rank 5): pulling a handle so the curve crosses a value adds anticipation and 'applies at any point in the curve'. 332 shapes value-graph handles; 1546 is the helpx handle reference; 736 is Ebberts' overshoot math. The explicit settle recipe (extra key 3 frames later, nudged for a slight overshoot, then Separate Dimensions) is 746, the chunk just before 747, and it ranks out. Nothing says why combined Position cannot overshoot."
+  },
+  {
+   "id": "n03",
+   "topic": "easing-graph-editor",
+   "pilot_score": 0,
+   "score": 2,
+   "best_rank": 1,
+   "best_id": 662,
+   "top1_id": 662,
+   "top1_relevance": 0.817,
+   "n_hits": 5,
+   "agent_ids": [
+    662,
+    1536,
+    1537,
+    672,
+    660
+   ],
+   "cause": null,
+   "better_id": null,
+   "notes": "662 (rank 1, Jake): Keyframe Interpolation shows Auto Bezier spatial; set Linear, or turn on 'Default Spatial Interpolation to Linear'. 1536 (rank 2, helpx 2026): spatial vs temporal; Auto Bezier is the default; the preference now lives in Preferences > Composition and does not change existing keys. 1537: boomerang drift fix (Hold or Linear). 672: reshaping the path leaves the timing unchanged. Pilot had no spatial-interpolation content at all."
+  },
+  {
+   "id": "n04",
+   "topic": "text-kinetic-type",
+   "pilot_score": 2,
+   "score": 2,
+   "best_rank": 3,
+   "best_id": 822,
+   "top1_id": 463,
+   "top1_relevance": 0.795,
+   "n_hits": 5,
+   "agent_ids": [
+    463,
+    844,
+    822,
+    823,
+    842
+   ],
+   "cause": null,
+   "better_id": null,
+   "notes": "822+823 (ranks 3-4, Jake): Shape Square -> Ramp Up, Ease Low up to 100%, Offset -100 -> 100 over 30 frames, then add Position/Rotation. 463 (rank 1, helpx): Animate menu, Range Selector Start/End/Offset, Index units, Advanced. 844 (rank 2): Ease High/Low and Based On words. How selector length sets the cascade is only implied; Randomize Order is not in the hits."
+  },
+  {
+   "id": "n05",
+   "topic": "text-kinetic-type",
+   "pilot_score": 1,
+   "score": 1,
+   "best_rank": 1,
+   "best_id": 1952,
+   "top1_id": 1952,
+   "top1_relevance": 0.758,
+   "n_hits": 3,
+   "agent_ids": [
+    1952,
+    1942,
+    836
+   ],
+   "cause": "coverage",
+   "better_id": 2014,
+   "notes": "Only 3 hits: the per-source cap (2) threw away the rest of a 20-chunk pool that the 74-chunk Korenman page filled. 1952 (rank 1): tap * while the audio plays to drop a marker per word, then animate to the markers. 836 (rank 3): word-by-word range selector plus 'creating contrast' (cut off at the chunk end). No hero-word scale/weight rule or hold times in the hits. No source anywhere says a graphic should lead its word by N frames; the subtitle guides say the opposite (Netflix 2136: in-time on the first audio frame). Partial helpers that rank out: 1551 (helpx: * on the keypad during audio preview), 2014 (give important words more room), 352 (Zammit emphasis, now garbled by the caption bug)."
+  },
+  {
+   "id": "n06",
+   "topic": "shape-ui-animation",
+   "pilot_score": 0,
+   "score": 2,
+   "best_rank": 1,
+   "best_id": 2111,
+   "top1_id": 2111,
+   "top1_relevance": 0.79,
+   "n_hits": 5,
+   "agent_ids": [
+    2111,
+    2112,
+    779,
+    778,
+    609
+   ],
+   "cause": null,
+   "better_id": null,
+   "notes": "2111/2112 (ranks 1-2, Exportlab 2026): Scale stretches the corner radius; animate Contents > Rectangle 1 > Rectangle Path 1 Size (unlinked) and Roundness, plus Fill colour. 779/778 (NaughtyyJuan) say the same. 609 (rank 5, Jake sourceRectAtTime): a position = size/2 expression pins the anchor to the top-left corner; parent the content to the box. That stroke width stays in pixels is implied, not stated. Pilot: nothing animated Rectangle Path Size."
+  },
+  {
+   "id": "n07",
+   "topic": "shape-ui-animation",
+   "pilot_score": 2,
+   "score": 2,
+   "best_rank": 3,
+   "best_id": 359,
+   "top1_id": 1031,
+   "top1_relevance": 0.767,
+   "n_hits": 5,
+   "agent_ids": [
+    1031,
+    361,
+    359,
+    871,
+    925
+   ],
+   "cause": null,
+   "better_id": null,
+   "notes": "359 (rank 3, Manuel): Start/End/Offset, offset end keys, speed-graph easing; trim on a group draws all strokes together or one after another (top first). 361 (rank 2): Round Cap + End = Start + 0.1 dot that rides the path; 871 (rank 4): the same dot via Offset; 1031 (rank 1, Marriott): draw-on from the middle with easy ease + graph editor. The literal 'Trim Multiple Shapes: Simultaneously/Individually' label and an arrowhead rig are not in the hits."
+  },
+  {
+   "id": "n08",
+   "topic": "expressions",
+   "pilot_score": 2,
+   "score": 2,
+   "best_rank": 1,
+   "best_id": 738,
+   "top1_id": 738,
+   "top1_relevance": 0.799,
+   "n_hits": 5,
+   "agent_ids": [
+    738,
+    737,
+    497,
+    370,
+    498
+   ],
+   "cause": null,
+   "better_id": null,
+   "notes": "738 (rank 1, Ebberts): keyframe overshoot expression with nearestKey, velocityAtTime(key.time - .001) as amplitude, and freq/decay decaying sine, each part explained. 737 (rank 2): per-character variants; 497/498 (ranks 3 and 5, helpx): inertial bounce with amp/freq/decay. Tuning advice (frequency sets the amplitude) is in 736, outside this list. No multi-dimensional note, and Convert Expression to Keyframes appears nowhere in the library."
+  },
+  {
+   "id": "n09",
+   "topic": "expressions",
+   "pilot_score": 1,
+   "score": 1,
+   "best_rank": 1,
+   "best_id": 497,
+   "top1_id": 497,
+   "top1_relevance": 0.735,
+   "n_hits": 5,
+   "agent_ids": [
+    497,
+    803,
+    1444,
+    362,
+    1407
+   ],
+   "cause": "coverage",
+   "better_id": null,
+   "notes": "497 (rank 1, helpx; also 1405, 1932 elsewhere) only gives a flat sin/cos circle around the comp centre. 1444 (rank 3) scales a layer by camera distance to keep its size constant, the opposite of faking depth. 803/362/1407 are unrelated rigs. Nothing in the library covers a tilted or elliptical orbit, scale/opacity from sin(angle), per-layer phase, or passing behind a subject."
+  },
+  {
+   "id": "n10",
+   "topic": "3d-camera-depth",
+   "pilot_score": 2,
+   "score": 2,
+   "best_rank": 1,
+   "best_id": 1771,
+   "top1_id": 1771,
+   "top1_relevance": 0.813,
+   "n_hits": 5,
+   "agent_ids": [
+    1771,
+    1770,
+    512,
+    513,
+    1776
+   ],
+   "cause": null,
+   "better_id": null,
+   "notes": "1771/1770 (ranks 1-2, helpx 2026, Advanced 3D DOF): Enable Depth of Field, Focus Distance, Layer > Camera > Link Focus Distance to Layer (expression) vs Set Focus Distance, Aperture, Focus Area Width, Near/Far Blur Level; the renderer is Advanced 3D. 512/513 (Caleb Ward) and 1776 (helpx Camera settings: length(position, pointOfInterest), Aperture <-> F-Stop) cover Classic 3D. No Z-spacing advice."
+  },
+  {
+   "id": "n11",
+   "topic": "3d-camera-depth",
+   "pilot_score": 2,
+   "score": 2,
+   "best_rank": 2,
+   "best_id": 376,
+   "top1_id": 380,
+   "top1_relevance": 0.75,
+   "n_hits": 5,
+   "agent_ids": [
+    380,
+    376,
+    1350,
+    1286,
+    510
+   ],
+   "cause": null,
+   "better_id": null,
+   "notes": "376 (rank 2) + 380 (rank 1), Bricks: parent layers to stacked 3D nulls, keyframe the next null before the previous move ends, then easy ease + graph editor. 510 (rank 5, Caleb Ward): parenting the camera to a null and its side effects; 1286 (rank 4): Create Orbit Null for a continuous drift. Z-spacing parallax appears only in the garbled 1350; no scale compensation or sub-pixel jitter advice."
+  },
+  {
+   "id": "n12",
+   "topic": "motion-blur",
+   "pilot_score": 2,
+   "score": 2,
+   "best_rank": 1,
+   "best_id": 516,
+   "top1_id": 516,
+   "top1_relevance": 0.772,
+   "n_hits": 5,
+   "agent_ids": [
+    516,
+    1559,
+    546,
+    1560,
+    515
+   ],
+   "cause": null,
+   "better_id": null,
+   "notes": "516 (rank 1, Meyer CMG): blur applies only to enabled, transform-animated layers; inside a precomp enable blur on the inner layers or use Collapse Transformations; shutter settings are in Comp Settings > Advanced; the switch does not blur rendered footage. 515 (rank 5): the switch is needed in two places. 1559 (rank 2): the Switches Affect Nested Comps preference. 1560: shutter angle/phase and samples."
+  },
+  {
+   "id": "n13",
+   "topic": "motion-blur",
+   "pilot_score": 1,
+   "score": 1,
+   "best_rank": 1,
+   "best_id": 1743,
+   "top1_id": 1743,
+   "top1_relevance": 0.73,
+   "n_hits": 5,
+   "agent_ids": [
+    1743,
+    517,
+    518,
+    2571,
+    389
+   ],
+   "cause": "ranking",
+   "better_id": 2556,
+   "notes": "1743 (rank 1, helpx Pixel Motion Blur): Shutter Control Manual, Shutter Angle in degrees (so 180 can be typed), Shutter Samples, Vector Detail. 517/518 (Meyer): shutter math and a Timewarp fallback. 2571 (rank 4) is RSMB Vectors alpha info, which is tangential. 389 (rank 5) is a garbled SternFX chunk. The RSMB manual answers the rest but ranks out: 2556 (Blur Amt default 0.5 = 180-degree shutter), 2561/2562 (FG matte separation to stop foreground/background spill), 2566-2568 (problem footage: duplicated frames, transparency, picket fences)."
+  },
+  {
+   "id": "n14",
+   "topic": "glow-premium-fx",
+   "pilot_score": 1,
+   "score": 1,
+   "best_rank": 2,
+   "best_id": 2519,
+   "top1_id": 2523,
+   "top1_relevance": 0.752,
+   "n_hits": 4,
+   "agent_ids": [
+    2523,
+    2519,
+    408,
+    1175
+   ],
+   "cause": "ranking",
+   "better_id": 2498,
+   "notes": "Only 4 hits: the per-source cap kept 2 Deep Glow manual chunks and dropped 2496/2498/2505 from the vector top 5. 2523 (rank 1): Add is the physically correct blend mode and Screen is the default; flicker comes from thresholding. 2519 (rank 2): Source Opacity, compositing the original back, Unmult, continuous rasterisation. 408 (Quickstart): gamma, exposure, quality presets, half float. The dropped 2498 defines Exposure (applied after threshold; Screen clamps at 1.0, Add keeps superbrights) and Threshold Mode; 2502 covers Input Masking (an alpha-isolated source). No chunk in the library gives starting values (a coverage gap). 32 bpc is only touched in 2517 (dithering removed, use 16/32 bpc)."
+  },
+  {
+   "id": "n15",
+   "topic": "glow-premium-fx",
+   "pilot_score": 1,
+   "score": 1,
+   "best_rank": 1,
+   "best_id": 522,
+   "top1_id": 522,
+   "top1_relevance": 0.763,
+   "n_hits": 5,
+   "agent_ids": [
+    522,
+    1175,
+    1174,
+    521,
+    2229
+   ],
+   "cause": "coverage",
+   "better_id": null,
+   "notes": "522/521 (Korenman): duplicate > Levels (crush blacks) > blur > tint, an isolated pass you can tint. 1174/1175 (Jake, Glow): Glow Based On, threshold, intensity, Composite Original, Add vs Screen. 2229 (rank 5, flylib): stock light wrap. Nothing in the library explains why additive/screen glow vanishes on white, or gives a Normal/Multiply coloured halo for light backgrounds."
+  },
+  {
+   "id": "n16",
+   "topic": "glow-premium-fx",
+   "pilot_score": 0,
+   "score": 1,
+   "best_rank": 1,
+   "best_id": 1217,
+   "top1_id": 1217,
+   "top1_relevance": 0.706,
+   "n_hits": 5,
+   "agent_ids": [
+    1217,
+    1195,
+    1249,
+    1252,
+    1237
+   ],
+   "cause": "ranking",
+   "better_id": 2636,
+   "notes": "1217/1195 (Jake, CC Particle World): producer motion makes ribbon trails, the effect reacts to the 3D camera, and velocity/gravity/resistance are explained, so the stock fallback is usable. 1237 (Particular layer emitters) and 1249/1252 (Dancer to Dust, garbled captions) do not cover the orbit/trail setup. The Particular manual has it but ranks out: 2636 (Light emitter naming, so particles follow an animated light), 2610-2613 (Emit/Stroke from Parent trails), 2654/2655 (size/opacity over life), 2731 (DOF from Camera Settings). At 0.706 this is the run's lowest top-1 relevance. Pilot had no particle content at all."
+  },
+  {
+   "id": "n17",
+   "topic": "transitions",
+   "pilot_score": 2,
+   "score": 2,
+   "best_rank": 2,
+   "best_id": 419,
+   "top1_id": 420,
+   "top1_relevance": 0.767,
+   "n_hits": 5,
+   "agent_ids": [
+    420,
+    419,
+    384,
+    386,
+    1014
+   ],
+   "cause": null,
+   "better_id": null,
+   "notes": "419 (rank 2, Olufemii): Motion Tile with Mirror Edges and a larger output, easy ease, ramp-up/ramp-down handles on each clip's graph, motion blur on both. 420 (rank 1): a whip pan with the same ramps plus motion blur. 384/386 (Bricks): a spin transition that keeps its direction across the cut; 1014: match-cut direction. No frame durations and no Directional Blur."
+  },
+  {
+   "id": "n18",
+   "topic": "transitions",
+   "pilot_score": 2,
+   "score": 2,
+   "best_rank": 2,
+   "best_id": 790,
+   "top1_id": 811,
+   "top1_relevance": 0.734,
+   "n_hits": 5,
+   "agent_ids": [
+    811,
+    790,
+    416,
+    800,
+    1025
+   ],
+   "cause": null,
+   "better_id": null,
+   "notes": "790 (rank 2, Jake transition rig): a rectangle matte whose Size and Roundness (driven by sliders) shape the incoming video's alpha; 800 (rank 4): the roundness/position expressions. 811 (rank 1, Cameron Perry): a shape layer above the comp set as Alpha Inverted Matte in the Track Matte column. 416: an eased mask-expand wipe. Card shadow and edge aliasing are not in the hits; the rig's animated border stroke is 806, which is in the library."
+  },
+  {
+   "id": "n19",
+   "topic": "compositing-color-finishing",
+   "pilot_score": 1,
+   "score": 2,
+   "best_rank": 3,
+   "best_id": 2050,
+   "top1_id": 2051,
+   "top1_relevance": 0.803,
+   "n_hits": 5,
+   "agent_ids": [
+    2051,
+    532,
+    2050,
+    400,
+    1361
+   ],
+   "cause": null,
+   "better_id": null,
+   "notes": "2050 (rank 3, Rich Young): add Noise or Add Grain at about 1-5%; banding returns after streaming recompression; Ramp Scatter. 2051/532 (ranks 1-2): 16/32 bpc alone will not save an 8-bit output; AE dithers on render, not in previews (Arithmetic trick). No bitrate figures, and 4:2:0 chroma is never named."
+  },
+  {
+   "id": "n20",
+   "topic": "compositing-color-finishing",
+   "pilot_score": 0,
+   "score": 2,
+   "best_rank": 1,
+   "best_id": 2278,
+   "top1_id": 2278,
+   "top1_relevance": 0.74,
+   "n_hits": 5,
+   "agent_ids": [
+    2278,
+    2229,
+    1366,
+    2277,
+    1795
+   ],
+   "cause": null,
+   "better_id": null,
+   "notes": "2278 (rank 1, Envato Tuts+): a 3D duplicate of the character, X rotation 180, placed at the feet, Fill black, 60% opacity, which is a cast shadow from the alpha. 2229 (rank 2, flylib): stock light wrap (Silhouette Alpha, Fast Blur with Repeat Edge Pixels, Stencil Alpha copy). 1795 (helpx Shadow catchers) is for 3D models. Edge choke and colour match are not in the hits, but the library has them (flylib Color Matching; 1797/1799 Matte Choker and Simple Choker). Pilot: nothing."
+  },
+  {
+   "id": "n21",
+   "topic": "footage-integration",
+   "pilot_score": 2,
+   "score": 2,
+   "best_rank": 2,
+   "best_id": 591,
+   "top1_id": 592,
+   "top1_relevance": 0.801,
+   "n_hits": 5,
+   "agent_ids": [
+    592,
+    591,
+    1335,
+    1381,
+    1334
+   ],
+   "cause": null,
+   "better_id": 596,
+   "notes": "591 (rank 2, helpx): straight vs premultiplied, the halo when the interpretation is wrong, Remove Color Matting, File > Interpret Footage > Main. 592 (rank 1): Guess/Ignore/Straight/Premultiplied options and the default preference. The frame-rate half was in the vector top 5: 596 says still sequences take the Sequence Footage preference (30 fps) and are fixed with Conform To Frame Rate. The per-source cap dropped it for three garbled Manu Mercurial chunks (1335, 1381, 1334)."
+  },
+  {
+   "id": "n22",
+   "topic": "footage-integration",
+   "pilot_score": 1,
+   "score": 2,
+   "best_rank": 1,
+   "best_id": 1588,
+   "top1_id": 1588,
+   "top1_relevance": 0.765,
+   "n_hits": 5,
+   "agent_ids": [
+    1588,
+    2042,
+    702,
+    2041,
+    1592
+   ],
+   "cause": null,
+   "better_id": null,
+   "notes": "1588 (rank 1, helpx): which formats are colour-managed; Interpret Footage > Main > Color > Media Color Space; Override Media Color Space. 2042 (rank 2, Frame.io): graphics made in Rec.709 often read as sRGB, so reassign Rec.709 Gamma 2.4. 2041: working space Rec.709 plus Display Color Management. 702 (ECAbrams): Preserve, assigning profiles, LUTs. Not in the hits: Linearize Working Space (1594), and nothing anywhere on ProRes Rec.601 vs 709 matrix tags; the CineD 'gamma shift' article (2021-2037) is about macOS display gamma."
+  },
+  {
+   "id": "n23",
+   "topic": "workflow-precomps-render",
+   "pilot_score": 2,
+   "score": 2,
+   "best_rank": 1,
+   "best_id": 2102,
+   "top1_id": 2102,
+   "top1_relevance": 0.798,
+   "n_hits": 5,
+   "agent_ids": [
+    2102,
+    2097,
+    447,
+    446,
+    555
+   ],
+   "cause": null,
+   "better_id": null,
+   "notes": "2102/2097 (ranks 1-2, Meyer CMG): nested comps arrive flattened; Collapse Transformations re-applies scale to the source; continuous rasterization keeps vectors sharp above 100%. 447/446 (Jake): collapse with shape layers removes comp bounds and uses the parent camera. 555 (helpx): render order with masks and effects. Missing: building the precomp at final resolution."
+  },
+  {
+   "id": "n24",
+   "topic": "workflow-precomps-render",
+   "pilot_score": 2,
+   "score": 2,
+   "best_rank": 1,
+   "best_id": 559,
+   "top1_id": 559,
+   "top1_relevance": 0.751,
+   "n_hits": 5,
+   "agent_ids": [
+    559,
+    561,
+    1629,
+    1706,
+    706
+   ],
+   "cause": null,
+   "better_id": null,
+   "notes": "559/561 (ranks 1-2, helpx): aerender syntax with -project/-comp/-s/-e/-RStemplate/-OMtemplate/-output, plus the flag table (MFR, inclusive -e). -mem_usage and -continueOnMissingFootage are in 560/563, which rank out. Nothing in the library on chunked renders or joining the parts; 1706 (memory errors) and 1629 (Collect Files) are filler."
+  }
+ ],
+ "known_answer_rank_misses": [
+  {
+   "id": "r01",
+   "query": "Why won't the bezier handles in the Graph Editor's value graph respond when I try to edit a layer's position animation?",
+   "difficulty": "hard",
+   "target_type": "transcript",
+   "gold_ids": [
+    330,
+    342
+   ],
+   "gold_agent_ranks": {
+    "330": 2,
+    "342": null
+   },
+   "vector_gold_rank": 2,
+   "rank1_id": 1546,
+   "rank1_relevance": 0.81,
+   "rank1_source": "helpx.adobe.com - Keyframe interpolation (doc)",
+   "rank1_vs_gold": "worse",
+   "answer_still_in_top5": true,
+   "notes": "1546 (helpx: dragging and splitting bezier handles) is on-topic but never says the value graph is locked for combined Position or that Separate Dimensions fixes it. Gold 330 is still at rank 2."
+  },
+  {
+   "id": "r02",
+   "query": "How do I set a text animator's range selector so the reveal brings in one whole word at a time instead of one character at a time?",
+   "difficulty": "easy",
+   "target_type": "transcript",
+   "gold_ids": [
+    344,
+    470
+   ],
+   "gold_agent_ranks": {
+    "344": 3,
+    "470": 4
+   },
+   "vector_gold_rank": 3,
+   "rank1_id": 825,
+   "rank1_relevance": 0.821,
+   "rank1_source": "Jake In Motion - Text Animators are an After Effects superpower | Ae Genius (transcript)",
+   "rank1_vs_gold": "better",
+   "answer_still_in_top5": true,
+   "notes": "825 (Jake): Range Selector > Advanced > Based On, Characters -> Words. A direct answer, and cleaner than gold 344, a Zammit chunk the caption bug has garbled. Gold 344/470 are at ranks 3-4."
+  },
+  {
+   "id": "r03",
+   "query": "How do I use Trim Paths to make a round dot travel along a stroked path?",
+   "difficulty": "easy",
+   "target_type": "transcript",
+   "gold_ids": [
+    361
+   ],
+   "gold_agent_ranks": {
+    "361": 2
+   },
+   "vector_gold_rank": 1,
+   "rank1_id": 871,
+   "rank1_relevance": 0.769,
+   "rank1_source": "Animation Explained - How to Animate a Logo - Common Techniques in After Effects (transcript)",
+   "rank1_vs_gold": "as_good",
+   "answer_still_in_top5": true,
+   "notes": "871 (Animation Explained): stroke weight = dot size, Round Cap, Trim End 0.1, animate Offset. A valid, simpler method than the gold's End = Start + 0.1 expression; gold 361 is at rank 2. This is the tenth miss: the vector list has the gold at rank 1."
+  },
+  {
+   "id": "r05",
+   "query": "When I chain several fake camera moves using stacked, parented 3D nulls, how do I keep the motion flowing from one move into the next instead of stopping in between?",
+   "difficulty": "medium",
+   "target_type": "transcript",
+   "gold_ids": [
+    376,
+    377
+   ],
+   "gold_agent_ranks": {
+    "376": 2,
+    "377": null
+   },
+   "vector_gold_rank": 2,
+   "rank1_id": 984,
+   "rank1_relevance": 0.774,
+   "rank1_source": "Stephan Zammit - Why Your Motion Design Looks Cheap (5 Fixes In After Effects) (transcript)",
+   "rank1_vs_gold": "worse",
+   "answer_still_in_top5": true,
+   "notes": "984 (Zammit, 'looks cheap'): continuous flow through a parent null and the kinetic cut. Related, but it lacks the key fact (key the next null before the previous move ends). Gold 376 is at rank 2."
+  },
+  {
+   "id": "r08",
+   "query": "In Deep Glow 2, how do I keep a glow from blowing out in a linear 32-bit comp so the rendered file looks like what I see in the viewer?",
+   "difficulty": "medium",
+   "target_type": "transcript",
+   "gold_ids": [
+    407
+   ],
+   "gold_agent_ranks": {
+    "407": null
+   },
+   "vector_gold_rank": null,
+   "rank1_id": 2517,
+   "rank1_relevance": 0.773,
+   "rank1_source": "Plugin Everything (James Whiffin) - Deep Glow 2 Docs (official manual) (doc)",
+   "rank1_vs_gold": "worse",
+   "answer_still_in_top5": false,
+   "notes": "2517 (Deep Glow manual: Aux Expansion, dithering removed, use 16/32 bpc) never mentions tone mapping. Gold 407 is gone, and the manual's own Tonemapping section (2507) is not retrieved. The cap cut the list to 3 hits because the 20-chunk pool was almost all Deep Glow manual. This is the one real regression: the agent gets no answer."
+  },
+  {
+   "id": "r10",
+   "query": "When I shake or push my footage around during a transition, empty black borders show at the edges of the frame; how do I fill them?",
+   "difficulty": "hard",
+   "target_type": "transcript",
+   "gold_ids": [
+    417,
+    419,
+    422
+   ],
+   "gold_agent_ranks": {
+    "417": null,
+    "419": 4,
+    "422": 2
+   },
+   "vector_gold_rank": 2,
+   "rank1_id": 806,
+   "rank1_relevance": 0.719,
+   "rank1_source": "Jake In Motion - BEST seamless transition rig in After Effects (Free Preset) (transcript)",
+   "rank1_vs_gold": "worse",
+   "answer_still_in_top5": true,
+   "notes": "806 (Jake rig: stroke-width expression) has nothing to do with frame edges. Gold 422 is at rank 2 and 419 at rank 4, both Motion Tile + Mirror Edges."
+  },
+  {
+   "id": "r12",
+   "query": "I put a Gradient Ramp on a shape layer, but its start and end stay stuck to the top and bottom of the comp instead of following the shape when I move it; why?",
+   "difficulty": "hard",
+   "target_type": "transcript",
+   "gold_ids": [
+    448
+   ],
+   "gold_agent_ranks": {
+    "448": 3
+   },
+   "vector_gold_rank": 3,
+   "rank1_id": 483,
+   "rank1_relevance": 0.767,
+   "rank1_source": "helpx.adobe.com - Shape attributes, paint operations, and path operations for shape layers (doc)",
+   "rank1_vs_gold": "worse",
+   "answer_still_in_top5": true,
+   "notes": "483 (helpx: Start/End points of a shape-layer gradient fill) is a different feature from the Gradient Ramp effect and gives no 'why'. Gold 448 (collapse/continuous rasterization applies effects at comp size) is at rank 3."
+  },
+  {
+   "id": "r16",
+   "query": "How do I make a layer spring past its final keyframed position and settle back on its own, without hand-keying the wobble?",
+   "difficulty": "medium",
+   "target_type": "doc",
+   "gold_ids": [
+    497,
+    498
+   ],
+   "gold_agent_ranks": {
+    "497": 3,
+    "498": 4
+   },
+   "vector_gold_rank": 3,
+   "rank1_id": 738,
+   "rank1_relevance": 0.803,
+   "rank1_source": "Dan Ebberts - Realistic Bounce and Overshoot (tutorial)",
+   "rank1_vs_gold": "better",
+   "answer_still_in_top5": true,
+   "notes": "738 (Ebberts): the same inertial-overshoot expression (nearestKey, velocityAtTime, decaying sine), with clearer code and an explanation of each part. Gold 497/498 are at ranks 3-4."
+  },
+  {
+   "id": "r17",
+   "query": "How do I make a 3D camera's Focus Distance automatically track a moving layer for depth of field?",
+   "difficulty": "easy",
+   "target_type": "article",
+   "gold_ids": [
+    505,
+    513
+   ],
+   "gold_agent_ranks": {
+    "505": null,
+    "513": 2
+   },
+   "vector_gold_rank": 2,
+   "rank1_id": 1771,
+   "rank1_relevance": 0.799,
+   "rank1_source": "helpx.adobe.com - Enable in‑engine Depth of Field in Advanced 3D (doc)",
+   "rank1_vs_gold": "as_good",
+   "answer_still_in_top5": true,
+   "notes": "1771 (helpx 2026 Advanced 3D DOF): Link Focus Distance to Layer writes an expression; Set Focus Distance to Layer is a one-time snap. The newer official version of gold 513 (rank 2)."
+  },
+  {
+   "id": "r21",
+   "query": "How do I get rid of banding in smooth gradients when my final export is only 8-bit?",
+   "difficulty": "medium",
+   "target_type": "doc",
+   "gold_ids": [
+    401,
+    532
+   ],
+   "gold_agent_ranks": {
+    "401": null,
+    "532": 3
+   },
+   "vector_gold_rank": 4,
+   "rank1_id": 2051,
+   "rank1_relevance": 0.815,
+   "rank1_source": "Rich Young - Remove banding in After Effects, Premiere, and everywhere by Rich Young - ProVideo Coalition (article)",
+   "rank1_vs_gold": "as_good",
+   "answer_still_in_top5": true,
+   "notes": "2051 (Rich Young) quotes helpx word for word: 16/32 bpc, dithering on 8-bpc render but not in previews, the Arithmetic trick. Identical to gold 532 (rank 3); the duplicate costs one slot."
+  }
+ ],
+ "calibration": {
+  "relevance_is": "cosine similarity of the gemini-embedding-2 vectors, as returned by the agent's search tool (hybrid ranks, vector relevance).",
+  "top1_relevance_by_score": {
+   "2": {
+    "n": 18,
+    "min": 0.734,
+    "median": 0.784,
+    "max": 0.817,
+    "values": [
+     0.734,
+     0.74,
+     0.75,
+     0.751,
+     0.765,
+     0.767,
+     0.767,
+     0.772,
+     0.778,
+     0.79,
+     0.793,
+     0.795,
+     0.798,
+     0.799,
+     0.801,
+     0.803,
+     0.813,
+     0.817
+    ]
+   },
+   "1": {
+    "n": 6,
+    "min": 0.706,
+    "median": 0.744,
+    "max": 0.763,
+    "values": [
+     0.706,
+     0.73,
+     0.735,
+     0.752,
+     0.758,
+     0.763
+    ]
+   },
+   "0": {
+    "n": 0
+   }
+  },
+  "bands_needs": [
+   {
+    "top1_relevance": "0.00-0.70",
+    "score_2": 0,
+    "score_1": 0,
+    "score_0": 0
+   },
+   {
+    "top1_relevance": "0.70-0.74",
+    "score_2": 1,
+    "score_1": 3,
+    "score_0": 0
+   },
+   {
+    "top1_relevance": "0.74-0.77",
+    "score_2": 6,
+    "score_1": 3,
+    "score_0": 0
+   },
+   {
+    "top1_relevance": "0.77-1.00",
+    "score_2": 11,
+    "score_1": 0,
+    "score_0": 0
+   }
+  ],
+  "known_answer_top1": {
+   "values": [
+    0.719,
+    0.733,
+    0.742,
+    0.742,
+    0.747,
+    0.767,
+    0.769,
+    0.772,
+    0.773,
+    0.774,
+    0.781,
+    0.79,
+    0.799,
+    0.802,
+    0.803,
+    0.803,
+    0.805,
+    0.809,
+    0.81,
+    0.815,
+    0.821,
+    0.83,
+    0.831,
+    0.88
+   ],
+   "rank1_wrong_but_answer_in_top5": {
+    "r01": 0.81,
+    "r05": 0.774,
+    "r08": 0.773,
+    "r10": 0.719,
+    "r12": 0.767
+   },
+   "note": "All 24 known-answer questions are answerable; their top-1 relevance runs 0.719-0.880. A wrong rank-1 hit still scored up to 0.81 (r01), so high relevance shows the topic is covered, not that hit 1 is the answer. Read all hits."
+  },
+  "thresholds": {
+   "likely_nothing_below": 0.7,
+   "read_carefully_between": [
+    0.7,
+    0.77
+   ],
+   "likely_real_answer_at_or_above": 0.77,
+   "evidence": "Every need with top-1 >= 0.77 scored 2 (11/11). From 0.74 to 0.77, 6 of 9 scored 2. From 0.70 to 0.74, 1 of 4 did (n18 at 0.734). The lowest top-1 in the run was 0.706 (n16, partial), and the lowest for an answerable known-answer question was 0.719 (r10).",
+   "caveat": "No real-needs question scored 0 this time, so the 'nothing' floor is not measured; 0.70 is kept from the tool docstring and nothing contradicts it. Add 4-6 questions known to be absent (e.g. Premiere-only, Blender, Cinema 4D modelling) to measure it. Relevance also cannot tell 'partial because uncovered' (n09, n15 at 0.735/0.763) from 'partial because a better chunk ranked out' (n13, n14 at 0.730/0.752).",
+   "tool_docstring_change": "mcp_server.search says 0.74+ = usually a real answer. Data: 17 of 20 at >= 0.74 scored 2, and the 3 misses (n05 0.758, n14 0.752, n15 0.763) sat below 0.77. Suggest: < 0.70 nothing; 0.70-0.77 partial, read and cross-check; >= 0.77 a real answer is very likely somewhere in the top 5."
+  }
+ },
+ "verdict": {
+  "counts": {
+   "pilot": {
+    "score_2": 11,
+    "score_1": 9,
+    "score_0": 4,
+    "sources": 24,
+    "chunks": 277
+   },
+   "now": {
+    "score_2": 18,
+    "score_1": 6,
+    "score_0": 0,
+    "sources": 174,
+    "chunks": 2620
+   }
+  },
+  "helps_today": "Yes. 18 of 24 real needs now get an answer the agent can act on (pilot: 11), and none come back empty (pilot: 4). Eight questions rose and none fell. The new sources carry the wins: the bezier/influence mapping (forum thread), spatial interpolation (Jake + helpx Keyframe interpolation), shape Size/Roundness (Exportlab, NaughtyyJuan), cast shadow + light wrap (Envato, flylib), grain against banding (Rich Young), colour management (helpx, Frame.io), particles (CC Particle World). It still fails on our most specific premium needs: orbit rigs, glow on white, VO-synced type, and exact plugin settings. In three of those six the plugin manual that answers is in the library but does not surface.",
+  "improved": [
+   {
+    "id": "n01",
+    "from": 1,
+    "to": 2
+   },
+   {
+    "id": "n02",
+    "from": 1,
+    "to": 2
+   },
+   {
+    "id": "n03",
+    "from": 0,
+    "to": 2
+   },
+   {
+    "id": "n06",
+    "from": 0,
+    "to": 2
+   },
+   {
+    "id": "n16",
+    "from": 0,
+    "to": 1
+   },
+   {
+    "id": "n19",
+    "from": 1,
+    "to": 2
+   },
+   {
+    "id": "n20",
+    "from": 0,
+    "to": 2
+   },
+   {
+    "id": "n22",
+    "from": 1,
+    "to": 2
+   }
+  ],
+  "unchanged_at_2": [
+   "n04",
+   "n07",
+   "n08",
+   "n10",
+   "n11",
+   "n12",
+   "n17",
+   "n18",
+   "n21",
+   "n23",
+   "n24"
+  ],
+  "not_improved": [
+   {
+    "id": "n05",
+    "score": 1,
+    "cause": "coverage",
+    "why": "No VO-sync craft source: nothing on graphic-leads-the-word timing or hero-word hierarchy, and the cap cut the list to 3 Korenman/Sonduck hits."
+   },
+   {
+    "id": "n09",
+    "score": 1,
+    "cause": "coverage",
+    "why": "Only a flat sin/cos circle; no tilted/elliptical orbit, depth scale, phase, or front/back pass."
+   },
+   {
+    "id": "n13",
+    "score": 1,
+    "cause": "ranking",
+    "why": "RSMB manual 2556 (0.5 = 180 deg) and 2561/2562 (FG matte) exist but lose to helpx/Meyer chunks."
+   },
+   {
+    "id": "n14",
+    "score": 1,
+    "cause": "ranking",
+    "why": "Deep Glow manual 2498/2502 were in the vector top 5 but the per-source cap removed them; no source anywhere gives starting values."
+   },
+   {
+    "id": "n15",
+    "score": 1,
+    "cause": "coverage",
+    "why": "No source explains glow on white backgrounds or gives a light-background halo method."
+   },
+   {
+    "id": "n16",
+    "score": 1,
+    "cause": "ranking",
+    "why": "Particular manual 2636/2610/2731 exist but lose to Jake and Maxon transcripts. Up from 0 thanks to the CC Particle World fallback."
+   }
+  ],
+  "cause_breakdown_below_2": {
+   "pilot": {
+    "coverage": 12,
+    "ranking": 1,
+    "chunk": 0
+   },
+   "now": {
+    "coverage": 3,
+    "ranking": 3,
+    "chunk": 0
+   }
+  },
+  "regression_check": {
+   "summary": "Of the 10 known-answer questions where the agent's rank-1 hit is not gold (9 by vector rank, plus r03 where only the agent list misses), 5 rank-1 hits answer as well or better (r02, r03, r16, r17, r21): new, better sources. 5 are worse (r01, r05, r08, r10, r12). In 4 of those the gold is still at rank 2-3, so the agent still has the answer. Only r08 (Deep Glow tone mapping) truly regressed: the gold is gone and the manual's own Tonemapping chunk 2507 is not retrieved either.",
+   "as_good_or_better": [
+    "r02",
+    "r03",
+    "r16",
+    "r17",
+    "r21"
+   ],
+   "worse_but_gold_in_top3": [
+    "r01",
+    "r05",
+    "r10",
+    "r12"
+   ],
+   "real_regression": [
+    "r08"
+   ],
+   "pattern": "The worse cases are 'why doesn't X work' troubleshooting questions where a feature doc or loosely related tutorial matches the words better than the transcript with the fix: helpx in r01 and r12, the Deep Glow manual in r08, Jake's rig in r10, Zammit in r05."
+  },
+  "gaps_to_source": [
+   {
+    "rank": 1,
+    "gap": "Glow and halo on light/white backgrounds (n15)",
+    "missing": "Why Add/Screen glow cannot brighten white; a Normal/Multiply/Color Burn coloured halo or a soft-shadow-as-glow for white keynote and UI looks; Deep Glow on light plates (Input Masking + a tinted Normal pass)."
+   },
+   {
+    "rank": 2,
+    "gap": "Orbit and fake-3D ring expressions (n09)",
+    "missing": "Ellipse orbits with tilt and roll (R*sin(tilt)), scale/opacity/blur tied to sin(angle), per-layer phase from index or a slider, z-order swaps or front/back matte splits to pass behind a subject (Dan Ebberts motionscript orbit pages, atom/ring tutorials)."
+   },
+   {
+    "rank": 3,
+    "gap": "VO-synced kinetic type (n05)",
+    "missing": "A marker-driven or audio-waveform workflow for word reveals in sync with narration, the 'graphic leads the word by 2-6 frames' rule, hero-word hierarchy and hold times. Korenman Part 1 is a 74-chunk wall of transcript, and Creative Dojo covers only marker triggers."
+   },
+   {
+    "rank": 4,
+    "gap": "Recipe-level plugin tutorials with numbers (n14, n16)",
+    "missing": "Deep Glow 2 in-depth tutorials (tone mapping, neon text with starting Radius/Exposure/Threshold), Particular light-emitter orbit and trail recipes. The manuals are reference only and give no starting values."
+   },
+   {
+    "rank": 5,
+    "gap": "Smaller holes",
+    "missing": "ProRes Rec.601 vs 709 matrix tagging and checking a match (n22); chunked aerender runs and lossless joins (n24); Convert Expression to Keyframes (n08); card shadow and edge polish for matte reveals (n18)."
+   }
+  ],
+  "retrieval_problems": [
+   {
+    "problem": "The per-source cap starves results and throws away answers.",
+    "detail": "search() fetches top_k*4 = 20 rows, then keeps at most 2 per source, without refilling. When one big source fills the pool, the agent gets 3-4 hits and loses the right chunk.",
+    "evidence": [
+     "n05: 3 hits; by inference the 20-row pool was about 19 Korenman chunks",
+     "n14: 4 hits; dropped Deep Glow 2498 (Exposure/Threshold), 2496, 2505 from the vector top 5",
+     "r08: 3 hits; pool almost all Deep Glow manual; gold 407 lost",
+     "n21: dropped 596 (Conform To Frame Rate, vector rank 4) and backfilled 3 garbled Manu Mercurial chunks"
+    ],
+    "fix": "Refill until top_k distinct sources or the pool runs out (fetch 50-100). Better: merge adjacent same-source hits into one passage before capping, so a manual can give one long section instead of being cut off."
+   },
+   {
+    "problem": "Big single-file sources have flat locators, so their chunks look alike.",
+    "detail": "113 of 127 expression-reference chunks carry the stale locator 'Examples > Rotate the hands of a clock' (e.g. 1444, the Light object attributes). 32 of 59 Deep Glow chunks say only 'Effect Controls'. 73 of 74 Korenman chunks share one locator. The control or section name never reaches the header, so the embeddings and deep links lose it.",
+    "evidence": [
+     "n09 (1444 labelled 'Rotate the hands of a clock')",
+     "n14",
+     "n05",
+     "r08"
+    ],
+    "fix": "Rebuild breadcrumbs from the nearest h4-h6 heading (the docsforadobe pilcrow anchors break the parser), and split the Korenman page by its timestamps."
+   },
+   {
+    "problem": "Plugin manuals lose to transcripts and helpx on plugin questions.",
+    "detail": "All three ranking failures are the plugin manuals added for exactly those questions: RSMB (n13), Deep Glow (n14), Particular (n16). Their chunks are short, generic reference text, so tutorials that use the same words outrank them. Docs beating transcripts goes the other way on troubleshooting questions (r01, r12).",
+    "evidence": [
+     "n13 -> 2556",
+     "n14 -> 2498/2502",
+     "n16 -> 2636/2610/2731"
+    ],
+    "fix": "Pass tools_available or topic filters from the agent, add a plugin-name boost (a query mentioning RSMB/Particular/Deep Glow lifts that manual), or rerank with a cross-encoder."
+   },
+   {
+    "problem": "The keyword half still adds nothing.",
+    "detail": "Hybrid top 5 == vector top 5 in 47 of 48 questions (r03 is the exception), as in the pilot.",
+    "evidence": [
+     "final_needs_results.json",
+     "final_retrieval_results.json"
+    ],
+    "fix": "Same as the pilot advice: a wider BM25 pool plus a reranker, or drop BM25 from the default path."
+   },
+   {
+    "problem": "The caption parser regressed in the bulk re-ingest, dropping about half the words.",
+    "detail": "118 chunks in 9 manual-caption videos now hold '&nbsp;&nbsp;' fragments with about half of each cue missing. Pilot copies were complete: Zammit 'Right Way to Animate Text' 5268 -> 2757 words, Marriott 'Elevate' 3412 -> 1804, SternFX motion blur 1953 -> 1033. About 16 transcript sources run at 60-105 words/min against a 189 median (a few may be clip- or music-heavy), including Manu Mercurial (29 chunks) and Dancer to Dust, which show up as junk backfill. These were the best-reading videos in the pilot.",
+    "evidence": [
+     "r02 gold 344 garbled",
+     "n13 rank 5 (389)",
+     "n21 ranks 3-5 (1335, 1381, 1334)",
+     "n16 ranks 3-4 (1249, 1252)",
+     "n05 lost Zammit emphasis 352"
+    ],
+    "fix": "Re-fetch these videos and keep every line of multi-line cues; flag any transcript under ~120 wpm at ingest."
+   },
+   {
+    "problem": "Duplicate and footer text still takes slots.",
+    "detail": "Rich Young 2051 repeats helpx 532 word for word (both returned in n19/r21). 18 Meyer/Rich Young chunks carry 'Filmtools ... Shop Now', and their locator is literally 'Filmtools'.",
+    "evidence": [
+     "n19",
+     "r21",
+     "n12 (515)"
+    ],
+    "fix": "Near-duplicate filtering at ingest; strip the ProVideo Coalition sidebar."
+   }
+  ],
+  "transcripts_vs_docs": "Transcripts are not losing overall. Of the 18 scores of 2, the best hit was a transcript in 7 (n02, n03, n04, n07, n11, n17, n18), a doc in 4 (n10, n21, n22, n24), an article in 4 (n01, n12, n19, n23) and a written tutorial in 3 (n06, n08, n20). Docs win settings, flags and dialogs; transcripts win technique. The real imbalance is that large manuals either flood the pool (Deep Glow, Korenman) or sink (RSMB, Particular), depending on how closely the query's words match them."
+ },
+ "meta": {
+  "judged": "2026-10-10",
+  "library": "after-effects, 174 sources, 2620 chunks, gemini-embedding-2",
+  "rubric": "2 = a hit lets the agent act (must_contain substance, readable); 1 = relevant but partial; 0 = nothing useful. best_rank/best_id = the single hit carrying most of the answer; chunk ids are the new chunks_full.jsonl ids (the pilot ids in needs_judgement.json are a different numbering).",
+  "judged_list": "agent (what the search tool returns, after the per-source cap)"
+ }
+}

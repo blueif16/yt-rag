@@ -1,0 +1,532 @@
+[
+  {
+    "url": "https://github.com/material-components/material-components-android/blob/master/docs/theming/Motion.md",
+    "kind": "page",
+    "title": "Material motion: spring, easing and duration tokens, and transition patterns (Material Components for Android docs)",
+    "author": "Google, Material Design team",
+    "type": "doc",
+    "approx_chars": 31857,
+    "published": "2023-01-23",
+    "text_file": "/home/ran/yt-rag/eval/after-effects/bulk/texts/material-motion-tokens-transitions.md",
+    "tags": {
+      "topics": [
+        "easing",
+        "transitions"
+      ],
+      "scenarios": [
+        "ui-promo"
+      ],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": []
+    },
+    "why": "Exact M3 numbers: six spring tokens (fast/default/slow spatial = damping 0.9, stiffness 1400/700/300; effects = damping 1, stiffness 3800/1600/800), seven easing curves as cubic-beziers, 16 duration tokens (50 to 1000 ms), and container transform, shared axis and fade-through specs down to fade and scale thresholds. Lets UI promo moves match real Android motion."
+  },
+  {
+    "url": "https://m3.material.io/styles/motion/easing-and-duration/applying-easing-and-duration",
+    "kind": "page",
+    "title": "Easing and duration – Material Design 3 (Applying easing and duration)",
+    "author": "Google, Material Design",
+    "type": "doc",
+    "approx_chars": 4720,
+    "text_file": "/home/ran/yt-rag/eval/after-effects/bulk/texts/m3-applying-easing-and-duration.md",
+    "tags": {
+      "topics": [
+        "easing",
+        "transitions"
+      ],
+      "scenarios": [
+        "ui-promo"
+      ],
+      "level": "basic",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "Default easing and duration pairs (Emphasized 500 ms on-screen, Emphasized decelerate 400 ms to enter, Emphasized accelerate 200 ms to exit, plus the Standard set) and the rules for choosing them: enter vs. exit, temporary vs. permanent exit, duration scaled to the area covered."
+  },
+  {
+    "url": "https://carbondesignsystem.com/elements/motion/choreography/",
+    "kind": "page",
+    "title": "Motion: Choreography (Carbon Design System)",
+    "author": "IBM Carbon Design System",
+    "type": "doc",
+    "approx_chars": 2916,
+    "tags": {
+      "topics": [
+        "design",
+        "easing"
+      ],
+      "scenarios": [
+        "ui-promo",
+        "data-viz"
+      ],
+      "level": "intermediate",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "Concrete choreography rules: stagger table rows by 20 ms with the whole sequence inside 500 ms, a five-step entrance order (shell, then body, dynamic content, primary action, data viz last), grid-only motion paths, and when to break consistency on purpose. Use it to stage multi-element UI reveals."
+  },
+  {
+    "url": "https://learn.microsoft.com/en-us/windows/apps/design/motion/timing-and-easing",
+    "kind": "page",
+    "title": "Timing and easing (Fluent motion, Windows apps)",
+    "author": "Microsoft",
+    "type": "doc",
+    "approx_chars": 2278,
+    "published": "2026-02-28",
+    "tags": {
+      "topics": [
+        "easing"
+      ],
+      "scenarios": [
+        "ui-promo"
+      ],
+      "level": "basic",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "Fluent's system values: 83, 167 and 250 ms control durations, Fast Out Slow In cubic-bezier(0,0,0,1) for entering, and Slow Out Fast In cubic-bezier(1,0,1,1) for exiting. These are the numbers that make Windows or Copilot UI promos move like the real OS."
+  },
+  {
+    "url": "https://www.nngroup.com/articles/animation-usability/",
+    "kind": "page",
+    "title": "Animation for Attention and Comprehension",
+    "author": "Aurora Harley (Nielsen Norman Group)",
+    "type": "article",
+    "approx_chars": 10295,
+    "published": "2014-09-21",
+    "tags": {
+      "topics": [
+        "design"
+      ],
+      "scenarios": [
+        "ui-promo",
+        "explainer"
+      ],
+      "level": "intermediate",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "Perception rules for where the eye goes: motion in the periphery pulls attention, a slide-in grabs attention faster than a fade, and an effect must start within 0.1 s of its cause to read as caused by it. Use it to direct attention in explainer and UI shots."
+  },
+  {
+    "url": "https://www.kvin.me/posts/effortless-ui-spring-animations",
+    "kind": "page",
+    "title": "Effortless UI Spring Animations: A Two-Parameter Approach",
+    "author": "Kevin Grajeda",
+    "type": "article",
+    "approx_chars": 6079,
+    "published": "2024-08-21",
+    "tags": {
+      "topics": [
+        "easing",
+        "expressions"
+      ],
+      "scenarios": [
+        "ui-promo"
+      ],
+      "level": "advanced",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "Corrected formulas that turn bounce and perceptual duration into mass, stiffness and damping (stiffness = (2π/d)^2, damping = (1-bounce)·4π/d). With them a spring expression can be timed like an ease, so springs from AE, Remotion and SwiftUI match."
+  },
+  {
+    "url": "https://www.provideocoalition.com/wp-content/uploads/p35-lasseter.pdf",
+    "kind": "page",
+    "title": "Principles of Traditional Animation Applied to 3D Computer Animation (SIGGRAPH 1987)",
+    "author": "John Lasseter (Pixar)",
+    "type": "article",
+    "approx_chars": 51070,
+    "published": "1987-07-01",
+    "tags": {
+      "topics": [
+        "design",
+        "easing"
+      ],
+      "scenarios": [
+        "character",
+        "logo-ident"
+      ],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": []
+    },
+    "why": "The canonical paper on squash and stretch, timing, anticipation, staging, follow-through and overlap, slow in/out, arcs and secondary action, written for keyframe animators. Applying it turns mechanical keyframes into weighted, readable motion for the host character and logo stings."
+  },
+  {
+    "url": "http://robertpenner.com/easing/penner_chapter7_tweening.pdf",
+    "kind": "page",
+    "title": "Motion, Tweening, and Easing (Robert Penner's Programming Macromedia Flash MX, ch. 7)",
+    "author": "Robert Penner",
+    "type": "article",
+    "approx_chars": 83604,
+    "published": "2002-10-04",
+    "tags": {
+      "topics": [
+        "easing",
+        "expressions"
+      ],
+      "scenarios": [],
+      "level": "advanced",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "The original derivation and code for the standard easing families (linear, quadratic through quintic, sinusoidal, exponential and circular, in/out/inOut) as functions of (t, b, c, d), plus the exponential slide. It is the source of easeOutExpo and friends, so the formulas port straight into AE expressions and GSAP."
+  },
+  {
+    "url": "https://www.bbc.co.uk/accessibility/forproducts/guides/subtitles/",
+    "kind": "page",
+    "title": "BBC Subtitle Guidelines: Presentation (editing, line breaks, timing, synchronisation, shot changes)",
+    "author": "BBC",
+    "type": "doc",
+    "approx_chars": 77477,
+    "text_file": "/home/ran/yt-rag/eval/after-effects/bulk/texts/bbc-subtitle-guidelines-presentation.md",
+    "tags": {
+      "topics": [
+        "text"
+      ],
+      "scenarios": [
+        "titles",
+        "kinetic-type",
+        "edit-pacing"
+      ],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": []
+    },
+    "why": "The reference rules for on-screen text timing: 160–180 wpm, about 0.33 s per word minimum (1.2 s for four words), breaking lines at natural linguistic points, syncing to speech onset and cutting on shot changes, plus line length, colour and positioning. Apply to burnt-in captions and kinetic type holds."
+  },
+  {
+    "url": "https://partnerhelp.netflixstudios.com/hc/en-us/articles/217350977-English-USA-Timed-Text-Style-Guide",
+    "kind": "page",
+    "title": "English (USA) Timed Text Style Guide",
+    "author": "Netflix",
+    "type": "doc",
+    "approx_chars": 51892,
+    "published": "2021-10-22",
+    "tags": {
+      "topics": [
+        "text"
+      ],
+      "scenarios": [
+        "titles"
+      ],
+      "level": "intermediate",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "Hard numbers for captions: 42 characters per line, reading speed up to 20 characters per second for adults (17 for children), plus line treatment, numbers, punctuation, italics and continuity rules. A second, stricter check for subtitle and caption layers."
+  },
+  {
+    "url": "https://tech.ebu.ch/docs/r/r095.pdf",
+    "kind": "page",
+    "title": "EBU R 95: Safe areas for 16:9 television production",
+    "author": "European Broadcasting Union",
+    "type": "doc",
+    "approx_chars": 7958,
+    "published": "2017-06-27",
+    "tags": {
+      "topics": [
+        "design",
+        "text"
+      ],
+      "scenarios": [
+        "titles"
+      ],
+      "level": "basic",
+      "impact": "low",
+      "tools": []
+    },
+    "why": "The broadcast definition of safe areas for 16:9: action-safe inset 3.5% and graphics-safe inset 5% on every edge, with the image centre kept fixed (the per-raster pixel tables are figures, not text). Use these numbers for title and lower-third margins."
+  },
+  {
+    "url": "https://chrisbrejon.com/cg-cinematography/chapter-1-color-management/",
+    "kind": "page",
+    "title": "Chapter 1: Color Management (CG Cinematography)",
+    "author": "Chris Brejon",
+    "type": "article",
+    "approx_chars": 35977,
+    "published": "2020-03-10",
+    "tags": {
+      "topics": [
+        "color-finish",
+        "compositing"
+      ],
+      "scenarios": [
+        "hero-fx"
+      ],
+      "level": "advanced",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "A precise explanation of primaries, white point, OETF/EOTF, sRGB, scene-linear vs. display-linear, tone mapping, LUTs and OCIO, with the common mistakes. Gives the agent the right mental model before it touches working space, linearize or EXR imports."
+  },
+  {
+    "url": "https://prolost.com/blog/aces",
+    "kind": "page",
+    "title": "Linear Light, Gamma, and ACES",
+    "author": "Stu Maschwitz (Prolost)",
+    "type": "article",
+    "approx_chars": 39419,
+    "published": "2021-06-22",
+    "tags": {
+      "topics": [
+        "color-finish",
+        "compositing",
+        "light-glow"
+      ],
+      "scenarios": [
+        "hero-fx"
+      ],
+      "level": "advanced",
+      "impact": "high",
+      "tools": []
+    },
+    "why": "Why blurs, glows, Add-mode light and motion blur look photographic only in linear light, and how ACES (ACEScg working space, the RRT/ODT roll-off, inverted ODT for sRGB plates) fixes clipped, flat highlights, with hands-on use of the AE OCIO effect. Premium glows come straight from this."
+  },
+  {
+    "url": "https://prolost.com/blog/2006/6/4/know-when-to-log-em-know-when-to-lin-em.html",
+    "kind": "page",
+    "title": "Know When to Log 'em, Know When to Lin 'em",
+    "author": "Stu Maschwitz (Prolost)",
+    "type": "article",
+    "approx_chars": 3734,
+    "published": "2006-06-04",
+    "tags": {
+      "topics": [
+        "color-finish",
+        "compositing"
+      ],
+      "scenarios": [],
+      "level": "advanced",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "Which operations belong in which space. Linear light: gain grades, resizing, motion and focus blur, add/multiply, fog, light, text rasterising. Gamma or log: inverts, black crush, grain, dissolves, fades to black. Use it to decide whether a step goes in a linearized precomp."
+  },
+  {
+    "url": "https://helpx.adobe.com/after-effects/desktop/adjust-colors/opencolorio-and-aces-color-management/opencolorio-aces-color-management.html",
+    "kind": "page",
+    "title": "OpenColorIO and ACES color management",
+    "author": "Adobe",
+    "type": "doc",
+    "approx_chars": 6105,
+    "published": "2026-09-18",
+    "tags": {
+      "topics": [
+        "color-finish",
+        "render-export"
+      ],
+      "scenarios": [],
+      "level": "intermediate",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "Native OCIO in current AE: the OCIO color-managed engine, config, working and display color space, per-footage Override Media Color Space, output color space in the Output Module, and the five OCIO effects (File, Color Space, Display, Look, CDL Transform). Needed to bring ACEScg Blender or three.js renders in correctly."
+  },
+  {
+    "url": "https://www.reddigitalcinema.com/red-101/shutter-angle-tutorial",
+    "kind": "page",
+    "title": "Shutter Angles & Creative Control",
+    "author": "RED Digital Cinema (RED 101)",
+    "type": "article",
+    "approx_chars": 3349,
+    "tags": {
+      "topics": [
+        "motion-blur"
+      ],
+      "scenarios": [
+        "hero-fx"
+      ],
+      "level": "basic",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "What shutter angle physically means (180° = 1/48 s at 24 fps). Larger angles smear motion; smaller angles stutter, giving crisp discrete frames like a 1950s newsreel. Use it to choose AE motion-blur angles on purpose instead of by default."
+  },
+  {
+    "url": "https://www.reddigitalcinema.com/red-101/camera-panning-speed",
+    "kind": "page",
+    "title": "Panning Speed Best Practices",
+    "author": "RED Digital Cinema (RED 101)",
+    "type": "article",
+    "approx_chars": 6376,
+    "tags": {
+      "topics": [
+        "motion-blur",
+        "camera-3d"
+      ],
+      "scenarios": [
+        "ui-promo",
+        "edit-pacing"
+      ],
+      "level": "intermediate",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "The judder rule: at 24 fps with a 180° shutter, pan no faster than one full frame width every ~7 seconds, and how frame rate and shutter angle shift that limit. Apply it to camera pans, UI scrolls and slow pushes so they don't strobe."
+  },
+  {
+    "url": "https://support.google.com/youtube/answer/1722171?hl=en",
+    "kind": "page",
+    "title": "YouTube recommended upload encoding settings",
+    "author": "Google / YouTube Help",
+    "type": "doc",
+    "approx_chars": 4818,
+    "tags": {
+      "topics": [
+        "render-export"
+      ],
+      "scenarios": [],
+      "level": "basic",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "YouTube's own delivery spec for the channel: MP4/H.264 High Profile, progressive, closed GOP of half the frame rate, recommended SDR/HDR bitrates per resolution and frame rate, AAC-LC 48 kHz audio, BT.709 colour. These are the targets for the final render."
+  },
+  {
+    "url": "https://helpx.adobe.com/after-effects/desktop/render-and-export/multi-frame-rendering/multi-frame-rendering.html",
+    "kind": "page",
+    "title": "Preview and render with Multi-Frame Rendering",
+    "author": "Adobe",
+    "type": "doc",
+    "approx_chars": 5743,
+    "published": "2026-08-10",
+    "tags": {
+      "topics": [
+        "workflow",
+        "render-export"
+      ],
+      "scenarios": [],
+      "level": "intermediate",
+      "impact": "low",
+      "tools": []
+    },
+    "why": "How MFR uses cores, RAM and GPU (1.2–4x speedups by hardware tier), the CPU-reserve setting, Speculative Preview, and the Render Queue performance readout. Needed to diagnose slow aerender jobs and plug-ins that are not MFR-safe."
+  },
+  {
+    "url": "https://helpx.adobe.com/after-effects/desktop/memory-storage-performance/improve-performance/improve-performance.html",
+    "kind": "page",
+    "title": "Improve performance",
+    "author": "Adobe",
+    "type": "doc",
+    "approx_chars": 7680,
+    "published": "2026-04-17",
+    "tags": {
+      "topics": [
+        "workflow"
+      ],
+      "scenarios": [],
+      "level": "intermediate",
+      "impact": "low",
+      "tools": []
+    },
+    "why": "Adobe's speed checklist: memory and cache settings; simplifying the project (remove unused items, split projects, Collect Files to a fast local disk, pre-render nested comps, proxies, lower resolution, solo); screen-output settings (display color management off, region of interest, hardware-accelerated panels); and effect habits that slow renders."
+  },
+  {
+    "url": "https://helpx.adobe.com/after-effects/desktop/get-started/technical-requirements/basics-gpu-after-effects.html",
+    "kind": "page",
+    "title": "GPU and GPU driver requirements for After Effects",
+    "author": "Adobe",
+    "type": "doc",
+    "approx_chars": 7661,
+    "published": "2026-03-27",
+    "tags": {
+      "topics": [
+        "workflow",
+        "render-export"
+      ],
+      "scenarios": [],
+      "level": "intermediate",
+      "impact": "low",
+      "tools": []
+    },
+    "why": "Which AE features use the GPU (Mercury GPU Acceleration for supported effects, hardware-accelerated panels, display color management), the CUDA 11.8+ driver minimum, where to switch Mercury GPU vs. Software Only, and common GPU failure modes. Use it to troubleshoot render glitches or slow GPU effects on the Windows AE box."
+  },
+  {
+    "url": "https://motiondeveloper.com/blog/expression-pre-processing",
+    "kind": "page",
+    "title": "What happens during expression pre-processing",
+    "author": "Motion Developer (Tim Haywood)",
+    "type": "article",
+    "approx_chars": 5180,
+    "published": "2020-09-25",
+    "tags": {
+      "topics": [
+        "expressions"
+      ],
+      "scenarios": [],
+      "level": "advanced",
+      "impact": "low",
+      "tools": []
+    },
+    "why": "AE engine internals: the JS engine rewrites array math into add/sub/mul/div wrappers and wraps code in a with()-Proxy scope for thisLayer/thisProperty (inspect it with __preprocess). This explains why code in external .jsx skips that step, runs faster, and needs explicit prefixes."
+  },
+  {
+    "url": "https://motiondeveloper.com/blog/design-tokens-jsx",
+    "kind": "page",
+    "title": "Share design tokens across projects with JSX files",
+    "author": "Motion Developer (Tim Haywood)",
+    "type": "tutorial",
+    "approx_chars": 3854,
+    "published": "2021-11-17",
+    "tags": {
+      "topics": [
+        "expressions",
+        "workflow"
+      ],
+      "scenarios": [
+        "ui-promo",
+        "titles"
+      ],
+      "level": "advanced",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "Pattern for keeping brand colours, sizes and theme variants in one imported .jsx file that every expression references, with theming logic, thisLayer.hexToRgb conversion and a lazy Proxy for speed. This maps directly onto our brand kits, so one token file restyles every comp."
+  },
+  {
+    "url": "https://motiondeveloper.com/blog/write-expressions-external-files",
+    "kind": "page",
+    "title": "How to write expressions in external (jsx) files",
+    "author": "Motion Developer (Tim Haywood)",
+    "type": "tutorial",
+    "approx_chars": 5378,
+    "published": "2020-08-23",
+    "tags": {
+      "topics": [
+        "expressions",
+        "workflow"
+      ],
+      "scenarios": [],
+      "level": "advanced",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "How to keep expression logic in a versioned .jsx library imported as footage: the loose JSON-with-functions syntax, the required thisLayer prefixes and explicit vector math, and the performance gain. This suits agents that generate and update expressions from code."
+  },
+  {
+    "url": "https://www.provideocoalition.com/cmg_hidden_gems_chapter_20_-_collapsing_transformations/",
+    "kind": "page",
+    "title": "CMG Hidden Gems: Chapter 20 – Collapsing Transformations",
+    "author": "Chris and Trish Meyer",
+    "type": "article",
+    "approx_chars": 10529,
+    "published": "2011-04-15",
+    "tags": {
+      "topics": [
+        "workflow",
+        "compositing",
+        "camera-3d"
+      ],
+      "scenarios": [
+        "ui-promo"
+      ],
+      "level": "intermediate",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "AE's render pipeline order (masks, then effects, then transforms, etc.) and exactly how Collapse Transformations / Continuously Rasterize rewires it. That keeps nested UI and vector art sharp when scaled twice and lets precomped 3D layers interact, and it explains the pasteboard and adjustment-layer gotchas."
+  }
+]

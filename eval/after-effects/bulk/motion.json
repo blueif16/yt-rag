@@ -1,0 +1,705 @@
+[
+  {
+    "url": "https://helpx.adobe.com/after-effects/desktop/animate-in-after-effects/animation-keyframes/keyframe-interpolation.html",
+    "kind": "page",
+    "title": "Keyframe interpolation",
+    "author": "Adobe",
+    "type": "doc",
+    "approx_chars": 15468,
+    "tags": {
+      "topics": [
+        "easing"
+      ],
+      "scenarios": [],
+      "level": "intermediate",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "Spatial vs temporal interpolation, Auto Bezier boomerang fix, Linear/Continuous/Bezier/Hold, Rove Across Time, Default Spatial Interpolation To Linear pref: the exact reference the pilot lacked for clean UI/type moves."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=xUmMHgZ9YfI",
+    "kind": "video",
+    "title": "You NEED to understand spatial interpolation \\\\ After Effects Tutorial",
+    "author": "Jake In Motion",
+    "views": 39086,
+    "likes": 2061,
+    "published": "2022-10-25",
+    "duration_sec": 594,
+    "captions": "auto",
+    "tags": {
+      "topics": [
+        "easing"
+      ],
+      "scenarios": [
+        "ui-promo"
+      ],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": []
+    },
+    "why": "Why Auto Bezier motion paths drift and overshoot, switching keys to spatial Linear, sculpting curved paths with handles instead of Separate Dimensions, 2D and 3D camera paths; straight, deliberate UI moves. Under 50k views but a niche gap topic from a top-tier instructor (5.3% likes)."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=PerFI3xPXtI",
+    "kind": "video",
+    "title": "Unlock the power of Keyframes in After Effects \\\\ AE Tutorial",
+    "author": "Jake In Motion",
+    "views": 93515,
+    "likes": 4216,
+    "published": "2022-11-10",
+    "duration_sec": 984,
+    "captions": "auto",
+    "tags": {
+      "topics": [
+        "easing"
+      ],
+      "scenarios": [],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": []
+    },
+    "why": "Every keyframe type (linear, bezier, continuous, auto, hold) on both value graph and motion path, plus roving keys to keep speed continuous through a sculpted path; fast-in/swoop-out moves without per-key easing."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=HpVtzOtaHlg",
+    "kind": "video",
+    "title": "After Effects Easing...like a pro",
+    "author": "MotionXP",
+    "views": 108464,
+    "likes": 5223,
+    "published": "2023-12-20",
+    "duration_sec": 755,
+    "captions": "auto",
+    "tags": {
+      "topics": [
+        "easing",
+        "design"
+      ],
+      "scenarios": [],
+      "level": "intermediate",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "Physically motivated curves: falling and impact, hang time, decaying overshoot/wobble on scale and rotation, roving keys on arcs; gives settles and hits real weight."
+  },
+  {
+    "url": "http://www.motionscript.com/articles/bounce-and-overshoot.html",
+    "kind": "page",
+    "title": "Realistic Bounce and Overshoot",
+    "author": "Dan Ebberts",
+    "type": "article",
+    "approx_chars": 13500,
+    "tags": {
+      "topics": [
+        "easing",
+        "expressions"
+      ],
+      "scenarios": [
+        "ui-promo",
+        "logo-ident"
+      ],
+      "level": "advanced",
+      "impact": "high",
+      "tools": []
+    },
+    "why": "Canonical overshoot vs bounce: velocity-matched decaying-sine overshoot (freq/decay, why amplitude = v/w), keyframe overshoot and keyframe bounce-back code; settles that match the incoming move."
+  },
+  {
+    "url": "https://helpx.adobe.com/after-effects/desktop/animate-in-after-effects/assorted-animation-tools/assorted-animation-tools.html",
+    "kind": "page",
+    "title": "Assorted animation tools",
+    "author": "Adobe",
+    "type": "doc",
+    "approx_chars": 18736,
+    "tags": {
+      "topics": [
+        "easing"
+      ],
+      "scenarios": [],
+      "level": "basic",
+      "impact": "low",
+      "tools": []
+    },
+    "why": "Motion path controls, adding path keys with the Pen, Motion Sketch, pasting a mask/shape path into Position, Smoother and Wiggler settings, Convert Audio to Keyframes."
+  },
+  {
+    "url": "https://community.adobe.com/questions-529/real-keyframes-speed-and-influence-of-spatial-properties-29398",
+    "kind": "page",
+    "title": "Real keyframes speed and influence of spatial properties",
+    "author": "bodymovin (Hernan Torrisi) and UQg, Adobe Community",
+    "type": "article",
+    "approx_chars": 3500,
+    "text_file": "/home/ran/yt-rag/eval/after-effects/bulk/texts/ae-ease-to-cubic-bezier.md",
+    "tags": {
+      "topics": [
+        "easing"
+      ],
+      "scenarios": [],
+      "level": "advanced",
+      "impact": "low",
+      "tools": []
+    },
+    "why": "Exact AE speed/influence <-> cubic-bezier math per property type (1D/multi-D, spatial uses arc length, Shape avg speed 1) plus the hidden influence clamp on spatial keys; lets SML cubic-bezier tokens be set exactly."
+  },
+  {
+    "url": "https://www.carbondesignsystem.com/building-blocks/foundations/motion/overview",
+    "kind": "page",
+    "title": "Motion | Carbon Design System",
+    "author": "IBM Carbon Design System",
+    "type": "doc",
+    "approx_chars": 7883,
+    "tags": {
+      "topics": [
+        "easing",
+        "design"
+      ],
+      "scenarios": [
+        "ui-promo"
+      ],
+      "level": "basic",
+      "impact": "low",
+      "tools": []
+    },
+    "why": "Productive vs expressive UI motion: standard/entrance/exit cubic-beziers with their AE influence equivalents and a 70-700 ms duration scale; ready values for believable product-UI moves."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=n24aTp1-jK4",
+    "kind": "video",
+    "title": "Perfect Shape Morphs in After Effects",
+    "author": "Ben Marriott",
+    "views": 369585,
+    "likes": 17154,
+    "published": "2024-04-18",
+    "duration_sec": 2315,
+    "captions": "manual",
+    "tags": {
+      "topics": [
+        "shapes",
+        "easing"
+      ],
+      "scenarios": [
+        "ui-promo",
+        "logo-ident"
+      ],
+      "level": "advanced",
+      "impact": "high",
+      "tools": []
+    },
+    "why": "Shape-layer morphs done right: matching vertex counts, Set First Vertex to stop twisting, reusing path keys via expressions, anticipation and secondary moves; clean card/icon/logo morph transitions."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=y5Q-AhxPh9A",
+    "kind": "video",
+    "title": "Apple Style UI Shape Morphing Tutorial in After Effects",
+    "author": "NaughtyyJuan",
+    "views": 247923,
+    "likes": 15096,
+    "published": "2026-02-25",
+    "duration_sec": 1000,
+    "captions": "auto",
+    "tags": {
+      "topics": [
+        "shapes",
+        "easing"
+      ],
+      "scenarios": [
+        "ui-promo"
+      ],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": []
+    },
+    "why": "Apple-style UI morph: animate Rectangle Path Size and Roundness (never Scale), nulls for grouped elements, graph-editor easing and motion blur; rounded cards that resize without corner distortion."
+  },
+  {
+    "url": "https://exportlab.io/blog/shape-morph-after-effects",
+    "kind": "page",
+    "title": "Shape Morph in After Effects: Apple-Style UI Animation",
+    "author": "Exportlab Team",
+    "type": "tutorial",
+    "approx_chars": 9239,
+    "tags": {
+      "topics": [
+        "shapes",
+        "easing"
+      ],
+      "scenarios": [
+        "ui-promo"
+      ],
+      "level": "intermediate",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "Written recipe for UI card morphs: Size/Roundness/Fill on one shape, roundness caps at half the short side, 6-8 frame steps, low-amplitude bounce on Size, one-frame content stagger, bezier morph point counts."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=CVliDoNgoCg",
+    "kind": "video",
+    "title": "sourceRectAtTime(); | After Effects Expressions",
+    "author": "Jake In Motion",
+    "views": 152841,
+    "likes": 3790,
+    "published": "2018-03-13",
+    "duration_sec": 2072,
+    "captions": "auto",
+    "tags": {
+      "topics": [
+        "expressions",
+        "shapes"
+      ],
+      "scenarios": [
+        "ui-promo",
+        "titles"
+      ],
+      "level": "advanced",
+      "impact": "high",
+      "tools": []
+    },
+    "why": "sourceRectAtTime() in depth: auto-sizing boxes and cards with padding, anchoring to any edge, time arguments, text-layer bounding-box quirks; UI cards and labels that resize cleanly with their content."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=HGXP8JHWaSU",
+    "kind": "video",
+    "title": "BEST seamless transition rig in After Effects (Free Preset)",
+    "author": "Jake In Motion",
+    "views": 46853,
+    "likes": 2956,
+    "published": "2025-03-07",
+    "duration_sec": 1803,
+    "captions": "auto",
+    "tags": {
+      "topics": [
+        "expressions",
+        "transitions",
+        "shapes"
+      ],
+      "scenarios": [
+        "ui-promo"
+      ],
+      "level": "advanced",
+      "impact": "high",
+      "tools": []
+    },
+    "why": "One Transition slider drives a rounded-rectangle matte from full-frame to a card (size, position, roundness, stroke width via linear()); smooth expression-driven card resizes and full-screen-to-card transitions. 47k views is fine for a niche advanced rig from a top-tier instructor (6.3% likes)."
+  },
+  {
+    "url": "https://schoolofmotion.com/blog/anchor-point-expressions-in-after-effects",
+    "kind": "page",
+    "title": "Anchor Point Expressions in After Effects",
+    "author": "Ryan Plummer (School of Motion)",
+    "type": "tutorial",
+    "approx_chars": 8013,
+    "tags": {
+      "topics": [
+        "expressions"
+      ],
+      "scenarios": [
+        "ui-promo",
+        "titles"
+      ],
+      "level": "intermediate",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "sourceRectAtTime code to pin the anchor to any corner or centre with slider offsets; cards and labels grow from the right edge instead of the middle."
+  },
+  {
+    "url": "https://helpx.adobe.com/after-effects/desktop/animate-in-after-effects/animate-shape-paths-and-masks/animating-shape-paths-masks.html",
+    "kind": "page",
+    "title": "Managing and animating shape paths and masks",
+    "author": "Adobe",
+    "type": "doc",
+    "approx_chars": 32750,
+    "tags": {
+      "topics": [
+        "shapes",
+        "mattes-masks"
+      ],
+      "scenarios": [],
+      "level": "intermediate",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "Path animation reference: vertex numbering and Set First Vertex, Preserve Constant Vertex Count, free-transform of path points, Smart Mask Interpolation options; why morphs twist and how to fix it."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=wNFHUvtogOE",
+    "kind": "video",
+    "title": "How I Mockup UI Animations inside Adobe After Effects (Walkthrough)",
+    "author": "Cameron Perry",
+    "views": 129315,
+    "likes": 2682,
+    "published": "2021-08-04",
+    "duration_sec": 906,
+    "captions": "auto",
+    "tags": {
+      "topics": [
+        "shapes",
+        "easing"
+      ],
+      "scenarios": [
+        "ui-promo"
+      ],
+      "level": "intermediate",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "Practical app-UI mockup: precomped scroll content, 80/80 influence for a flick-scroll feel, parenting, Corner Pin into a phone screen; a believable app walkthrough shot."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=NclmWZa4c_8",
+    "kind": "video",
+    "title": "Text Animators are an After Effects superpower | Ae Genius",
+    "author": "Jake In Motion",
+    "views": 78680,
+    "likes": 3068,
+    "published": "2024-06-05",
+    "duration_sec": 796,
+    "captions": "auto",
+    "tags": {
+      "topics": [
+        "text"
+      ],
+      "scenarios": [
+        "kinetic-type",
+        "titles"
+      ],
+      "level": "intermediate",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "Stacking animator properties non-destructively, range-selector timing, grouping alignment, saving text animators as reusable presets; one consistent text-in system across a video."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=5mu8Iku7xMA",
+    "kind": "video",
+    "title": "Ultimate Text Morph Animation in After Effects",
+    "author": "Ben Marriott",
+    "views": 559321,
+    "likes": 26495,
+    "published": "2021-10-14",
+    "duration_sec": 504,
+    "captions": "auto",
+    "tags": {
+      "topics": [
+        "text",
+        "transitions"
+      ],
+      "scenarios": [
+        "kinetic-type",
+        "logo-ident"
+      ],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": []
+    },
+    "why": "Liquid word-to-word morph from stock effects: Gaussian blur then Levels to re-sharpen on an adjustment layer, Turbulent Displace evolution, fractal-noise blur map; a premium type transition."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=UnK5lGmadSs",
+    "kind": "video",
+    "title": "3 Kinetic Typography Techniques in After Effects",
+    "author": "SonduckFilm",
+    "views": 697053,
+    "likes": 16624,
+    "published": "2019-12-02",
+    "duration_sec": 717,
+    "captions": "auto",
+    "tags": {
+      "topics": [
+        "text"
+      ],
+      "scenarios": [
+        "kinetic-type"
+      ],
+      "level": "basic",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "Three kinetic-type builds: range-selector fades by character, null-driven line moves, Fill Color animator wipes; quick, readable type sequences."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=Ph91d0Mb9sQ",
+    "kind": "video",
+    "title": "The SECRET to Smooth Text Animation in After Effects (No plugins)",
+    "author": "Lambodar Motion",
+    "views": 170359,
+    "likes": 6216,
+    "published": "2025-11-27",
+    "duration_sec": 1200,
+    "captions": "auto",
+    "tags": {
+      "topics": [
+        "text",
+        "easing"
+      ],
+      "scenarios": [
+        "kinetic-type"
+      ],
+      "level": "intermediate",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "Range selector Ease High/Low for fast-in slow-out letters, path-text with First Margin keys, keyframe spacing for bounce; smoother text reveals without plugins."
+  },
+  {
+    "url": "https://schoolofmotion.com/blog/kinetic-typography-after-effects-part-1",
+    "kind": "page",
+    "title": "Tutorial: Kinetic Typography in After Effects | Part 1",
+    "author": "Joey Korenman (School of Motion)",
+    "type": "tutorial",
+    "approx_chars": 68092,
+    "tags": {
+      "topics": [
+        "text",
+        "workflow"
+      ],
+      "scenarios": [
+        "kinetic-type",
+        "edit-pacing"
+      ],
+      "level": "intermediate",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "Audio-driven kinetic type: comp markers per spoken word while scrubbing, precomps that inherit markers, staggering words onto markers; the VO-sync method the pilot found missing."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=pJLZU7ffXDA",
+    "kind": "video",
+    "title": "Motion Graphics Tutorial | Pro Logo Animation in After Effects",
+    "author": "Jafar Fazel",
+    "views": 884290,
+    "likes": 25578,
+    "published": "2023-04-19",
+    "duration_sec": 1395,
+    "captions": "manual",
+    "tags": {
+      "topics": [
+        "easing",
+        "shapes"
+      ],
+      "scenarios": [
+        "logo-ident"
+      ],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": []
+    },
+    "why": "Pro letter-by-letter logo build with exact speed/influence values, collisions, snaps and nulls; a reference for ident timing and weight."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=Iqhm_TESuf4",
+    "kind": "video",
+    "title": "How to Animate a Logo - Common Techniques in After Effects",
+    "author": "Animation Explained",
+    "views": 107238,
+    "likes": 2441,
+    "published": "2024-01-12",
+    "duration_sec": 618,
+    "captions": "auto",
+    "tags": {
+      "topics": [
+        "shapes",
+        "mattes-masks"
+      ],
+      "scenarios": [
+        "logo-ident"
+      ],
+      "level": "intermediate",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "Common logo techniques: prepping vectors into shape layers, trim-path draw-ons, matte reveals, combining trim paths with mattes for uneven strokes, graph-editor polish."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=zikOzJUtWr4",
+    "kind": "video",
+    "title": "After Effects morph transition...with match cuts",
+    "author": "MotionXP",
+    "views": 460003,
+    "likes": 16954,
+    "published": "2022-03-30",
+    "duration_sec": 729,
+    "captions": "auto",
+    "tags": {
+      "topics": [
+        "transitions",
+        "easing"
+      ],
+      "scenarios": [
+        "logo-ident",
+        "ui-promo"
+      ],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": []
+    },
+    "why": "Morph transitions via match cuts: cut on the velocity peak in the graph editor, keep motion continuous across the cut, then dress it; shape-to-shape transitions without building tweens."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=ythBGTLjot8",
+    "kind": "video",
+    "title": "This Animation Technique Works Every Time",
+    "author": "Ben Marriott",
+    "views": 495620,
+    "likes": 24020,
+    "published": "2022-05-12",
+    "duration_sec": 482,
+    "captions": "manual",
+    "tags": {
+      "topics": [
+        "transitions",
+        "design"
+      ],
+      "scenarios": [
+        "edit-pacing"
+      ],
+      "level": "intermediate",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "Match-cut craft from professional pieces: carry scale (100->105) and rotation across cuts, accelerate into the cut, match composition; connects scenes so a sequence flows."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=nHh0NRo8G2U",
+    "kind": "video",
+    "title": "How To Animate Infographics Like VOX (After Effects Tutorial)",
+    "author": "Mapal",
+    "views": 338292,
+    "likes": 14170,
+    "published": "2023-11-07",
+    "duration_sec": 2479,
+    "captions": "auto",
+    "tags": {
+      "topics": [
+        "shapes",
+        "text",
+        "design"
+      ],
+      "scenarios": [
+        "data-viz",
+        "explainer"
+      ],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": []
+    },
+    "why": "Vox-style infographic workflow end to end: trim-path rings and bars, label moves, map highlights, subtle wiggle life, texture; explainer data graphics that look editorial."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=KYweBo9lgKM",
+    "kind": "video",
+    "title": "Animate Numbers in After Effects - How to add commas, decimals & symbols",
+    "author": "Validation",
+    "views": 460601,
+    "likes": 12705,
+    "published": "2023-10-13",
+    "duration_sec": 565,
+    "captions": "auto",
+    "tags": {
+      "topics": [
+        "expressions",
+        "text"
+      ],
+      "scenarios": [
+        "data-viz"
+      ],
+      "level": "basic",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "Number counters: Slider/Angle Control to Source Text, decimals, commas, prefix/suffix, going past 1,000,000, saving as a preset; clean stat hits."
+  },
+  {
+    "url": "https://motionscript.com/design-guide/counter.html",
+    "kind": "page",
+    "title": "Dan Ebberts's Expressioneering Design Guide",
+    "author": "Dan Ebberts",
+    "type": "article",
+    "approx_chars": 2965,
+    "tags": {
+      "topics": [
+        "expressions"
+      ],
+      "scenarios": [
+        "data-viz"
+      ],
+      "level": "intermediate",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "Universal counter expression: begin/end/duration via linear(), decimals, comma grouping, negative numbers and currency prefix in one Source Text expression."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=0amv44UwAwg",
+    "kind": "video",
+    "title": "Create Bar Infographics with Controls | After Effects Motion Graphic Tutorial",
+    "author": "SonduckFilm",
+    "views": 231405,
+    "likes": 4968,
+    "published": "2019-09-18",
+    "duration_sec": 400,
+    "captions": "auto",
+    "tags": {
+      "topics": [
+        "shapes",
+        "expressions"
+      ],
+      "scenarios": [
+        "data-viz"
+      ],
+      "level": "basic",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "Bar chart driven by slider controls: trim-path bars linked to slider controls on one null, eased slider keys and staggered entrances; editable data bars (Animation Composer only used for an optional stagger)."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=CqHb6bVoxgI",
+    "kind": "video",
+    "title": "How VOX Directs Your Attention",
+    "author": "Chris Moran",
+    "views": 58142,
+    "likes": 3413,
+    "published": "2026-04-29",
+    "duration_sec": 1448,
+    "captions": "auto",
+    "tags": {
+      "topics": [
+        "shapes",
+        "mattes-masks",
+        "design"
+      ],
+      "scenarios": [
+        "explainer"
+      ],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": []
+    },
+    "why": "Vox-style markup animations: hand-drawn highlights and circles (Roughen Edges), contrast callouts, Compound Blur focus with a gradient map, Radio Waves pings, texture; directs the eye in explainers."
+  },
+  {
+    "url": "https://blog.thecompassvideo.com/create-an-amazing-network-animation-in-after-effects",
+    "kind": "page",
+    "title": "Create Amazing Network Animations in After Effects",
+    "author": "Oscar Estrada (The Compass Video)",
+    "type": "tutorial",
+    "approx_chars": 9545,
+    "tags": {
+      "topics": [
+        "expressions",
+        "shapes"
+      ],
+      "scenarios": [
+        "explainer"
+      ],
+      "level": "intermediate",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "Node-and-line diagrams without plugins: connectors whose ends follow nodes by layer-name expressions (toComp), trim-path draw-ons, Essential Graphics controls; diagrams that stay attached when nodes move."
+  }
+]

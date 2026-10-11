@@ -40,7 +40,7 @@ def check_env() -> None:
 
 def check_gemini() -> None:
     from yt_rag.gemini_embeddings import GeminiEmbeddings
-    emb = GeminiEmbeddings(model=os.getenv("EMBEDDING_MODEL", "gemini-embedding-001"),
+    emb = GeminiEmbeddings(model=os.getenv("EMBEDDING_MODEL") or None,
                            output_dimensionality=int(os.getenv("EMBEDDING_DIM", "768")))
     vec = emb.embed_query("smoke test")
     if not vec or len(vec) != int(os.getenv("EMBEDDING_DIM", "768")):

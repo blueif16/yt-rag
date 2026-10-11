@@ -1,0 +1,716 @@
+[
+ {
+  "url": "https://ae-expressions.docsforadobe.dev/print_page/",
+  "kind": "page",
+  "title": "After Effects Expression Reference (full offline edition)",
+  "author": "Docs for Adobe (community-maintained expression reference)",
+  "type": "doc",
+  "approx_chars": 173904,
+  "tags": {
+   "topics": [
+    "expressions"
+   ],
+   "scenarios": [],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "why": "The whole expression API on one page: every global, time-conversion, vector, interpolation and random method, Comp/Layer/Property/Key/MarkerKey objects, sourceRectAtTime, loopOut types, TextStyle setters (setFontSize, setFillColor...), path methods, plus worked examples and changelog to AE 26.0; the agent can look up any function and its exact signature."
+ },
+ {
+  "url": "https://helpx.adobe.com/after-effects/desktop/work-with-expressions/expression-basics/legacy-and-extend-script-engine.html",
+  "kind": "page",
+  "title": "Syntax differences between expression engines",
+  "author": "Adobe Help Center",
+  "type": "doc",
+  "approx_chars": 19255,
+  "tags": {
+   "topics": [
+    "expressions"
+   ],
+   "scenarios": [],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "why": "JavaScript-engine pitfalls with fixes: if/else must end in else, no same-line if/else without braces, no trailing function declaration, thisLayer() not this(), .value needed for Source Text character indexing, posterizeTime(0) to freeze a value; explains most 'expression error' failures an agent will hit."
+ },
+ {
+  "url": "https://www.motionscript.com/articles/bounce-and-overshoot.html",
+  "kind": "page",
+  "title": "Realistic Bounce and Overshoot",
+  "author": "Dan Ebberts (MotionScript.com)",
+  "type": "tutorial",
+  "approx_chars": 13500,
+  "tags": {
+   "topics": [
+    "expressions",
+    "easing"
+   ],
+   "scenarios": [
+    "ui-promo",
+    "kinetic-type",
+    "logo-ident"
+   ],
+   "level": "advanced",
+   "impact": "high",
+   "tools": []
+  },
+  "why": "The canonical inertial-overshoot and bounce expressions (amp/freq/decay off velocityAtTime at the last key, plus physically based bounce with elasticity) with line-by-line reasoning; gives UI cards and type a premium settle without hand-keying."
+ },
+ {
+  "url": "https://www.motionscript.com/design-guide/marker-sync.html",
+  "kind": "page",
+  "title": "Triggering Animation with Markers (Expressioneer's Design Guide)",
+  "author": "Dan Ebberts (MotionScript.com)",
+  "type": "tutorial",
+  "approx_chars": 5061,
+  "tags": {
+   "topics": [
+    "expressions",
+    "workflow"
+   ],
+   "scenarios": [
+    "character",
+    "explainer"
+   ],
+   "level": "advanced",
+   "impact": "medium",
+   "tools": []
+  },
+  "why": "Time-remap expression that plays named, pre-keyed actions inside a precomp whenever a layer marker with that comment appears; the standard way to drive repeatable beats (host gestures, callouts) from VO markers."
+ },
+ {
+  "url": "https://www.motionscript.com/mastering-expressions/simulation-basics-1.html",
+  "kind": "page",
+  "title": "Physical Simulations: Sine and Cosine",
+  "author": "Dan Ebberts (MotionScript.com)",
+  "type": "tutorial",
+  "approx_chars": 7285,
+  "tags": {
+   "topics": [
+    "expressions"
+   ],
+   "scenarios": [
+    "logo-ident",
+    "hero-fx"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "why": "Math.sin/Math.cos as expression oscillators: amplitude, frequency in cycles per second (2*PI*freq*time), 90-degree phase offset, oscillation added on top of keyframed Position, with graphed examples and code; the base for pulses, sways and orbits."
+ },
+ {
+  "url": "https://schoolofmotion.com/blog/everything-expressions-you-didnt-know-part-1",
+  "kind": "page",
+  "title": "Everything About Expressions You Didn't Know...Part 1: Beginning()",
+  "author": "Zack Lovatt (School of Motion)",
+  "type": "tutorial",
+  "approx_chars": 15968,
+  "tags": {
+   "topics": [
+    "expressions"
+   ],
+   "scenarios": [],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "why": "Property/Effect, Layer, Key and MarkerKey menus with code: wiggling and smoothing any property, reading precomp sources and in/out points, sampleImage colour picking, and a marker-duration time-remap that retimes a precomp to each marker."
+ },
+ {
+  "url": "https://schoolofmotion.com/blog/everything-expressions-you-didnt-know-part-2",
+  "kind": "page",
+  "title": "Everything About Expressions You Didn't Know...Part Deux: Semicolon's Revenge",
+  "author": "Zack Lovatt (School of Motion)",
+  "type": "tutorial",
+  "approx_chars": 7868,
+  "tags": {
+   "topics": [
+    "expressions",
+    "camera-3d",
+    "text"
+   ],
+   "scenarios": [],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "why": "Light, Camera and Text menus with code: keep layer size constant during camera zooms, auto-focus DOF on a layer, set fonts and copy text styling by expression."
+ },
+ {
+  "url": "https://schoolofmotion.com/blog/everything-expressions-you-didnt-know-part-3",
+  "kind": "page",
+  "title": "Everything About Expressions You Didn't Know...Part III: The Return of Math",
+  "author": "Zack Lovatt (School of Motion)",
+  "type": "tutorial",
+  "approx_chars": 12167,
+  "tags": {
+   "topics": [
+    "expressions",
+    "shapes"
+   ],
+   "scenarios": [],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "why": "JavaScript Math, Random Numbers and Path Property menus with code: rounding, min/max, sine waves, seedRandom per layer, copying and building shape paths (points, createPath)."
+ },
+ {
+  "url": "https://schoolofmotion.com/blog/everything-expressions-you-didnt-know-part-4",
+  "kind": "page",
+  "title": "Everything About Expressions You Didn't Know...Part Quatro: Going Global",
+  "author": "Zack Lovatt (School of Motion)",
+  "type": "tutorial",
+  "approx_chars": 15713,
+  "tags": {
+   "topics": [
+    "expressions",
+    "workflow"
+   ],
+   "scenarios": [],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "why": "Global, Comp, Footage and Project menus with code: linking across comps and layers, animating without keyframes, posterizeTime for stepped frame rates, timeToFrames/framesToTime, fit-to-comp scaling."
+ },
+ {
+  "url": "https://schoolofmotion.com/blog/everything-expressions-you-didnt-know-part-5",
+  "kind": "page",
+  "title": "Everything About Expressions You Didn't Know...Part Chamesh: Interpolate This",
+  "author": "Zack Lovatt (School of Motion)",
+  "type": "tutorial",
+  "approx_chars": 13017,
+  "tags": {
+   "topics": [
+    "expressions",
+    "easing"
+   ],
+   "scenarios": [],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "why": "Interpolation, Vector Math and Color Conversion menus with code: linear()/ease() as keyframe replacements and value remappers, clamp-limited wiggle, lookAt rotation, distance-driven animation, HSL/hex colour maths."
+ },
+ {
+  "url": "https://schoolofmotion.com/blog/anchor-point-expressions-in-after-effects",
+  "kind": "page",
+  "title": "Anchor Point Expressions in After Effects",
+  "author": "Ryan Plummer (School of Motion)",
+  "type": "tutorial",
+  "approx_chars": 8013,
+  "tags": {
+   "topics": [
+    "expressions",
+    "text"
+   ],
+   "scenarios": [
+    "titles",
+    "ui-promo"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "why": "sourceRectAtTime top/left/width/height arithmetic for pinning the anchor to any corner or centre of a text layer, with a slider offset; the layout maths under responsive titles and boxes."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=CVliDoNgoCg",
+  "kind": "video",
+  "title": "sourceRectAtTime(); | After Effects Expressions",
+  "author": "Jake In Motion",
+  "views": 152841,
+  "likes": 3790,
+  "published": "2018-03-13",
+  "duration_sec": 2072,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "expressions",
+    "text",
+    "shapes"
+   ],
+   "scenarios": [
+    "titles",
+    "ui-promo"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": []
+  },
+  "why": "Definitive 35-minute deep dive on sourceRectAtTime: what it returns, building boxes and accents that resize and follow animated text, and handling scale. Pre-2021, but the API is unchanged and nothing newer is as complete."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=VdaGqq4I0qM",
+  "kind": "video",
+  "title": "Intro to Expression Rigs in After Effects",
+  "author": "School of Motion",
+  "views": 43039,
+  "likes": 1881,
+  "published": "2021-03-03",
+  "duration_sec": 2095,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "expressions",
+    "workflow"
+   ],
+   "scenarios": [],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "why": "Nol Honig and Zack Lovatt (Advanced Motion Methods) build rigs from a controller null with angle, checkbox and slider controls linked by expressions, then a larger multi-layer rig; under 50k views, but top-tier instructors and 4.4% likes."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=xFT6W9uSwbY",
+  "kind": "video",
+  "title": "ValueAtTime Expression- Adobe After Effects tutorial",
+  "author": "ECAbrams",
+  "views": 139612,
+  "likes": 3276,
+  "published": "2019-05-25",
+  "duration_sec": 755,
+  "captions": "manual",
+  "tags": {
+   "topics": [
+    "expressions"
+   ],
+   "scenarios": [
+    "kinetic-type"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "why": "valueAtTime explained: referencing a leader layer at an offset time, building animated trails with a custom delay, and alternative trail methods; manual captions, so it reads cleanly."
+ },
+ {
+  "url": "https://helpx.adobe.com/after-effects/desktop/animate-in-after-effects/animation-keyframes/keyframe-interpolation.html",
+  "kind": "page",
+  "title": "Keyframe interpolation",
+  "author": "Adobe Help Center",
+  "type": "doc",
+  "approx_chars": 15468,
+  "tags": {
+   "topics": [
+    "easing"
+   ],
+   "scenarios": [],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "why": "The missing interpolation reference: temporal vs spatial, Linear/Bezier/Continuous/Auto Bezier/Hold, the Keyframe Interpolation dialog, the Default Spatial Interpolation To Linear preference, boomerang-path fix, roving keys."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=xUmMHgZ9YfI",
+  "kind": "video",
+  "title": "You NEED to understand spatial interpolation \\\\ After Effects Tutorial",
+  "author": "Jake In Motion",
+  "views": 39086,
+  "likes": 2061,
+  "published": "2022-10-25",
+  "duration_sec": 594,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "easing"
+   ],
+   "scenarios": [
+    "ui-promo"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": []
+  },
+  "why": "Why layers drift between hold poses (Auto Bezier spatial interpolation), the fix with linear spatial keys, and the 3D case; under 50k views, but a top instructor at 5.3% likes, and it fills a gap nothing in the library covers."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=PerFI3xPXtI",
+  "kind": "video",
+  "title": "Unlock the power of Keyframes in After Effects \\\\ AE Tutorial",
+  "author": "Jake In Motion",
+  "views": 93514,
+  "likes": 4216,
+  "published": "2022-11-10",
+  "duration_sec": 984,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "easing"
+   ],
+   "scenarios": [],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "why": "Each keyframe type in practice (linear, bezier, auto/continuous bezier, eased, hold, rove across time) and lesser-known uses such as hold-key stepping and smear frames."
+ },
+ {
+  "url": "https://helpx.adobe.com/after-effects/desktop/work-with-layers/work-with-layer-and-composition-markers/layer-markers-composition-markers.html",
+  "kind": "page",
+  "title": "Layer markers and composition markers",
+  "author": "Adobe Help Center",
+  "type": "doc",
+  "approx_chars": 7652,
+  "tags": {
+   "topics": [
+    "workflow"
+   ],
+   "scenarios": [
+    "explainer"
+   ],
+   "level": "basic",
+   "impact": "medium",
+   "tools": []
+  },
+  "why": "Marker mechanics for VO sync: add during audio preview with numpad *, durations, comments, colour labels, Update Markers From Source on precomps, how nested comp markers become layer markers."
+ },
+ {
+  "url": "https://helpx.adobe.com/after-effects/desktop/animate-in-after-effects/assorted-animation-tools/assorted-animation-tools.html",
+  "kind": "page",
+  "title": "Assorted animation tools",
+  "author": "Adobe Help Center",
+  "type": "doc",
+  "approx_chars": 18736,
+  "tags": {
+   "topics": [
+    "workflow",
+    "motion-blur"
+   ],
+   "scenarios": [],
+   "level": "basic",
+   "impact": "low",
+   "tools": []
+  },
+  "why": "Reference for Convert Audio to Keyframes (Audio Amplitude layer and channels), Smoother, Wiggler, Motion Sketch, path-to-motion and comp motion-blur settings (shutter angle/phase, samples)."
+ },
+ {
+  "url": "https://helpx.adobe.com/after-effects/desktop/animate-in-after-effects/time-stretching-and-time-remapping/time-stretching-time-remapping.html",
+  "kind": "page",
+  "title": "Time-stretching and time-remapping",
+  "author": "Adobe Help Center",
+  "type": "doc",
+  "approx_chars": 18676,
+  "tags": {
+   "topics": [
+    "workflow"
+   ],
+   "scenarios": [],
+   "level": "basic",
+   "impact": "low",
+   "tools": []
+  },
+  "why": "Time remap, freeze frames, reverse, stretch-without-keyframes and frame blending modes; the mechanics behind marker-driven precomp retiming."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=HznxC9yOQbw",
+  "kind": "video",
+  "title": "After Effects: Trigger Animations with Markers (No Keyframes)",
+  "author": "Creative Dojo",
+  "views": 32339,
+  "likes": 767,
+  "published": "2021-02-28",
+  "duration_sec": 891,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "expressions",
+    "workflow"
+   ],
+   "scenarios": [
+    "titles",
+    "kinetic-type"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "why": "Replaces in/out keyframes with expressions that read layer markers (accessing markers, fade and position animations timed from them), so moving a marker retimes the animation; the base pattern for VO-cued graphics. Niche topic, 2.4% likes."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=rKCEBNE4qZY",
+  "kind": "video",
+  "title": "How to Sync Animation With Audio Using Expressions in After Effects",
+  "author": "ukramedia (Andrew Marston)",
+  "views": 17381,
+  "likes": 494,
+  "published": "2021-06-07",
+  "duration_sec": 737,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "expressions"
+   ],
+   "scenarios": [
+    "logo-ident"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "why": "Convert Audio to Keyframes, then a rig that normalises by the track's max value, remaps with linear() and smooths the result; music-synced motion for idents and beat hits. Niche advanced, 2.8% likes."
+ },
+ {
+  "url": "https://helpx.adobe.com/after-effects/desktop/adjust-colors/color-management/color-management.html",
+  "kind": "page",
+  "title": "Color management",
+  "author": "Adobe Help Center",
+  "type": "doc",
+  "approx_chars": 36853,
+  "tags": {
+   "topics": [
+    "render-export",
+    "color-finish"
+   ],
+   "scenarios": [],
+   "level": "advanced",
+   "impact": "medium",
+   "tools": []
+  },
+  "why": "Working space, linearize/1.0-gamma blending, Interpret Footage colour (Preserve RGB, 16-235 profiles), output profiles, Convert to Linear Light, colour-managed video formats, and the washed-out/levels troubleshooting notes."
+ },
+ {
+  "url": "https://www.cined.com/quicktime-gamma-shift-bug-what-is-it-and-how-to-combat-it/",
+  "kind": "page",
+  "title": "Quicktime Gamma Shift Bug - What Is It and How to Combat It",
+  "author": "Graham Sheldon (CineD)",
+  "type": "article",
+  "approx_chars": 19830,
+  "tags": {
+   "topics": [
+    "render-export",
+    "color-finish"
+   ],
+   "scenarios": [],
+   "level": "advanced",
+   "impact": "medium",
+   "tools": []
+  },
+  "why": "Why Rec.709 exports look washed out on macOS: NCLC 1-1-1 vs 1-2-1 tags, ColorSync's 1.96 gamma, dim-surround compensation, what platforms retag, and practical viewer and monitoring settings."
+ },
+ {
+  "url": "https://workflow.frame.io/guide/adobe-color-management",
+  "kind": "page",
+  "title": "Adobe color management (Video Post-Production Workflow Guide)",
+  "author": "Frame.io",
+  "type": "article",
+  "approx_chars": 14483,
+  "tags": {
+   "topics": [
+    "render-export",
+    "color-finish"
+   ],
+   "scenarios": [],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "why": "One consistent Rec.709 setup across Photoshop, Premiere and After Effects: working space, media colour-space overrides, display colour management, and how to fix graphics that come in as sRGB and shift."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=Tf3x4dhxydk",
+  "kind": "video",
+  "title": "Color Management in Adobe After Effects",
+  "author": "ECAbrams",
+  "views": 141928,
+  "likes": 4118,
+  "published": "2021-01-14",
+  "duration_sec": 786,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "render-export",
+    "color-finish"
+   ],
+   "scenarios": [],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": []
+  },
+  "why": "Colour spaces, gamut and transfer functions explained, then the actual AE settings (working space, interpret, display, output profile) that keep renders matching the comp."
+ },
+ {
+  "url": "https://www.provideocoalition.com/remove-banding-in-after-effects/",
+  "kind": "page",
+  "title": "Remove banding in After Effects, Premiere, and everywhere",
+  "author": "Rich Young (ProVideo Coalition)",
+  "type": "article",
+  "approx_chars": 4285,
+  "tags": {
+   "topics": [
+    "color-finish",
+    "render-export"
+   ],
+   "scenarios": [],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": []
+  },
+  "why": "Banding fixes with exact numbers: 1-5% Noise or Add Grain, 16/32 bpc for precision, AE dithers only when converting down to 8 bpc on render, and an Arithmetic-effect trick to preview the dither."
+ },
+ {
+  "url": "https://helpx.adobe.com/after-effects/desktop/render-and-export/basics-of-rendering-and-exporting/basics-rendering-exporting.html",
+  "kind": "page",
+  "title": "Basics of rendering and exporting",
+  "author": "Adobe Help Center",
+  "type": "doc",
+  "approx_chars": 51413,
+  "tags": {
+   "topics": [
+    "render-export"
+   ],
+   "scenarios": [],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "why": "Full Render Queue reference: render settings (quality, resolution, frame blending, motion blur, time span), output module settings (format, channels, straight/premultiplied alpha, colour, audio), templates, statuses, post-render actions, AME hand-off."
+ },
+ {
+  "url": "https://helpx.adobe.com/after-effects/desktop/render-and-export/export-h-264-from-the-after-effects/exporting-h264-from-the-after-effects-render-queue.html",
+  "kind": "page",
+  "title": "Exporting H.264 from the After Effects Render Queue",
+  "author": "Adobe Help Center",
+  "type": "doc",
+  "approx_chars": 12803,
+  "tags": {
+   "topics": [
+    "render-export"
+   ],
+   "scenarios": [],
+   "level": "basic",
+   "impact": "medium",
+   "tools": []
+  },
+  "why": "Native H.264 from the Render Queue: Format Options (hardware/software encoding, profile/level, bitrate), the 5/15/40 Mbps presets, and how to resolve settings-mismatch warnings."
+ },
+ {
+  "url": "https://helpx.adobe.com/media-encoder/using/export-settings-reference.html",
+  "kind": "page",
+  "title": "Export settings reference for Media Encoder",
+  "author": "Adobe Help Center",
+  "type": "doc",
+  "approx_chars": 40945,
+  "tags": {
+   "topics": [
+    "render-export"
+   ],
+   "scenarios": [],
+   "level": "intermediate",
+   "impact": "low",
+   "tools": []
+  },
+  "why": "Media Encoder export settings line by line: Match Source, VBR 1/2-pass, target/max bitrate, Key Frame Distance, Render at Maximum Depth, Use Maximum Render Quality, alpha options."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=FZ9yfCeZZMA",
+  "kind": "video",
+  "title": "RENDER SETTINGS and OUTPUT MODULE in After Effects Tutorial",
+  "author": "SternFX (Eran Stern)",
+  "views": 25866,
+  "likes": 135,
+  "published": "2023-03-29",
+  "duration_sec": 767,
+  "captions": "manual",
+  "tags": {
+   "topics": [
+    "render-export"
+   ],
+   "scenarios": [],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "why": "Walks through the Render Queue, the Render Settings and Output Module dialogs section by section, and rendering several outputs from one item; by Eran Stern, with manual captions. Under 50k views and a low like ratio, but a top-tier instructor and current (AE 2023)."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=XobSAXZaKJ8",
+  "kind": "video",
+  "title": "CD / The Horrors of the Alpha Channel",
+  "author": "Captain Disillusion",
+  "views": 2033392,
+  "likes": 118851,
+  "published": "2022-10-22",
+  "duration_sec": 418,
+  "captions": "manual",
+  "tags": {
+   "topics": [
+    "compositing",
+    "render-export"
+   ],
+   "scenarios": [],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "why": "The clearest explanation of premultiplication: double-multiplying gives dark edges, treating straight as premultiplied gives ghosting, apps unmultiply, and formats rarely tag which kind they hold; the theory behind our straight-alpha PNG handoff and Interpret Footage choices."
+ },
+ {
+  "url": "https://helpx.adobe.com/after-effects/desktop/motion-graphics/work-with-motion-graphics-templates/creating-motion-graphics-templates.html",
+  "kind": "page",
+  "title": "Work with Motion Graphics templates",
+  "author": "Adobe Help Center",
+  "type": "doc",
+  "approx_chars": 16985,
+  "tags": {
+   "topics": [
+    "workflow"
+   ],
+   "scenarios": [
+    "titles"
+   ],
+   "level": "intermediate",
+   "impact": "low",
+   "tools": []
+  },
+  "why": "Essential Graphics panel and MOGRT export: primary comp, supported property controls, groups, font controls, replaceable media, CSV/TSV data controls, comments, export."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=-XzXh4E6N5o",
+  "kind": "video",
+  "title": "Essential Properties Explained | Ae Genius",
+  "author": "Jake In Motion",
+  "views": 31091,
+  "likes": 1464,
+  "published": "2024-06-11",
+  "duration_sec": 836,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "workflow"
+   ],
+   "scenarios": [
+    "titles",
+    "ui-promo"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "why": "Essential Properties turn one precomp into a reusable element whose chosen properties (texture, randomness, animation controls) can be set per instance without duplicating comps; under 50k views, but recent and 4.7% likes."
+ },
+ {
+  "url": "https://helpx.adobe.com/after-effects/desktop/memory-storage-performance/memory-and-storage/memory-storage1.html",
+  "kind": "page",
+  "title": "Memory and storage",
+  "author": "Adobe Help Center",
+  "type": "doc",
+  "approx_chars": 16751,
+  "tags": {
+   "topics": [
+    "workflow"
+   ],
+   "scenarios": [],
+   "level": "intermediate",
+   "impact": "low",
+   "tools": []
+  },
+  "why": "Memory preferences, RAM needed for rendering, purging, RAM/disk/media cache and the persistent disk cache; the settings behind slow previews and long-render memory thrash."
+ }
+]

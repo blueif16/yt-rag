@@ -1,0 +1,29 @@
+topics:
+  easing: graph editor, keyframe interpolation, timing and spacing
+  text: text animators, kinetic typography, type in motion
+  shapes: shape layers, trim paths, repeaters, UI and vector animation
+  expressions: expressions, rigs, sliders, procedural animation
+  camera-3d: 3D layers, cameras, depth of field, 3D renderers
+  motion-blur: native motion blur, shutter angle, RSMB, pixel motion blur
+  light-glow: glows, light rays, flares, emissive and neon looks
+  particles: particle systems (Particular, Form, CC Particle World)
+  mattes-masks: masks, track mattes, reveals
+  transitions: shot-to-shot transitions, match cuts, whips and punches
+  compositing: keying, tracking, light wrap, shadows, integrating layers
+  color-finish: grading, grain, texture, bit depth, the final look
+  workflow: precomps, project organisation, templates, performance
+  render-export: render queue, aerender, codecs, color management, interpreting footage
+  design: motion design principles, composition, layout, pacing, storytelling
+scenarios:
+  ui-promo: app, product, UI and website promo shots
+  kinetic-type: type-driven sequences, quotes, title text
+  logo-ident: logo stings, channel idents, intros and outros
+  explainer: diagrams, lecture and explainer graphics, callouts
+  data-viz: charts, counters, stat hits
+  character: character or host animation and integration
+  titles: lower thirds, titles, captions
+  hero-fx: hero moments: glows, particles, 3D, big reveals
+  edit-pacing: whole-video craft: pacing, rhythm, scene flow, retention
+level: basic | intermediate | advanced
+impact: high | medium | low
+tools: required third-party plugins, kebab-case; [] = stock AE only

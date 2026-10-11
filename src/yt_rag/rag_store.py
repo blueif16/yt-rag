@@ -21,7 +21,7 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 from supabase import create_client, Client
-from .gemini_embeddings import GeminiEmbeddings
+from .gemini_embeddings import DEFAULT_MODEL, GeminiEmbeddings
 
 # Load THIS package's own .env by absolute path — never CWD-discovered. The MCP
 # client spawns this process with an arbitrary working directory (e.g. another
@@ -34,7 +34,7 @@ load_dotenv(Path(__file__).resolve().parents[2] / ".env", override=True)
 class RAGConfig:
     supabase_url: str = field(default_factory=lambda: os.getenv("SUPABASE_URL", ""))
     supabase_key: str = field(default_factory=lambda: os.getenv("SUPABASE_SECRET_KEY") or os.getenv("SUPABASE_KEY", ""))
-    embedding_model: str = "gemini-embedding-001"
+    embedding_model: str = field(default_factory=lambda: os.getenv("EMBEDDING_MODEL", DEFAULT_MODEL))
     embedding_dim: int = 768
 
     # Search defaults
@@ -125,8 +125,8 @@ class RAGStore:
         # Embed
         embedding = self._embeddings.embed_query(content)
         
-        # Minimal metadata
-        metadata = {}
+        # Minimal metadata (+ which model embedded it — models are incompatible)
+        metadata = {"embed_model": self._embeddings.model}
         if source:
             metadata["source"] = source
         if type:
@@ -200,7 +200,7 @@ class RAGStore:
             # Build records
             records = []
             for n, emb, h in zip(new_items, embeddings, new_hashes):
-                metadata = {}
+                metadata = {"embed_model": self._embeddings.model}
                 if n.get("source"):
                     metadata["source"] = n["source"]
                 if n.get("type"):
@@ -228,31 +228,39 @@ class RAGStore:
         self,
         query: str,
         top_k: int | None = None,
-        graph_depth: int | None = None
+        graph_depth: int | None = None,
+        filter_meta: dict | None = None,
+        tools_available: list[str] | None = None,
     ) -> list[dict]:
         """
-        SOTA search: Hybrid RRF (BM25 + Vector) + Graph traversal.
-        
-        Query by feeling, semantics, keywords - it all works.
+        SOTA search: Hybrid RRF (BM25 + Vector) + Graph traversal
+        (search_chunks, migrations/008). Rows come best-first, each with
+        `similarity` (cosine, 0-1) and `namespace`.
+
+        filter_meta: JSONB containment on chunk metadata, e.g.
+            {"scenarios": ["ui-promo"]}; tools_available: keep only sources
+            whose required plugins are all in this list.
         """
         k = top_k or self.config.match_count
         depth = graph_depth or self.config.graph_depth
         embedding = self._embeddings.embed_query(query)
-        
+
         try:
-            result = self.client.rpc("search_context_mesh", {
+            result = self.client.rpc("search_chunks", {
                 "query_text": query,
                 "query_embedding": embedding,
                 "match_count": k,
                 "rrf_k": self.config.rrf_k,
                 "graph_depth": depth,
-                "filter_namespace": self.namespace
+                "filter_namespace": None if self.namespace == "*" else self.namespace,
+                "filter_meta": filter_meta,
+                "tools_available": tools_available,
             }).execute()
             return result.data
         except Exception:
             # Fallback to vector only
             return self.search_vector(query, top_k=k)
-    
+
     def search_vector(self, query: str, top_k: int | None = None) -> list[dict]:
         """Fast vector-only search (skip graph)."""
         k = top_k or self.config.match_count

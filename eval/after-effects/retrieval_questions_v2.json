@@ -1,0 +1,359 @@
+[
+ {
+  "id": "r01",
+  "query": "Why won't the bezier handles in the Graph Editor's value graph respond when I try to edit a layer's position animation?",
+  "gold_ids": [
+   330,
+   342
+  ],
+  "target_type": "transcript",
+  "difficulty": "hard",
+  "answer_gist": "Adobe locks the value graph for combined Position; right-click Position > Separate Dimensions (or use the speed graph) to edit X/Y curves individually.",
+  "gold_ids_v1": [
+   306,
+   318
+  ]
+ },
+ {
+  "id": "r02",
+  "query": "How do I set a text animator's range selector so the reveal brings in one whole word at a time instead of one character at a time?",
+  "gold_ids": [
+   344,
+   470
+  ],
+  "target_type": "transcript",
+  "difficulty": "easy",
+  "answer_gist": "Keyframe the range selector Offset 0 to 100%, then under Advanced change Based On from Characters to Words.",
+  "gold_ids_v1": [
+   43,
+   165
+  ]
+ },
+ {
+  "id": "r03",
+  "query": "How do I use Trim Paths to make a round dot travel along a stroked path?",
+  "gold_ids": [
+   361
+  ],
+  "target_type": "transcript",
+  "difficulty": "easy",
+  "answer_gist": "Duplicate the line, set a thick stroke with Round Cap, add Trim Paths and link End to Start + 0.1 via expression, then animate Start so the dot slides along.",
+  "gold_ids_v1": [
+   61
+  ]
+ },
+ {
+  "id": "r04",
+  "query": "How do I use the posterizeTime expression to give just one property a lower frame rate than the rest of the animation?",
+  "gold_ids": [
+   369
+  ],
+  "target_type": "transcript",
+  "difficulty": "easy",
+  "answer_gist": "On that property's expression put posterizeTime(12); on the first line followed by value/time, so e.g. rotation steps at 12 or 6 fps while position stays at 24.",
+  "gold_ids_v1": [
+   69
+  ]
+ },
+ {
+  "id": "r05",
+  "query": "When I chain several fake camera moves using stacked, parented 3D nulls, how do I keep the motion flowing from one move into the next instead of stopping in between?",
+  "gold_ids": [
+   376,
+   377
+  ],
+  "target_type": "transcript",
+  "difficulty": "medium",
+  "answer_gist": "Parent each move's null to a new 3D null and set the next null's first keyframe before the previous move has finished, then ease and tune in the graph editor.",
+  "gold_ids_v1": [
+   76,
+   77
+  ]
+ },
+ {
+  "id": "r06",
+  "query": "After switching my comp to the Advanced 3D renderer, my fast camera spin has no motion blur at all; is there a built-in way to still get blur?",
+  "gold_ids": [
+   392,
+   393,
+   518
+  ],
+  "target_type": "transcript",
+  "difficulty": "hard",
+  "answer_gist": "Native blur is unsupported there; nest the comp in a new comp and apply Pixel Motion Blur or (better for animation, slower) CC Force Motion Blur to the flattened precomp (Timewarp with motion blur is another built-in option).",
+  "gold_ids_v1": [
+   93,
+   94,
+   294
+  ]
+ },
+ {
+  "id": "r07",
+  "query": "How can I fake a soft, colored glow rising from the base of a light beam using only solid shapes and masks instead of a glow effect?",
+  "gold_ids": [
+   399,
+   400
+  ],
+  "target_type": "transcript",
+  "difficulty": "medium",
+  "answer_gist": "Draw a large solid shape, cut an elliptical mask at the beam base with high feather (~400), then stack duplicates in lighter greens with smaller feather (200, 100) tighter to the center and fade opacity on/off.",
+  "gold_ids_v1": [
+   101,
+   102
+  ]
+ },
+ {
+  "id": "r08",
+  "query": "In Deep Glow 2, how do I keep a glow from blowing out in a linear 32-bit comp so the rendered file looks like what I see in the viewer?",
+  "gold_ids": [
+   407
+  ],
+  "target_type": "transcript",
+  "difficulty": "medium",
+  "answer_gist": "Use the new tone mapping section, which remaps the very large HDR glow values (e.g. from Add/Overlay blending in linear) back into standard range so export matches the comp.",
+  "gold_ids_v1": [
+   109
+  ]
+ },
+ {
+  "id": "r09",
+  "query": "With the After Effects 2023 track matte system, can several layers use the same Track Matte layer, and does the matte still have to be the layer right above them in the stack?",
+  "gold_ids": [
+   411,
+   412,
+   526
+  ],
+  "target_type": "transcript",
+  "difficulty": "easy",
+  "answer_gist": "Since AE 2023 the matte can sit anywhere in the stack and one layer can matte many layers (select them all and pick it in the dropdown or pick whip), including adjustment layers matted by editable text.",
+  "gold_ids_v1": [
+   114,
+   113,
+   202
+  ]
+ },
+ {
+  "id": "r10",
+  "query": "When I shake or push my footage around during a transition, empty black borders show at the edges of the frame; how do I fill them?",
+  "gold_ids": [
+   417,
+   419,
+   422
+  ],
+  "target_type": "transcript",
+  "difficulty": "hard",
+  "answer_gist": "Apply Motion Tile at the top of the effect stack, enable Mirror Edges and raise Output Width/Height so the frame edges are filled with mirrored image.",
+  "gold_ids_v1": [
+   119,
+   121,
+   124
+  ]
+ },
+ {
+  "id": "r11",
+  "query": "Darkening a blown-out sky with a hue-targeted brightness curve in Lumetri leaves harsh blocky artifacts around its edges; why does that happen and how do I avoid it?",
+  "gold_ids": [
+   433,
+   434
+  ],
+  "target_type": "transcript",
+  "difficulty": "hard",
+  "answer_gist": "Hue vs Luma runs after the basic correction and cannot grab clipped overexposed pixels; first pull down Exposure, Highlights and Whites, then widen the hue range and tighten the curve.",
+  "gold_ids_v1": [
+   137,
+   136
+  ]
+ },
+ {
+  "id": "r12",
+  "query": "I put a Gradient Ramp on a shape layer, but its start and end stay stuck to the top and bottom of the comp instead of following the shape when I move it; why?",
+  "gold_ids": [
+   448
+  ],
+  "target_type": "transcript",
+  "difficulty": "hard",
+  "answer_gist": "On continuously rasterized / collapsed layers effects are applied after transformations at comp size, so point-control effects use comp coordinates; turning collapse off on a precomp makes them follow the layer bounds.",
+  "gold_ids_v1": [
+   325
+  ]
+ },
+ {
+  "id": "r13",
+  "query": "What speed and influence values does Easy Ease give a keyframe in After Effects?",
+  "gold_ids": [
+   456,
+   457
+  ],
+  "target_type": "doc",
+  "difficulty": "easy",
+  "answer_gist": "Easy Ease sets each keyframe to speed 0 with 33.33% influence on both sides; exact values can be typed in Animation > Keyframe Velocity.",
+  "gold_ids_v1": [
+   152
+  ]
+ },
+ {
+  "id": "r14",
+  "query": "When I rotate letters with a text animator, each character swings around its baseline instead of its middle; how do I center the rotation point?",
+  "gold_ids": [
+   474
+  ],
+  "target_type": "doc",
+  "difficulty": "hard",
+  "answer_gist": "Under More Options set Anchor Point Grouping and Grouping Alignment; about 0%, -50% centers caps and 0%, -25% centers mixed or lowercase text.",
+  "gold_ids_v1": [
+   169
+  ]
+ },
+ {
+  "id": "r15",
+  "query": "How do I make each copy produced by a shape layer Repeater move and rotate randomly on its own rather than all identically?",
+  "gold_ids": [
+   490,
+   491,
+   495
+  ],
+  "target_type": "doc",
+  "difficulty": "medium",
+  "answer_gist": "Add a Wiggle Transform after (below) the Repeater; if it sits above the Repeater all copies wiggle the same, and Correlation sets how similar neighbouring copies are.",
+  "gold_ids_v1": [
+   190,
+   185,
+   186
+  ]
+ },
+ {
+  "id": "r16",
+  "query": "How do I make a layer spring past its final keyframed position and settle back on its own, without hand-keying the wobble?",
+  "gold_ids": [
+   497,
+   498
+  ],
+  "target_type": "doc",
+  "difficulty": "medium",
+  "answer_gist": "Apply the inertial-bounce overshoot expression (amp, freq, decay; velocityAtTime of the last key times a decaying sine) to the keyframed property.",
+  "gold_ids_v1": [
+   192,
+   193
+  ]
+ },
+ {
+  "id": "r17",
+  "query": "How do I make a 3D camera's Focus Distance automatically track a moving layer for depth of field?",
+  "gold_ids": [
+   505,
+   513
+  ],
+  "target_type": "article",
+  "difficulty": "easy",
+  "answer_gist": "Use Layer > Camera > Link Focus Distance to Layer, which writes an expression so focus follows the layer (Set Focus Distance to Layer is a one-time snap); an equivalent dot-product expression on Focus Distance also works.",
+  "gold_ids_v1": [
+   289,
+   200
+  ]
+ },
+ {
+  "id": "r18",
+  "query": "What Shutter Phase value should I pair with a given Shutter Angle so motion blur is centered on the frame instead of trailing behind it?",
+  "gold_ids": [
+   390,
+   517
+  ],
+  "target_type": "article",
+  "difficulty": "easy",
+  "answer_gist": "Set Shutter Phase to minus half the Shutter Angle (e.g. 180 / -90, 720 / -360); a phase of 0 makes the blur lag the action.",
+  "gold_ids_v1": [
+   293,
+   91
+  ]
+ },
+ {
+  "id": "r19",
+  "query": "My homemade glow (a duplicate layer thresholded with Levels, blurred and added on top) darkens the picture once the project is set to 32 bpc; how do I fix it?",
+  "gold_ids": [
+   523
+  ],
+  "target_type": "tutorial",
+  "difficulty": "hard",
+  "answer_gist": "In 32-bit, Levels produces negative values that darken the add; enable Clip to Output Black in the Levels effect.",
+  "gold_ids_v1": [
+   300
+  ]
+ },
+ {
+  "id": "r20",
+  "query": "How can I make a light-sweep layer show up only where the layers beneath it are opaque, without setting up a matte?",
+  "gold_ids": [
+   527,
+   528
+  ],
+  "target_type": "doc",
+  "difficulty": "medium",
+  "answer_gist": "Turn on Preserve Underlying Transparency for the sweep layer; it takes its transparency from the composite of the layers below, like a Photoshop clipping mask, useful for glints.",
+  "gold_ids_v1": [
+   204,
+   203
+  ]
+ },
+ {
+  "id": "r21",
+  "query": "How do I get rid of banding in smooth gradients when my final export is only 8-bit?",
+  "gold_ids": [
+   401,
+   532
+  ],
+  "target_type": "doc",
+  "difficulty": "medium",
+  "answer_gist": "Work at 16 or 32 bpc for precision; AE dithers when converting to 8 bpc on render/export but not in previews, and an 8-bpc no-op effect (Arithmetic) on an adjustment layer forces dithering in preview.",
+  "gold_ids_v1": [
+   208,
+   103
+  ]
+ },
+ {
+  "id": "r22",
+  "query": "After I precompose a group of 3D layers, the main comp's camera no longer moves through them in depth and they act like one flat card; how do I keep them 3D?",
+  "gold_ids": [
+   446,
+   447,
+   556
+  ],
+  "target_type": "doc",
+  "difficulty": "medium",
+  "answer_gist": "Without Collapse Transformations a nested 3D comp renders as a flat 2D image through its default camera; enabling collapse exposes the nested layers' 3D to the containing comp's camera and lights.",
+  "gold_ids_v1": [
+   232,
+   323,
+   324
+  ]
+ },
+ {
+  "id": "r23",
+  "query": "Which aerender command-line arguments render just one comp and only a range of its frames?",
+  "gold_ids": [
+   559,
+   561
+  ],
+  "target_type": "doc",
+  "difficulty": "easy",
+  "answer_gist": "Use -project with -comp \"name\" plus -s start_frame and -e end_frame (inclusive), e.g. aerender -project p.aep -comp \"Composition_1\" -s 1 -e 10 -output path.",
+  "gold_ids_v1": [
+   237,
+   235
+  ]
+ },
+ {
+  "id": "r24",
+  "query": "My transparent overlay frames show a dark rim around their soft edges once composited; what did I get wrong when importing them?",
+  "gold_ids": [
+   590,
+   591
+  ],
+  "target_type": "doc",
+  "difficulty": "hard",
+  "answer_gist": "The alpha was interpreted wrongly (straight vs premultiplied); fix it in Interpret Footage > Main > Alpha, or unmultiply with Remove Color Matting.",
+  "gold_ids_v1": [
+   268,
+   267
+  ]
+ }
+]

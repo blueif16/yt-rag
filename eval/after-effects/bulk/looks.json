@@ -1,0 +1,806 @@
+[
+  {
+    "url": "https://pluginevery.notion.site/Deep-Glow-2-Manual-ef33bb75ca724f17a830ebccb8bf802d",
+    "kind": "page",
+    "title": "Deep Glow 2 Docs (official manual)",
+    "author": "Plugin Everything (James Whiffin)",
+    "type": "doc",
+    "approx_chars": 78925,
+    "text_file": "/home/ran/yt-rag/eval/after-effects/bulk/texts/deep-glow-2-manual.md",
+    "tags": {
+      "topics": [
+        "light-glow",
+        "color-finish"
+      ],
+      "scenarios": [
+        "hero-fx",
+        "logo-ident",
+        "ui-promo"
+      ],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": [
+        "deep-glow-2"
+      ]
+    },
+    "why": "Every DG2 control with exact behaviour: Exponential vs Iris mode, Screen vs Add (when to tonemap), chrominance vs luminance threshold, saturation bias, lens dirt, quality presets and the flicker/linear-workflow FAQ; turns DG2 from presets into controlled, non-flickering bloom."
+  },
+  {
+    "url": "https://help.maxon.net/rg/en-us/Content/html/01-Shine-trapcode-shine.html",
+    "kind": "page",
+    "title": "Trapcode Shine User Guide (all chapters)",
+    "author": "Maxon / Red Giant",
+    "type": "doc",
+    "approx_chars": 19978,
+    "text_file": "/home/ran/yt-rag/eval/after-effects/bulk/texts/trapcode-shine-user-guide.md",
+    "tags": {
+      "topics": [
+        "light-glow"
+      ],
+      "scenarios": [
+        "logo-ident",
+        "hero-fx",
+        "titles"
+      ],
+      "level": "intermediate",
+      "impact": "medium",
+      "tools": [
+        "trapcode-shine"
+      ]
+    },
+    "why": "Official Shine reference (source point, ray length, shimmer, boost light, colorize, fractal noise, transfer modes): volumetric light rays through logos and type for idents, with the settings that keep rays from looking cheap."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=t40ZTEBr_M0",
+    "kind": "video",
+    "title": "Glow | Effects of After Effects",
+    "author": "Jake In Motion",
+    "views": 60623,
+    "likes": 1348,
+    "published": "2021-11-08",
+    "duration_sec": 554,
+    "captions": "auto",
+    "tags": {
+      "topics": [
+        "light-glow"
+      ],
+      "scenarios": [
+        "titles",
+        "ui-promo"
+      ],
+      "level": "basic",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "Jake Bartlett walks through every stock Glow parameter (based-on alpha vs color, threshold/radius/intensity interplay, A&B colors, Glow Operation blend modes, composite original), which is the stock fallback and the starting point for glows that must sit on lighter grounds."
+  },
+  {
+    "url": "https://flylib.com/books/en/2.104.1/backlighting_flares_light_volume.html",
+    "kind": "page",
+    "title": "Backlighting, Flares, Light Volume (After Effects 7.0 Studio Techniques, ch. 12)",
+    "author": "Mark Christiansen (via flylib)",
+    "type": "tutorial",
+    "approx_chars": 17649,
+    "tags": {
+      "topics": [
+        "compositing",
+        "light-glow"
+      ],
+      "scenarios": [
+        "character",
+        "hero-fx"
+      ],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": []
+    },
+    "why": "Canonical roll-your-own light wrap recipe (Silhouette/Stencil Alpha + Fast Blur with Repeat Edge Pixels, Add/Screen at low opacity) plus believable flares and volumetric light; directly sells a cut-out host against a bright backdrop with stock AE."
+  },
+  {
+    "url": "https://pdfcoffee.com/reelsmart-motion-blur-userx27s-manual-ofx-plugin-version-pdf-free.html",
+    "kind": "page",
+    "title": "ReelSmart Motion Blur User's Manual (official, OFX edition)",
+    "author": "RE:Vision Effects",
+    "type": "doc",
+    "approx_chars": 28291,
+    "text_file": "/home/ran/yt-rag/eval/after-effects/bulk/texts/rsmb-manual.md",
+    "tags": {
+      "topics": [
+        "motion-blur"
+      ],
+      "scenarios": [
+        "ui-promo",
+        "hero-fx"
+      ],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": [
+        "rsmb"
+      ]
+    },
+    "why": "Official RSMB reference: Blur Amount 0.5 = 180 deg, Motion Sensitivity vs gloop, FG matte separation and Inv Matte Shrink, premult, frame-duplicate pitfalls, 5%-of-frame reach limit and RSMB Vectors format; exactly what blurring delivered PNG sequences and precomps needs."
+  },
+  {
+    "url": "https://helpx.adobe.com/after-effects/desktop/apply-effects-and-animation-presets/list-of-effects/time-effects.html",
+    "kind": "page",
+    "title": "Time effects (Echo, Pixel Motion Blur, Timewarp, Time Displacement)",
+    "author": "Adobe Help Center",
+    "type": "doc",
+    "approx_chars": 18839,
+    "tags": {
+      "topics": [
+        "motion-blur"
+      ],
+      "scenarios": [
+        "hero-fx"
+      ],
+      "level": "intermediate",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "Stock alternatives to RSMB with exact controls: Pixel Motion Blur (shutter control/samples/vector detail) for footage and pre-rendered clips, Echo for streak trails, Timewarp motion-blur settings; the stock path when a layer has no keyframed motion to blur."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=o50HiHGN4ss",
+    "kind": "video",
+    "title": "CINEMATIC Motion Blur | After Effects Tutorial",
+    "author": "pwnisher",
+    "views": 66664,
+    "likes": 3995,
+    "published": "2020-08-29",
+    "duration_sec": 383,
+    "captions": "auto",
+    "tags": {
+      "topics": [
+        "motion-blur",
+        "color-finish"
+      ],
+      "scenarios": [
+        "hero-fx"
+      ],
+      "level": "intermediate",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "Andrew Kramer's trick shown by pwnisher: sandwich RSMB/Force Motion Blur between two Exposure gamma adjustments (0.1 / 10) so blurred highlights keep their brightness like in-camera streaks; fixes washed-out, cheap-looking blur on bright and glowing elements."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=ANG3iMQVHVo",
+    "kind": "video",
+    "title": "CC Force Motion Blur | Effects of After Effects",
+    "author": "Jake In Motion",
+    "views": 56970,
+    "likes": 1079,
+    "published": "2021-11-17",
+    "duration_sec": 355,
+    "captions": "auto",
+    "tags": {
+      "topics": [
+        "motion-blur"
+      ],
+      "scenarios": [],
+      "level": "basic",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "CC Force Motion Blur explained (subframe samples, shutter angle, native vs override) - the quick stock way to add true sub-frame blur to precomps and nested animation where layer switches can't reach."
+  },
+  {
+    "url": "https://help.maxon.net/rg/en-us/Content/html/01-Trapcode-Particular.html",
+    "kind": "page",
+    "title": "Trapcode Particular User Guide (all 56 chapters)",
+    "author": "Maxon / Red Giant",
+    "type": "doc",
+    "approx_chars": 206908,
+    "text_file": "/home/ran/yt-rag/eval/after-effects/bulk/texts/trapcode-particular-user-guide.md",
+    "tags": {
+      "topics": [
+        "particles"
+      ],
+      "scenarios": [
+        "hero-fx",
+        "logo-ident"
+      ],
+      "level": "advanced",
+      "impact": "high",
+      "tools": [
+        "trapcode-particular"
+      ]
+    },
+    "why": "The full official Particular manual (Designer, multiple systems, emit from parent, every emitter type incl. layer/text/3D model, particle types, physics, fluid, fields, layer maps, lighting/shadowlets, DOF and motion blur); gives agents exact parameter meanings and ranges for hero particle shots."
+  },
+  {
+    "url": "https://help.maxon.net/rg/en-us/Content/html/01-Form.html",
+    "kind": "page",
+    "title": "Trapcode Form User Guide (all chapters)",
+    "author": "Maxon / Red Giant",
+    "type": "doc",
+    "approx_chars": 157119,
+    "text_file": "/home/ran/yt-rag/eval/after-effects/bulk/texts/trapcode-form-user-guide.md",
+    "tags": {
+      "topics": [
+        "particles"
+      ],
+      "scenarios": [
+        "hero-fx",
+        "logo-ident"
+      ],
+      "level": "advanced",
+      "impact": "medium",
+      "tools": [
+        "trapcode-form"
+      ]
+    },
+    "why": "Official Form manual: base forms (grid, strings, 3D model, text/mask), layer maps, audio react, disperse/twist, fractal and spherical fields, shadowlets, motion blur; for living particle grids, logo builds and tech backgrounds."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=7Fp9207Ds5I",
+    "kind": "video",
+    "title": "CC Particle Systems II + CC Particle World | Effects of After Effects",
+    "author": "Jake In Motion",
+    "views": 188506,
+    "likes": 4225,
+    "published": "2021-11-11",
+    "duration_sec": 4436,
+    "captions": "auto",
+    "tags": {
+      "topics": [
+        "particles"
+      ],
+      "scenarios": [
+        "hero-fx"
+      ],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": []
+    },
+    "why": "73-minute deep dive by Jake Bartlett on the stock particle engines (CC Particle Systems II and CC Particle World): birth rate, longevity, gravity and physics, textured particles from layers, 3D camera interaction; the no-plugin fallback for sparks, dust and bursts."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=eN3MOSqxlqk",
+    "kind": "video",
+    "title": "Trapcode Particular 3 Training | 05: Layer Emitters",
+    "author": "Maxon Red Giant",
+    "views": 143980,
+    "likes": 1324,
+    "published": "2018-03-19",
+    "duration_sec": 975,
+    "captions": "auto",
+    "tags": {
+      "topics": [
+        "particles"
+      ],
+      "scenarios": [
+        "logo-ident",
+        "hero-fx"
+      ],
+      "level": "intermediate",
+      "impact": "medium",
+      "tools": [
+        "trapcode-particular"
+      ]
+    },
+    "why": "Official Particular training on Layer emitters: emitting particles from a logo/text layer's pixels and colors, layer sampling modes and layer RGB usage; the core technique for particle logo builds and disintegrations in idents."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=wF0Jsz-7Ji4",
+    "kind": "video",
+    "title": "Dancer to Dust - Trapcode Particular Tutorial",
+    "author": "Maxon Red Giant",
+    "views": 35705,
+    "likes": 888,
+    "published": "2023-08-14",
+    "duration_sec": 1463,
+    "captions": "manual",
+    "tags": {
+      "topics": [
+        "particles",
+        "compositing"
+      ],
+      "scenarios": [
+        "character",
+        "hero-fx"
+      ],
+      "level": "advanced",
+      "impact": "medium",
+      "tools": [
+        "trapcode-particular"
+      ]
+    },
+    "why": "Maxon recreates the 'dancer falling to dust' demo: an animated character exported as an OBJ sequence drives Particular's 3D model emitter (emit from faces), with turbulence, the built-in ground plane and parent/child systems, then composited into a photo; the recipe for dissolving or materialising a 3D host."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=7OWVKb649Ao",
+    "kind": "video",
+    "title": "Trapcode Form 3 Training | 06: Layer Maps",
+    "author": "Maxon Red Giant",
+    "views": 52892,
+    "likes": 610,
+    "published": "2018-06-19",
+    "duration_sec": 1232,
+    "captions": "auto",
+    "tags": {
+      "topics": [
+        "particles"
+      ],
+      "scenarios": [
+        "logo-ident",
+        "hero-fx"
+      ],
+      "level": "intermediate",
+      "impact": "medium",
+      "tools": [
+        "trapcode-form"
+      ]
+    },
+    "why": "Official Form training on Layer Maps (color/alpha, displacement, size, fractal strength, disperse maps from precomps); how to drive a particle grid from a logo or gradient for controllable, art-directed particle reveals."
+  },
+  {
+    "url": "https://helpx.adobe.com/after-effects/desktop/work-with-3d-composition/advanced-3d-renderer/advanced-3d-renderer.html",
+    "kind": "page",
+    "title": "Advanced 3D renderer",
+    "author": "Adobe Help Center",
+    "type": "doc",
+    "approx_chars": 7231,
+    "tags": {
+      "topics": [
+        "camera-3d"
+      ],
+      "scenarios": [
+        "ui-promo",
+        "hero-fx"
+      ],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": []
+    },
+    "why": "What Advanced 3D renders (GLB/GLTF/OBJ/FBX, environment lights, extrusions, Adobe Standard Material) and its Render Options: quality, shadow resolution, casting box size/center, Draft 3D; the settings that decide whether 3D in AE looks premium or noisy."
+  },
+  {
+    "url": "https://helpx.adobe.com/after-effects/desktop/import-files/import-and-add-3d-models/import-3d-model.html",
+    "kind": "page",
+    "title": "Import and add 3D models to your composition",
+    "author": "Adobe Help Center",
+    "type": "doc",
+    "approx_chars": 5486,
+    "tags": {
+      "topics": [
+        "camera-3d"
+      ],
+      "scenarios": [
+        "ui-promo",
+        "logo-ident"
+      ],
+      "level": "basic",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "Supported 3D formats and the exact import flow for GLB/GLTF/OBJ/FBX models (model settings, scale, decluttered import), so device and product models can be dropped into AE shots without leaving the app."
+  },
+  {
+    "url": "https://helpx.adobe.com/after-effects/using/image-based-lighting.html",
+    "kind": "page",
+    "title": "Create realistic reflections and ambient lighting in a 3D scene (environment lights)",
+    "author": "Adobe Help Center",
+    "type": "doc",
+    "approx_chars": 7722,
+    "tags": {
+      "topics": [
+        "camera-3d",
+        "light-glow"
+      ],
+      "scenarios": [
+        "ui-promo",
+        "hero-fx"
+      ],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": []
+    },
+    "why": "Environment light setup with HDR/EXR or animated comps as sources, environment-light shadows and their exceptions, Accepts Lights bypass; image-based lighting is the biggest single jump from flat to photographic 3D in AE."
+  },
+  {
+    "url": "https://helpx.adobe.com/after-effects/using/enable-in_engine-depth-of-field-in-advanced-3d.html",
+    "kind": "page",
+    "title": "Enable in-engine Depth of Field in Advanced 3D",
+    "author": "Adobe Help Center",
+    "type": "doc",
+    "approx_chars": 3388,
+    "tags": {
+      "topics": [
+        "camera-3d"
+      ],
+      "scenarios": [
+        "ui-promo",
+        "hero-fx"
+      ],
+      "level": "intermediate",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "AE 26.3's in-engine DOF: Focus Distance linking to a layer, Aperture, Focus Area Width, Near/Far Blur Level, and Render Quality to kill focus-pull ripple; camera-accurate rack focus on models, meshes, text and shapes."
+  },
+  {
+    "url": "https://helpx.adobe.com/after-effects/desktop/work-with-layers/camera-layer/cameras-lights-points-interest.html",
+    "kind": "page",
+    "title": "Cameras, lights, and points of interest",
+    "author": "Adobe Help Center",
+    "type": "doc",
+    "approx_chars": 28437,
+    "tags": {
+      "topics": [
+        "camera-3d",
+        "light-glow"
+      ],
+      "scenarios": [],
+      "level": "intermediate",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "Reference for every camera and light setting (focal length/zoom, DOF focus distance, aperture/f-stop, blur level, iris; light types, falloff, shadow darkness/diffusion) and camera commands; the exact values behind premium camera moves and lighting."
+  },
+  {
+    "url": "https://www.adobe.com/learn/after-effects/web/native-3d-meshes-substance-textures",
+    "kind": "page",
+    "title": "Build native 3D scenes with meshes and Substance materials",
+    "author": "Adobe Learn (Jess Libby)",
+    "type": "tutorial",
+    "approx_chars": 7586,
+    "text_file": "/home/ran/yt-rag/eval/after-effects/bulk/texts/adobe-learn-native-3d-meshes-substance.md",
+    "tags": {
+      "topics": [
+        "camera-3d"
+      ],
+      "scenarios": [
+        "logo-ident",
+        "hero-fx",
+        "kinetic-type"
+      ],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": []
+    },
+    "why": "AE 2026 parametric meshes plus Substance 3D materials (displacement, subdivision, scale/seam, random seed, keyframed material props), environment light shadow darkness, and the rule that a 2D layer inside a 3D stack breaks lighting and shadows."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=iOZkdYZPVU0",
+    "kind": "video",
+    "title": "Professional 3D Renders in After Effects (No plugins!)",
+    "author": "Jake In Motion",
+    "views": 35404,
+    "likes": 1615,
+    "published": "2025-05-23",
+    "duration_sec": 1281,
+    "captions": "auto",
+    "tags": {
+      "topics": [
+        "camera-3d",
+        "light-glow"
+      ],
+      "scenarios": [
+        "ui-promo",
+        "hero-fx"
+      ],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": []
+    },
+    "why": "Jake Bartlett's full Advanced 3D render workflow with no plugins: Polyhaven HDRIs as environment lights, materials, shadows, render quality settings and finishing passes for photographic 3D product shots."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=wwsHGbZN6ZU",
+    "kind": "video",
+    "title": "This New Advanced 3D Feature is CRAZY - After Effects Tutorial | 3D Models, HDRI, Shadow Catcher",
+    "author": "Motion Nations",
+    "views": 175261,
+    "likes": 5857,
+    "published": "2024-12-09",
+    "duration_sec": 660,
+    "captions": "auto",
+    "tags": {
+      "topics": [
+        "camera-3d",
+        "compositing"
+      ],
+      "scenarios": [
+        "ui-promo",
+        "hero-fx"
+      ],
+      "level": "intermediate",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "Imports a 3D model, lights it with an HDRI environment light and grounds it on footage with a shadow catcher plane (Accepts Shadows: Only); the native path for compositing a 3D device or object onto a background."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=FsyWSLoJ6P0",
+    "kind": "video",
+    "title": "Master 3D Glass Effect Motion Graphics in After Effects Advanced Tutorial",
+    "author": "Stephan Zammit",
+    "views": 150583,
+    "likes": 6700,
+    "published": "2024-12-16",
+    "duration_sec": 1432,
+    "captions": "auto",
+    "tags": {
+      "topics": [
+        "light-glow",
+        "compositing"
+      ],
+      "scenarios": [
+        "ui-promo",
+        "logo-ident",
+        "hero-fx"
+      ],
+      "level": "advanced",
+      "impact": "high",
+      "tools": []
+    },
+    "why": "Stephan Zammit builds realistic 3D glass in stock AE: refraction via displacement maps, per-channel dispersion offsets, edge highlights and inner reflections; a premium glassmorphism look for tech promos and logo shapes."
+  },
+  {
+    "url": "https://help.maxon.net/c4d/r25/en-us/Content/html/1100.html",
+    "kind": "page",
+    "title": "Cineware for After Effects",
+    "author": "Maxon",
+    "type": "doc",
+    "approx_chars": 17405,
+    "tags": {
+      "topics": [
+        "camera-3d",
+        "workflow"
+      ],
+      "scenarios": [],
+      "level": "intermediate",
+      "impact": "low",
+      "tools": []
+    },
+    "why": "How .c4d scenes load into AE via Cineware: render settings, using C4D cameras, extracting scene data, multi-pass compositing and Live Link; the reference when a Cinema 4D scene (bundled C4D add-on) must be finished in AE."
+  },
+  {
+    "url": "https://helpx.adobe.com/after-effects/using/shadow-catchers.html",
+    "kind": "page",
+    "title": "Shadow catchers",
+    "author": "Adobe Help Center",
+    "type": "doc",
+    "approx_chars": 2664,
+    "tags": {
+      "topics": [
+        "camera-3d",
+        "compositing"
+      ],
+      "scenarios": [
+        "ui-promo"
+      ],
+      "level": "basic",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "Step-by-step shadow catcher: 3D solid aligned to the ground, Accepts Shadows set to Only, environment light casting, shadow color; grounds a 3D model on a 2D plate so it stops floating."
+  },
+  {
+    "url": "https://flylib.com/books/en/2.104.1/color_matching.html",
+    "kind": "page",
+    "title": "Color Matching (After Effects 7.0 Studio Techniques, ch. 5)",
+    "author": "Mark Christiansen (via flylib)",
+    "type": "tutorial",
+    "approx_chars": 21085,
+    "tags": {
+      "topics": [
+        "compositing",
+        "color-finish"
+      ],
+      "scenarios": [
+        "character"
+      ],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": []
+    },
+    "why": "The channel-by-channel Levels method for matching a foreground to its plate (black/white/midtone references, green first, gamma slamming, Info panel readings); the reliable way to make a host or cut-out sit in the background's light."
+  },
+  {
+    "url": "https://flylib.com/books/en/2.104.1/shadows_and_reflected_light.html",
+    "kind": "page",
+    "title": "Shadows and Reflected Light (After Effects 7.0 Studio Techniques, ch. 12)",
+    "author": "Mark Christiansen (via flylib)",
+    "type": "tutorial",
+    "approx_chars": 8104,
+    "tags": {
+      "topics": [
+        "compositing"
+      ],
+      "scenarios": [
+        "character"
+      ],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": []
+    },
+    "why": "Cast shadows from a matte (corner pin, Levels output white 0, luma-matted adjustment layer), the contact-shadow pool trick under feet, and bounce/reflected light; the integration details that stop a composited figure from floating."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=rdi0bPWqYyI",
+    "kind": "video",
+    "title": "Advanced Lighting in After Effects",
+    "author": "Ben Marriott",
+    "views": 124142,
+    "likes": 5609,
+    "published": "2024-06-25",
+    "duration_sec": 1754,
+    "captions": "manual",
+    "tags": {
+      "topics": [
+        "compositing",
+        "light-glow"
+      ],
+      "scenarios": [
+        "character"
+      ],
+      "level": "advanced",
+      "impact": "high",
+      "tools": []
+    },
+    "why": "Ben Marriott composites a 2D animated character into a real environment: form shading, cast shadows, highlights, rim light, reactive reflections and shadows that loop with environmental changes; the closest match to grounding our host in a backdrop."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=jv4axtpnZps",
+    "kind": "video",
+    "title": "Animation Post Production Like a PRO (After Effects Beginner Tutorial)",
+    "author": "Manu Mercurial",
+    "views": 1629745,
+    "likes": 95748,
+    "published": "2023-02-23",
+    "duration_sec": 2687,
+    "captions": "manual",
+    "tags": {
+      "topics": [
+        "color-finish",
+        "compositing",
+        "light-glow"
+      ],
+      "scenarios": [
+        "character",
+        "explainer"
+      ],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": []
+    },
+    "why": "Studio-style post-production for 2D animation in AE: story-driven lighting passes, shadows, glows, depth blur to guide the eye, color grade and finishing texture; turns a flat character render into a movie-quality shot."
+  },
+  {
+    "url": "https://photography.tutsplus.com/tutorials/how-to-add-soft-shadow-animation-after-effects--cms-37786",
+    "kind": "page",
+    "title": "How to Add Soft Shadow Effects to Cartoon Animation Using After Effects",
+    "author": "Envato Tuts+ (Jonathan Lam)",
+    "type": "tutorial",
+    "approx_chars": 7785,
+    "tags": {
+      "topics": [
+        "compositing",
+        "camera-3d"
+      ],
+      "scenarios": [
+        "character"
+      ],
+      "level": "basic",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "Concrete steps for soft character and prop shadows (duplicate, Fill black, X-rotate 180 in 3D, align at the feet, Gaussian blur ~12, opacity ~60%, layer order); a quick stock recipe for grounding the host on a stage."
+  },
+  {
+    "url": "https://helpx.adobe.com/after-effects/desktop/apply-effects-and-animation-presets/list-of-effects/matte-effects.html",
+    "kind": "page",
+    "title": "Matte effects (Matte Choker, Refine Soft Matte, Simple Choker)",
+    "author": "Adobe Help Center",
+    "type": "doc",
+    "approx_chars": 4063,
+    "tags": {
+      "topics": [
+        "mattes-masks",
+        "compositing"
+      ],
+      "scenarios": [
+        "character"
+      ],
+      "level": "intermediate",
+      "impact": "low",
+      "tools": []
+    },
+    "why": "Edge treatment controls with exact behaviour: choke/spread, Refine Soft Matte edge detail, chatter reduction and decontaminate edge colors; cleans fringes and halos on cut-out characters before light wrap and shadows."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=w_zYlc5C_FQ",
+    "kind": "video",
+    "title": "How To Light a Set for Animation with Adobe After Effects - A Scene Case Study | Animation Tutorial",
+    "author": "Daniel Gies",
+    "views": 206151,
+    "likes": 5892,
+    "published": "2016-01-13",
+    "duration_sec": 1341,
+    "captions": "auto",
+    "tags": {
+      "topics": [
+        "light-glow",
+        "compositing"
+      ],
+      "scenarios": [
+        "character",
+        "explainer"
+      ],
+      "level": "intermediate",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "Daniel Gies case study relighting a full animation set in AE: deciding light sources, painting light and shadow passes, color and mood per scene, whatever the asset quality; makes plain backdrops feel lit and gives the host a believable light to sit in."
+  },
+  {
+    "url": "https://helpx.adobe.com/after-effects/desktop/apply-effects-and-animation-presets/list-of-effects/noise-grain-effects.html",
+    "kind": "page",
+    "title": "Noise and Grain effects (Add Grain, Match Grain, Fractal Noise, Turbulent Noise)",
+    "author": "Adobe Help Center",
+    "type": "doc",
+    "approx_chars": 69922,
+    "tags": {
+      "topics": [
+        "color-finish"
+      ],
+      "scenarios": [],
+      "level": "intermediate",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "Exact controls for Add Grain/Match Grain (presets, intensity, size, channel balance, blend modes, final-output view) and Fractal/Turbulent Noise; the stock toolkit for grain, de-banding and procedural texture in the finishing pass."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=X8JiaUHmdUA",
+    "kind": "video",
+    "title": "Animated Grain shading in After Effects tutorial - Noise and textured gradients",
+    "author": "Ben Marriott",
+    "views": 752302,
+    "likes": 24766,
+    "published": "2019-03-06",
+    "duration_sec": 599,
+    "captions": "manual",
+    "tags": {
+      "topics": [
+        "color-finish",
+        "shapes"
+      ],
+      "scenarios": [
+        "explainer",
+        "character"
+      ],
+      "level": "intermediate",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "Ben Marriott's animated grain shading: noise-based textured gradients and shading on flat vector shapes; adds the tactile, illustrated finish that makes clean shape-layer graphics feel crafted."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=De8KHhLndkM",
+    "kind": "video",
+    "title": "RGB Split in After Effects | Chromatic Aberration Tutorial",
+    "author": "Ben Marriott",
+    "views": 104178,
+    "likes": 3491,
+    "published": "2021-02-11",
+    "duration_sec": 735,
+    "captions": "auto",
+    "tags": {
+      "topics": [
+        "color-finish"
+      ],
+      "scenarios": [
+        "kinetic-type",
+        "hero-fx"
+      ],
+      "level": "intermediate",
+      "impact": "medium",
+      "tools": []
+    },
+    "why": "Ben Marriott builds RGB split / chromatic aberration in stock AE (Shift Channels-style channel separation, radial from frame center, kept subtle, expression-driven); a tasteful lens finish for hits and transitions."
+  }
+]

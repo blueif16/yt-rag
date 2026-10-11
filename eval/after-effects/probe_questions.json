@@ -1,0 +1,482 @@
+[
+  {
+    "id": "p01",
+    "area": "easing-graph-editor",
+    "kind": "premium",
+    "query": "How do pros shape the speed graph in After Effects so a hero move launches crisply and then glides into a long, luxurious deceleration tail instead of a symmetric Easy Ease?",
+    "must_contain": [
+      "Asymmetric ease: low outgoing influence, high (80-100%) incoming influence",
+      "Reads the speed graph's peak position and tail, not only the value graph"
+    ]
+  },
+  {
+    "id": "p02",
+    "area": "easing-graph-editor",
+    "kind": "howto",
+    "query": "How do I ease a shape or mask path morph in After Effects when path keyframes have no value graph, only a speed graph?",
+    "must_contain": [
+      "Path keys are eased in the speed graph or via Keyframe Velocity influence",
+      "Matching vertex count and First Vertex so the eased morph doesn't twist"
+    ]
+  },
+  {
+    "id": "p03",
+    "area": "easing-graph-editor",
+    "kind": "troubleshoot",
+    "query": "Why does my After Effects animation hitch or stall at a middle keyframe, and how do I make a three-key move flow through it as one continuous motion?",
+    "must_contain": [
+      "Speed drops to zero at the middle key; fix with Continuous Bezier or matched in/out speed",
+      "Rove Across Time to redistribute intermediate keys for even speed"
+    ]
+  },
+  {
+    "id": "p04",
+    "area": "text-kinetic-type",
+    "kind": "premium",
+    "query": "How do pros make a big headline reveal in After Effects feel premium, using line-by-line masked rises, a slow tracking settle and weight contrast instead of a generic fade-up preset?",
+    "must_contain": [
+      "Lines rise from behind a hard mask edge with staggered, overlapping timing",
+      "Subtle tracking/scale drift through the hold plus size/weight contrast for hierarchy"
+    ]
+  },
+  {
+    "id": "p05",
+    "area": "text-kinetic-type",
+    "kind": "howto",
+    "query": "How do I build a stat counter in After Effects that eases up to a number with thousands separators and decimals from a slider and a Source Text expression, without the digits jittering?",
+    "must_contain": [
+      "Eased Slider Control read by a Source Text expression with toFixed and comma formatting",
+      "Tabular/monospaced figures or fixed alignment so the width doesn't jitter"
+    ]
+  },
+  {
+    "id": "p06",
+    "area": "text-kinetic-type",
+    "kind": "troubleshoot",
+    "query": "Why do my letters scale or rotate around the baseline or layer anchor instead of each character's center in an After Effects text animator, and how do I fix the pivot?",
+    "must_contain": [
+      "Text More Options: Anchor Point Grouping and Grouping Alignment (e.g. 0%, -50%)",
+      "Animator Anchor Point property to offset the per-character pivot"
+    ]
+  },
+  {
+    "id": "p07",
+    "area": "shape-ui-animation",
+    "kind": "premium",
+    "query": "How do pros stagger a UI card cascade in After Effects so a grid of cards enters as one coherent gesture rather than a row of separate pops?",
+    "must_contain": [
+      "Small overlapping offsets ordered by position or importance, one shared direction of travel",
+      "Offsets driven from one control (index expression or sequenced layers) for easy retiming"
+    ]
+  },
+  {
+    "id": "p08",
+    "area": "shape-ui-animation",
+    "kind": "howto",
+    "query": "How do I animate a realistic cursor click on a UI button in After Effects, with the press-down scale, ripple and state change timed like a real product demo?",
+    "must_contain": [
+      "Brief scale-down (about 95-97%) on the click with a quick spring back",
+      "Cursor arrives and pauses before the click; ripple and state change follow within frames"
+    ]
+  },
+  {
+    "id": "p09",
+    "area": "shape-ui-animation",
+    "kind": "troubleshoot",
+    "query": "Why do thin strokes, hairlines and rounded UI corners shimmer or crawl when shape layers drift slowly in After Effects, and how do I keep them crisp?",
+    "must_contain": [
+      "Sub-pixel drift causes aliasing; snap resting positions to whole pixels or add motion blur",
+      "Keep strokes at least 1-2 px at output size; avoid downscaling, check Continuous Rasterization"
+    ]
+  },
+  {
+    "id": "p10",
+    "area": "expressions-rigs",
+    "kind": "premium",
+    "query": "How do pros use expressions in After Effects to add follow-through and lag between linked elements, like a label trailing its card, so a rig feels hand-animated rather than rigidly parented?",
+    "must_contain": [
+      "valueAtTime(time - delay) on the leader's transform, with delay scaled by index",
+      "Followers settle after the leader lands (overlap) instead of moving rigidly with it"
+    ]
+  },
+  {
+    "id": "p11",
+    "area": "expressions-rigs",
+    "kind": "howto",
+    "query": "What After Effects expression sizes a rounded backplate to its text layer with sourceRectAtTime, with padding, so chips and lower thirds resize automatically when the text changes?",
+    "must_contain": [
+      "sourceRectAtTime width/height/left/top drive the rectangle Size and Position plus padding",
+      "Accounts for the text layer's scale, anchor or parenting (toComp) to stay aligned"
+    ]
+  },
+  {
+    "id": "p12",
+    "area": "expressions-rigs",
+    "kind": "troubleshoot",
+    "query": "Which After Effects expression patterns make previews and renders crawl, such as loops over every layer, sampleImage or sourceRectAtTime on many layers, and how do I speed them up?",
+    "must_contain": [
+      "Names costly patterns: per-frame layer loops, sampleImage, deep valueAtTime chains",
+      "Fixes: Convert Expression to Keyframes, posterizeTime, JavaScript engine, fewer cross-references"
+    ]
+  },
+  {
+    "id": "p13",
+    "area": "3d-camera-depth",
+    "kind": "premium",
+    "query": "How do pros make a premium 3D product turntable of a phone or laptop inside After Effects with an imported GLB model, environment lighting and the Advanced 3D renderer?",
+    "must_contain": [
+      "Imports a 3D model (GLB/OBJ) and lights it with an HDRI environment light in Advanced 3D",
+      "Slow eased camera orbit, with screen content mapped or composited onto the device"
+    ]
+  },
+  {
+    "id": "p14",
+    "area": "3d-camera-depth",
+    "kind": "howto",
+    "query": "How do I fake depth of field on flat 2D layers in After Effects without the 3D camera renderer, using Camera Lens Blur with a gradient or depth map?",
+    "must_contain": [
+      "Camera Lens Blur with a luminance Blur Map layer and Blur Focal Distance",
+      "Iris shape and specular highlight settings for bokeh, or per-layer blur tied to distance"
+    ]
+  },
+  {
+    "id": "p15",
+    "area": "3d-camera-depth",
+    "kind": "troubleshoot",
+    "query": "Why do 3D layers in After Effects sort in the wrong order, z-fight or flicker when they pass near each other, and how do Classic 3D and Advanced 3D handle intersections differently?",
+    "must_contain": [
+      "Classic 3D sorts by layer distance; coplanar layers z-fight; fix with small Z offsets",
+      "2D layers, adjustment layers or uncollapsed precomps split the 3D sorting groups"
+    ]
+  },
+  {
+    "id": "p16",
+    "area": "motion-blur",
+    "kind": "premium",
+    "query": "How do pros use motion blur in After Effects to make fast UI and type moves feel premium, and when do they deliberately exaggerate it or turn it off?",
+    "must_contain": [
+      "Blur peaks on fast transitional or impact frames; none or minimal on text being read",
+      "Shutter angle choices (180° baseline, wider for stylized whips) kept consistent across sources"
+    ]
+  },
+  {
+    "id": "p17",
+    "area": "motion-blur",
+    "kind": "howto",
+    "query": "What Samples Per Frame and Adaptive Sample Limit values should I set in After Effects comp settings so fast rotations and scale pops get smooth motion blur instead of stepped copies?",
+    "must_contain": [
+      "Explains Samples Per Frame vs Adaptive Sample Limit and which layer types each governs",
+      "Raising samples removes visible stepping, at a render-time cost"
+    ]
+  },
+  {
+    "id": "p18",
+    "area": "motion-blur",
+    "kind": "troubleshoot",
+    "query": "Why doesn't animation driven by an effect, like the Transform effect, Turbulent Displace or a wiggled effect property, get motion blur in After Effects, and how do I add it?",
+    "must_contain": [
+      "Layer motion blur covers transform properties only; the Transform effect has its own shutter setting",
+      "CC Force Motion Blur, Pixel Motion Blur or RSMB on a precomp as fixes"
+    ]
+  },
+  {
+    "id": "p19",
+    "area": "glow-light",
+    "kind": "premium",
+    "query": "How do pros create a premium glossy light sweep or specular shine across a logo or device mockup in After Effects so it reads as real light on a surface?",
+    "must_contain": [
+      "A soft gradient band confined to the logo's alpha (matte), Add/Screen, eased across once",
+      "Shine shaped by the surface (edges/bevel, falloff, slight glow), not a flat looping wipe"
+    ]
+  },
+  {
+    "id": "p20",
+    "area": "glow-light",
+    "kind": "howto",
+    "query": "How do I build a stock After Effects glow that looks physically based by stacking several blur or Glow passes at increasing radii, as a fallback when Deep Glow isn't available?",
+    "must_contain": [
+      "Several passes with roughly doubling radius and falling intensity, combined Add/Screen",
+      "Isolated glow source (alpha or threshold) and 16/32 bpc for a smooth falloff"
+    ]
+  },
+  {
+    "id": "p21",
+    "area": "glow-light",
+    "kind": "troubleshoot",
+    "query": "Why does my glow wash saturated brand colors out to white or muddy them in After Effects, and how do I keep the core colored while only the falloff blooms?",
+    "must_contain": [
+      "Clipping to white from too much intensity/exposure; tint the glow from the source color",
+      "Neighboring colors mixing and 8 bpc clipping; use 16/32 bpc and separate glow passes"
+    ]
+  },
+  {
+    "id": "p22",
+    "area": "particles",
+    "kind": "premium",
+    "query": "How do pros keep particles in After Effects from looking template-y, so a particle field reads as a designed element through size variation, depth, motion and density?",
+    "must_contain": [
+      "Many tiny and few large particles, layered in depth with focus/DOF or a fore/background split",
+      "Restrained density, palette colors, and motion that reacts to the scene's beats"
+    ]
+  },
+  {
+    "id": "p23",
+    "area": "particles",
+    "kind": "howto",
+    "query": "How do I make Trapcode Particular emit from a logo or text layer so the logo dissolves into particles or assembles out of them, colored by the layer's pixels?",
+    "must_contain": [
+      "Layer or Layer Grid emitter with a 3D precomp source; particle color from Layer RGB",
+      "Turbulence/physics and emission timing for the dissolve; reversed timing or Form for assembly"
+    ]
+  },
+  {
+    "id": "p24",
+    "area": "particles",
+    "kind": "troubleshoot",
+    "query": "Why do Trapcode Particular particles pop on at the first frame, flicker, or leave dotted gaps in fast trails, and how do I fix it with pre-run, random seed and sub-frame emission?",
+    "must_contain": [
+      "Pre Run so the field is already populated at frame 0; a fixed Random Seed",
+      "Sub-frame position/emission settings to fill gaps in fast-moving emitters"
+    ]
+  },
+  {
+    "id": "p25",
+    "area": "masks-mattes-reveals",
+    "kind": "premium",
+    "query": "How do pros design an elegant masked reveal in After Effects where text or a product slides out from behind an invisible edge with layered parallax inside the mask?",
+    "must_contain": [
+      "Content moves inside a static or slower-moving mask, giving parallax depth",
+      "Hard vs feathered edge choice, with staggered layers on matched easing"
+    ]
+  },
+  {
+    "id": "p26",
+    "area": "masks-mattes-reveals",
+    "kind": "howto",
+    "query": "How do I use one matte layer to reveal several layers in After Effects with the new track matte picker or Set Matte, without duplicating the matte?",
+    "must_contain": [
+      "Track matte dropdown (AE 2023+) lets many layers reference one matte, visible or hidden",
+      "Alpha vs Luma and Inverted options; Set Matte effect as an alternative"
+    ]
+  },
+  {
+    "id": "p27",
+    "area": "masks-mattes-reveals",
+    "kind": "troubleshoot",
+    "query": "Why does a thin seam, fringe or light line appear where two matted or masked layers meet edge to edge in After Effects, and how do I make the join seamless?",
+    "must_contain": [
+      "Antialiased edges conflate; fix with the Alpha Add blend mode or overlapping edges",
+      "Use one matte plus an inverted copy; check matte scale and rasterization"
+    ]
+  },
+  {
+    "id": "p28",
+    "area": "transitions",
+    "kind": "premium",
+    "query": "How do pros make scene transitions in a tech video feel motivated and invisible, using match cuts, shape-continuity morphs and object-led wipes instead of stock transitions?",
+    "must_contain": [
+      "Match on shape, color or position; an element of scene A becomes scene B's container",
+      "Speed and direction carried across the cut, timed to the VO or an audio hit"
+    ]
+  },
+  {
+    "id": "p29",
+    "area": "transitions",
+    "kind": "howto",
+    "query": "How do I build a short glitch or RGB-split digital transition in After Effects with stock effects so it hits for only a few frames and stays clean enough for a tech channel?",
+    "must_contain": [
+      "Per-channel offsets (Shift Channels or channel displacement) plus blocky displacement noise",
+      "Lasts about 4-8 frames, peaks on the cut, paired with a sound hit"
+    ]
+  },
+  {
+    "id": "p30",
+    "area": "transitions",
+    "kind": "troubleshoot",
+    "query": "Why does my transition flash a black frame, a gap or a doubled frame at the cut in After Effects, and how do I fix off-by-one in/out points between overlapping precomps?",
+    "must_contain": [
+      "Off-by-one from layer in/out points, comp start frame (0 vs 1) or footage one frame short",
+      "Overlap handles past the cut, checked frame by frame"
+    ]
+  },
+  {
+    "id": "p31",
+    "area": "compositing-character-footage",
+    "kind": "premium",
+    "query": "How do pros composite a screen recording or app UI into a device mockup in After Effects so the screen looks like real glass, with reflections, a slight screen glow and correct perspective?",
+    "must_contain": [
+      "Corner pin, 3D placement or tracking, a rounded screen mask, a glass reflection layer on top",
+      "Matched blacks/contrast plus subtle bloom or grain so the UI sits in the device"
+    ]
+  },
+  {
+    "id": "p32",
+    "area": "compositing-character-footage",
+    "kind": "howto",
+    "query": "How do I make a character or product cast a soft reflection on a glossy studio floor in After Effects that fades and blurs with distance from the contact point?",
+    "must_contain": [
+      "Vertically flipped duplicate from the contact line, gradient fade, low opacity",
+      "Blur grows with distance, tint matched to the floor, follows the animated subject"
+    ]
+  },
+  {
+    "id": "p33",
+    "area": "compositing-character-footage",
+    "kind": "troubleshoot",
+    "query": "Why does my tracked graphic drift, slip or jitter on handheld footage in After Effects, and how do I fix it with better track points, Mocha planar tracking or smoothing?",
+    "must_contain": [
+      "High-contrast features, tuned feature/search regions, or a planar surface track in Mocha AE",
+      "Manual drift correction and jitter smoothing (Smoother or expression averaging)"
+    ]
+  },
+  {
+    "id": "p34",
+    "area": "color-finishing",
+    "kind": "premium",
+    "query": "How do pros give clean motion graphics a filmic finish in After Effects with subtle grain, halation, vignette and chromatic aberration, without it looking like a cheap overlay?",
+    "must_contain": [
+      "A subtle, ordered finishing stack on a top adjustment layer; halation only on highlights",
+      "Text/UI stays legible; effects are felt not seen (no heavy CA on type)"
+    ]
+  },
+  {
+    "id": "p35",
+    "area": "color-finishing",
+    "kind": "howto",
+    "query": "How do I apply one consistent grade across every scene of an After Effects video with a top adjustment layer, Lumetri or a LUT, while keeping brand and UI colors exact?",
+    "must_contain": [
+      "One adjustment layer with Lumetri Color or Apply Color LUT in the main comp",
+      "Protect graphics (grade footage only, or masks/HSL qualifiers), check with Lumetri scopes"
+    ]
+  },
+  {
+    "id": "p36",
+    "area": "color-finishing",
+    "kind": "troubleshoot",
+    "query": "Why does my paper, noise or dust texture overlay in After Effects look like a static dirty screen or visibly tile and loop, and how do I make it feel organic?",
+    "must_contain": [
+      "Texture changes per frame or stepped (random offsets, posterizeTime)",
+      "No visible repeats; Overlay/Soft Light at low opacity"
+    ]
+  },
+  {
+    "id": "p37",
+    "area": "workflow-precomps-performance",
+    "kind": "premium",
+    "query": "How do professional motion designers structure a large After Effects project for a long video, with a master comp, scene precomps, shared controllers and reusable modules, so changes propagate and it stays fast?",
+    "must_contain": [
+      "Master > scene > module precomp hierarchy with clear naming",
+      "Global control layers/comps and reusable templated modules"
+    ]
+  },
+  {
+    "id": "p38",
+    "area": "workflow-precomps-performance",
+    "kind": "howto",
+    "query": "How do I use Essential Properties (master properties) in After Effects so one reusable precomp, like a lower third or card, shows different text and colors in each instance?",
+    "must_contain": [
+      "Add properties to the Essential Graphics panel, then override per instance under Master Properties",
+      "Pushing or resetting overrides, and which properties can be exposed"
+    ]
+  },
+  {
+    "id": "p39",
+    "area": "workflow-precomps-performance",
+    "kind": "troubleshoot",
+    "query": "Why are RAM previews in my heavy After Effects comp slow or constantly re-rendering, and which cache, GPU, preview and pre-render settings speed up iteration?",
+    "must_contain": [
+      "Disk cache size/location, Multi-Frame Rendering, preview resolution, region of interest",
+      "Pre-render or proxy heavy precomps; disable heavy effects while editing"
+    ]
+  },
+  {
+    "id": "p40",
+    "area": "render-export-color-management",
+    "kind": "premium",
+    "query": "How do pros export a final master from After Effects for YouTube at maximum quality, with an intermediate codec first, then encode settings, bitrate and BT.709 tagging?",
+    "must_contain": [
+      "Lossless or ProRes intermediate, then high-bitrate H.264/H.265 (or upload the ProRes)",
+      "BT.709 tags and full vs limited range; uploading 4K to get a better YouTube codec"
+    ]
+  },
+  {
+    "id": "p41",
+    "area": "render-export-color-management",
+    "kind": "howto",
+    "query": "How do I render an MP4 straight from the After Effects Render Queue with the native H.264 output module, which bitrate settings matter, and when is Media Encoder still better?",
+    "must_contain": [
+      "Native H.264 output module settings: bitrate/quality, hardware encoding, audio",
+      "When to use Media Encoder or render-then-transcode instead"
+    ]
+  },
+  {
+    "id": "p42",
+    "area": "render-export-color-management",
+    "kind": "troubleshoot",
+    "query": "Why does my After Effects H.264 export look darker, lifted or gamma-shifted compared with the comp viewer once played in QuickTime, a browser or YouTube, and how do I fix it?",
+    "must_contain": [
+      "Working space/display color management vs output profile (Convert to Output Color Space)",
+      "Player gamma and range differences (QuickTime 1.96, full vs limited); verify with scopes/ffprobe"
+    ]
+  },
+  {
+    "id": "p43",
+    "area": "design-layout-hierarchy-timing",
+    "kind": "premium",
+    "query": "How do pros lay out graphics around an on-screen presenter or character host, with headroom, look room and graphics placed where the host gazes and gestures?",
+    "must_contain": [
+      "Framing: headroom, lead/look room, thirds; graphics on the gaze or gesture side",
+      "Consistent gutters between the host frame and graphics; never crop limbs at joints"
+    ]
+  },
+  {
+    "id": "p44",
+    "area": "design-layout-hierarchy-timing",
+    "kind": "howto",
+    "query": "How do I set up title-safe overlays, guides and a column grid in After Effects so every scene shares the same margins and alignment?",
+    "must_contain": [
+      "Title/action safe toggle, grid and proportional grid, rulers and guides",
+      "Saved/imported guides or a template comp with a guide-layer grid; snapping"
+    ]
+  },
+  {
+    "id": "p45",
+    "area": "design-layout-hierarchy-timing",
+    "kind": "troubleshoot",
+    "query": "Why does my motion-graphics scene feel cluttered and confusing even when each element looks good, and how do I fix the visual hierarchy and limit how many things move at once?",
+    "must_contain": [
+      "Too many simultaneous motions or focal points; one hero motion, stagger the rest",
+      "Attention steered by contrast (scale, value, color, blur/dim); remove or delay elements"
+    ]
+  },
+  {
+    "id": "p46",
+    "area": "video-pacing-edit-rhythm",
+    "kind": "premium",
+    "query": "How do top tech YouTubers pace a video's edit rhythm, including how often the visual changes, when to hold on the host, and how energy builds toward a payoff?",
+    "must_contain": [
+      "Concrete cadence numbers (a visual change every few seconds) with varied shot lengths",
+      "Hooks or pattern interrupts and energy ramps; deliberate holds on key moments"
+    ]
+  },
+  {
+    "id": "p47",
+    "area": "video-pacing-edit-rhythm",
+    "kind": "howto",
+    "query": "How do I cut motion graphics and B-roll to the beat of a music track in After Effects using beat markers or Convert Audio to Keyframes?",
+    "must_contain": [
+      "Markers tapped on beats during audio preview, or Convert Audio to Keyframes amplitude",
+      "Hits on downbeats and phrase starts rather than every beat; cuts snapped to markers"
+    ]
+  },
+  {
+    "id": "p48",
+    "area": "video-pacing-edit-rhythm",
+    "kind": "troubleshoot",
+    "query": "Why does an explainer video feel slow and draggy even with lots of animation, and how do editors find and fix dead air, over-long holds and monotonous rhythm?",
+    "must_contain": [
+      "Trim pauses between VO phrases (J/L cuts) and cut holds to reading time",
+      "Vary rhythm across sections, sync visual changes to speech emphasis, check the retention graph"
+    ]
+  }
+]
