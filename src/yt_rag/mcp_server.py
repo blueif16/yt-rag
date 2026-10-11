@@ -8,7 +8,7 @@ with the same metadata envelope (see chunks.py). See collections.py for the rule
 
 Tools:
   - list_repository()                 collections + purposes + stats (call first)
-  - search(query, collection?, top_k) hybrid RRF + graph search, ?t=<sec> deep-links
+  - search(query, collection?, top_k) similarity + rare-word boost, passages, ?t=<sec> deep-links
   - create_collection(name, purpose)  register a new topic (only if none fits)
   - ingest_channels(collection, channels, n_videos?)  latest uploads → collection
   - ingest_videos(collection, urls)   cherry-picked videos → collection
@@ -58,29 +58,38 @@ def search(query: str, collection: str | None = None, top_k: int = 10,
            type: str | None = None, tools_available: list[str] | None = None,
            per_source: int = 3, context: int = 0) -> list[dict]:
     """
-    Search the corpus (video captions + web pages + notes): hybrid BM25 +
-    vector (RRF) + graph traversal.
+    Search the corpus (video captions + web pages + notes): vector similarity
+    plus a small boost for chunks that contain the query's rare words (effect,
+    plugin and menu names).
 
-    Each result is one chunk: a ~90-second stretch of a video or a ~1500-char
-    section of a page, starting with a self-describing header
-    ([author — "title" — date — locator]). `source_url` deep-links to the exact
-    second (videos) or section (pages).
+    Each result is one passage: a ~90-second stretch of a video or a
+    ~1500-char section of a page, or two such chunks back to back when both
+    match (`chunks`: 2). It starts with a self-describing header
+    ([author — "title" — date — locator]). `source_url` deep-links to the
+    exact second (videos) or section (pages).
 
     `relevance` is the cosine similarity to your query (gemini-embedding-2,
     calibrated on the after-effects collection). Read it as absolute: best hit
     0.77+ = a real answer; 0.70-0.77 = often partial, read and cross-check;
     below ~0.70 = the library most likely has nothing on this — say so
-    instead of forcing an answer. Weak or partial? Search again, rephrased with
-    the exact After Effects / plugin terms (effect, property and menu names).
+    instead of forcing an answer.
+
+    Search twice. First ask the question in plain words. Then search again
+    with only the terms the answer itself would contain: effect, property,
+    menu, expression and plugin names and the trade words for the technique,
+    3-8 terms, no sentence ("Puppet Position Pin Advanced Starch overlap",
+    "Roto Brush Refine Edge decontaminate edge colors"). Read both result lists:
+    the question finds the explanations, the terms find the recipes that use
+    other words for the same thing.
 
     Args:
-        query: What to search for — a full natural-language question works
-            best ("why does my glow disappear on a white background"); short
-            exact names work too ("CC Force Motion Blur", "loopOut").
+        query: A full natural-language question ("why does my glow disappear
+            on a white background"), or the exact terms of the answer
+            ("CC Force Motion Blur shutter angle", "loopOut cycle").
         collection: Scope to one topic collection (e.g. "after-effects"). Pick it
             by matching your question to each collection's `purpose` from
             list_repository(). Omit to search the entire corpus.
-        top_k: Number of chunks to return (default 10, cap 25). The best chunk
+        top_k: Number of passages to return (default 10, cap 25). The best one
             often ranks 6-10, so read all of them before concluding.
         scenario: Only sources tagged for this kind of shot/video, e.g.
             "ui-promo", "logo-ident", "hero-fx" (vocabulary: list_repository).
@@ -91,19 +100,38 @@ def search(query: str, collection: str | None = None, top_k: int = 10,
         tools_available: Plugins you can use, e.g. ["deep-glow-2", "rsmb",
             "trapcode-particular"]; sources that need anything else are left
             out. [] = stock After Effects only.
-        per_source: At most this many chunks from one video/page (default 3),
+        per_source: At most this many passages from one video/page (default 3),
             so one long tutorial or manual cannot fill every slot. 0 = no cap.
-        context: 1 = also return the chunk before and after each hit
+        context: 1 = also return the chunk before and after each passage
             (context_before / context_after), for steps or code that run
-            across a chunk boundary. Default 0.
+            across a boundary. Default 0.
 
     Returns:
         List of {content, relevance, source_url, type, title, author,
-        published_at, locator, collection, tags} (+ video_id, chunk_start_sec,
-        views for videos; + context_before, context_after when context=1).
-        `tags` = {topics, scenarios, level, impact, tools} when the source is tagged.
+        published_at, locator, chunks, collection, tags} (+ video_id,
+        chunk_start_sec, views for videos; + context_before, context_after when
+        context=1). `tags` = {topics, scenarios, level, impact, tools} when the
+        source is tagged.
     """
     top_k = max(1, min(int(top_k), 25))
+    try:
+        rag, passages = search_passages(query, collection, top_k, scenario=scenario, topic=topic,
+                                        type=type, tools_available=tools_available,
+                                        per_source=per_source)
+    except Exception as e:
+        return [{"error": f"search failed: {e}"}]
+    out = [_passage_hit(p, collection) for p in passages]
+    if context:
+        _attach_neighbours(rag, passages, out)
+    return out
+
+
+def search_passages(query: str, collection: str | None = None, top_k: int = 10, *,
+                    scenario: str | None = None, topic: str | None = None,
+                    type: str | None = None, tools_available: list[str] | None = None,
+                    per_source: int = 3, keyword_boost: float | None = None):
+    """The rows behind search(): (store, passages), each passage a list of
+    chunk rows (with ids) in reading order. Used by the tool and by the eval."""
     filter_meta: dict = {}
     if scenario:
         filter_meta["scenarios"] = [scenario]
@@ -116,43 +144,19 @@ def search(query: str, collection: str | None = None, top_k: int = 10,
     # its own; capping that pool then left agents with 3-4 hits. Draw a wide
     # pool so the cap still leaves top_k (the vector half is an exact scan, so
     # this costs a few ms).
-    pool = min(100, max(top_k * 10, 30)) if per_source else top_k
-    try:
-        rows = rag.search(query, top_k=pool, filter_meta=filter_meta or None,
-                          tools_available=tools_available)
-    except Exception as e:
-        return [{"error": f"search failed: {e}"}]
-    rows = cap_per_source(rows, per_source)[:top_k]
-
-    out = []
-    for r in rows:
-        meta = r.get("metadata") or {}
-        hit = {
-            "content": r.get("content", ""),
-            "relevance": round(r["similarity"], 3) if r.get("similarity") is not None else None,
-            "source_url": meta.get("source", ""),
-            "type": meta.get("type", ""),
-            "title": meta.get("title", ""),
-            "author": meta.get("author") or meta.get("channel", ""),
-            "published_at": meta.get("published_at", ""),
-            "locator": meta.get("locator", ""),
-            "collection": r.get("namespace") or collection or "",
-        }
-        tags = {k: meta[k] for k in TAG_FIELDS if k in meta}
-        if tags:
-            hit["tags"] = tags
-        if meta.get("video_id"):
-            hit["video_id"] = meta["video_id"]
-            hit["chunk_start_sec"] = meta.get("chunk_start_sec")
-            if meta.get("views") is not None:
-                hit["views"] = meta["views"]
-        out.append(hit)
-    if context:
-        _attach_neighbours(rag, rows, out)
-    return out
+    pool = min(100, max(top_k * 10, 30)) if per_source else top_k * 3
+    rows = rag.search(query, top_k=pool, filter_meta=filter_meta or None,
+                      tools_available=tools_available, keyword_boost=keyword_boost)
+    return rag, group_passages(rows, per_source, top_k)
 
 
 TAG_FIELDS = ("topics", "scenarios", "level", "impact", "tools")
+MAX_PASSAGE_CHUNKS = 2
+
+
+def _doc_key(r: dict) -> str:
+    meta = r.get("metadata") or {}
+    return meta.get("doc_id") or meta.get("video_id") or meta.get("source") or str(r.get("id"))
 
 
 def cap_per_source(rows: list[dict], per_source: int) -> list[dict]:
@@ -162,12 +166,80 @@ def cap_per_source(rows: list[dict], per_source: int) -> list[dict]:
     seen: dict[str, int] = {}
     kept = []
     for r in rows:
-        meta = r.get("metadata") or {}
-        doc = meta.get("doc_id") or meta.get("video_id") or meta.get("source") or str(r.get("id"))
+        doc = _doc_key(r)
         if seen.get(doc, 0) < per_source:
             seen[doc] = seen.get(doc, 0) + 1
             kept.append(r)
     return kept
+
+
+def group_passages(rows: list[dict], per_source: int, top_k: int) -> list[list[dict]]:
+    """Best-first rows -> at most top_k passages.
+
+    A row next to a passage already chosen from the same video or page
+    (chunk_index ± 1) joins that passage instead of taking a slot of its own,
+    up to MAX_PASSAGE_CHUNKS chunks; the per-source cap counts passages. So a
+    source whose matching chunks sit side by side reads as one passage, and
+    its cap is left for its other sections (measured on the after-effects set:
+    every chunk the plain cap kept is still there, plus the neighbours that
+    carry the rest of a recipe). Once top_k passages exist, the scan stops at
+    the first row that would need a slot of its own."""
+    passages: list[list[dict]] = []
+    seen: dict[str, int] = {}
+    for r in rows:
+        doc, idx = _doc_key(r), (r.get("metadata") or {}).get("chunk_index")
+        if idx is not None:
+            home = next((p for p in passages if _doc_key(p[0]) == doc
+                         and len(p) < MAX_PASSAGE_CHUNKS
+                         and any(abs(int(idx) - int(x["metadata"]["chunk_index"])) == 1 for x in p)),
+                        None)
+            if home is not None:
+                home.append(r)
+                home.sort(key=lambda x: int(x["metadata"]["chunk_index"]))
+                continue
+        if len(passages) >= top_k:
+            break
+        if per_source and seen.get(doc, 0) >= per_source:
+            continue
+        seen[doc] = seen.get(doc, 0) + 1
+        passages.append([r])
+    return passages
+
+
+def _passage_hit(p: list[dict], collection: str | None) -> dict:
+    first, last = p[0], p[-1]
+    meta, last_meta = first.get("metadata") or {}, last.get("metadata") or {}
+    content = first.get("content", "")
+    for r in p[1:]:
+        content += "\n\n" + _body(r.get("content", ""))
+    sims = [r["similarity"] for r in p if r.get("similarity") is not None]
+    locator = meta.get("locator", "")
+    if len(p) > 1:
+        if meta.get("chunk_start_sec") is not None and last_meta.get("locator"):
+            locator = f"{locator.split('–')[0]}–{last_meta['locator'].split('–')[-1]}"
+        elif last_meta.get("locator") and last_meta["locator"] != locator:
+            locator = f"{locator} / {last_meta['locator']}"
+    hit = {
+        "content": content,
+        "relevance": round(max(sims), 3) if sims else None,
+        "source_url": meta.get("source", ""),
+        "type": meta.get("type", ""),
+        "title": meta.get("title", ""),
+        "author": meta.get("author") or meta.get("channel", ""),
+        "published_at": meta.get("published_at", ""),
+        "locator": locator,
+        "chunks": len(p),
+        "collection": first.get("namespace") or collection or "",
+    }
+    tags = {k: meta[k] for k in TAG_FIELDS if k in meta}
+    if tags:
+        hit["tags"] = tags
+    if meta.get("video_id"):
+        hit["video_id"] = meta["video_id"]
+        hit["chunk_start_sec"] = meta.get("chunk_start_sec")
+        if meta.get("views") is not None:
+            hit["views"] = meta["views"]
+    return hit
 
 
 def _body(content: str) -> str:
@@ -175,19 +247,19 @@ def _body(content: str) -> str:
     return content.split("\n", 1)[1] if content.startswith("[") and "\n" in content else content
 
 
-def _attach_neighbours(rag, rows: list[dict], hits: list[dict]) -> None:
-    """Add context_before / context_after: the previous and next chunk of the
-    same video or page (same doc_id, chunk_index ± 1), in one query."""
+def _attach_neighbours(rag, passages: list[list[dict]], hits: list[dict]) -> None:
+    """Add context_before / context_after: the chunk just before and just after
+    each passage (same doc_id, first chunk_index - 1, last + 1), in one query."""
     keys, clauses = [], []
-    for r, hit in zip(rows, hits):
-        meta = r.get("metadata") or {}
-        doc, idx = meta.get("doc_id"), meta.get("chunk_index")
-        if doc is None or idx is None:
+    for p, hit in zip(passages, hits):
+        meta, last = p[0].get("metadata") or {}, p[-1].get("metadata") or {}
+        doc, lo, hi = meta.get("doc_id"), meta.get("chunk_index"), last.get("chunk_index")
+        if doc is None or lo is None or hi is None:
             keys.append(None)
             continue
-        keys.append((hit["collection"], doc, int(idx)))
+        keys.append((hit["collection"], doc, int(lo), int(hi)))
         clauses.append(f'and(namespace.eq."{hit["collection"]}",metadata->>doc_id.eq."{doc}",'
-                       f'metadata->>chunk_index.in.({int(idx) - 1},{int(idx) + 1}))')
+                       f'metadata->>chunk_index.in.({int(lo) - 1},{int(hi) + 1}))')
     if not clauses:
         return
     found = rag.client.table("documents").select("namespace, content, metadata").or_(
@@ -196,11 +268,11 @@ def _attach_neighbours(rag, rows: list[dict], hits: list[dict]) -> None:
               for f in found}
     for key, hit in zip(keys, hits):
         if key:
-            ns, doc, idx = key
-            if (ns, doc, idx - 1) in by_key:
-                hit["context_before"] = _body(by_key[(ns, doc, idx - 1)])
-            if (ns, doc, idx + 1) in by_key:
-                hit["context_after"] = _body(by_key[(ns, doc, idx + 1)])
+            ns, doc, lo, hi = key
+            if (ns, doc, lo - 1) in by_key:
+                hit["context_before"] = _body(by_key[(ns, doc, lo - 1)])
+            if (ns, doc, hi + 1) in by_key:
+                hit["context_after"] = _body(by_key[(ns, doc, hi + 1)])
 
 
 @mcp.tool()

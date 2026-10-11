@@ -36,7 +36,8 @@ YOUTUBE_RE = re.compile(r"(?:youtube\.com/(?:watch|shorts/|embed/|live/)|youtu\.
 HR_RE = re.compile(r"^\s*(?:[-*_]\s*){3,}$")  # a horizontal rule: no content
 # A markdown table's separator row: | --- | :---: | (outer pipes optional).
 TABLE_SEP_RE = re.compile(r"^\s*\|?\s*:?-{3,}:?\s*(?:\|\s*:?-{3,}:?\s*)*\|?\s*$")
-MIN_CHUNK_TEXT = 40  # a chunk with less text than this (headings aside) is dropped
+MIN_CHUNK_TEXT = 40  # a chunk with less text than this (headings aside) joins the next
+ROW_LABEL_CHARS = 100  # a long table row repeats at most this much of its first cell
 
 # ---- boilerplate: site menus, tables of contents, account and cookie lines ----
 NAV_RUN_MIN = 8    # menu-like lines in a row before a run can be a menu
@@ -270,7 +271,8 @@ def _cells(row: str) -> list[str]:
 
 def _row_record(header: str, row: str, max_chars: int) -> list[str]:
     """A table row too long for one chunk, as `column: value` lines packed into
-    pieces; every piece starts with the row's first cell, so it reads on its own."""
+    pieces; every later piece starts with the row's first cell (shortened if
+    long), so it reads on its own."""
     names, cells = _cells(header), _cells(row)
     if len(cells) > len(names) and names:  # a stray "|" inside a cell
         cells = cells[:len(names) - 1] + [" | ".join(cells[len(names) - 1:])]
@@ -278,14 +280,16 @@ def _row_record(header: str, row: str, max_chars: int) -> list[str]:
               for k, c in enumerate(cells) if c]
     if not fields:
         return _hard_split(row, max_chars)
-    label, pieces, cur = fields[0], [], fields[0]
-    for f in fields[1:]:
+    label = fields[0] if len(fields[0]) <= ROW_LABEL_CHARS else \
+        fields[0][:ROW_LABEL_CHARS].rsplit(" ", 1)[0] + " …"
+    pieces, cur = [], ""
+    for f in fields:
         for part in ([f] if len(label) + 1 + len(f) <= max_chars
                      else _hard_split(f, max_chars - len(label) - 1)):
-            if len(cur) + 1 + len(part) > max_chars:
+            if cur and len(cur) + 1 + len(part) > max_chars:
                 pieces.append(cur)
                 cur = label
-            cur += "\n" + part
+            cur = f"{cur}\n{part}" if cur else part
     pieces.append(cur)
     return pieces
 

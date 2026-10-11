@@ -416,6 +416,15 @@ def test_oversized_row_becomes_a_named_record():
     assert "Build route: Long recipe" in chunks[0]["text"]
 
 
+def test_long_first_cell_is_shortened_on_later_pieces():
+    first = "Methods: " + " ".join(f"m{i}()" for i in range(70))  # ~400 chars: fits one piece
+    md = f"## T\n\n| Kind | Detail |\n|---|---|\n| {first} | {'Long detail sentence. ' * 60} |\n"
+    chunks = split_markdown(md, max_chars=900)
+    assert first in chunks[0]["text"]  # the first piece has the whole cell
+    assert all(len(c["text"].splitlines()[1]) < 120 for c in chunks[1:])  # later ones a label
+    assert all("Kind: Methods: m0() m1()" in c["text"] for c in chunks)
+
+
 def test_table_without_outer_pipes():
     rows = "\n".join(f"**Row {i}** | `attr{i}` | {'y' * 200}" for i in range(10))
     md = f"## Attributes\n\nElement | Attribute | Default\n------- | --------- | -------\n{rows}\n"
@@ -438,3 +447,56 @@ def test_overlong_heading_line_counts_as_text():
     md = "## " + "Before You Start, EXTREMELY IMPORTANT. Common problems discussed here! " * 3
     (chunk,) = split_markdown(md + "\n\nMore.")
     assert "EXTREMELY IMPORTANT" in chunk["text"]
+
+
+# ---- passages: adjacent chunks of one source join, the cap counts passages ----
+
+from yt_rag.mcp_server import _passage_hit, group_passages  # noqa: E402
+
+
+def _row(i, doc, idx, sim=0.7, video=False):
+    meta = {"doc_id": doc, "chunk_index": idx, "title": doc, "source": f"https://x/{doc}#{idx}",
+            "locator": f"0{idx}:00–0{idx + 1}:00" if video else f"Section {idx}"}
+    if video:
+        meta.update(video_id=doc, chunk_start_sec=idx * 60)
+    return {"id": i, "content": f'[A — "{doc}" — {idx}]\nbody {i}', "metadata": meta,
+            "similarity": sim, "namespace": "c"}
+
+
+def test_neighbours_join_one_passage_and_free_the_cap():
+    rows = [_row(1, "a", 0), _row(2, "a", 5), _row(3, "a", 9), _row(4, "a", 1),
+            _row(5, "a", 12), _row(6, "b", 3)]
+    ps = group_passages(rows, per_source=3, top_k=10)
+    assert [[r["id"] for r in p] for p in ps] == [[1, 4], [2], [3], [6]]  # 5 = a 4th passage of a
+
+
+def test_passages_keep_every_row_the_plain_cap_keeps():
+    from yt_rag.mcp_server import cap_per_source
+    rows = [_row(i, "abc"[i % 3], (i * 7) % 11) for i in range(30)]
+    capped = {r["id"] for r in cap_per_source(rows, 3)[:10]}
+    grouped = {r["id"] for p in group_passages(rows, 3, 10) for r in p}
+    assert capped <= grouped
+
+
+def test_passage_is_at_most_two_chunks_in_reading_order():
+    rows = [_row(1, "a", 3), _row(2, "a", 2), _row(3, "a", 4), _row(4, "a", 1)]
+    ps = group_passages(rows, per_source=3, top_k=10)
+    assert [[r["id"] for r in p] for p in ps] == [[2, 1], [3], [4]]  # 3+2 full; 4 starts, 1 is index 1
+    assert all([r["metadata"]["chunk_index"] for r in p] == sorted(r["metadata"]["chunk_index"] for r in p)
+               for p in ps)
+
+
+def test_scan_stops_at_the_first_row_that_needs_a_slot_once_top_k_is_full():
+    rows = [_row(1, "a", 0), _row(2, "b", 0), _row(3, "a", 1)]
+    assert [[r["id"] for r in p] for p in group_passages(rows, 3, 2)] == [[1, 3], [2]]
+    rows = [_row(1, "a", 0), _row(2, "b", 0), _row(4, "c", 0), _row(3, "a", 1)]
+    assert [[r["id"] for r in p] for p in group_passages(rows, 3, 2)] == [[1], [2]]
+
+
+def test_passage_hit_reads_as_one_hit():
+    p = [_row(1, "v", 2, 0.71, video=True), _row(2, "v", 3, 0.75, video=True)]
+    hit = _passage_hit(p, "c")
+    assert hit["chunks"] == 2 and hit["relevance"] == 0.75
+    assert hit["locator"] == "02:00–04:00"
+    assert hit["content"].startswith('[A — "v" — 2]\nbody 1') and hit["content"].endswith("body 2")
+    assert hit["content"].count("[A —") == 1  # the second header is dropped
