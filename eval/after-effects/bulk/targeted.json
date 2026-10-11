@@ -1,0 +1,627 @@
+[
+ {
+  "url": "/home/ran/ae_playground/research/video-rhythm-2026-10/README.md",
+  "kind": "page",
+  "title": "Video rhythm and segmentation: research synthesis and plan (2026-10-06)",
+  "author": "Ran Studio (in-house research)",
+  "type": "note",
+  "published": "2026-10-06",
+  "approx_chars": 8691,
+  "tags": {
+   "topics": [
+    "design"
+   ],
+   "scenarios": [
+    "edit-pacing",
+    "logo-ident"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": []
+  },
+  "why": "Our synthesis: hook first then a <=3 s sting, 50%-at-0:30 yardstick, brand moment placed after the hook, dedicated moments every 45-90 s, SFX sync windows (hits -1/+2 frames, whooshes 2-4 frames early), bed -24 dB under VO, -14 LUFS; plus a 0-30 s beat table. Gives the planner a concrete opening timeline."
+ },
+ {
+  "url": "/home/ran/ae_playground/research/video-rhythm-2026-10/hook-science-and-production.md",
+  "kind": "page",
+  "title": "Hook science, sonic branding and production practice for tech-YouTube openings",
+  "author": "Ran Studio (in-house research)",
+  "type": "note",
+  "published": "2026-10-06",
+  "approx_chars": 55099,
+  "tags": {
+   "topics": [
+    "design"
+   ],
+   "scenarios": [
+    "edit-pacing",
+    "logo-ident"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": []
+  },
+  "why": "Retention data tagged official / measured / opinion (drop-off at 5/15/30/60 s), pacing and pattern-interrupt cadence, open loops, sponsor placement, opening blueprint rules R1-R16, sonic-logo length/sync/loudness, and what pros template once vs rebuild per episode. The evidence base for hook and re-hook decisions."
+ },
+ {
+  "url": "/home/ran/ae_playground/research/video-rhythm-2026-10/channel-anatomy.md",
+  "kind": "page",
+  "title": "Tech YouTube intro anatomy: 30 channels (research 2026-10-06)",
+  "author": "Ran Studio (in-house research)",
+  "type": "note",
+  "published": "2026-10-06",
+  "approx_chars": 47868,
+  "tags": {
+   "topics": [
+    "design"
+   ],
+   "scenarios": [
+    "edit-pacing",
+    "logo-ident"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "why": "Per-channel table of how ~30 tech, dev/AI and explainer channels open (hook length, sting length and position, sponsor slot), 10 intro archetypes, dated 2010s-2026 changes and a reference queue. Lets an agent pick an opening archetype with real precedents instead of guessing."
+ },
+ {
+  "url": "/home/ran/ae_playground/research/video-rhythm-2026-10/techniques.md",
+  "kind": "page",
+  "title": "Signature intro techniques for tech YouTube (catalog, 2026-10-06)",
+  "author": "Ran Studio (in-house research)",
+  "type": "note",
+  "published": "2026-10-06",
+  "approx_chars": 60936,
+  "tags": {
+   "topics": [
+    "design",
+    "transitions",
+    "light-glow"
+   ],
+   "scenarios": [
+    "logo-ident",
+    "hero-fx",
+    "edit-pacing"
+   ],
+   "level": "advanced",
+   "impact": "medium",
+   "tools": []
+  },
+  "why": "63 sting, title-drop, 3D-product, hook-device, transition and finish techniques, each with an AE build route (stock effect matchNames, key params, SML eases), SFX pairing, difficulty for kumo-driven AE and the plugin vs stock fallback. Maps a desired opening beat to a buildable AE recipe."
+ },
+ {
+  "url": "/home/ran/ae_playground/research/lecture-craft-2026-10/README.md",
+  "kind": "page",
+  "title": "Lecture craft for a character host (2026-10-07)",
+  "author": "Ran Studio (in-house research)",
+  "type": "note",
+  "published": "2026-10-07",
+  "approx_chars": 8319,
+  "tags": {
+   "topics": [
+    "design"
+   ],
+   "scenarios": [
+    "explainer",
+    "character",
+    "edit-pacing"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": []
+  },
+  "why": "Measured pace of 3b1b, Welch Labs, Kurzgesagt, Veritasium (167-194 wpm overall, rare 3-5 s gaps), edX engagement bands, gesture/pointing research, Mayer effect sizes, 3b1b layout geometry and 8 rules (160-185 wpm, 1.5-2.5 s holds after hero reveals, read text >=24 px on output, a stage beat about every 20 s, 6-10 px light wrap). Direct pacing rules for host-led explainers."
+ },
+ {
+  "url": "https://support.google.com/youtube/answer/9314415",
+  "kind": "page",
+  "title": "Measure key moments for audience retention",
+  "author": "YouTube Help (Google)",
+  "type": "doc",
+  "approx_chars": 5722,
+  "tags": {
+   "topics": [
+    "design"
+   ],
+   "scenarios": [
+    "edit-pacing"
+   ],
+   "level": "basic",
+   "impact": "medium",
+   "tools": []
+  },
+  "why": "YouTube's official definitions of the retention-graph moments (Intro = share still watching at 0:30, top moments, spikes, dips) and how to read them by traffic source and new vs returning viewers. The only official yardstick for diagnosing where a cut loses viewers."
+ },
+ {
+  "url": "https://www.jeraldblackstock.ca/tutorials-after-effects-neon.html",
+  "kind": "page",
+  "title": "Neon Signage | After Effects (procedural glow and flickering, 100% built-in effects)",
+  "author": "Jerald Blackstock (Blackstock Fine Art & Design)",
+  "type": "tutorial",
+  "approx_chars": 10223,
+  "tags": {
+   "topics": [
+    "light-glow",
+    "expressions"
+   ],
+   "scenarios": [
+    "titles",
+    "logo-ident",
+    "hero-fx"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": []
+  },
+  "why": "Full stock neon build with numbers: 4 stacked Glows (threshold 0, radius 20/60/180/540, intensity 0.3) then CC Toner to restore colour purity after additive passes, a Simple Choker -10 + Fast Box Blur 200 fill glow, a hot white core layer, off-state tube, hard/soft shadows, Silhouette-Alpha master switch and a probability flicker expression. The stock fallback for DG2 with colour-safe cores."
+ },
+ {
+  "url": "https://olafmotion.com/tutorials/how-to-create-a-neon-glow-effect-in-after-effects/",
+  "kind": "page",
+  "title": "How to create a neon glow effect in After Effects",
+  "author": "Bartek (OlafMotion)",
+  "type": "tutorial",
+  "published": "2026-08-12",
+  "approx_chars": 24952,
+  "text_file": "/home/ran/yt-rag/eval/after-effects/bulk/texts/olafmotion-neon-glow.md",
+  "tags": {
+   "topics": [
+    "light-glow"
+   ],
+   "scenarios": [
+    "titles",
+    "logo-ident"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "why": "Core / bloom / halo / spill layer split with starting ranges (tight glow threshold 60-80%, radius 10-40, intensity 0.6-1.2; halo threshold 10-40%, radius 60-200, intensity 0.2-0.8), Curves before Glow to choose what blooms, paler core vs saturated halo, Add vs Screen, 16 bpc plus grain against banding, flicker keyframe pattern. Starting values instead of trial and error."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=l0MKEtsdZpg",
+  "kind": "video",
+  "title": "Deep Glow 2: In Depth Guide to Tone Mapping",
+  "author": "Plugin Everything (James Whiffin)",
+  "views": 8554,
+  "likes": 85,
+  "published": "2024-11-25",
+  "duration_sec": 475,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "light-glow",
+    "color-finish"
+   ],
+   "scenarios": [
+    "hero-fx",
+    "logo-ident"
+   ],
+   "level": "advanced",
+   "impact": "high",
+   "tools": [
+    "deep-glow-2"
+   ]
+  },
+  "why": "Plugin author shows why HDR glow cores clip on 8-bit export (values >1 cut off), and the fix: ACES/Hable/Reinhard tone mapping, the DG2 Tone Map Utility on an adjustment layer so the source is tonemapped too, gamma-correction compensation, and Clamp Chroma at 10-20% for a white-hot core. Below the 15k view bar but it is the developer's own guide to our installed plugin."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=zaNhmXUjq90",
+  "kind": "video",
+  "title": "Deep Glow 2: In Depth Tutorial - Iris Mode",
+  "author": "aescripts + aeplugins (Plugin Everything)",
+  "views": 2088,
+  "likes": 38,
+  "published": "2024-11-26",
+  "duration_sec": 821,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "light-glow"
+   ],
+   "scenarios": [
+    "hero-fx",
+    "logo-ident"
+   ],
+   "level": "advanced",
+   "impact": "medium",
+   "tools": [
+    "deep-glow-2"
+   ]
+  },
+  "why": "Building custom irises for DG2 image-based glow: 600x600 iris comp, feather 150 / expansion -150 for an exponential-like falloff, iterations and radius easing (0 linear, 100 exponential), iris quality vs detail, ~20% gamma correction in linear, precompose animated irises to avoid skew. Low views, but the developer's only walkthrough of a feature the manual just names."
+ },
+ {
+  "url": "https://creativecow.net/forums/thread/glow-effect-and-transparent-background-mechanics/",
+  "kind": "page",
+  "title": "Glow Effect and transparent background mechanics",
+  "author": "Creative COW forum (Oleg Pirogov, Jeff Kay, Max Haller)",
+  "type": "article",
+  "published": "2019-01-14",
+  "approx_chars": 5890,
+  "text_file": "/home/ran/yt-rag/eval/after-effects/bulk/texts/creativecow-glow-transparent-mechanics.md",
+  "tags": {
+   "topics": [
+    "light-glow",
+    "compositing"
+   ],
+   "scenarios": [],
+   "level": "intermediate",
+   "impact": "low",
+   "tools": []
+  },
+  "why": "Mechanics only: Glow's radius is the only control that touches alpha, so glow pixels are low-alpha but superbright (only at 32 bpc); they read only when composited Add/Normal over a dark plate, and vanish over transparency or white. Gives the luma-matte workaround and straight-alpha advice. Explains why additive glow fails on our white stage; no tutorial gives tested light-background settings."
+ },
+ {
+  "url": "https://www.premiumbeat.com/blog/screen-replacements-in-after-effects/",
+  "kind": "page",
+  "title": "Basic Screen Replacements (with Reflections) in Adobe After Effects",
+  "author": "Jason Boone (PremiumBeat)",
+  "type": "tutorial",
+  "published": "2020-07-30",
+  "approx_chars": 6553,
+  "tags": {
+   "topics": [
+    "compositing"
+   ],
+   "scenarios": [
+    "ui-promo"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": []
+  },
+  "why": "Mocha AE planar track with Perspective, planar surface fitted to the screen, nested pre-comp at the phone's native resolution (1080x2340) with Fit to Comp, Corner Pin with Motion Blur export, then the original screen's reflection isolated with an alpha matte and Screen/Add. The core UI-on-device shot done properly."
+ },
+ {
+  "url": "https://www.premiumbeat.com/blog/video-tutorial-cell-phone-tablet-screen-replacement-in-after-effects/",
+  "kind": "page",
+  "title": "Video Tutorial: Cell Phone & Tablet Screen Replacement in After Effects",
+  "author": "Evan Abrams (PremiumBeat)",
+  "type": "tutorial",
+  "published": "2013-09-10",
+  "approx_chars": 10993,
+  "tags": {
+   "topics": [
+    "compositing",
+    "light-glow"
+   ],
+   "scenarios": [
+    "ui-promo"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "why": "Full transcript: Warp Stabilizer, built-in Perspective Corner Pin tracker (RGB, enhance, stop below 80% confidence), then selling the insert: a blurred screen glow at 50% (Fast Blur 25), an Add glow at ~10%, a spillover-alpha matte that keeps light streaks over the new screen, and a Hue/Sat colorize border fix. The finishing layers that make a replaced screen look lit."
+ },
+ {
+  "url": "https://helpx.adobe.com/after-effects/desktop/animate-in-after-effects/track-motion/tracking-stabilizing-motion-cs5.html",
+  "kind": "page",
+  "title": "Tracking and stabilizing motion",
+  "author": "Adobe",
+  "type": "doc",
+  "published": "2026-07-30",
+  "approx_chars": 46424,
+  "tags": {
+   "topics": [
+    "compositing"
+   ],
+   "scenarios": [
+    "ui-promo"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "why": "Official reference for every AE tracker: Mocha AE planar tracking and applying its data, point tracker (one/two/four-point corner pin, feature and search regions, confidence, adapt feature, apply to a null), 3D Camera Tracker, mask and face tracking, Warp Stabilizer. Fills the 'no tracking anywhere' hole."
+ },
+ {
+  "url": "https://www.ledet.com/after-effects-tip-of-the-week-create-a-cinematic-light-sweep-on-text/",
+  "kind": "page",
+  "title": "After Effects Tip of the Week: Create a Cinematic Light Sweep on Text",
+  "author": "Ledet Training",
+  "type": "tutorial",
+  "published": "2025-10-27",
+  "approx_chars": 3472,
+  "tags": {
+   "topics": [
+    "light-glow",
+    "mattes-masks"
+   ],
+   "scenarios": [
+    "titles",
+    "logo-ident"
+   ],
+   "level": "basic",
+   "impact": "medium",
+   "tools": []
+  },
+  "why": "Masked white solid in Add/Screen, Gaussian blur ~20 px, eased 1-2 s mask-path pass, 60-70% opacity, track-matted to a duplicate of the text, plus a delayed smaller secondary sweep and a glint on the crossing frame. A controllable sweep rig beyond CC Light Sweep."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=k6UOK0atgEM",
+  "kind": "video",
+  "title": "Advanced 3D Shiny Logo Reveal in After Effects - NO PLUGINS",
+  "author": "Motion Nations",
+  "views": 95010,
+  "likes": 2457,
+  "published": "2025-08-18",
+  "duration_sec": 697,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "camera-3d",
+    "light-glow"
+   ],
+   "scenarios": [
+    "logo-ident",
+    "hero-fx"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": []
+  },
+  "why": "Advanced 3D extruded logo (depth 100-130, angular bevel 5) lit by an image-based environment light, specular shininess ~80-88, and rotating the environment light so reflections sweep across the bevels; draft 3D for preview. The premium metal sheen on an ident without plugins."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=Czh7wbRtv2Y",
+  "kind": "video",
+  "title": "How To Create Apple's Liquid Glass in After Effects (100% No Plugins!)",
+  "author": "MDMZ",
+  "views": 179644,
+  "likes": 5903,
+  "published": "2025-07-07",
+  "duration_sec": 779,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "light-glow",
+    "shapes",
+    "compositing"
+   ],
+   "scenarios": [
+    "ui-promo"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": []
+  },
+  "why": "Apple Liquid Glass UI with stock effects and exact values: CC Light Sweep edge shine (Smooth, width 120, sweep intensity 0, edge intensity 60, thickness 0.8, mirrored), multiply edge darkness (blur 15) track-matted, soft drop shadow, CC Glass (softness 50, light 65/60), CC Lens linked by expression, and a blurred gradient refraction map into Displacement Map. The 2025-26 Apple sheen on UI cards."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=Ct3HkdQHDqI",
+  "kind": "video",
+  "title": "Simple Shape Orbits - Adobe After Effects tutorial",
+  "author": "ECAbrams (Evan Abrams)",
+  "views": 318011,
+  "likes": 11325,
+  "published": "2018-06-23",
+  "duration_sec": 356,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "camera-3d",
+    "expressions"
+   ],
+   "scenarios": [
+    "explainer",
+    "logo-ident"
+   ],
+   "level": "basic",
+   "impact": "medium",
+   "tools": []
+  },
+  "why": "2.5D orbit rig: 3D layers parented to a 3D spinner null, Y rotation with loopOut so the orbiter passes behind the nucleus, auto-orient toward camera so flat shapes don't edge-on, and tilted nulls for atom-style rings. The front/back orbit pass for the memory-atom ring."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=bj28UpR_5Wc",
+  "kind": "video",
+  "title": "Make Apple-Style Carousel Motion Graphics in After Effects",
+  "author": "SonduckFilm (Joshua Noel)",
+  "views": 233286,
+  "likes": 6877,
+  "published": "2025-11-03",
+  "duration_sec": 394,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "camera-3d",
+    "expressions"
+   ],
+   "scenarios": [
+    "ui-promo",
+    "titles"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": []
+  },
+  "why": "2D and 3D carousels: items at Z -500 parented to a 3D null in 60-degree steps, stepped spin with eased keys and loopOut('offset'), camera tilt, depth of field, compound-blur floor reflection, and a CC Cylinder strip. Ring rigs with real depth for product and UI showcases."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=yFVC9AUw0T4",
+  "kind": "video",
+  "title": "How to Make a 3D Carousel with Expressions in After Effects",
+  "author": "ukramedia (Andrew Marston)",
+  "views": 17521,
+  "likes": 604,
+  "published": "2021-09-14",
+  "duration_sec": 1359,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "expressions",
+    "camera-3d"
+   ],
+   "scenarios": [
+    "ui-promo",
+    "explainer"
+   ],
+   "level": "advanced",
+   "impact": "medium",
+   "tools": []
+  },
+  "why": "Expression rig that spaces any number of objects evenly along a bezier path (pointOnPath, index-based phase), drives the whole ring from one progress slider, and then makes it 3D. Niche advanced topic (17.5k views, 3.4% likes) from an established expressions teacher; gives per-element phase and a reusable control."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=FT0Enr_jXO4",
+  "kind": "video",
+  "title": "Trapcode Particular 3 Training | 04: Light Emitters",
+  "author": "Maxon Red Giant (Harry Frank)",
+  "views": 64038,
+  "likes": 595,
+  "published": "2018-03-19",
+  "duration_sec": 604,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "particles",
+    "camera-3d"
+   ],
+   "scenarios": [
+    "hero-fx",
+    "logo-ident"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": [
+    "trapcode-particular"
+   ]
+  },
+  "why": "Official lesson on driving Particular emitters from AE lights: Light Naming ('Emitter'), point vs directional light emitters, parenting the light to an animated 3D layer so trails follow it through camera moves. The recipe for particle trails orbiting a subject that the manual's chunks only describe."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=hXtRc84o-WU",
+  "kind": "video",
+  "title": "Make ANYTHING Retro in After Effects",
+  "author": "Ben Marriott",
+  "views": 989217,
+  "likes": 54045,
+  "published": "2022-09-29",
+  "duration_sec": 749,
+  "captions": "manual",
+  "tags": {
+   "topics": [
+    "color-finish",
+    "light-glow"
+   ],
+   "scenarios": [
+    "hero-fx"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": []
+  },
+  "why": "One adjustment-layer finish stack in order with values: Gaussian 8 + Sharpen ~300 edge artifacts, bloom (Deep Glow radius 250, exposure 0.4, or stacked stock Glows) with Curves before it to pull whites and after it to tame highlights, chromatic aberration 0.15, screened texture at 50%, drop shadows at 25%; and the rule that each effect should be felt, not seen."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=B_ja6zsqxa4",
+  "kind": "video",
+  "title": "The curious mystery of HALATION and a half baked AFTER EFFECTS tutorial!",
+  "author": "Marsgohome",
+  "views": 20035,
+  "likes": 1046,
+  "published": "2022-11-29",
+  "duration_sec": 724,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "color-finish",
+    "light-glow"
+   ],
+   "scenarios": [],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "why": "Why film halates (red layer, anti-halation backing) and two stock AE builds: Levels/Curves highlight key, Shift Channels to drop blue, Channel Blur red 5 / green 3, Add, masked where it smears; and a 16/32-bpc Cineon Converter variant. A stock halation recipe; niche topic with 5% like ratio."
+ },
+ {
+  "url": "https://community.adobe.com/questions-529/how-to-animate-a-line-in-one-pixel-increments-58938",
+  "kind": "page",
+  "title": "How to animate a line in one pixel increments",
+  "author": "Adobe Community (Rick Gerard answer)",
+  "type": "article",
+  "published": "2025-01-14",
+  "approx_chars": 2781,
+  "tags": {
+   "topics": [
+    "shapes",
+    "expressions"
+   ],
+   "scenarios": [
+    "ui-promo"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "why": "Crisp hairlines: even-width strokes need whole-pixel vertex positions, odd widths need .5; move lines a whole number of pixels per frame with timeToFrames() expressions (null-driven or Trim Paths End converted from pixels to percent); critical speeds cause judder. Fixes shimmering UI rules and dividers."
+ },
+ {
+  "url": "https://madebyloop.co.uk/blog/ultimate-guide-camera-lens-blur-after-effects/",
+  "kind": "page",
+  "title": "The ultimate guide to the Camera Lens Blur effect in After Effects",
+  "author": "Made By Loop",
+  "type": "tutorial",
+  "published": "2023-04-03",
+  "approx_chars": 8636,
+  "tags": {
+   "topics": [
+    "camera-3d"
+   ],
+   "scenarios": [
+    "ui-promo",
+    "hero-fx"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "why": "Every Camera Lens Blur control explained (radius, iris shape/roundness/aspect/rotation, diffraction fringe, highlight gain/threshold), adjustment-layer setup, gradient-ramp blur maps (precompose or Effects & Masks), blur focal distance, tilt-shift and 3D depth passes. Fake depth of field on 2D layouts."
+ },
+ {
+  "url": "https://helpx.adobe.com/after-effects/desktop/work-with-layers/work-with-layer-blending-modes/blending-modes-layer-styles.html",
+  "kind": "page",
+  "title": "Blending modes and layer styles",
+  "author": "Adobe",
+  "type": "doc",
+  "published": "2024-12-03",
+  "approx_chars": 25208,
+  "tags": {
+   "topics": [
+    "compositing",
+    "mattes-masks"
+   ],
+   "scenarios": [],
+   "level": "intermediate",
+   "impact": "low",
+   "tools": []
+  },
+  "why": "Official definitions of every blending mode, including Alpha Add (removes seams between abutting matted layers), Stencil/Silhouette Alpha and Luma, Luminescent Premul, 32-bpc behaviour and blending at 1.0 gamma, plus layer styles. Exact mechanics for matte seams and additive light."
+ },
+ {
+  "url": "https://helpx.adobe.com/after-effects/desktop/view-and-preview/preview-video-and-audio/modifying-using-views.html",
+  "kind": "page",
+  "title": "Modifying and using views (safe zones, grids, guides, and rulers)",
+  "author": "Adobe",
+  "type": "doc",
+  "published": "2026-09-09",
+  "approx_chars": 16118,
+  "tags": {
+   "topics": [
+    "design",
+    "workflow"
+   ],
+   "scenarios": [
+    "titles"
+   ],
+   "level": "basic",
+   "impact": "low",
+   "tools": []
+  },
+  "why": "Title-safe 80% / action-safe 90% (10% and 5% margins), center-cut safe zones, Grids & Guides preferences, guides, rulers and snapping. The numbers behind shared margins and caption placement."
+ }
+]
