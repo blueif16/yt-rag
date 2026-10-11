@@ -1,0 +1,7730 @@
+{
+ "meta": {
+  "judged": "2026-10-11",
+  "scope": "Regression check only (the library is now judged by recreating reference effects). The 57 answered questions were checked mechanically: each round-3 best chunk, re-mapped by 5-gram overlap where its source was re-chunked, must still be in the hits. p07, p36, p40, p42 and p46 were read in full. Other sub-2 questions were not re-read.",
+  "library": "after-effects: 201 sources, 3,013 chunks (13 sources re-chunked: 325 rows replaced by 332; backup in ~/yt-rag/eval/after-effects/chunks_deleted_round4.jsonl, 342 rows incl. one intermediate re-chunk). No notes from the parallel ingest appeared during the run.",
+  "search": "MCP search defaults (top_k 10, per_source 3) on search_chunks_v2: cosine similarity + 0.01 x share of the query's rare words (df < 20%), passages of adjacent same-source chunks (max 2, the cap counts passages). Median 13.5 chunks per search (was 10).",
+  "rule": "score_with_rule = the agent also runs the second, term-based search the ae-library skill now requires; the term queries (round4_term_queries.json) were written blind by a fresh agent from the rule text and the question only.",
+  "rubric": "Round 3: 2 = an actionable answer somewhere in the hits an agent gets; 1 = partial; 0 = nothing.",
+  "results_file": "eval/after-effects/round4_results.json (local, gitignored)"
+ },
+ "scores": [
+  {
+   "id": "p01",
+   "set": "probe",
+   "query": "How do pros shape the speed graph in After Effects so a hero move launches crisply and then glides into a long, luxurious deceleration tail instead of a symmetric Easy Ease?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "Graph Editor speed graph Keyframe Velocity incoming influence outgoing influence",
+   "agent_ids": [
+    [
+     747,
+     748
+    ],
+    [
+     332,
+     333
+    ],
+    [
+     339,
+     340
+    ],
+    [
+     3239,
+     3240
+    ],
+    [
+     328,
+     329
+    ],
+    [
+     751,
+     752
+    ],
+    [
+     749
+    ],
+    [
+     3242
+    ],
+    [
+     3238
+    ],
+    [
+     3203
+    ]
+   ],
+   "term_ids": [
+    [
+     3238,
+     3239
+    ],
+    [
+     3240,
+     3241
+    ],
+    [
+     338,
+     339
+    ],
+    [
+     329,
+     330
+    ],
+    [
+     332,
+     333
+    ],
+    [
+     3242
+    ],
+    [
+     3397
+    ],
+    [
+     962
+    ],
+    [
+     3203
+    ],
+    [
+     670
+    ]
+   ],
+   "best_ids_r3": [
+    339
+   ],
+   "best_ids_now": {
+    "339": [
+     339
+    ]
+   },
+   "best_kept": {
+    "339": true
+   },
+   "best_kept_with_rule": {
+    "339": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "p02",
+   "set": "probe",
+   "query": "How do I ease a shape or mask path morph in After Effects when path keyframes have no value graph, only a speed graph?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "path keyframes speed graph Keyframe Velocity influence Flow",
+   "agent_ids": [
+    [
+     3241,
+     3242
+    ],
+    [
+     751
+    ],
+    [
+     3012
+    ],
+    [
+     333
+    ],
+    [
+     3579
+    ],
+    [
+     335,
+     336
+    ],
+    [
+     747
+    ],
+    [
+     338
+    ],
+    [
+     3029
+    ],
+    [
+     4123
+    ]
+   ],
+   "term_ids": [
+    [
+     3240,
+     3241
+    ],
+    [
+     3238,
+     3239
+    ],
+    [
+     4456,
+     4457
+    ],
+    [
+     676
+    ],
+    [
+     3242
+    ],
+    [
+     751
+    ],
+    [
+     337,
+     338
+    ],
+    [
+     339
+    ],
+    [
+     332
+    ],
+    [
+     673
+    ]
+   ],
+   "best_ids_r3": [
+    3012
+   ],
+   "best_ids_now": {
+    "3012": [
+     3012
+    ]
+   },
+   "best_kept": {
+    "3012": true
+   },
+   "best_kept_with_rule": {
+    "3012": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "p03",
+   "set": "probe",
+   "query": "Why does my After Effects animation hitch or stall at a middle keyframe, and how do I make a three-key move flow through it as one continuous motion?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "Rove Across Time Continuous Bezier Auto Bezier speed graph",
+   "agent_ids": [
+    [
+     3864
+    ],
+    [
+     984
+    ],
+    [
+     671,
+     672
+    ],
+    [
+     3859
+    ],
+    [
+     674
+    ],
+    [
+     3025
+    ],
+    [
+     3242
+    ],
+    [
+     660
+    ],
+    [
+     3393
+    ],
+    [
+     852
+    ]
+   ],
+   "term_ids": [
+    [
+     674,
+     675
+    ],
+    [
+     3242,
+     3243
+    ],
+    [
+     336,
+     337
+    ],
+    [
+     3392,
+     3393
+    ],
+    [
+     3238
+    ],
+    [
+     3240,
+     3241
+    ],
+    [
+     751
+    ],
+    [
+     670
+    ],
+    [
+     3396
+    ],
+    [
+     3391
+    ]
+   ],
+   "best_ids_r3": [
+    3864
+   ],
+   "best_ids_now": {
+    "3864": [
+     3864
+    ]
+   },
+   "best_kept": {
+    "3864": true
+   },
+   "best_kept_with_rule": {
+    "3864": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "p04",
+   "set": "probe",
+   "query": "How do pros make a big headline reveal in After Effects feel premium, using line-by-line masked rises, a slow tracking settle and weight contrast instead of a generic fade-up preset?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "Range Selector Based On Lines Tracking Amount track matte font weight",
+   "agent_ids": [
+    [
+     836
+    ],
+    [
+     2976
+    ],
+    [
+     2981
+    ],
+    [
+     2973
+    ],
+    [
+     5534,
+     5535
+    ],
+    [
+     840
+    ],
+    [
+     1033,
+     1034
+    ],
+    [
+     991
+    ],
+    [
+     838
+    ],
+    [
+     1031,
+     1032
+    ]
+   ],
+   "term_ids": [
+    [
+     3255,
+     3256
+    ],
+    [
+     991
+    ],
+    [
+     3252,
+     3253
+    ],
+    [
+     3257,
+     3258
+    ],
+    [
+     1032
+    ],
+    [
+     1034
+    ],
+    [
+     4060
+    ],
+    [
+     4058
+    ],
+    [
+     825
+    ],
+    [
+     840
+    ]
+   ],
+   "best_ids_r3": [
+    5152,
+    1033,
+    991
+   ],
+   "best_ids_now": {
+    "5152": [
+     5535,
+     5536
+    ],
+    "1033": [
+     1033
+    ],
+    "991": [
+     991
+    ]
+   },
+   "best_kept": {
+    "5152": true,
+    "1033": true,
+    "991": true
+   },
+   "best_kept_with_rule": {
+    "5152": true,
+    "1033": true,
+    "991": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "p05",
+   "set": "probe",
+   "query": "How do I build a stat counter in After Effects that eases up to a number with thousands separators and decimals from a slider and a Source Text expression, without the digits jittering?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "Slider Control Source Text toLocaleString toFixed Math.round tabular figures",
+   "agent_ids": [
+    [
+     913,
+     914
+    ],
+    [
+     4127,
+     4128
+    ],
+    [
+     915,
+     916
+    ],
+    [
+     917,
+     918
+    ],
+    [
+     371,
+     372
+    ],
+    [
+     4067,
+     4068
+    ],
+    [
+     844
+    ],
+    [
+     3282
+    ],
+    [
+     4069
+    ],
+    [
+     614
+    ]
+   ],
+   "term_ids": [
+    [
+     913,
+     914
+    ],
+    [
+     4127,
+     4128
+    ],
+    [
+     915,
+     916
+    ],
+    [
+     372
+    ],
+    [
+     3759,
+     3760
+    ],
+    [
+     3282
+    ],
+    [
+     623
+    ],
+    [
+     4067
+    ],
+    [
+     790
+    ],
+    [
+     917
+    ]
+   ],
+   "best_ids_r3": [
+    4128
+   ],
+   "best_ids_now": {
+    "4128": [
+     4128
+    ]
+   },
+   "best_kept": {
+    "4128": true
+   },
+   "best_kept_with_rule": {
+    "4128": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "p06",
+   "set": "probe",
+   "query": "Why do my letters scale or rotate around the baseline or layer anchor instead of each character's center in an After Effects text animator, and how do I fix the pivot?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "Anchor Point Grouping Grouping Alignment Character text animator",
+   "agent_ids": [
+    [
+     3259,
+     3260
+    ],
+    [
+     3251
+    ],
+    [
+     824,
+     825
+    ],
+    [
+     821,
+     822
+    ],
+    [
+     823
+    ],
+    [
+     609,
+     610
+    ],
+    [
+     844
+    ],
+    [
+     848
+    ],
+    [
+     3249
+    ],
+    [
+     3790
+    ]
+   ],
+   "term_ids": [
+    [
+     3259
+    ],
+    [
+     3250,
+     3251
+    ],
+    [
+     824,
+     825
+    ],
+    [
+     3252,
+     3253
+    ],
+    [
+     3790
+    ],
+    [
+     609
+    ],
+    [
+     821
+    ],
+    [
+     851
+    ],
+    [
+     2949
+    ],
+    [
+     2951
+    ]
+   ],
+   "best_ids_r3": [
+    3259
+   ],
+   "best_ids_now": {
+    "3259": [
+     3259
+    ]
+   },
+   "best_kept": {
+    "3259": true
+   },
+   "best_kept_with_rule": {
+    "3259": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "p07",
+   "set": "probe",
+   "query": "How do pros stagger a UI card cascade in After Effects so a grid of cards enters as one coherent gesture rather than a row of separate pops?",
+   "prev_score": 1,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": "ranking fixed by the rare-word boost",
+   "notes": "Carbon 'Sequence and stagger' (4211, rank 10) adds the ordering rule round 3 missed: stable content first, the important element last, ~20 ms steps, total under 500 ms; with Mapal 890 (Motion Tools sequence) and Bricks 380 (2-3 frame offsets) that is actionable. The term search adds the index-driven delay (helpx 3286 delay * (index - parent.index); ECAbrams valueAtTime 2988-2990).",
+   "method": "read",
+   "change": "up",
+   "terms": "index delay valueAtTime stagger offset Sequence Layers overlap",
+   "agent_ids": [
+    [
+     922
+    ],
+    [
+     809,
+     810
+    ],
+    [
+     814,
+     815
+    ],
+    [
+     812,
+     813
+    ],
+    [
+     890
+    ],
+    [
+     1009
+    ],
+    [
+     383
+    ],
+    [
+     379,
+     380
+    ],
+    [
+     373
+    ],
+    [
+     4211
+    ]
+   ],
+   "term_ids": [
+    [
+     2988,
+     2989
+    ],
+    [
+     3286,
+     3287
+    ],
+    [
+     2990
+    ],
+    [
+     3950
+    ],
+    [
+     2986,
+     2987
+    ],
+    [
+     890
+    ],
+    [
+     3279
+    ],
+    [
+     922
+    ],
+    [
+     4211
+    ],
+    [
+     4067
+    ]
+   ],
+   "best_ids_r3": [
+    890,
+    380
+   ],
+   "best_ids_now": {
+    "890": [
+     890
+    ],
+    "380": [
+     380
+    ]
+   },
+   "best_kept": {
+    "890": true,
+    "380": true
+   },
+   "best_kept_with_rule": {
+    "890": true,
+    "380": true
+   },
+   "better_ids_now": [
+    4211
+   ],
+   "better_ids_with_rule": [
+    4211,
+    3286
+   ]
+  },
+  {
+   "id": "p08",
+   "set": "probe",
+   "query": "How do I animate a realistic cursor click on a UI button in After Effects, with the press-down scale, ripple and state change timed like a real product demo?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "cursor press Scale ripple Ellipse Trim Paths hold keyframe",
+   "agent_ids": [
+    [
+     1012,
+     1013
+    ],
+    [
+     815,
+     816
+    ],
+    [
+     663,
+     664
+    ],
+    [
+     812,
+     813
+    ],
+    [
+     1014,
+     1015
+    ],
+    [
+     809
+    ],
+    [
+     781
+    ],
+    [
+     1008
+    ],
+    [
+     786
+    ],
+    [
+     4992
+    ]
+   ],
+   "term_ids": [
+    [
+     1011,
+     1012
+    ],
+    [
+     663
+    ],
+    [
+     851
+    ],
+    [
+     671
+    ],
+    [
+     673
+    ],
+    [
+     724
+    ],
+    [
+     3027
+    ],
+    [
+     929
+    ],
+    [
+     620
+    ],
+    [
+     361
+    ]
+   ],
+   "best_ids_r3": [
+    1013
+   ],
+   "best_ids_now": {
+    "1013": [
+     1013
+    ]
+   },
+   "best_kept": {
+    "1013": true
+   },
+   "best_kept_with_rule": {
+    "1013": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "p09",
+   "set": "probe",
+   "query": "Why do thin strokes, hairlines and rounded UI corners shimmer or crawl when shape layers drift slowly in After Effects, and how do I keep them crisp?",
+   "prev_score": 1,
+   "score": 1,
+   "score_with_rule": null,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Round-3 hits and best chunks still present; not re-read.",
+   "change": "same",
+   "terms": "subpixel aliasing Continuous Rasterization Motion Blur Fast Box Blur Stroke Width",
+   "agent_ids": [
+    [
+     5296
+    ],
+    [
+     4124,
+     4125
+    ],
+    [
+     3933
+    ],
+    [
+     4120,
+     4121
+    ],
+    [
+     4126
+    ],
+    [
+     5627
+    ],
+    [
+     3720
+    ],
+    [
+     4986,
+     4987
+    ],
+    [
+     3702
+    ],
+    [
+     3028
+    ]
+   ],
+   "term_ids": [
+    [
+     3594
+    ],
+    [
+     3877,
+     3878
+    ],
+    [
+     3409
+    ],
+    [
+     2968,
+     2969
+    ],
+    [
+     4403
+    ],
+    [
+     2965
+    ],
+    [
+     3894
+    ],
+    [
+     3412,
+     3413
+    ],
+    [
+     3411
+    ],
+    [
+     2967
+    ]
+   ],
+   "best_ids_r3": [
+    5296
+   ],
+   "best_ids_now": {
+    "5296": [
+     5296
+    ]
+   },
+   "best_kept": {
+    "5296": true
+   },
+   "best_kept_with_rule": {
+    "5296": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "p10",
+   "set": "probe",
+   "query": "How do pros use expressions in After Effects to add follow-through and lag between linked elements, like a label trailing its card, so a rig feels hand-animated rather than rigidly parented?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "valueAtTime thisComp.layer delay lag follow-through inertia",
+   "agent_ids": [
+    [
+     3744,
+     3745
+    ],
+    [
+     3949,
+     3950
+    ],
+    [
+     3286,
+     3287
+    ],
+    [
+     2988,
+     2989
+    ],
+    [
+     2987
+    ],
+    [
+     3282,
+     3283
+    ],
+    [
+     3285
+    ],
+    [
+     643
+    ],
+    [
+     637,
+     638
+    ],
+    [
+     4068
+    ]
+   ],
+   "term_ids": [
+    [
+     2988,
+     2989
+    ],
+    [
+     3950
+    ],
+    [
+     2985,
+     2986
+    ],
+    [
+     2990,
+     2991
+    ],
+    [
+     3286,
+     3287
+    ],
+    [
+     4069
+    ],
+    [
+     3282,
+     3283
+    ],
+    [
+     3285
+    ],
+    [
+     4066
+    ],
+    [
+     4071
+    ]
+   ],
+   "best_ids_r3": [
+    2989
+   ],
+   "best_ids_now": {
+    "2989": [
+     2989
+    ]
+   },
+   "best_kept": {
+    "2989": true
+   },
+   "best_kept_with_rule": {
+    "2989": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "p11",
+   "set": "probe",
+   "query": "What After Effects expression sizes a rounded backplate to its text layer with sourceRectAtTime, with padding, so chips and lower thirds resize automatically when the text changes?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "sourceRectAtTime padding Rectangle Path Size Position Anchor Point",
+   "agent_ids": [
+    [
+     611,
+     612
+    ],
+    [
+     621,
+     622
+    ],
+    [
+     617,
+     618
+    ],
+    [
+     798,
+     799
+    ],
+    [
+     797
+    ],
+    [
+     3787,
+     3788
+    ],
+    [
+     800
+    ],
+    [
+     3772,
+     3773
+    ],
+    [
+     372
+    ],
+    [
+     3789
+    ]
+   ],
+   "term_ids": [
+    [
+     611,
+     612
+    ],
+    [
+     615,
+     616
+    ],
+    [
+     609,
+     610
+    ],
+    [
+     3788,
+     3789
+    ],
+    [
+     3790,
+     3791
+    ],
+    [
+     795
+    ],
+    [
+     801
+    ],
+    [
+     4021
+    ],
+    [
+     793
+    ],
+    [
+     3787
+    ]
+   ],
+   "best_ids_r3": [
+    611
+   ],
+   "best_ids_now": {
+    "611": [
+     611
+    ]
+   },
+   "best_kept": {
+    "611": true
+   },
+   "best_kept_with_rule": {
+    "611": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "p12",
+   "set": "probe",
+   "query": "Which After Effects expression patterns make previews and renders crawl, such as loops over every layer, sampleImage or sourceRectAtTime on many layers, and how do I speed them up?",
+   "prev_score": 1,
+   "score": 1,
+   "score_with_rule": null,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Round-3 hits and best chunks still present; not re-read.",
+   "change": "same",
+   "terms": "posterizeTime sampleImage sourceRectAtTime Convert Expression to Keyframes JavaScript engine",
+   "agent_ids": [
+    [
+     3718
+    ],
+    [
+     3720
+    ],
+    [
+     3722,
+     3723
+    ],
+    [
+     3946
+    ],
+    [
+     369
+    ],
+    [
+     3770,
+     3771
+    ],
+    [
+     3772
+    ],
+    [
+     643
+    ],
+    [
+     3282
+    ],
+    [
+     3819
+    ]
+   ],
+   "term_ids": [
+    [
+     5663
+    ],
+    [
+     3956,
+     3957
+    ],
+    [
+     369
+    ],
+    [
+     613
+    ],
+    [
+     5672
+    ],
+    [
+     3595
+    ],
+    [
+     3946
+    ],
+    [
+     5666
+    ],
+    [
+     4025
+    ],
+    [
+     3769
+    ]
+   ],
+   "best_ids_r3": [
+    3770,
+    369
+   ],
+   "best_ids_now": {
+    "3770": [
+     3770
+    ],
+    "369": [
+     369
+    ]
+   },
+   "best_kept": {
+    "3770": true,
+    "369": true
+   },
+   "best_kept_with_rule": {
+    "3770": true,
+    "369": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "p13",
+   "set": "probe",
+   "query": "How do pros make a premium 3D product turntable of a phone or laptop inside After Effects with an imported GLB model, environment lighting and the Advanced 3D renderer?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "Advanced 3D Environment Light HDRI GLB 3D model layer camera orbit",
+   "agent_ids": [
+    [
+     1278,
+     1279
+    ],
+    [
+     1292,
+     1293
+    ],
+    [
+     1290,
+     1291
+    ],
+    [
+     3606,
+     3607
+    ],
+    [
+     1298
+    ],
+    [
+     5539
+    ],
+    [
+     1294,
+     1295
+    ],
+    [
+     1280,
+     1281
+    ],
+    [
+     4979
+    ],
+    [
+     4984
+    ]
+   ],
+   "term_ids": [
+    [
+     1278,
+     1279
+    ],
+    [
+     3615,
+     3616
+    ],
+    [
+     1294,
+     1295
+    ],
+    [
+     1292,
+     1293
+    ],
+    [
+     4869
+    ],
+    [
+     1297,
+     1298
+    ],
+    [
+     3617
+    ],
+    [
+     3619,
+     3620
+    ],
+    [
+     4980
+    ],
+    [
+     3606
+    ]
+   ],
+   "best_ids_r3": [
+    1278
+   ],
+   "best_ids_now": {
+    "1278": [
+     1278
+    ]
+   },
+   "best_kept": {
+    "1278": true
+   },
+   "best_kept_with_rule": {
+    "1278": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "p14",
+   "set": "probe",
+   "query": "How do I fake depth of field on flat 2D layers in After Effects without the 3D camera renderer, using Camera Lens Blur with a gradient or depth map?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "Camera Lens Blur Blur Map Gradient Ramp Blur Focal Distance Iris Shape",
+   "agent_ids": [
+    [
+     5302,
+     5303
+    ],
+    [
+     5298,
+     5299
+    ],
+    [
+     3736,
+     3737
+    ],
+    [
+     5300,
+     5301
+    ],
+    [
+     3621,
+     3622
+    ],
+    [
+     3627
+    ],
+    [
+     1061
+    ],
+    [
+     3206
+    ],
+    [
+     3187,
+     3188
+    ],
+    [
+     3623
+    ]
+   ],
+   "term_ids": [
+    [
+     5299,
+     5300
+    ],
+    [
+     5301,
+     5302
+    ],
+    [
+     3627,
+     3628
+    ],
+    [
+     5298
+    ],
+    [
+     933,
+     934
+    ],
+    [
+     3187,
+     3188
+    ],
+    [
+     3985
+    ],
+    [
+     3206
+    ],
+    [
+     5631
+    ],
+    [
+     3736
+    ]
+   ],
+   "best_ids_r3": [
+    5302,
+    5298,
+    5303
+   ],
+   "best_ids_now": {
+    "5302": [
+     5302
+    ],
+    "5298": [
+     5298
+    ],
+    "5303": [
+     5303
+    ]
+   },
+   "best_kept": {
+    "5302": true,
+    "5298": true,
+    "5303": true
+   },
+   "best_kept_with_rule": {
+    "5302": true,
+    "5298": true,
+    "5303": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "p15",
+   "set": "probe",
+   "query": "Why do 3D layers in After Effects sort in the wrong order, z-fight or flicker when they pass near each other, and how do Classic 3D and Advanced 3D handle intersections differently?",
+   "prev_score": 1,
+   "score": 1,
+   "score_with_rule": null,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Round-3 hits and best chunks still present; not re-read. Term search now brings round-3 better chunk(s) [3323]; not re-judged.",
+   "change": "same",
+   "terms": "Classic 3D Advanced 3D intersecting layers z-fighting Collapse Transformations depth sorting",
+   "agent_ids": [
+    [
+     3606
+    ],
+    [
+     3640
+    ],
+    [
+     3609,
+     3610
+    ],
+    [
+     3645
+    ],
+    [
+     3322
+    ],
+    [
+     3634
+    ],
+    [
+     3623
+    ],
+    [
+     3621
+    ],
+    [
+     5280
+    ],
+    [
+     3619
+    ]
+   ],
+   "term_ids": [
+    [
+     3322,
+     3323
+    ],
+    [
+     3931,
+     3932
+    ],
+    [
+     3927,
+     3928
+    ],
+    [
+     3929,
+     3930
+    ],
+    [
+     3321
+    ],
+    [
+     446,
+     447
+    ],
+    [
+     445
+    ],
+    [
+     3162
+    ],
+    [
+     3640
+    ],
+    [
+     1288
+    ]
+   ],
+   "best_ids_r3": [
+    3322
+   ],
+   "best_ids_now": {
+    "3322": [
+     3322
+    ]
+   },
+   "best_kept": {
+    "3322": true
+   },
+   "best_kept_with_rule": {
+    "3322": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": [
+    3323
+   ]
+  },
+  {
+   "id": "p16",
+   "set": "probe",
+   "query": "How do pros use motion blur in After Effects to make fast UI and type moves feel premium, and when do they deliberately exaggerate it or turn it off?",
+   "prev_score": 1,
+   "score": 1,
+   "score_with_rule": null,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Round-3 hits and best chunks still present; not re-read. Term search now brings round-3 better chunk(s) [2967]; not re-judged.",
+   "change": "same",
+   "terms": "Shutter Angle Shutter Phase motion blur switch Pixel Motion Blur RSMB",
+   "agent_ids": [
+    [
+     2965,
+     2966
+    ],
+    [
+     3876
+    ],
+    [
+     1180
+    ],
+    [
+     2968,
+     2969
+    ],
+    [
+     5557
+    ],
+    [
+     676
+    ],
+    [
+     1061
+    ],
+    [
+     3409
+    ],
+    [
+     3411
+    ],
+    [
+     2970
+    ]
+   ],
+   "term_ids": [
+    [
+     3594
+    ],
+    [
+     3877
+    ],
+    [
+     3411,
+     3412
+    ],
+    [
+     2967
+    ],
+    [
+     4432,
+     4433
+    ],
+    [
+     4746
+    ],
+    [
+     4867
+    ],
+    [
+     2972
+    ],
+    [
+     1186
+    ],
+    [
+     2965
+    ]
+   ],
+   "best_ids_r3": [
+    2965,
+    2966,
+    5171
+   ],
+   "best_ids_now": {
+    "2965": [
+     2965
+    ],
+    "2966": [
+     2966
+    ],
+    "5171": [
+     5557
+    ]
+   },
+   "best_kept": {
+    "2965": true,
+    "2966": true,
+    "5171": true
+   },
+   "best_kept_with_rule": {
+    "2965": true,
+    "2966": true,
+    "5171": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": [
+    2967
+   ]
+  },
+  {
+   "id": "p17",
+   "set": "probe",
+   "query": "What Samples Per Frame and Adaptive Sample Limit values should I set in After Effects comp settings so fast rotations and scale pops get smooth motion blur instead of stepped copies?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "Samples Per Frame Adaptive Sample Limit Shutter Angle Advanced tab",
+   "agent_ids": [
+    [
+     3410,
+     3411
+    ],
+    [
+     1185,
+     1186
+    ],
+    [
+     2967,
+     2968
+    ],
+    [
+     3876,
+     3877
+    ],
+    [
+     3878
+    ],
+    [
+     676
+    ],
+    [
+     3430
+    ],
+    [
+     3027
+    ],
+    [
+     2966
+    ],
+    [
+     3594
+    ]
+   ],
+   "term_ids": [
+    [
+     3411,
+     3412
+    ],
+    [
+     3877
+    ],
+    [
+     2967
+    ],
+    [
+     1186
+    ],
+    [
+     3605
+    ],
+    [
+     3610
+    ],
+    [
+     4433,
+     4434
+    ],
+    [
+     3594
+    ],
+    [
+     4867
+    ],
+    [
+     4436
+    ]
+   ],
+   "best_ids_r3": [
+    3877
+   ],
+   "best_ids_now": {
+    "3877": [
+     3877
+    ]
+   },
+   "best_kept": {
+    "3877": true
+   },
+   "best_kept_with_rule": {
+    "3877": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "p18",
+   "set": "probe",
+   "query": "Why doesn't animation driven by an effect, like the Transform effect, Turbulent Displace or a wiggled effect property, get motion blur in After Effects, and how do I add it?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "Transform effect Use Composition's Shutter Angle CC Force Motion Blur Pixel Motion Blur",
+   "agent_ids": [
+    [
+     3877,
+     3878
+    ],
+    [
+     1184,
+     1185
+    ],
+    [
+     3409,
+     3410
+    ],
+    [
+     3876
+    ],
+    [
+     2965,
+     2966
+    ],
+    [
+     2968,
+     2969
+    ],
+    [
+     830
+    ],
+    [
+     3411,
+     3412
+    ],
+    [
+     1182
+    ],
+    [
+     3879
+    ]
+   ],
+   "term_ids": [
+    [
+     1186,
+     1187
+    ],
+    [
+     3594
+    ],
+    [
+     3411,
+     3412
+    ],
+    [
+     3877,
+     3878
+    ],
+    [
+     3879
+    ],
+    [
+     1184,
+     1185
+    ],
+    [
+     2969
+    ],
+    [
+     2966,
+     2967
+    ],
+    [
+     3409
+    ],
+    [
+     4866,
+     4867
+    ]
+   ],
+   "best_ids_r3": [
+    1184
+   ],
+   "best_ids_now": {
+    "1184": [
+     1184
+    ]
+   },
+   "best_kept": {
+    "1184": true
+   },
+   "best_kept_with_rule": {
+    "1184": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "p19",
+   "set": "probe",
+   "query": "How do pros create a premium glossy light sweep or specular shine across a logo or device mockup in After Effects so it reads as real light on a surface?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "CC Light Sweep Gradient Ramp Add blending alpha matte specular highlight",
+   "agent_ids": [
+    [
+     5294,
+     5295
+    ],
+    [
+     5293
+    ],
+    [
+     4986,
+     4987
+    ],
+    [
+     4980,
+     4981
+    ],
+    [
+     4983,
+     4984
+    ],
+    [
+     5525
+    ],
+    [
+     4977
+    ],
+    [
+     1309
+    ],
+    [
+     5531
+    ],
+    [
+     5557
+    ]
+   ],
+   "term_ids": [
+    [
+     1308,
+     1309
+    ],
+    [
+     5267,
+     5268
+    ],
+    [
+     5558
+    ],
+    [
+     5294,
+     5295
+    ],
+    [
+     5273
+    ],
+    [
+     3199
+    ],
+    [
+     5204
+    ],
+    [
+     4987
+    ],
+    [
+     5293
+    ],
+    [
+     5269
+    ]
+   ],
+   "best_ids_r3": [
+    5294,
+    5295,
+    4987,
+    4981
+   ],
+   "best_ids_now": {
+    "5294": [
+     5294
+    ],
+    "5295": [
+     5295
+    ],
+    "4987": [
+     4987
+    ],
+    "4981": [
+     4981
+    ]
+   },
+   "best_kept": {
+    "5294": true,
+    "5295": true,
+    "4987": true,
+    "4981": true
+   },
+   "best_kept_with_rule": {
+    "5294": true,
+    "5295": true,
+    "4987": true,
+    "4981": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "p20",
+   "set": "probe",
+   "query": "How do I build a stock After Effects glow that looks physically based by stacking several blur or Glow passes at increasing radii, as a fallback when Deep Glow isn't available?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "Glow Radius Glow Threshold Glow Intensity Fast Box Blur Add blending mode",
+   "agent_ids": [
+    [
+     3740,
+     3741
+    ],
+    [
+     5313
+    ],
+    [
+     5310,
+     5311
+    ],
+    [
+     3739
+    ],
+    [
+     5029
+    ],
+    [
+     5567
+    ],
+    [
+     3742
+    ],
+    [
+     1174,
+     1175
+    ],
+    [
+     5219
+    ],
+    [
+     5304
+    ]
+   ],
+   "term_ids": [
+    [
+     1175,
+     1176
+    ],
+    [
+     5325,
+     5326
+    ],
+    [
+     5205
+    ],
+    [
+     5311
+    ],
+    [
+     5219
+    ],
+    [
+     5324
+    ],
+    [
+     1174
+    ],
+    [
+     3741
+    ],
+    [
+     5307
+    ],
+    [
+     5599
+    ]
+   ],
+   "best_ids_r3": [
+    5311,
+    5313,
+    5029,
+    3741
+   ],
+   "best_ids_now": {
+    "5311": [
+     5311
+    ],
+    "5313": [
+     5313
+    ],
+    "5029": [
+     5029
+    ],
+    "3741": [
+     3741
+    ]
+   },
+   "best_kept": {
+    "5311": true,
+    "5313": true,
+    "5029": true,
+    "3741": true
+   },
+   "best_kept_with_rule": {
+    "5311": true,
+    "5313": true,
+    "5029": true,
+    "3741": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": [
+    5205
+   ]
+  },
+  {
+   "id": "p21",
+   "set": "probe",
+   "query": "Why does my glow wash saturated brand colors out to white or muddy them in After Effects, and how do I keep the core colored while only the falloff blooms?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "Glow Colors A & B Colors Glow Operation Tint Deep Glow Exposure",
+   "agent_ids": [
+    [
+     5316
+    ],
+    [
+     5311,
+     5312
+    ],
+    [
+     1176,
+     1177
+    ],
+    [
+     3740,
+     3741
+    ],
+    [
+     1174,
+     1175
+    ],
+    [
+     5313
+    ],
+    [
+     1178,
+     1179
+    ],
+    [
+     3739
+    ],
+    [
+     5030
+    ],
+    [
+     5326,
+     5327
+    ]
+   ],
+   "term_ids": [
+    [
+     1176,
+     1177
+    ],
+    [
+     5609,
+     5610
+    ],
+    [
+     5600
+    ],
+    [
+     1175
+    ],
+    [
+     1178
+    ],
+    [
+     5612
+    ],
+    [
+     5325,
+     5326
+    ],
+    [
+     2978
+    ],
+    [
+     407
+    ],
+    [
+     4973
+    ]
+   ],
+   "best_ids_r3": [
+    1176
+   ],
+   "best_ids_now": {
+    "1176": [
+     1176
+    ]
+   },
+   "best_kept": {
+    "1176": true
+   },
+   "best_kept_with_rule": {
+    "1176": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "p22",
+   "set": "probe",
+   "query": "How do pros keep particles in After Effects from looking template-y, so a particle field reads as a designed element through size variation, depth, motion and density?",
+   "prev_score": 1,
+   "score": 1,
+   "score_with_rule": null,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Round-3 hits and best chunks still present; not re-read.",
+   "change": "same",
+   "terms": "Size Random Size over Life Opacity Random Turbulence Field depth of field",
+   "agent_ids": [
+    [
+     3155
+    ],
+    [
+     1197,
+     1198
+    ],
+    [
+     1190,
+     1191
+    ],
+    [
+     3081
+    ],
+    [
+     1202,
+     1203
+    ],
+    [
+     1243
+    ],
+    [
+     3165
+    ],
+    [
+     983
+    ],
+    [
+     5022
+    ],
+    [
+     3158
+    ]
+   ],
+   "term_ids": [
+    [
+     1197,
+     1198
+    ],
+    [
+     4714,
+     4715
+    ],
+    [
+     3707
+    ],
+    [
+     3158
+    ],
+    [
+     4853
+    ],
+    [
+     3705
+    ],
+    [
+     3155
+    ],
+    [
+     4668
+    ],
+    [
+     4808,
+     4809
+    ],
+    [
+     4717
+    ]
+   ],
+   "best_ids_r3": [
+    3155,
+    3081
+   ],
+   "best_ids_now": {
+    "3155": [
+     3155
+    ],
+    "3081": [
+     3081
+    ]
+   },
+   "best_kept": {
+    "3155": true,
+    "3081": true
+   },
+   "best_kept_with_rule": {
+    "3155": true,
+    "3081": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "p23",
+   "set": "probe",
+   "query": "How do I make Trapcode Particular emit from a logo or text layer so the logo dissolves into particles or assembles out of them, colored by the layer's pixels?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "Particular Emitter Type Layer Layer RGB Usage Layer Sampling 3D layer",
+   "agent_ids": [
+    [
+     1241,
+     1242
+    ],
+    [
+     1244,
+     1245
+    ],
+    [
+     1237,
+     1238
+    ],
+    [
+     4663,
+     4664
+    ],
+    [
+     5018,
+     5019
+    ],
+    [
+     5021,
+     5022
+    ],
+    [
+     4654
+    ],
+    [
+     5020
+    ],
+    [
+     3160
+    ],
+    [
+     4725
+    ]
+   ],
+   "term_ids": [
+    [
+     4654,
+     4655
+    ],
+    [
+     4663,
+     4664
+    ],
+    [
+     1238,
+     1239
+    ],
+    [
+     1241,
+     1242
+    ],
+    [
+     1237
+    ],
+    [
+     4647,
+     4648
+    ],
+    [
+     5019,
+     5020
+    ],
+    [
+     5018
+    ],
+    [
+     5022,
+     5023
+    ],
+    [
+     4824
+    ]
+   ],
+   "best_ids_r3": [
+    1242
+   ],
+   "best_ids_now": {
+    "1242": [
+     1242
+    ]
+   },
+   "best_kept": {
+    "1242": true
+   },
+   "best_kept_with_rule": {
+    "1242": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "p24",
+   "set": "probe",
+   "query": "Why do Trapcode Particular particles pop on at the first frame, flicker, or leave dotted gaps in fast trails, and how do I fix it with pre-run, random seed and sub-frame emission?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "Pre Run Random Seed Emitter Time Sampling Subframe Particles/sec",
+   "agent_ids": [
+    [
+     4731
+    ],
+    [
+     4647
+    ],
+    [
+     3159,
+     3160
+    ],
+    [
+     4654
+    ],
+    [
+     3155
+    ],
+    [
+     1246,
+     1247
+    ],
+    [
+     5022
+    ],
+    [
+     5018
+    ],
+    [
+     1237,
+     1238
+    ],
+    [
+     1245
+    ]
+   ],
+   "term_ids": [
+    [
+     4647
+    ],
+    [
+     4731
+    ],
+    [
+     1190,
+     1191
+    ],
+    [
+     4682,
+     4683
+    ],
+    [
+     4826,
+     4827
+    ],
+    [
+     3159
+    ],
+    [
+     1239
+    ],
+    [
+     3155
+    ],
+    [
+     1192
+    ],
+    [
+     1247
+    ]
+   ],
+   "best_ids_r3": [
+    4731
+   ],
+   "best_ids_now": {
+    "4731": [
+     4731
+    ]
+   },
+   "best_kept": {
+    "4731": true
+   },
+   "best_kept_with_rule": {
+    "4731": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "p25",
+   "set": "probe",
+   "query": "How do pros design an elegant masked reveal in After Effects where text or a product slides out from behind an invisible edge with layered parallax inside the mask?",
+   "prev_score": 1,
+   "score": 1,
+   "score_with_rule": null,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Round-3 hits and best chunks still present; not re-read. Term search now brings round-3 better chunk(s) [1032]; not re-judged.",
+   "change": "same",
+   "terms": "alpha track matte parallax offset Position Mask Feather precomp",
+   "agent_ids": [
+    [
+     2976
+    ],
+    [
+     2973
+    ],
+    [
+     382
+    ],
+    [
+     811
+    ],
+    [
+     818
+    ],
+    [
+     3208
+    ],
+    [
+     3205
+    ],
+    [
+     2983
+    ],
+    [
+     3218
+    ],
+    [
+     873
+    ]
+   ],
+   "term_ids": [
+    [
+     3208
+    ],
+    [
+     3293
+    ],
+    [
+     811
+    ],
+    [
+     1032
+    ],
+    [
+     2981
+    ],
+    [
+     445
+    ],
+    [
+     3291
+    ],
+    [
+     3217
+    ],
+    [
+     412
+    ],
+    [
+     818
+    ]
+   ],
+   "best_ids_r3": [
+    811,
+    3208
+   ],
+   "best_ids_now": {
+    "811": [
+     811
+    ],
+    "3208": [
+     3208
+    ]
+   },
+   "best_kept": {
+    "811": true,
+    "3208": true
+   },
+   "best_kept_with_rule": {
+    "811": true,
+    "3208": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": [
+    1032
+   ]
+  },
+  {
+   "id": "p26",
+   "set": "probe",
+   "query": "How do I use one matte layer to reveal several layers in After Effects with the new track matte picker or Set Matte, without duplicating the matte?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "Track Matte pick whip Set Matte Alpha Matte Luma Matte",
+   "agent_ids": [
+    [
+     411,
+     412
+    ],
+    [
+     3292,
+     3293
+    ],
+    [
+     3291
+    ],
+    [
+     413,
+     414
+    ],
+    [
+     1032
+    ],
+    [
+     410
+    ],
+    [
+     3294
+    ],
+    [
+     3226
+    ],
+    [
+     873
+    ],
+    [
+     3657
+    ]
+   ],
+   "term_ids": [
+    [
+     3291,
+     3292
+    ],
+    [
+     3293,
+     3294
+    ],
+    [
+     412,
+     413
+    ],
+    [
+     414
+    ],
+    [
+     410,
+     411
+    ],
+    [
+     1032
+    ],
+    [
+     3226
+    ],
+    [
+     3657
+    ],
+    [
+     3648
+    ],
+    [
+     818
+    ]
+   ],
+   "best_ids_r3": [
+    412
+   ],
+   "best_ids_now": {
+    "412": [
+     412
+    ]
+   },
+   "best_kept": {
+    "412": true
+   },
+   "best_kept_with_rule": {
+    "412": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "p27",
+   "set": "probe",
+   "query": "Why does a thin seam, fringe or light line appear where two matted or masked layers meet edge to edge in After Effects, and how do I make the join seamless?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "Alpha Add blending mode Mask Expansion Simple Choker conflation artifact",
+   "agent_ids": [
+    [
+     3178
+    ],
+    [
+     5273
+    ],
+    [
+     3223
+    ],
+    [
+     3648,
+     3649
+    ],
+    [
+     3650
+    ],
+    [
+     3270
+    ],
+    [
+     5220
+    ],
+    [
+     3210
+    ],
+    [
+     3226
+    ],
+    [
+     2978
+    ]
+   ],
+   "term_ids": [
+    [
+     5273
+    ],
+    [
+     3650
+    ],
+    [
+     3003,
+     3004
+    ],
+    [
+     3648
+    ],
+    [
+     3002
+    ],
+    [
+     3835
+    ],
+    [
+     5220
+    ],
+    [
+     5038
+    ],
+    [
+     3356,
+     3357
+    ],
+    [
+     3005
+    ]
+   ],
+   "best_ids_r3": [
+    5273,
+    3178
+   ],
+   "best_ids_now": {
+    "5273": [
+     5273
+    ],
+    "3178": [
+     3178
+    ]
+   },
+   "best_kept": {
+    "5273": true,
+    "3178": true
+   },
+   "best_kept_with_rule": {
+    "5273": true,
+    "3178": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "p28",
+   "set": "probe",
+   "query": "How do pros make scene transitions in a tech video feel motivated and invisible, using match cuts, shape-continuity morphs and object-led wipes instead of stock transitions?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "match cut graphic match shape morph object wipe whip pan continuity",
+   "agent_ids": [
+    [
+     5550,
+     5551
+    ],
+    [
+     5553,
+     5554
+    ],
+    [
+     5552
+    ],
+    [
+     883,
+     884
+    ],
+    [
+     877,
+     878
+    ],
+    [
+     3048,
+     3049
+    ],
+    [
+     3050,
+     3051
+    ],
+    [
+     879
+    ],
+    [
+     984
+    ],
+    [
+     3053
+    ]
+   ],
+   "term_ids": [
+    [
+     877,
+     878
+    ],
+    [
+     3048
+    ],
+    [
+     879,
+     880
+    ],
+    [
+     883,
+     884
+    ],
+    [
+     5550,
+     5551
+    ],
+    [
+     3050,
+     3051
+    ],
+    [
+     5553
+    ],
+    [
+     3128
+    ],
+    [
+     1025
+    ],
+    [
+     420
+    ]
+   ],
+   "best_ids_r3": [
+    884
+   ],
+   "best_ids_now": {
+    "884": [
+     884
+    ]
+   },
+   "best_kept": {
+    "884": true
+   },
+   "best_kept_with_rule": {
+    "884": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "p29",
+   "set": "probe",
+   "query": "How do I build a short glitch or RGB-split digital transition in After Effects with stock effects so it hits for only a few frames and stays clean enough for a tech channel?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "Shift Channels Displacement Map Fractal Noise Offset Screen blending posterizeTime",
+   "agent_ids": [
+    [
+     5523,
+     5524
+    ],
+    [
+     5552,
+     5553
+    ],
+    [
+     416,
+     417
+    ],
+    [
+     5554,
+     5555
+    ],
+    [
+     1384,
+     1385
+    ],
+    [
+     1386,
+     1387
+    ],
+    [
+     422
+    ],
+    [
+     1170
+    ],
+    [
+     1390,
+     1391
+    ],
+    [
+     419
+    ]
+   ],
+   "term_ids": [
+    [
+     832,
+     833
+    ],
+    [
+     3597,
+     3598
+    ],
+    [
+     3599,
+     3600
+    ],
+    [
+     3217
+    ],
+    [
+     3222
+    ],
+    [
+     3686,
+     3687
+    ],
+    [
+     3682
+    ],
+    [
+     1305
+    ],
+    [
+     1390
+    ],
+    [
+     3592
+    ]
+   ],
+   "best_ids_r3": [
+    417
+   ],
+   "best_ids_now": {
+    "417": [
+     417
+    ]
+   },
+   "best_kept": {
+    "417": true
+   },
+   "best_kept_with_rule": {
+    "417": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "p30",
+   "set": "probe",
+   "query": "Why does my transition flash a black frame, a gap or a doubled frame at the cut in After Effects, and how do I fix off-by-one in/out points between overlapping precomps?",
+   "prev_score": 0,
+   "score": 0,
+   "score_with_rule": null,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Round-3 hits and best chunks still present; not re-read.",
+   "change": "same",
+   "terms": "In Point Out Point precomp duration Start Frame Interpret Footage frame rate",
+   "agent_ids": [
+    [
+     3028
+    ],
+    [
+     3312,
+     3313
+    ],
+    [
+     3194
+    ],
+    [
+     422
+    ],
+    [
+     1020,
+     1021
+    ],
+    [
+     801
+    ],
+    [
+     1025
+    ],
+    [
+     5552
+    ],
+    [
+     384
+    ],
+    [
+     3431
+    ]
+   ],
+   "term_ids": [
+    [
+     3362,
+     3363
+    ],
+    [
+     3360,
+     3361
+    ],
+    [
+     3358,
+     3359
+    ],
+    [
+     3753
+    ],
+    [
+     3193,
+     3194
+    ],
+    [
+     3595
+    ],
+    [
+     3312
+    ],
+    [
+     3980
+    ],
+    [
+     3977
+    ],
+    [
+     3748
+    ]
+   ],
+   "best_ids_r3": [],
+   "best_ids_now": {},
+   "best_kept": {},
+   "best_kept_with_rule": {},
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "p31",
+   "set": "probe",
+   "query": "How do pros composite a screen recording or app UI into a device mockup in After Effects so the screen looks like real glass, with reflections, a slight screen glow and correct perspective?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "Corner Pin CC Power Pin Screen blending reflection gradient Glow Mocha",
+   "agent_ids": [
+    [
+     5215,
+     5216
+    ],
+    [
+     5211,
+     5212
+    ],
+    [
+     5218,
+     5219
+    ],
+    [
+     817,
+     818
+    ],
+    [
+     5217
+    ],
+    [
+     4987
+    ],
+    [
+     5213
+    ],
+    [
+     5210
+    ],
+    [
+     5542
+    ],
+    [
+     4989
+    ]
+   ],
+   "term_ids": [
+    [
+     5227,
+     5228
+    ],
+    [
+     5211
+    ],
+    [
+     5219,
+     5220
+    ],
+    [
+     817
+    ],
+    [
+     5213,
+     5214
+    ],
+    [
+     5267,
+     5268
+    ],
+    [
+     5221,
+     5222
+    ],
+    [
+     5274
+    ],
+    [
+     5215
+    ],
+    [
+     4993
+    ]
+   ],
+   "best_ids_r3": [
+    5219,
+    5211,
+    5213,
+    817,
+    818
+   ],
+   "best_ids_now": {
+    "5219": [
+     5219
+    ],
+    "5211": [
+     5211
+    ],
+    "5213": [
+     5213
+    ],
+    "817": [
+     817
+    ],
+    "818": [
+     818
+    ]
+   },
+   "best_kept": {
+    "5219": true,
+    "5211": true,
+    "5213": true,
+    "817": true,
+    "818": true
+   },
+   "best_kept_with_rule": {
+    "5219": true,
+    "5211": true,
+    "5213": true,
+    "817": true,
+    "818": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": [
+    5214,
+    5221
+   ]
+  },
+  {
+   "id": "p32",
+   "set": "probe",
+   "query": "How do I make a character or product cast a soft reflection on a glossy studio floor in After Effects that fades and blurs with distance from the contact point?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "Compound Blur Blur Layer Gradient Ramp Scale -100 Luma Matte",
+   "agent_ids": [
+    [
+     3161,
+     3162
+    ],
+    [
+     4292,
+     4293
+    ],
+    [
+     3646
+    ],
+    [
+     3178,
+     3179
+    ],
+    [
+     5410,
+     5411
+    ],
+    [
+     3177
+    ],
+    [
+     3615
+    ],
+    [
+     1227
+    ],
+    [
+     4988
+    ],
+    [
+     3174
+    ]
+   ],
+   "term_ids": [
+    [
+     933
+    ],
+    [
+     3162,
+     3163
+    ],
+    [
+     939
+    ],
+    [
+     3199
+    ],
+    [
+     829
+    ],
+    [
+     5299
+    ],
+    [
+     3161
+    ],
+    [
+     832
+    ],
+    [
+     5302
+    ],
+    [
+     3168
+    ]
+   ],
+   "best_ids_r3": [
+    3179
+   ],
+   "best_ids_now": {
+    "3179": [
+     3179
+    ]
+   },
+   "best_kept": {
+    "3179": true
+   },
+   "best_kept_with_rule": {
+    "3179": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "p33",
+   "set": "probe",
+   "query": "Why does my tracked graphic drift, slip or jitter on handheld footage in After Effects, and how do I fix it with better track points, Mocha planar tracking or smoothing?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "Mocha AE planar track Feature Region Search Region Smoother Adapt Feature",
+   "agent_ids": [
+    [
+     5251,
+     5252
+    ],
+    [
+     5224,
+     5225
+    ],
+    [
+     5226,
+     5227
+    ],
+    [
+     5216
+    ],
+    [
+     5218
+    ],
+    [
+     1286
+    ],
+    [
+     2966
+    ],
+    [
+     5211
+    ],
+    [
+     1020
+    ],
+    [
+     5556
+    ]
+   ],
+   "term_ids": [
+    [
+     5226,
+     5227
+    ],
+    [
+     5233,
+     5234
+    ],
+    [
+     5248,
+     5249
+    ],
+    [
+     5211,
+     5212
+    ],
+    [
+     2966
+    ],
+    [
+     5218
+    ],
+    [
+     3585
+    ],
+    [
+     3413,
+     3414
+    ],
+    [
+     3649,
+     3650
+    ],
+    [
+     4575
+    ]
+   ],
+   "best_ids_r3": [
+    5251,
+    5252,
+    5211,
+    5218
+   ],
+   "best_ids_now": {
+    "5251": [
+     5251
+    ],
+    "5252": [
+     5252
+    ],
+    "5211": [
+     5211
+    ],
+    "5218": [
+     5218
+    ]
+   },
+   "best_kept": {
+    "5251": true,
+    "5252": true,
+    "5211": true,
+    "5218": true
+   },
+   "best_kept_with_rule": {
+    "5251": true,
+    "5252": true,
+    "5211": true,
+    "5218": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": [
+    3413
+   ]
+  },
+  {
+   "id": "p34",
+   "set": "probe",
+   "query": "How do pros give clean motion graphics a filmic finish in After Effects with subtle grain, halation, vignette and chromatic aberration, without it looking like a cheap overlay?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "Add Grain Match Grain halation Lumetri Vignette chromatic aberration Shift Channels",
+   "agent_ids": [
+    [
+     1167,
+     1168
+    ],
+    [
+     1171,
+     1172
+    ],
+    [
+     5558
+    ],
+    [
+     1170
+    ],
+    [
+     5031,
+     5032
+    ],
+    [
+     5556
+    ],
+    [
+     3216
+    ],
+    [
+     3167
+    ],
+    [
+     983
+    ],
+    [
+     988
+    ]
+   ],
+   "term_ids": [
+    [
+     3665,
+     3666
+    ],
+    [
+     3167
+    ],
+    [
+     3688,
+     3689
+    ],
+    [
+     3651,
+     3652
+    ],
+    [
+     440,
+     441
+    ],
+    [
+     1167,
+     1168
+    ],
+    [
+     5037,
+     5038
+    ],
+    [
+     5041
+    ],
+    [
+     1172
+    ],
+    [
+     429
+    ]
+   ],
+   "best_ids_r3": [
+    5172,
+    5031,
+    5032,
+    1167,
+    1168
+   ],
+   "best_ids_now": {
+    "5172": [
+     5558
+    ],
+    "5031": [
+     5031
+    ],
+    "5032": [
+     5032
+    ],
+    "1167": [
+     1167
+    ],
+    "1168": [
+     1168
+    ]
+   },
+   "best_kept": {
+    "5172": true,
+    "5031": true,
+    "5032": true,
+    "1167": true,
+    "1168": true
+   },
+   "best_kept_with_rule": {
+    "5172": true,
+    "5031": true,
+    "5032": true,
+    "1167": true,
+    "1168": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "p35",
+   "set": "probe",
+   "query": "How do I apply one consistent grade across every scene of an After Effects video with a top adjustment layer, Lumetri or a LUT, while keeping brand and UI colors exact?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "Adjustment Layer Lumetri Color Apply Color LUT layer order Creative Look Intensity",
+   "agent_ids": [
+    [
+     424,
+     425
+    ],
+    [
+     3182,
+     3183
+    ],
+    [
+     702
+    ],
+    [
+     428,
+     429
+    ],
+    [
+     3196,
+     3197
+    ],
+    [
+     423
+    ],
+    [
+     3300,
+     3301
+    ],
+    [
+     3215
+    ],
+    [
+     3198,
+     3199
+    ],
+    [
+     3185,
+     3186
+    ]
+   ],
+   "term_ids": [
+    [
+     424,
+     425
+    ],
+    [
+     428,
+     429
+    ],
+    [
+     434,
+     435
+    ],
+    [
+     3196,
+     3197
+    ],
+    [
+     702
+    ],
+    [
+     3457
+    ],
+    [
+     3215
+    ],
+    [
+     3711
+    ],
+    [
+     3515
+    ],
+    [
+     3301
+    ]
+   ],
+   "best_ids_r3": [
+    3196,
+    3215,
+    425
+   ],
+   "best_ids_now": {
+    "3196": [
+     3196
+    ],
+    "3215": [
+     3215
+    ],
+    "425": [
+     425
+    ]
+   },
+   "best_kept": {
+    "3196": true,
+    "3215": true,
+    "425": true
+   },
+   "best_kept_with_rule": {
+    "3196": true,
+    "3215": true,
+    "425": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "p36",
+   "set": "probe",
+   "query": "Why does my paper, noise or dust texture overlay in After Effects look like a static dirty screen or visibly tile and loop, and how do I make it feel organic?",
+   "prev_score": 1,
+   "score": 1,
+   "score_with_rule": 2,
+   "change_cause": "term search (agent rule); one search unchanged",
+   "notes": "One search: same material as round 3 (grunge on Overlay 1167, seamless tiles 3812-3821, grain shading 3222/3224, looping texture precomps 832); still no stepped change. Term search ('Fractal Noise Evolution posterizeTime Motion Tile Overlay blending Offset') adds Chris Moran 926 (Random Seed = time*4 for boiled edges), Mapal 893 (posterizeTime(6) + wiggle), helpx 3686/3687 (new Random Seed per cycle, looped Evolution). Borderline 2 with both lists; 724/722 (Jake) still rank out.",
+   "method": "read",
+   "change": "same",
+   "terms": "Fractal Noise Evolution posterizeTime Motion Tile Overlay blending Offset",
+   "agent_ids": [
+    [
+     1166,
+     1167
+    ],
+    [
+     3814,
+     3815
+    ],
+    [
+     3812,
+     3813
+    ],
+    [
+     3222
+    ],
+    [
+     832
+    ],
+    [
+     3820,
+     3821
+    ],
+    [
+     3680
+    ],
+    [
+     3224
+    ],
+    [
+     1165
+    ],
+    [
+     3695
+    ]
+   ],
+   "term_ids": [
+    [
+     3686,
+     3687
+    ],
+    [
+     3684,
+     3685
+    ],
+    [
+     832
+    ],
+    [
+     3681,
+     3682
+    ],
+    [
+     893
+    ],
+    [
+     4855
+    ],
+    [
+     3222
+    ],
+    [
+     422
+    ],
+    [
+     926
+    ],
+    [
+     723
+    ]
+   ],
+   "best_ids_r3": [
+    3814,
+    1167,
+    3695
+   ],
+   "best_ids_now": {
+    "3814": [
+     3814
+    ],
+    "1167": [
+     1167
+    ],
+    "3695": [
+     3695
+    ]
+   },
+   "best_kept": {
+    "3814": true,
+    "1167": true,
+    "3695": true
+   },
+   "best_kept_with_rule": {
+    "3814": true,
+    "1167": true,
+    "3695": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "p37",
+   "set": "probe",
+   "query": "How do professional motion designers structure a large After Effects project for a long video, with a master comp, scene precomps, shared controllers and reusable modules, so changes propagate and it stays fast?",
+   "prev_score": 1,
+   "score": 1,
+   "score_with_rule": null,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Round-3 hits and best chunks still present; not re-read.",
+   "change": "same",
+   "terms": "master comp precomps Essential Properties controller null proxy pre-render",
+   "agent_ids": [
+    [
+     983
+    ],
+    [
+     1004
+    ],
+    [
+     3718
+    ],
+    [
+     3194
+    ],
+    [
+     814
+    ],
+    [
+     4137
+    ],
+    [
+     3809
+    ],
+    [
+     810
+    ],
+    [
+     4075
+    ],
+    [
+     373
+    ]
+   ],
+   "term_ids": [
+    [
+     720,
+     721
+    ],
+    [
+     719
+    ],
+    [
+     3319
+    ],
+    [
+     725,
+     726
+    ],
+    [
+     4132
+    ],
+    [
+     3310,
+     3311
+    ],
+    [
+     3542
+    ],
+    [
+     3313,
+     3314
+    ],
+    [
+     3551
+    ],
+    [
+     1283
+    ]
+   ],
+   "best_ids_r3": [
+    3718,
+    4075
+   ],
+   "best_ids_now": {
+    "3718": [
+     3718
+    ],
+    "4075": [
+     4075
+    ]
+   },
+   "best_kept": {
+    "3718": true,
+    "4075": true
+   },
+   "best_kept_with_rule": {
+    "3718": true,
+    "4075": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "p38",
+   "set": "probe",
+   "query": "How do I use Essential Properties (master properties) in After Effects so one reusable precomp, like a lower third or card, shows different text and colors in each instance?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "Essential Graphics panel Master Properties Add Property to Essential Graphics Push to Master",
+   "agent_ids": [
+    [
+     721,
+     722
+    ],
+    [
+     719,
+     720
+    ],
+    [
+     725,
+     726
+    ],
+    [
+     3541,
+     3542
+    ],
+    [
+     3551
+    ],
+    [
+     3544
+    ],
+    [
+     4132
+    ],
+    [
+     1036
+    ],
+    [
+     3853
+    ],
+    [
+     4137
+    ]
+   ],
+   "term_ids": [
+    [
+     3541,
+     3542
+    ],
+    [
+     3543,
+     3544
+    ],
+    [
+     720,
+     721
+    ],
+    [
+     3539,
+     3540
+    ],
+    [
+     725,
+     726
+    ],
+    [
+     722,
+     723
+    ],
+    [
+     4132,
+     4133
+    ],
+    [
+     814
+    ],
+    [
+     1035,
+     1036
+    ],
+    [
+     921
+    ]
+   ],
+   "best_ids_r3": [
+    721
+   ],
+   "best_ids_now": {
+    "721": [
+     721
+    ]
+   },
+   "best_kept": {
+    "721": true
+   },
+   "best_kept_with_rule": {
+    "721": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "p39",
+   "set": "probe",
+   "query": "Why are RAM previews in my heavy After Effects comp slow or constantly re-rendering, and which cache, GPU, preview and pre-render settings speed up iteration?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "Disk Cache Media Cache Fast Previews Adaptive Resolution Mercury GPU Acceleration Region of Interest proxy",
+   "agent_ids": [
+    [
+     3717,
+     3718
+    ],
+    [
+     3720
+    ],
+    [
+     3712,
+     3713
+    ],
+    [
+     3722,
+     3723
+    ],
+    [
+     3559,
+     3560
+    ],
+    [
+     3561,
+     3562
+    ],
+    [
+     3554,
+     3555
+    ],
+    [
+     3319
+    ],
+    [
+     3715
+    ],
+    [
+     3462
+    ]
+   ],
+   "term_ids": [
+    [
+     3561,
+     3562
+    ],
+    [
+     3717,
+     3718
+    ],
+    [
+     3559,
+     3560
+    ],
+    [
+     3563,
+     3564
+    ],
+    [
+     3720,
+     3721
+    ],
+    [
+     3722,
+     3723
+    ],
+    [
+     3486
+    ],
+    [
+     3713
+    ],
+    [
+     5286
+    ],
+    [
+     3462
+    ]
+   ],
+   "best_ids_r3": [
+    3718
+   ],
+   "best_ids_now": {
+    "3718": [
+     3718
+    ]
+   },
+   "best_kept": {
+    "3718": true
+   },
+   "best_kept_with_rule": {
+    "3718": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "p40",
+   "set": "probe",
+   "query": "How do pros export a final master from After Effects for YouTube at maximum quality, with an intermediate codec first, then encode settings, bitrate and BT.709 tagging?",
+   "prev_score": 1,
+   "score": 1,
+   "score_with_rule": 2,
+   "change_cause": "term search (agent rule); one search unchanged",
+   "notes": "One search adds only Media Encoder Match Source (3526) and a Manu intro passage. Term search adds YouTube's spec (4440-4443: BT.709 primaries/TRC/matrix, VBR, bitrate table, MP4/fast start) and Media Encoder VBR 2-pass (3527/3528); with the ProRes 422 HQ intermediate from the question search (2998/5320/3219) that is the full answer. Full vs limited range still absent.",
+   "method": "read",
+   "change": "same",
+   "terms": "ProRes 422 HQ intermediate H.264 VBR 2-pass bitrate Rec.709 tagging ffmpeg",
+   "agent_ids": [
+    [
+     3219
+    ],
+    [
+     3191,
+     3192
+    ],
+    [
+     3476
+    ],
+    [
+     5320
+    ],
+    [
+     3497
+    ],
+    [
+     2998
+    ],
+    [
+     3526
+    ],
+    [
+     3463
+    ],
+    [
+     3212
+    ],
+    [
+     3000
+    ]
+   ],
+   "term_ids": [
+    [
+     5462,
+     5463
+    ],
+    [
+     3527,
+     3528
+    ],
+    [
+     4109
+    ],
+    [
+     4442,
+     4443
+    ],
+    [
+     4440,
+     4441
+    ],
+    [
+     3524,
+     3525
+    ],
+    [
+     5464
+    ],
+    [
+     5374,
+     5375
+    ],
+    [
+     5373
+    ],
+    [
+     5370
+    ]
+   ],
+   "best_ids_r3": [
+    2998,
+    5320,
+    3219
+   ],
+   "best_ids_now": {
+    "2998": [
+     2998
+    ],
+    "5320": [
+     5320
+    ],
+    "3219": [
+     3219
+    ]
+   },
+   "best_kept": {
+    "2998": true,
+    "5320": true,
+    "3219": true
+   },
+   "best_kept_with_rule": {
+    "2998": true,
+    "5320": true,
+    "3219": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": [
+    4440,
+    4441,
+    4442,
+    4443
+   ]
+  },
+  {
+   "id": "p41",
+   "set": "probe",
+   "query": "How do I render an MP4 straight from the After Effects Render Queue with the native H.264 output module, which bitrate settings matter, and when is Media Encoder still better?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "Render Queue H.264 output module Target Bitrate Maximum Bitrate Hardware Accelerated Media Encoder",
+   "agent_ids": [
+    [
+     5361,
+     5362
+    ],
+    [
+     2999,
+     3000
+    ],
+    [
+     3476
+    ],
+    [
+     3496,
+     3497
+    ],
+    [
+     3528
+    ],
+    [
+     3219
+    ],
+    [
+     2993
+    ],
+    [
+     3463
+    ],
+    [
+     2998
+    ],
+    [
+     3531
+    ]
+   ],
+   "term_ids": [
+    [
+     5361,
+     5362
+    ],
+    [
+     3527,
+     3528
+    ],
+    [
+     3497,
+     3498
+    ],
+    [
+     3522,
+     3523
+    ],
+    [
+     3467
+    ],
+    [
+     3526
+    ],
+    [
+     3464,
+     3465
+    ],
+    [
+     2993
+    ],
+    [
+     2999,
+     3000
+    ],
+    [
+     5343
+    ]
+   ],
+   "best_ids_r3": [
+    3504
+   ],
+   "best_ids_now": {
+    "3504": [
+     5362
+    ]
+   },
+   "best_kept": {
+    "3504": true
+   },
+   "best_kept_with_rule": {
+    "3504": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "p42",
+   "set": "probe",
+   "query": "Why does my After Effects H.264 export look darker, lifted or gamma-shifted compared with the comp viewer once played in QuickTime, a browser or YouTube, and how do I fix it?",
+   "prev_score": 1,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": "chunk hygiene + passages",
+   "notes": "The helpx menu chunk 3502 is gone; its slot holds helpx 'Assign an output color profile' (3449: HDTV Rec.709 output profile per output module). Frame.io 4104 joins 4105 as one passage: File > Project Settings > Color, Rec.709 Gamma 2.4 working space, View > Use Display Color Management. CineD 5374 (old 4096, enable display color management) joins 5373. Actionable for the AE side; the QuickTime 1.96 / Rec709-A detail (CineD 5375, old 4097) appears only in other term searches. Borderline 2.",
+   "method": "read",
+   "change": "up",
+   "terms": "Working Space Rec.709 Compensate for Scene-referred Profiles Display Color Management gamma 2.4",
+   "agent_ids": [
+    [
+     5363,
+     5364
+    ],
+    [
+     5367,
+     5368
+    ],
+    [
+     5373,
+     5374
+    ],
+    [
+     3308
+    ],
+    [
+     5361,
+     5362
+    ],
+    [
+     3443
+    ],
+    [
+     3433
+    ],
+    [
+     4104,
+     4105
+    ],
+    [
+     3449
+    ],
+    [
+     5289
+    ]
+   ],
+   "term_ids": [
+    [
+     3308
+    ],
+    [
+     5374
+    ],
+    [
+     4104,
+     4105
+    ],
+    [
+     3442,
+     3443
+    ],
+    [
+     4381
+    ],
+    [
+     5372
+    ],
+    [
+     3433
+    ],
+    [
+     4111
+    ],
+    [
+     4106
+    ],
+    [
+     3445
+    ]
+   ],
+   "best_ids_r3": [
+    4095,
+    3433,
+    3308
+   ],
+   "best_ids_now": {
+    "4095": [
+     5373
+    ],
+    "3433": [
+     3433
+    ],
+    "3308": [
+     3308
+    ]
+   },
+   "best_kept": {
+    "4095": true,
+    "3433": true,
+    "3308": true
+   },
+   "best_kept_with_rule": {
+    "4095": true,
+    "3433": true,
+    "3308": true
+   },
+   "better_ids_now": [
+    4096
+   ],
+   "better_ids_with_rule": [
+    4096
+   ]
+  },
+  {
+   "id": "p43",
+   "set": "probe",
+   "query": "How do pros lay out graphics around an on-screen presenter or character host, with headroom, look room and graphics placed where the host gazes and gestures?",
+   "prev_score": 1,
+   "score": 1,
+   "score_with_rule": null,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Round-3 hits and best chunks still present; not re-read.",
+   "change": "same",
+   "terms": "headroom lead room nose room rule of thirds eyeline negative space",
+   "agent_ids": [
+    [
+     5193,
+     5194
+    ],
+    [
+     5195,
+     5196
+    ],
+    [
+     5197,
+     5198
+    ],
+    [
+     938
+    ],
+    [
+     1173
+    ],
+    [
+     4368
+    ],
+    [
+     929
+    ],
+    [
+     5291
+    ],
+    [
+     3057
+    ],
+    [
+     3870
+    ]
+   ],
+   "term_ids": [
+    [
+     3130,
+     3131
+    ],
+    [
+     3123,
+     3124
+    ],
+    [
+     4236
+    ],
+    [
+     3114
+    ],
+    [
+     3121,
+     3122
+    ],
+    [
+     4239,
+     4240
+    ],
+    [
+     5195
+    ],
+    [
+     3127,
+     3128
+    ],
+    [
+     5289
+    ],
+    [
+     4368
+    ]
+   ],
+   "best_ids_r3": [
+    5195,
+    5193,
+    3057
+   ],
+   "best_ids_now": {
+    "5195": [
+     5195
+    ],
+    "5193": [
+     5193
+    ],
+    "3057": [
+     3057
+    ]
+   },
+   "best_kept": {
+    "5195": true,
+    "5193": true,
+    "3057": true
+   },
+   "best_kept_with_rule": {
+    "5195": true,
+    "5193": true,
+    "3057": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "p44",
+   "set": "probe",
+   "query": "How do I set up title-safe overlays, guides and a column grid in After Effects so every scene shares the same margins and alignment?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "Title/Action Safe Proportional Grid rulers guides Guide Layer Grid & Guides",
+   "agent_ids": [
+    [
+     5290,
+     5291
+    ],
+    [
+     5289
+    ],
+    [
+     5292
+    ],
+    [
+     2963
+    ],
+    [
+     3844,
+     3845
+    ],
+    [
+     2973
+    ],
+    [
+     373,
+     374
+    ],
+    [
+     897
+    ],
+    [
+     1218
+    ],
+    [
+     3194
+    ]
+   ],
+   "term_ids": [
+    [
+     5290,
+     5291
+    ],
+    [
+     5292
+    ],
+    [
+     4367,
+     4368
+    ],
+    [
+     5289
+    ],
+    [
+     4366
+    ],
+    [
+     4369,
+     4370
+    ],
+    [
+     1218
+    ],
+    [
+     3843,
+     3844
+    ],
+    [
+     1216
+    ],
+    [
+     3845
+    ]
+   ],
+   "best_ids_r3": [
+    5290,
+    5291,
+    5289,
+    3844
+   ],
+   "best_ids_now": {
+    "5290": [
+     5290
+    ],
+    "5291": [
+     5291
+    ],
+    "5289": [
+     5289
+    ],
+    "3844": [
+     3844
+    ]
+   },
+   "best_kept": {
+    "5290": true,
+    "5291": true,
+    "5289": true,
+    "3844": true
+   },
+   "best_kept_with_rule": {
+    "5290": true,
+    "5291": true,
+    "5289": true,
+    "3844": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "p45",
+   "set": "probe",
+   "query": "Why does my motion-graphics scene feel cluttered and confusing even when each element looks good, and how do I fix the visual hierarchy and limit how many things move at once?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "visual hierarchy focal point contrast negative space eye trace staging",
+   "agent_ids": [
+    [
+     4213
+    ],
+    [
+     3873
+    ],
+    [
+     3867,
+     3868
+    ],
+    [
+     3088
+    ],
+    [
+     988
+    ],
+    [
+     340
+    ],
+    [
+     1020,
+     1021
+    ],
+    [
+     985
+    ],
+    [
+     1126
+    ],
+    [
+     4467
+    ]
+   ],
+   "term_ids": [
+    [
+     3901,
+     3902
+    ],
+    [
+     3057
+    ],
+    [
+     3123,
+     3124
+    ],
+    [
+     3087,
+     3088
+    ],
+    [
+     3121,
+     3122
+    ],
+    [
+     1126
+    ],
+    [
+     3130
+    ],
+    [
+     960
+    ],
+    [
+     930
+    ],
+    [
+     928
+    ]
+   ],
+   "best_ids_r3": [
+    3868
+   ],
+   "best_ids_now": {
+    "3868": [
+     3868
+    ]
+   },
+   "best_kept": {
+    "3868": true
+   },
+   "best_kept_with_rule": {
+    "3868": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "p46",
+   "set": "probe",
+   "query": "How do top tech YouTubers pace a video's edit rhythm, including how often the visual changes, when to hold on the host, and how energy builds toward a payoff?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "notes": "Read: lost one of four best chunks in one search (5065 -> 5437, opening blueprint R6) after the hook-science note was re-chunked; its neighbours R10/R11 (5438/5439) and the measured pace curve (5431/5432, rank 1) are in. Still 2; with the term search all four are back.",
+   "method": "read",
+   "change": "same",
+   "terms": "pacing average shot length pattern interrupt retention B-roll escalation payoff",
+   "agent_ids": [
+    [
+     5431,
+     5432
+    ],
+    [
+     5438,
+     5439
+    ],
+    [
+     5427,
+     5428
+    ],
+    [
+     5498,
+     5499
+    ],
+    [
+     5416
+    ],
+    [
+     5476,
+     5477
+    ],
+    [
+     5478,
+     5479
+    ],
+    [
+     5414
+    ],
+    [
+     5568
+    ],
+    [
+     5546
+    ]
+   ],
+   "term_ids": [
+    [
+     5431,
+     5432
+    ],
+    [
+     3137,
+     3138
+    ],
+    [
+     5438,
+     5439
+    ],
+    [
+     1096,
+     1097
+    ],
+    [
+     3143,
+     3144
+    ],
+    [
+     5418
+    ],
+    [
+     5437
+    ],
+    [
+     5416
+    ],
+    [
+     3139,
+     3140
+    ],
+    [
+     1098
+    ]
+   ],
+   "best_ids_r3": [
+    5059,
+    5060,
+    5065,
+    5044
+   ],
+   "best_ids_now": {
+    "5059": [
+     5431
+    ],
+    "5060": [
+     5432
+    ],
+    "5065": [
+     5437
+    ],
+    "5044": [
+     5416
+    ]
+   },
+   "best_kept": {
+    "5059": true,
+    "5060": true,
+    "5065": false,
+    "5044": true
+   },
+   "best_kept_with_rule": {
+    "5059": true,
+    "5060": true,
+    "5065": true,
+    "5044": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "p47",
+   "set": "probe",
+   "query": "How do I cut motion graphics and B-roll to the beat of a music track in After Effects using beat markers or Convert Audio to Keyframes?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "Convert Audio to Keyframes Audio Amplitude Both Channels layer markers comp markers",
+   "agent_ids": [
+    [
+     688,
+     689
+    ],
+    [
+     3417
+    ],
+    [
+     690
+    ],
+    [
+     1154,
+     1155
+    ],
+    [
+     3805,
+     3806
+    ],
+    [
+     5560
+    ],
+    [
+     1156
+    ],
+    [
+     3841
+    ],
+    [
+     1014
+    ],
+    [
+     695
+    ]
+   ],
+   "term_ids": [
+    [
+     3417
+    ],
+    [
+     689,
+     690
+    ],
+    [
+     692,
+     693
+    ],
+    [
+     688
+    ],
+    [
+     3399
+    ],
+    [
+     4006
+    ],
+    [
+     4074
+    ],
+    [
+     3403
+    ],
+    [
+     685
+    ],
+    [
+     679
+    ]
+   ],
+   "best_ids_r3": [
+    689
+   ],
+   "best_ids_now": {
+    "689": [
+     689
+    ]
+   },
+   "best_kept": {
+    "689": true
+   },
+   "best_kept_with_rule": {
+    "689": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "p48",
+   "set": "probe",
+   "query": "Why does an explainer video feel slow and draggy even with lots of animation, and how do editors find and fix dead air, over-long holds and monotonous rhythm?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "dead air jump cut J-cut L-cut hold time pacing shot length variation",
+   "agent_ids": [
+    [
+     3137,
+     3138
+    ],
+    [
+     1098
+    ],
+    [
+     5192
+    ],
+    [
+     1096
+    ],
+    [
+     3049
+    ],
+    [
+     3143
+    ],
+    [
+     3140
+    ],
+    [
+     5431,
+     5432
+    ],
+    [
+     3860
+    ],
+    [
+     1117
+    ]
+   ],
+   "term_ids": [
+    [
+     5431,
+     5432
+    ],
+    [
+     3131,
+     3132
+    ],
+    [
+     3143,
+     3144
+    ],
+    [
+     3137,
+     3138
+    ],
+    [
+     3125,
+     3126
+    ],
+    [
+     3141,
+     3142
+    ],
+    [
+     5437,
+     5438
+    ],
+    [
+     5439
+    ],
+    [
+     5418
+    ],
+    [
+     5194
+    ]
+   ],
+   "best_ids_r3": [
+    5192,
+    5060,
+    3137,
+    1096
+   ],
+   "best_ids_now": {
+    "5192": [
+     5192
+    ],
+    "5060": [
+     5432
+    ],
+    "3137": [
+     3137
+    ],
+    "1096": [
+     1096
+    ]
+   },
+   "best_kept": {
+    "5192": true,
+    "5060": true,
+    "3137": true,
+    "1096": true
+   },
+   "best_kept_with_rule": {
+    "5192": true,
+    "5060": true,
+    "3137": true,
+    "1096": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "n01",
+   "set": "need",
+   "query": "How do I type exact influence and speed values into the After Effects Keyframe Velocity dialog to reproduce a cubic-bezier ease like 0.05, 0.7, 0.1, 1?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "Keyframe Velocity Incoming Velocity Outgoing Velocity influence speed cubic-bezier",
+   "agent_ids": [
+    [
+     3241,
+     3242
+    ],
+    [
+     4456,
+     4457
+    ],
+    [
+     668
+    ],
+    [
+     812
+    ],
+    [
+     670
+    ],
+    [
+     916
+    ],
+    [
+     3240
+    ],
+    [
+     676
+    ],
+    [
+     3861
+    ],
+    [
+     3238
+    ]
+   ],
+   "term_ids": [
+    [
+     3240,
+     3241
+    ],
+    [
+     4456,
+     4457
+    ],
+    [
+     3238,
+     3239
+    ],
+    [
+     3235,
+     3236
+    ],
+    [
+     668,
+     669
+    ],
+    [
+     4455
+    ],
+    [
+     670
+    ],
+    [
+     339
+    ],
+    [
+     3388
+    ],
+    [
+     329
+    ]
+   ],
+   "best_ids_r3": [
+    4456
+   ],
+   "best_ids_now": {
+    "4456": [
+     4456
+    ]
+   },
+   "best_kept": {
+    "4456": true
+   },
+   "best_kept_with_rule": {
+    "4456": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "n02",
+   "set": "need",
+   "query": "In After Effects, how do I make a position move overshoot slightly and settle by separating dimensions and pulling bezier handles in the value graph?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "Separate Dimensions Value Graph bezier handles overshoot Graph Editor",
+   "agent_ids": [
+    [
+     747,
+     748
+    ],
+    [
+     3030
+    ],
+    [
+     332
+    ],
+    [
+     4069
+    ],
+    [
+     4066
+    ],
+    [
+     961
+    ],
+    [
+     3397
+    ],
+    [
+     673
+    ],
+    [
+     335,
+     336
+    ],
+    [
+     330
+    ]
+   ],
+   "term_ids": [
+    [
+     3397
+    ],
+    [
+     747,
+     748
+    ],
+    [
+     332,
+     333
+    ],
+    [
+     335,
+     336
+    ],
+    [
+     329,
+     330
+    ],
+    [
+     3239,
+     3240
+    ],
+    [
+     3238
+    ],
+    [
+     961,
+     962
+    ],
+    [
+     4069
+    ],
+    [
+     4066
+    ]
+   ],
+   "best_ids_r3": [
+    747
+   ],
+   "best_ids_now": {
+    "747": [
+     747
+    ]
+   },
+   "best_kept": {
+    "747": true
+   },
+   "best_kept_with_rule": {
+    "747": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "n03",
+   "set": "need",
+   "query": "Why does my layer's motion path curve or loop past the keyframes in After Effects, and how do I make spatial interpolation linear by default for UI and text moves?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "Default Spatial Interpolation to Linear Auto Bezier motion path Keyframe Interpolation",
+   "agent_ids": [
+    [
+     661,
+     662
+    ],
+    [
+     3387,
+     3388
+    ],
+    [
+     672,
+     673
+    ],
+    [
+     660
+    ],
+    [
+     663
+    ],
+    [
+     3395
+    ],
+    [
+     3390,
+     3391
+    ],
+    [
+     751
+    ],
+    [
+     1026
+    ],
+    [
+     674
+    ]
+   ],
+   "term_ids": [
+    [
+     662,
+     663
+    ],
+    [
+     3387,
+     3388
+    ],
+    [
+     3391,
+     3392
+    ],
+    [
+     3395,
+     3396
+    ],
+    [
+     660,
+     661
+    ],
+    [
+     668,
+     669
+    ],
+    [
+     672
+    ],
+    [
+     3242
+    ],
+    [
+     4457
+    ],
+    [
+     3414
+    ]
+   ],
+   "best_ids_r3": [
+    662
+   ],
+   "best_ids_now": {
+    "662": [
+     662
+    ]
+   },
+   "best_kept": {
+    "662": true
+   },
+   "best_kept_with_rule": {
+    "662": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "n04",
+   "set": "need",
+   "query": "How do I animate text per character in After Effects with a text animator and range selector so letters rise and fade in with a staggered, eased cascade?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "Animate Position Opacity Range Selector Offset Ease High Ease Low Shape Ramp Up",
+   "agent_ids": [
+    [
+     3248
+    ],
+    [
+     844
+    ],
+    [
+     822,
+     823
+    ],
+    [
+     2949
+    ],
+    [
+     842
+    ],
+    [
+     820,
+     821
+    ],
+    [
+     824,
+     825
+    ],
+    [
+     4067
+    ],
+    [
+     3255,
+     3256
+    ],
+    [
+     3252
+    ]
+   ],
+   "term_ids": [
+    [
+     3255,
+     3256
+    ],
+    [
+     843,
+     844
+    ],
+    [
+     822,
+     823
+    ],
+    [
+     3248
+    ],
+    [
+     3252
+    ],
+    [
+     821
+    ],
+    [
+     2949
+    ],
+    [
+     1010
+    ],
+    [
+     842
+    ],
+    [
+     824
+    ]
+   ],
+   "best_ids_r3": [
+    822
+   ],
+   "best_ids_now": {
+    "822": [
+     822
+    ]
+   },
+   "best_kept": {
+    "822": true
+   },
+   "best_kept_with_rule": {
+    "822": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "n05",
+   "set": "need",
+   "query": "How do pros sync word-by-word kinetic typography to a voiceover in After Effects so each word lands on the spoken word and still looks premium, not template-like?",
+   "prev_score": 1,
+   "score": 1,
+   "score_with_rule": null,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Round-3 hits and best chunks still present; not re-read.",
+   "change": "same",
+   "terms": "Speech to Text captions layer markers Range Selector Based On Words Expression Selector",
+   "agent_ids": [
+    [
+     3805,
+     3806
+    ],
+    [
+     3795,
+     3796
+    ],
+    [
+     3848,
+     3849
+    ],
+    [
+     835,
+     836
+    ],
+    [
+     834
+    ],
+    [
+     840,
+     841
+    ],
+    [
+     5534
+    ],
+    [
+     1004
+    ],
+    [
+     2955
+    ],
+    [
+     2957
+    ]
+   ],
+   "term_ids": [
+    [
+     2953,
+     2954
+    ],
+    [
+     3258
+    ],
+    [
+     3752
+    ],
+    [
+     684
+    ],
+    [
+     825
+    ],
+    [
+     3254,
+     3255
+    ],
+    [
+     4074
+    ],
+    [
+     682
+    ],
+    [
+     3253
+    ],
+    [
+     4018
+    ]
+   ],
+   "best_ids_r3": [
+    3806,
+    2955,
+    2957
+   ],
+   "best_ids_now": {
+    "3806": [
+     3806
+    ],
+    "2955": [
+     2955
+    ],
+    "2957": [
+     2957
+    ]
+   },
+   "best_kept": {
+    "3806": true,
+    "2955": true,
+    "2957": true
+   },
+   "best_kept_with_rule": {
+    "3806": true,
+    "2955": true,
+    "2957": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "n06",
+   "set": "need",
+   "query": "How do I animate a rounded-rectangle UI card in After Effects so it resizes without distorting its corner radius or stroke width (shape Size vs layer Scale)?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "Rectangle Path Size Roundness Stroke Width layer Scale",
+   "agent_ids": [
+    [
+     4120,
+     4121
+    ],
+    [
+     778,
+     779
+    ],
+    [
+     4122
+    ],
+    [
+     4992
+    ],
+    [
+     4124,
+     4125
+    ],
+    [
+     609
+    ],
+    [
+     781
+    ],
+    [
+     1008
+    ],
+    [
+     1011
+    ],
+    [
+     816
+    ]
+   ],
+   "term_ids": [
+    [
+     620,
+     621
+    ],
+    [
+     609
+    ],
+    [
+     625,
+     626
+    ],
+    [
+     3269
+    ],
+    [
+     4120,
+     4121
+    ],
+    [
+     797,
+     798
+    ],
+    [
+     779
+    ],
+    [
+     802
+    ],
+    [
+     806
+    ],
+    [
+     3274
+    ]
+   ],
+   "best_ids_r3": [
+    4120
+   ],
+   "best_ids_now": {
+    "4120": [
+     4120
+    ]
+   },
+   "best_kept": {
+    "4120": true
+   },
+   "best_kept_with_rule": {
+    "4120": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "n07",
+   "set": "need",
+   "query": "How do I make a clean line draw-on animation for connector lines, arrows or icons in After Effects with Trim Paths, rounded caps and good easing?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "Trim Paths Start End Line Cap Round Cap Taper Graph Editor",
+   "agent_ids": [
+    [
+     1031
+    ],
+    [
+     361
+    ],
+    [
+     871,
+     872
+    ],
+    [
+     359
+    ],
+    [
+     925
+    ],
+    [
+     363,
+     364
+    ],
+    [
+     927
+    ],
+    [
+     5296
+    ],
+    [
+     891
+    ],
+    [
+     843
+    ]
+   ],
+   "term_ids": [
+    [
+     360,
+     361
+    ],
+    [
+     359
+    ],
+    [
+     1031
+    ],
+    [
+     364
+    ],
+    [
+     925
+    ],
+    [
+     620
+    ],
+    [
+     5296
+    ],
+    [
+     4133
+    ],
+    [
+     3580
+    ],
+    [
+     872
+    ]
+   ],
+   "best_ids_r3": [
+    359
+   ],
+   "best_ids_now": {
+    "359": [
+     359
+    ]
+   },
+   "best_kept": {
+    "359": true
+   },
+   "best_kept_with_rule": {
+    "359": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "n08",
+   "set": "need",
+   "query": "What After Effects expression adds a damped spring or inertial bounce after the last keyframe, using the keyframe's incoming velocity?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "velocityAtTime nearestKey Math.exp Math.sin amp freq decay",
+   "agent_ids": [
+    [
+     4068,
+     4069
+    ],
+    [
+     4071,
+     4072
+    ],
+    [
+     4065,
+     4066
+    ],
+    [
+     3282,
+     3283
+    ],
+    [
+     369,
+     370
+    ],
+    [
+     890
+    ],
+    [
+     4080
+    ],
+    [
+     617
+    ],
+    [
+     677
+    ],
+    [
+     646
+    ]
+   ],
+   "term_ids": [
+    [
+     4062,
+     4063
+    ],
+    [
+     4068,
+     4069
+    ],
+    [
+     3282,
+     3283
+    ],
+    [
+     4065,
+     4066
+    ],
+    [
+     4079,
+     4080
+    ],
+    [
+     4082,
+     4083
+    ],
+    [
+     4001
+    ],
+    [
+     4081
+    ],
+    [
+     3761
+    ],
+    [
+     4227
+    ]
+   ],
+   "best_ids_r3": [
+    4069
+   ],
+   "best_ids_now": {
+    "4069": [
+     4069
+    ]
+   },
+   "best_kept": {
+    "4069": true
+   },
+   "best_kept_with_rule": {
+    "4069": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "n09",
+   "set": "need",
+   "query": "After Effects expression to move layers along a tilted elliptical orbit around a center null, scaling them up when in front and down when behind to fake depth",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "Math.sin Math.cos orbit radius angle Null center linear scale",
+   "agent_ids": [
+    [
+     4995,
+     4996
+    ],
+    [
+     3282
+    ],
+    [
+     5006,
+     5007
+    ],
+    [
+     5010
+    ],
+    [
+     4994
+    ],
+    [
+     5008
+    ],
+    [
+     803
+    ],
+    [
+     5001
+    ],
+    [
+     362
+    ],
+    [
+     1219
+    ]
+   ],
+   "term_ids": [
+    [
+     4079,
+     4080
+    ],
+    [
+     3786
+    ],
+    [
+     4081,
+     4082
+    ],
+    [
+     4078
+    ],
+    [
+     4063,
+     4064
+    ],
+    [
+     3282
+    ],
+    [
+     4334
+    ],
+    [
+     4305
+    ],
+    [
+     4317
+    ],
+    [
+     4065
+    ]
+   ],
+   "best_ids_r3": [
+    4995,
+    4996,
+    5010,
+    5006
+   ],
+   "best_ids_now": {
+    "4995": [
+     4995
+    ],
+    "4996": [
+     4996
+    ],
+    "5010": [
+     5010
+    ],
+    "5006": [
+     5006
+    ]
+   },
+   "best_kept": {
+    "4995": true,
+    "4996": true,
+    "5010": true,
+    "5006": true
+   },
+   "best_kept_with_rule": {
+    "4995": true,
+    "4996": true,
+    "5010": true,
+    "5006": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "n10",
+   "set": "need",
+   "query": "How do I set up depth of field with an After Effects 3D camera so foreground and background layers blur realistically, with focus linked to a layer?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "Camera Options Depth of Field Focus Distance Aperture Blur Level Link Focus to Layer",
+   "agent_ids": [
+    [
+     3621,
+     3622
+    ],
+    [
+     3736,
+     3737
+    ],
+    [
+     3627
+    ],
+    [
+     5298
+    ],
+    [
+     3629
+    ],
+    [
+     3645
+    ],
+    [
+     5302,
+     5303
+    ],
+    [
+     3623
+    ],
+    [
+     3206
+    ],
+    [
+     374
+    ]
+   ],
+   "term_ids": [
+    [
+     3627,
+     3628
+    ],
+    [
+     3736,
+     3737
+    ],
+    [
+     3622,
+     3623
+    ],
+    [
+     3985
+    ],
+    [
+     3626
+    ],
+    [
+     5299,
+     5300
+    ],
+    [
+     3629
+    ],
+    [
+     5298
+    ],
+    [
+     3621
+    ],
+    [
+     3735
+    ]
+   ],
+   "best_ids_r3": [
+    3622
+   ],
+   "best_ids_now": {
+    "3622": [
+     3622
+    ]
+   },
+   "best_kept": {
+    "3622": true
+   },
+   "best_kept_with_rule": {
+    "3622": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "n11",
+   "set": "need",
+   "query": "How do I make a smooth premium parallax camera push-in on 2.5D layers in After Effects using a null-parented camera, without a floaty or drifting feel?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "One-Node Camera parent null Z Position parallax Graph Editor",
+   "agent_ids": [
+    [
+     3208
+    ],
+    [
+     380,
+     381
+    ],
+    [
+     376,
+     377
+    ],
+    [
+     382,
+     383
+    ],
+    [
+     1286
+    ],
+    [
+     3733,
+     3734
+    ],
+    [
+     1282,
+     1283
+    ],
+    [
+     3730
+    ],
+    [
+     5001
+    ],
+    [
+     845
+    ]
+   ],
+   "term_ids": [
+    [
+     376,
+     377
+    ],
+    [
+     3733,
+     3734
+    ],
+    [
+     3203
+    ],
+    [
+     3857
+    ],
+    [
+     1286
+    ],
+    [
+     380
+    ],
+    [
+     3208
+    ],
+    [
+     3855
+    ],
+    [
+     3863
+    ],
+    [
+     382,
+     383
+    ]
+   ],
+   "best_ids_r3": [
+    376
+   ],
+   "best_ids_now": {
+    "376": [
+     376
+    ]
+   },
+   "best_kept": {
+    "376": true
+   },
+   "best_kept_with_rule": {
+    "376": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "n12",
+   "set": "need",
+   "query": "Motion blur is not showing on my precomp or nested comp in After Effects; which switches need to be on inside and outside the precomp?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "Motion Blur switch Enable Motion Blur Collapse Transformations precomp Shutter Angle",
+   "agent_ids": [
+    [
+     3875,
+     3876
+    ],
+    [
+     3410,
+     3411
+    ],
+    [
+     3312,
+     3313
+    ],
+    [
+     3412
+    ],
+    [
+     445
+    ],
+    [
+     3315
+    ],
+    [
+     3321,
+     3322
+    ],
+    [
+     3878
+    ],
+    [
+     2966
+    ],
+    [
+     3431
+    ]
+   ],
+   "term_ids": [
+    [
+     3411,
+     3412
+    ],
+    [
+     3409,
+     3410
+    ],
+    [
+     3876,
+     3877
+    ],
+    [
+     1186,
+     1187
+    ],
+    [
+     3594
+    ],
+    [
+     4746
+    ],
+    [
+     3878,
+     3879
+    ],
+    [
+     2966,
+     2967
+    ],
+    [
+     3413
+    ],
+    [
+     4866
+    ]
+   ],
+   "best_ids_r3": [
+    3876
+   ],
+   "best_ids_now": {
+    "3876": [
+     3876
+    ]
+   },
+   "best_kept": {
+    "3876": true
+   },
+   "best_kept_with_rule": {
+    "3876": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "n13",
+   "set": "need",
+   "query": "How do I add motion blur to an already-rendered PNG sequence in After Effects with RSMB or Pixel Motion Blur, matching a 180-degree shutter and avoiding edge artifacts on alpha?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "RSMB Motion Blur Amount Vector Detail Pixel Motion Blur Shutter Angle Shutter Samples",
+   "agent_ids": [
+    [
+     3594
+    ],
+    [
+     3877,
+     3878
+    ],
+    [
+     2966,
+     2967
+    ],
+    [
+     2969
+    ],
+    [
+     4585
+    ],
+    [
+     2971
+    ],
+    [
+     3412
+    ],
+    [
+     4565
+    ],
+    [
+     4575
+    ],
+    [
+     1181,
+     1182
+    ]
+   ],
+   "term_ids": [
+    [
+     3594
+    ],
+    [
+     4584,
+     4585
+    ],
+    [
+     4570
+    ],
+    [
+     3877
+    ],
+    [
+     4564,
+     4565
+    ],
+    [
+     1186
+    ],
+    [
+     2967
+    ],
+    [
+     3411
+    ],
+    [
+     4867
+    ],
+    [
+     2971
+    ]
+   ],
+   "best_ids_r3": [
+    3594,
+    4575,
+    4585,
+    2971
+   ],
+   "best_ids_now": {
+    "3594": [
+     3594
+    ],
+    "4575": [
+     4575
+    ],
+    "4585": [
+     4585
+    ],
+    "2971": [
+     2971
+    ]
+   },
+   "best_kept": {
+    "3594": true,
+    "4575": true,
+    "4585": true,
+    "2971": true
+   },
+   "best_kept_with_rule": {
+    "3594": true,
+    "4575": true,
+    "4585": true,
+    "2971": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": [
+    4570
+   ]
+  },
+  {
+   "id": "n14",
+   "set": "need",
+   "query": "What Deep Glow settings give a realistic, physically based glow on neon text or UI in After Effects without blowing out the whole frame?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "Deep Glow Radius Exposure Threshold Threshold Smoothing Tint Unmult",
+   "agent_ids": [
+    [
+     5311,
+     5312
+    ],
+    [
+     5316,
+     5317
+    ],
+    [
+     5625,
+     5626
+    ],
+    [
+     5313,
+     5314
+    ],
+    [
+     5607
+    ],
+    [
+     5621
+    ],
+    [
+     5030
+    ],
+    [
+     408
+    ],
+    [
+     5203
+    ],
+    [
+     1175
+    ]
+   ],
+   "term_ids": [
+    [
+     5599,
+     5600
+    ],
+    [
+     5601,
+     5602
+    ],
+    [
+     5608,
+     5609
+    ],
+    [
+     1174,
+     1175
+    ],
+    [
+     407,
+     408
+    ],
+    [
+     4970
+    ],
+    [
+     4972,
+     4973
+    ],
+    [
+     406
+    ],
+    [
+     4968
+    ],
+    [
+     5325
+    ]
+   ],
+   "best_ids_r3": [
+    5030,
+    4533,
+    4537,
+    408
+   ],
+   "best_ids_now": {
+    "5030": [
+     5030
+    ],
+    "4533": [
+     5621
+    ],
+    "4537": [
+     5625
+    ],
+    "408": [
+     408
+    ]
+   },
+   "best_kept": {
+    "5030": true,
+    "4533": true,
+    "4537": true,
+    "408": true
+   },
+   "best_kept_with_rule": {
+    "5030": true,
+    "4533": true,
+    "4537": true,
+    "408": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": [
+    4512
+   ]
+  },
+  {
+   "id": "n15",
+   "set": "need",
+   "query": "Why does my glow disappear on a white or light background in After Effects, and how do I make a glow or halo read on light backgrounds?",
+   "prev_score": 1,
+   "score": 1,
+   "score_with_rule": null,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Round-3 hits and best chunks still present; not re-read.",
+   "change": "same",
+   "terms": "Multiply blending mode colored halo Outer Glow Drop Shadow Glow Colors",
+   "agent_ids": [
+    [
+     5326,
+     5327
+    ],
+    [
+     5324,
+     5325
+    ],
+    [
+     3739,
+     3740
+    ],
+    [
+     1174,
+     1175
+    ],
+    [
+     5316
+    ],
+    [
+     1176,
+     1177
+    ],
+    [
+     5318,
+     5319
+    ],
+    [
+     5312,
+     5313
+    ],
+    [
+     3741,
+     3742
+    ],
+    [
+     1178
+    ]
+   ],
+   "term_ids": [
+    [
+     1176,
+     1177
+    ],
+    [
+     5265,
+     5266
+    ],
+    [
+     5278,
+     5279
+    ],
+    [
+     5263,
+     5264
+    ],
+    [
+     5325,
+     5326
+    ],
+    [
+     1175
+    ],
+    [
+     3199
+    ],
+    [
+     5327
+    ],
+    [
+     5205
+    ],
+    [
+     4988
+    ]
+   ],
+   "best_ids_r3": [
+    5326,
+    5319,
+    3741
+   ],
+   "best_ids_now": {
+    "5326": [
+     5326
+    ],
+    "5319": [
+     5319
+    ],
+    "3741": [
+     3741
+    ]
+   },
+   "best_kept": {
+    "5326": true,
+    "5319": true,
+    "3741": true
+   },
+   "best_kept_with_rule": {
+    "5326": true,
+    "5319": true,
+    "3741": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "n16",
+   "set": "need",
+   "query": "How do I make premium glowing particles orbit or trail around a character in After Effects with Trapcode Particular, with a stock CC Particle World fallback?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "Particular Aux System Emitter Position orbit null CC Particle World",
+   "agent_ids": [
+    [
+     5567
+    ],
+    [
+     5021,
+     5022
+    ],
+    [
+     1216,
+     1217
+    ],
+    [
+     5019
+    ],
+    [
+     3154
+    ],
+    [
+     1191
+    ],
+    [
+     1195
+    ],
+    [
+     3165
+    ],
+    [
+     3157
+    ],
+    [
+     4997
+    ]
+   ],
+   "term_ids": [
+    [
+     4642,
+     4643
+    ],
+    [
+     1218,
+     1219
+    ],
+    [
+     1192,
+     1193
+    ],
+    [
+     1221,
+     1222
+    ],
+    [
+     4627
+    ],
+    [
+     5019,
+     5020
+    ],
+    [
+     5021,
+     5022
+    ],
+    [
+     4647,
+     4648
+    ],
+    [
+     1237,
+     1238
+    ],
+    [
+     1240
+    ]
+   ],
+   "best_ids_r3": [
+    5019,
+    5021,
+    5022,
+    1191,
+    4997
+   ],
+   "best_ids_now": {
+    "5019": [
+     5019
+    ],
+    "5021": [
+     5021
+    ],
+    "5022": [
+     5022
+    ],
+    "1191": [
+     1191
+    ],
+    "4997": [
+     4997
+    ]
+   },
+   "best_kept": {
+    "5019": true,
+    "5021": true,
+    "5022": true,
+    "1191": true,
+    "4997": true
+   },
+   "best_kept_with_rule": {
+    "5019": true,
+    "5021": true,
+    "5022": true,
+    "1191": true,
+    "4997": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "n17",
+   "set": "need",
+   "query": "How do I build a smooth zoom or whip-pan transition between two scenes in After Effects with matched easing and directional blur, without plugins?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "Motion Tile Mirror Edges Transform effect Shutter Angle Directional Blur whip pan",
+   "agent_ids": [
+    [
+     419,
+     420
+    ],
+    [
+     384
+    ],
+    [
+     5550
+    ],
+    [
+     418
+    ],
+    [
+     386
+    ],
+    [
+     415
+    ],
+    [
+     1014
+    ],
+    [
+     881
+    ],
+    [
+     984
+    ],
+    [
+     3206
+    ]
+   ],
+   "term_ids": [
+    [
+     419
+    ],
+    [
+     3877,
+     3878
+    ],
+    [
+     3594
+    ],
+    [
+     2966,
+     2967
+    ],
+    [
+     3879
+    ],
+    [
+     3412
+    ],
+    [
+     3604,
+     3605
+    ],
+    [
+     1186,
+     1187
+    ],
+    [
+     422
+    ],
+    [
+     2972
+    ]
+   ],
+   "best_ids_r3": [
+    419
+   ],
+   "best_ids_now": {
+    "419": [
+     419
+    ]
+   },
+   "best_kept": {
+    "419": true
+   },
+   "best_kept_with_rule": {
+    "419": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "n18",
+   "set": "need",
+   "query": "How do I make a card-expand or shape-mask reveal transition in After Effects where the next scene appears inside a growing rounded rectangle, using track mattes?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "Rectangle Path Size Roundness Alpha Matte track matte precomp",
+   "agent_ids": [
+    [
+     811
+    ],
+    [
+     416
+    ],
+    [
+     789,
+     790
+    ],
+    [
+     799,
+     800
+    ],
+    [
+     1025
+    ],
+    [
+     877,
+     878
+    ],
+    [
+     804
+    ],
+    [
+     881
+    ],
+    [
+     421
+    ],
+    [
+     411
+    ]
+   ],
+   "term_ids": [
+    [
+     789,
+     790
+    ],
+    [
+     612
+    ],
+    [
+     799,
+     800
+    ],
+    [
+     620,
+     621
+    ],
+    [
+     797,
+     798
+    ],
+    [
+     3293
+    ],
+    [
+     609
+    ],
+    [
+     723
+    ],
+    [
+     719
+    ],
+    [
+     811
+    ]
+   ],
+   "best_ids_r3": [
+    790
+   ],
+   "best_ids_now": {
+    "790": [
+     790
+    ]
+   },
+   "best_kept": {
+    "790": true
+   },
+   "best_kept_with_rule": {
+    "790": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "n19",
+   "set": "need",
+   "query": "How do I stop banding in dark gradients and glows after H.264 export from After Effects by working at 16 bpc and adding grain or noise dither?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "16 bpc Noise Add Grain dither banding Gradient Ramp Ramp Scatter",
+   "agent_ids": [
+    [
+     3881,
+     3882
+    ],
+    [
+     3298
+    ],
+    [
+     3883,
+     3884
+    ],
+    [
+     5317,
+     5318
+    ],
+    [
+     5320,
+     5321
+    ],
+    [
+     2978
+    ],
+    [
+     3219
+    ],
+    [
+     5361
+    ],
+    [
+     5039
+    ],
+    [
+     3222
+    ]
+   ],
+   "term_ids": [
+    [
+     3881,
+     3882
+    ],
+    [
+     3651,
+     3652
+    ],
+    [
+     3298
+    ],
+    [
+     3669,
+     3670
+    ],
+    [
+     3693,
+     3694
+    ],
+    [
+     3883,
+     3884
+    ],
+    [
+     3221,
+     3222
+    ],
+    [
+     3167
+    ],
+    [
+     3224
+    ],
+    [
+     4395
+    ]
+   ],
+   "best_ids_r3": [
+    3882
+   ],
+   "best_ids_now": {
+    "3882": [
+     3882
+    ]
+   },
+   "best_kept": {
+    "3882": true
+   },
+   "best_kept_with_rule": {
+    "3882": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "n20",
+   "set": "need",
+   "query": "How do I composite a cut-out character onto a clean studio backdrop in After Effects so it sits in the scene, with a contact shadow, cast shadow and light wrap?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "contact shadow cast shadow Drop Shadow Corner Pin light wrap Fast Box Blur Multiply",
+   "agent_ids": [
+    [
+     4291,
+     4292
+    ],
+    [
+     5381
+    ],
+    [
+     1366
+    ],
+    [
+     3646
+    ],
+    [
+     5411
+    ],
+    [
+     3173
+    ],
+    [
+     3199
+    ],
+    [
+     3169
+    ],
+    [
+     4290
+    ],
+    [
+     3179
+    ]
+   ],
+   "term_ids": [
+    [
+     3173,
+     3174
+    ],
+    [
+     4988
+    ],
+    [
+     5409,
+     5410
+    ],
+    [
+     1296
+    ],
+    [
+     3179
+    ],
+    [
+     3646
+    ],
+    [
+     5205
+    ],
+    [
+     3633
+    ],
+    [
+     3175,
+     3176
+    ],
+    [
+     3619
+    ]
+   ],
+   "best_ids_r3": [
+    4292
+   ],
+   "best_ids_now": {
+    "4292": [
+     4292
+    ]
+   },
+   "best_kept": {
+    "4292": true
+   },
+   "best_kept_with_rule": {
+    "4292": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "n21",
+   "set": "need",
+   "query": "When importing a PNG sequence with alpha into After Effects, how do I set straight vs premultiplied alpha and the frame rate so there are no dark fringes or timing drift?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "Interpret Footage Straight Unmatted Premultiplied Matted With Color Assume this frame rate",
+   "agent_ids": [
+    [
+     3357,
+     3358
+    ],
+    [
+     3192,
+     3193
+    ],
+    [
+     3356
+    ],
+    [
+     3361,
+     3362
+    ],
+    [
+     3225
+    ],
+    [
+     3003,
+     3004
+    ],
+    [
+     4291
+    ],
+    [
+     3488
+    ],
+    [
+     3194
+    ],
+    [
+     3445
+    ]
+   ],
+   "term_ids": [
+    [
+     3357,
+     3358
+    ],
+    [
+     3355,
+     3356
+    ],
+    [
+     3352,
+     3353
+    ],
+    [
+     3446,
+     3447
+    ],
+    [
+     3003,
+     3004
+    ],
+    [
+     3448
+    ],
+    [
+     3445
+    ],
+    [
+     5288
+    ],
+    [
+     3294
+    ],
+    [
+     3493
+    ]
+   ],
+   "best_ids_r3": [
+    3357
+   ],
+   "best_ids_now": {
+    "3357": [
+     3357
+    ]
+   },
+   "best_kept": {
+    "3357": true
+   },
+   "best_kept_with_rule": {
+    "3357": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "n22",
+   "set": "need",
+   "query": "Why does my imported ProRes 4444 or PNG footage look washed out or colour-shifted in After Effects compared with the source, and which colour management settings fix it?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "Interpret Footage Color Assign Profile Preserve RGB Working Space Linearize Working Space OCIO",
+   "agent_ids": [
+    [
+     3439,
+     3440
+    ],
+    [
+     4104,
+     4105
+    ],
+    [
+     702
+    ],
+    [
+     3445,
+     3446
+    ],
+    [
+     3443
+    ],
+    [
+     3308
+    ],
+    [
+     3708
+    ],
+    [
+     696
+    ],
+    [
+     3353
+    ],
+    [
+     4110
+    ]
+   ],
+   "term_ids": [
+    [
+     3447,
+     3448
+    ],
+    [
+     3445,
+     3446
+    ],
+    [
+     3709,
+     3710
+    ],
+    [
+     4104,
+     4105
+    ],
+    [
+     3449,
+     3450
+    ],
+    [
+     3352,
+     3353
+    ],
+    [
+     701,
+     702
+    ],
+    [
+     4110,
+     4111
+    ],
+    [
+     4109
+    ],
+    [
+     3708
+    ]
+   ],
+   "best_ids_r3": [
+    3439
+   ],
+   "best_ids_now": {
+    "3439": [
+     3439
+    ]
+   },
+   "best_kept": {
+    "3439": true
+   },
+   "best_kept_with_rule": {
+    "3439": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "n23",
+   "set": "need",
+   "query": "Why does my precomp look pixelated or soft when scaled above 100% in After Effects, and when should I use Collapse Transformations or Continuous Rasterization?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "Collapse Transformations Continuous Rasterization precomp vector layer Best Quality",
+   "agent_ids": [
+    [
+     3932,
+     3933
+    ],
+    [
+     446,
+     447
+    ],
+    [
+     3928,
+     3929
+    ],
+    [
+     444,
+     445
+    ],
+    [
+     3321,
+     3322
+    ],
+    [
+     3930,
+     3931
+    ],
+    [
+     448,
+     449
+    ],
+    [
+     3320
+    ],
+    [
+     3323
+    ],
+    [
+     5622
+    ]
+   ],
+   "term_ids": [
+    [
+     3932,
+     3933
+    ],
+    [
+     3321,
+     3322
+    ],
+    [
+     3927,
+     3928
+    ],
+    [
+     446,
+     447
+    ],
+    [
+     444,
+     445
+    ],
+    [
+     3929,
+     3930
+    ],
+    [
+     442,
+     443
+    ],
+    [
+     3320
+    ],
+    [
+     3323
+    ],
+    [
+     5622
+    ]
+   ],
+   "best_ids_r3": [
+    3933
+   ],
+   "best_ids_now": {
+    "3933": [
+     3933
+    ]
+   },
+   "best_kept": {
+    "3933": true
+   },
+   "best_kept_with_rule": {
+    "3933": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  },
+  {
+   "id": "n24",
+   "set": "need",
+   "query": "How do I render a long After Effects comp reliably from the command line with aerender, using frame-range chunks, memory flags and output module templates, then join the parts?",
+   "prev_score": 2,
+   "score": 2,
+   "score_with_rule": 2,
+   "change_cause": null,
+   "method": "mechanical",
+   "notes": "Every round-3 best chunk is still in the hits.",
+   "change": "same",
+   "terms": "aerender -s -e -mem_usage -OMtemplate -RStemplate ffmpeg concat",
+   "agent_ids": [
+    [
+     5328,
+     5329
+    ],
+    [
+     5331,
+     5332
+    ],
+    [
+     5342,
+     5343
+    ],
+    [
+     3480,
+     3481
+    ],
+    [
+     3557
+    ],
+    [
+     3482
+    ],
+    [
+     3000
+    ],
+    [
+     2993
+    ],
+    [
+     3472
+    ],
+    [
+     3718
+    ]
+   ],
+   "term_ids": [
+    [
+     5329,
+     5330
+    ],
+    [
+     5331,
+     5332
+    ],
+    [
+     5333,
+     5334
+    ],
+    [
+     3557
+    ],
+    [
+     3481,
+     3482
+    ],
+    [
+     3000
+    ],
+    [
+     3472
+    ],
+    [
+     3555
+    ],
+    [
+     3499
+    ],
+    [
+     3319
+    ]
+   ],
+   "best_ids_r3": [
+    3327
+   ],
+   "best_ids_now": {
+    "3327": [
+     5331
+    ]
+   },
+   "best_kept": {
+    "3327": true
+   },
+   "best_kept_with_rule": {
+    "3327": true
+   },
+   "better_ids_now": [],
+   "better_ids_with_rule": []
+  }
+ ],
+ "verdict": {
+  "counts": {
+   "before": {
+    "2": 57,
+    "1": 14,
+    "0": 1
+   },
+   "after_one_search": {
+    "2": 59,
+    "1": 12,
+    "0": 1
+   },
+   "after_with_rule": {
+    "2": 61,
+    "1": 10,
+    "0": 1,
+    "note": "p36 and p40 read as 2 with the term search; p15, p16, p25 gain their round-3 'better' chunk in the term search but were not re-judged, so they stay counted at 1."
+   },
+   "worse": [],
+   "answered_kept": "57/57 keep an answer in one search; 56/57 keep every round-3 best chunk (p46 keeps 3 of 4); 57/57 keep all with the rule."
+  },
+  "targets": {
+   "p07": "1 -> 2 (rare-word boost)",
+   "p42": "1 -> 2 (hygiene + passages), borderline",
+   "p40": "1 -> 1 one search, 2 with the term search",
+   "p36": "1 -> 1 one search, borderline 2 with the term search"
+  },
+  "fixes": {
+   "1_nav_boilerplate": "Kept. strip_boilerplate at ingest (long menu runs, self-repeating menus, menus shared by pages of one site, link lists, account/cookie/ISBN/copyright lines). Corpus scan hits reviewed by eye: helpx TOC (3500-3502), CineD menu (4084), flylib book TOC + footer (4253/4270/4276), DG2 FAQ link list (4543), Material link list (4885); content lists (blend modes, cache menu, GPU list, changelog, numbered legends) stay. Freed p42's slot.",
+   "2_table_rows": "Kept. Tables split between rows with the header repeated; an oversized row becomes column: value lines with a short row label. Catalog B4 is now one whole row with its header.",
+   "3_per_source_cap": "Kept: passages. Measured against cap 2/3/4, intro-last, top-5 uncapped and a soft cap. Intro-last lost 3-4 answered questions; cap 4 and soft caps dropped borderline answers; passages are a strict superset of the cap-3 hits (no losses) and brought p31 5214 and p42 4096/4104, at +36% text per search.",
+   "4_keyword_half": "OR-mode keyword fused with RRF was destructive (w=0.3 already lost answers: RRF flattens vector ranks 1-10 to 0.002). Kept a small linear boost on similarity for rare query words (0.01, df < 20%), stable across 0.01-0.02 and df 10-20%: adds p07's Carbon chunk, no losses. The bigger lever is the agent rule: a blind second, term-based search added round-3 'better' chunks for 11 questions with no losses; written into the ae-library skill and the search docstring."
+  },
+  "open": [
+   "p40/p42: full vs limited range is still absent from the library; QuickTime 1.96/Rec709-A only via term searches.",
+   "p36: Jake's posterizeTime-on-Random-Seed chunks (722/724) still rank out even for term queries.",
+   "Passages cost ~36% more text per search; per_source=2 or a 2-passage cap per source would trim it if context gets tight.",
+   "One CineD promo line ('NEW PODCAST ... WATCH/LISTEN') survives the boilerplate filter; a provideocoalition ACM copyright line (3888) is left in a content chunk."
+  ]
+ }
+}

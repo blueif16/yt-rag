@@ -315,3 +315,188 @@ def test_manual_two_line_captions_keep_both_lines():
     text = " ".join(c[2] for c in parse_vtt(MANUAL_VTT))
     assert text == ("The text animator gives you per-character control. "
                     "Add a range selector and offset it.")
+
+
+# ---- boilerplate: menus, tables of contents, account lines ----
+
+from yt_rag.text_ingest import strip_boilerplate, strip_site_boilerplate  # noqa: E402
+
+TOC = "\n".join(f"- {t}" for t in (
+    "What's new", "Get started", "Technical requirements", "After Effects FAQ",
+    "Get familiar with the interface", "Planning and setup", "Keyboard shortcuts",
+    "Supported file formats", "Arrange and manage panels", "Language support",
+    "Work with projects", "Composition settings", "Precomposing and nesting",
+    "Import and interpret footage", "Manage footage items", "Scene Edit Detection",
+    "Create layers", "Layer properties", "Blending modes", "Work with masks",
+    "Export H.264"))
+
+
+def test_long_site_menu_is_dropped():
+    md = f"{TOC}\n\n## Export\n\nSelect File > Export > Add to Render Queue to add your composition."
+    out = strip_boilerplate(md)
+    assert "Keyboard shortcuts" not in out and "Add to Render Queue" in out
+
+
+def test_menu_broken_by_longer_labels_is_still_one_menu():
+    seg = lambda k: [f"  - Topic {k}{i}" for i in range(12)]
+    md = "\n".join(["Body sentence before the menu."] + seg("a") +
+                   ["  - Work with Track Mattes and Traveling Mattes"] + seg("b") + ["  - Frame.io"] + seg("c") +
+                   ["", "## Export", "", "Real content here."])
+    out = strip_boilerplate(md)
+    assert "Topic" not in out and "Frame.io" not in out and "Traveling Mattes" not in out
+    assert "Body sentence before the menu." in out and "Real content here." in out
+
+
+def test_menu_that_repeats_its_own_entries_is_dropped():
+    nav = "\n\n".join(["Education for Filmmakers", "Language", "Language", "Education for Filmmakers",
+                       "The CineD Channels", "Info", "Language", "Education for Filmmakers",
+                       "The CineD Channels", "Info"])
+    md = (f"{nav}\n\nYou are logged in as\n\n"
+          "We will send you notifications in your browser, every time a new article is published.\n\n"
+          "Why isn't the color of my video matching between my export and my timeline?")
+    out = strip_boilerplate(md)
+    assert "Language" not in out and "logged in" not in out and "notifications" not in out
+    assert out.strip().startswith("Why isn't the color")
+
+
+def test_short_content_list_stays():
+    md = ("Blend modes that brighten:\n\n" +
+          "\n".join(f"- {m}" for m in ("Screen", "Add", "Lighten", "Color Dodge", "Linear Dodge",
+                                        "Lighter Color", "Classic Color Dodge", "Overlay")) +
+          "\n\nUse Add for glows.")
+    assert strip_boilerplate(md) == md
+
+
+def test_numbered_steps_and_code_are_never_menus():
+    steps = "\n".join(f"{i}. Step {i}" for i in range(1, 25))
+    code = "```\n" + "\n".join(f"x{i}" for i in range(30)) + "\n```"
+    md = f"{steps}\n\n{code}"
+    assert strip_boilerplate(md) == md
+
+
+def test_menu_shared_by_pages_of_one_site_is_dropped():
+    toc = "\n".join(["The 7.0 Workflow", "The Timeline", "Optimizing Your Projects", "Color Correction",
+                     "Color Keying", "Rotoscoping and Paint", "Effective Motion Tracking",
+                     "Virtual Cinematography", "Expressions", "Working with Light"])
+    a, b = strip_site_boilerplate([f"Backlight text one here.\n\n{toc}", f"Color matching text.\n\n{toc}"])
+    assert "Color Keying" not in a and "Color Keying" not in b
+    assert a.strip() == "Backlight text one here." and b.strip() == "Color matching text."
+
+
+def test_link_lists_and_footers_are_dropped():
+    links = "\n".join(f"*   [Resource {i}](https://example.com/{i})" for i in range(5))
+    md = f"Body text that matters.\n\n{links}\n\nISBN: 0321385527\n\nFlylib.com © 2008-2020."
+    assert strip_boilerplate(md).strip() == "Body text that matters."
+
+
+# ---- tables: chunked by row, header repeated ----
+
+def _table(n_rows: int, cell: str = "x" * 300) -> str:
+    rows = "\n".join(f"| B{i} | **Technique {i}** | {cell} |" for i in range(n_rows))
+    return f"## Catalog\n\n| # | Technique | Build route |\n|---|---|---|\n{rows}\n"
+
+
+def test_table_splits_between_rows_with_header_repeated():
+    chunks = split_markdown(_table(12), max_chars=1000)
+    assert len(chunks) > 2
+    for c in chunks:
+        lines = [l for l in c["text"].splitlines() if l.count("|") >= 3]
+        assert lines[0] == "| # | Technique | Build route |" and lines[1] == "|---|---|---|"
+        # every row is whole: it starts with its id and ends with a pipe
+        assert all(l.startswith("| ") and l.endswith("|") for l in lines[2:])
+    ids = [l.split("|")[1].strip() for c in chunks for l in c["text"].splitlines() if l.startswith("| B")]
+    assert ids == [f"B{i}" for i in range(12)]  # no row lost or duplicated
+
+
+def test_oversized_row_becomes_a_named_record():
+    md = _table(1, cell="Long recipe sentence. " * 80)
+    chunks = split_markdown(md, max_chars=600)
+    assert len(chunks) > 1
+    assert all("#: B0" in c["text"] for c in chunks)  # every piece names its row
+    assert "Build route: Long recipe" in chunks[0]["text"]
+
+
+def test_long_first_cell_is_shortened_on_later_pieces():
+    first = "Methods: " + " ".join(f"m{i}()" for i in range(70))  # ~400 chars: fits one piece
+    md = f"## T\n\n| Kind | Detail |\n|---|---|\n| {first} | {'Long detail sentence. ' * 60} |\n"
+    chunks = split_markdown(md, max_chars=900)
+    assert first in chunks[0]["text"]  # the first piece has the whole cell
+    assert all(len(c["text"].splitlines()[1]) < 120 for c in chunks[1:])  # later ones a label
+    assert all("Kind: Methods: m0() m1()" in c["text"] for c in chunks)
+
+
+def test_table_without_outer_pipes():
+    rows = "\n".join(f"**Row {i}** | `attr{i}` | {'y' * 200}" for i in range(10))
+    md = f"## Attributes\n\nElement | Attribute | Default\n------- | --------- | -------\n{rows}\n"
+    chunks = split_markdown(md, max_chars=800)
+    assert len(chunks) > 1
+    assert all("Element | Attribute | Default" in c["text"] for c in chunks)
+
+
+# ---- empty chunks ----
+
+def test_rules_alone_never_make_a_chunk():
+    md = "## A\n\n" + "a" * 1400 + "\n\n### C3\n\n---\n\n### D1\n\n" + "d" * 1400
+    chunks = split_markdown(md)
+    assert all(c["text"].strip("()# \n").replace("-", "").strip() for c in chunks)
+    assert not any(c["text"].rstrip().endswith("---") for c in chunks)
+    assert "### D1" in chunks[-1]["text"]
+
+
+def test_overlong_heading_line_counts_as_text():
+    md = "## " + "Before You Start, EXTREMELY IMPORTANT. Common problems discussed here! " * 3
+    (chunk,) = split_markdown(md + "\n\nMore.")
+    assert "EXTREMELY IMPORTANT" in chunk["text"]
+
+
+# ---- passages: adjacent chunks of one source join, the cap counts passages ----
+
+from yt_rag.mcp_server import _passage_hit, group_passages  # noqa: E402
+
+
+def _row(i, doc, idx, sim=0.7, video=False):
+    meta = {"doc_id": doc, "chunk_index": idx, "title": doc, "source": f"https://x/{doc}#{idx}",
+            "locator": f"0{idx}:00–0{idx + 1}:00" if video else f"Section {idx}"}
+    if video:
+        meta.update(video_id=doc, chunk_start_sec=idx * 60)
+    return {"id": i, "content": f'[A — "{doc}" — {idx}]\nbody {i}', "metadata": meta,
+            "similarity": sim, "namespace": "c"}
+
+
+def test_neighbours_join_one_passage_and_free_the_cap():
+    rows = [_row(1, "a", 0), _row(2, "a", 5), _row(3, "a", 9), _row(4, "a", 1),
+            _row(5, "a", 12), _row(6, "b", 3)]
+    ps = group_passages(rows, per_source=3, top_k=10)
+    assert [[r["id"] for r in p] for p in ps] == [[1, 4], [2], [3], [6]]  # 5 = a 4th passage of a
+
+
+def test_passages_keep_every_row_the_plain_cap_keeps():
+    from yt_rag.mcp_server import cap_per_source
+    rows = [_row(i, "abc"[i % 3], (i * 7) % 11) for i in range(30)]
+    capped = {r["id"] for r in cap_per_source(rows, 3)[:10]}
+    grouped = {r["id"] for p in group_passages(rows, 3, 10) for r in p}
+    assert capped <= grouped
+
+
+def test_passage_is_at_most_two_chunks_in_reading_order():
+    rows = [_row(1, "a", 3), _row(2, "a", 2), _row(3, "a", 4), _row(4, "a", 1)]
+    ps = group_passages(rows, per_source=3, top_k=10)
+    assert [[r["id"] for r in p] for p in ps] == [[2, 1], [3], [4]]  # 3+2 full; 4 starts, 1 is index 1
+    assert all([r["metadata"]["chunk_index"] for r in p] == sorted(r["metadata"]["chunk_index"] for r in p)
+               for p in ps)
+
+
+def test_scan_stops_at_the_first_row_that_needs_a_slot_once_top_k_is_full():
+    rows = [_row(1, "a", 0), _row(2, "b", 0), _row(3, "a", 1)]
+    assert [[r["id"] for r in p] for p in group_passages(rows, 3, 2)] == [[1, 3], [2]]
+    rows = [_row(1, "a", 0), _row(2, "b", 0), _row(4, "c", 0), _row(3, "a", 1)]
+    assert [[r["id"] for r in p] for p in group_passages(rows, 3, 2)] == [[1], [2]]
+
+
+def test_passage_hit_reads_as_one_hit():
+    p = [_row(1, "v", 2, 0.71, video=True), _row(2, "v", 3, 0.75, video=True)]
+    hit = _passage_hit(p, "c")
+    assert hit["chunks"] == 2 and hit["relevance"] == 0.75
+    assert hit["locator"] == "02:00–04:00"
+    assert hit["content"].startswith('[A — "v" — 2]\nbody 1') and hit["content"].endswith("body 2")
+    assert hit["content"].count("[A —") == 1  # the second header is dropped

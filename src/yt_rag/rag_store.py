@@ -4,7 +4,8 @@ RAGStore - 2026 SOTA with Minimal Metadata Philosophy
 
 Content is rich and self-describing → embeddings capture everything
 Metadata is minimal → just source/type for reference
-Power from indexing → RRF (BM25 + Vector) + Graph traversal
+Search → cosine similarity + a small boost for the query's rare words
+(search_chunks_v2, migrations/010)
 
 Usage:
     rag = RAGStore(namespace="video_styles")
@@ -41,6 +42,10 @@ class RAGConfig:
     match_count: int = 5
     rrf_k: int = 60
     graph_depth: int = 2
+    # search_chunks_v2 (migrations/010): similarity + keyword_boost x the share
+    # of the query's rare words (in < rare_df of the chunks) a chunk contains.
+    keyword_boost: float = 0.01
+    rare_df: float = 0.2
 
 
 class RAGStore:
@@ -231,30 +236,33 @@ class RAGStore:
         graph_depth: int | None = None,
         filter_meta: dict | None = None,
         tools_available: list[str] | None = None,
+        keyword_boost: float | None = None,
     ) -> list[dict]:
         """
-        SOTA search: Hybrid RRF (BM25 + Vector) + Graph traversal
-        (search_chunks, migrations/008). Rows come best-first, each with
-        `similarity` (cosine, 0-1) and `namespace`.
+        Vector similarity plus a small boost for chunks that contain the
+        query's rare words (search_chunks_v2, migrations/010). Rows come
+        best-first, each with `similarity` (cosine, 0-1), `keyword` (0-1: the
+        share of the query's rare words it holds), `score` and `namespace`.
 
         filter_meta: JSONB containment on chunk metadata, e.g.
             {"scenarios": ["ui-promo"]}; tools_available: keep only sources
             whose required plugins are all in this list.
+        keyword_boost: 0 = vector only. graph_depth is accepted for
+            compatibility; no collection has graph relations.
         """
         k = top_k or self.config.match_count
-        depth = graph_depth or self.config.graph_depth
         embedding = self._embeddings.embed_query(query)
 
         try:
-            result = self.client.rpc("search_chunks", {
+            result = self.client.rpc("search_chunks_v2", {
                 "query_text": query,
                 "query_embedding": embedding,
                 "match_count": k,
-                "rrf_k": self.config.rrf_k,
-                "graph_depth": depth,
                 "filter_namespace": None if self.namespace == "*" else self.namespace,
                 "filter_meta": filter_meta,
                 "tools_available": tools_available,
+                "keyword_boost": self.config.keyword_boost if keyword_boost is None else keyword_boost,
+                "rare_df": self.config.rare_df,
             }).execute()
             return result.data
         except Exception:
