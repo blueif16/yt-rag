@@ -1,0 +1,983 @@
+[
+ {
+  "url": "https://nelson.co/work/linear-renders",
+  "kind": "page",
+  "title": "Linear renders (process write-up)",
+  "author": "Gavin Nelson (Linear)",
+  "type": "article",
+  "approx_chars": 7615,
+  "tags": {
+   "topics": [
+    "color-finish",
+    "design"
+   ],
+   "scenarios": [
+    "ui-promo"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": []
+  },
+  "trick": "Maker's iteration log for Linear's skewed, glass-material UI renders: a stripped-down test scene to tune one variable at a time, banding in a soft background glow killed with 2% monochrome gaussian noise at 50% gray set to Overlay, and depth of field pulled back (finally removed in render, done in post) because the key title must stay sharp and not bloom.",
+  "example": "https://nelson.co/work/linear-renders",
+  "why": "The person who made Linear's own dark-UI renders, with the exact debanding recipe and the 'keep the hero line sharp, restrain bloom' judgement Tech Black needs; a maker account the library had none of.",
+  "styles": [
+   "tech-black"
+  ]
+ },
+ {
+  "url": "https://pod.wave.co/podcast/dive-club--556f9cbd-ac35-4833-98cc-6d19a1ee9091/julian-lehr-how-storytelling-works-at-linear-80c66613",
+  "kind": "page",
+  "title": "Julian Lehr: How storytelling works at Linear (Dive Club transcript)",
+  "author": "Dive Club / Julian Lehr (Linear)",
+  "type": "article",
+  "approx_chars": 65505,
+  "tags": {
+   "topics": [
+    "story",
+    "design"
+   ],
+   "scenarios": [
+    "ui-promo"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "trick": "Linear's storytelling lead on how the in-house brand team turns dense product UI into launch visuals: 'simplify, simplify, simplify' so a screenshot never fights the copy, abstract away complexity to the one thing that matters, and make the product feel tangible through tilted 3D assets and a little glass, with durable-material metaphors (aluminium, glass).",
+  "example": "https://pod.wave.co/podcast/dive-club--556f9cbd-ac35-4833-98cc-6d19a1ee9091/julian-lehr-how-storytelling-works-at-linear-80c66613",
+  "why": "Maker-confirmed story logic behind every Tech Black shot (what to strip, why the UI is tilted and glassy); it is promo strategy rather than AE craft, so it seeds promo-craft.",
+  "styles": [
+   "tech-black"
+  ],
+  "collection": "promo-craft"
+ },
+ {
+  "url": "https://basement.studio/post/behind-the-ship",
+  "kind": "page",
+  "title": "Behind the Ship (Vercel Ship 2025 opener)",
+  "author": "basement.studio",
+  "type": "article",
+  "approx_chars": 5897,
+  "tags": {
+   "topics": [
+    "design",
+    "compositing"
+   ],
+   "scenarios": [
+    "hero-fx"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "trick": "Studio breakdown of the Vercel Ship 2025 opening film: concept and moodboard, animatic blocked into 3D, hand-keyed poses animated on twos (12 fps poses under a 24 fps camera) for a graphic, illustrated feel, EXR passes (direct, indirect, reflections, volumetrics) plus Cryptomatte so every layer is regraded without re-rendering, then grade in Resolve.",
+  "example": "https://basement.studio/post/behind-the-ship",
+  "why": "One of the dark tech launch-film makers the audit named; gives a maker-confirmed pass-based finishing pipeline and a deliberate on-twos cadence that also serves Color Punch's handmade-motion hole.",
+  "styles": [
+   "tech-black",
+   "color-punch"
+  ]
+ },
+ {
+  "url": "https://linear.app/now/how-we-redesigned-the-linear-ui",
+  "kind": "page",
+  "title": "How we redesigned the Linear UI (part II)",
+  "author": "Linear design team",
+  "type": "article",
+  "approx_chars": 13891,
+  "tags": {
+   "topics": [
+    "design",
+    "color-finish",
+    "text"
+   ],
+   "scenarios": [
+    "ui-promo"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "trick": "Linear rebuilt its dark and light themes from three LCH variables (base, accent, contrast) instead of 98 hand-set colours, explored surface elevation with black/white opacities, raised text and icon contrast in dark mode, and switched headings to Inter Display while keeping Inter for body text.",
+  "example": "https://linear.app/now/how-we-redesigned-the-linear-ui",
+  "why": "The brand's own account of how its near-black surfaces and type are built, so recreated UI planes match the real product instead of a generic dark theme.",
+  "styles": [
+   "tech-black"
+  ]
+ },
+ {
+  "url": "https://www.thedjpetersen.com/llm-thoughts/linear-theme/",
+  "kind": "page",
+  "title": "The Three-Variable Theme: Deconstructing Linear's System",
+  "author": "DJ Petersen",
+  "type": "article",
+  "approx_chars": 14887,
+  "tags": {
+   "topics": [
+    "color-finish",
+    "design"
+   ],
+   "scenarios": [
+    "ui-promo"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": []
+  },
+  "trick": "Deconstructs Linear's LCH theme generator into a numeric near-black value ladder: base #121214, hover #1c1c20, elevated panel #202024, border #2c2c30, primary text #ebebeb, muted text #a1a1aa, with the LCH lightness offsets (and recursive elevation) that produce them.",
+  "example": "https://www.thedjpetersen.com/llm-thoughts/linear-theme/",
+  "why": "Fills the 'near-black value ladder' gap with exact hex steps an agent can drop into a dark UI plane, so surfaces separate on screen instead of collapsing into one black.",
+  "styles": [
+   "tech-black"
+  ]
+ },
+ {
+  "url": "https://uncompressed.io/guides/fix-color-banding-video-upload",
+  "kind": "page",
+  "title": "Color Banding After Uploading Video to Vimeo or YouTube",
+  "author": "uncompressed.io",
+  "type": "tutorial",
+  "approx_chars": 20714,
+  "tags": {
+   "topics": [
+    "render-export",
+    "color-finish"
+   ],
+   "scenarios": [],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": []
+  },
+  "trick": "Diagnose banding by comparing a PNG of your master frame with the uploaded stream at the same frame, then fix the delivery: send a 10-bit master (ProRes 422 HQ / HEVC / DNxHR), add light dither or fine grain before the final encode, use CRF 18 or lower, and judge only after YouTube's high-quality pass (the first hours are a low-quality encode).",
+  "example": "https://uncompressed.io/guides/fix-color-banding-video-upload",
+  "why": "A current (8-bit YouTube/VP9-era) replacement for the library's 2012 banding article; directly protects Tech Black's dark gradients and light pools after upload.",
+  "styles": [
+   "tech-black",
+   "color-punch"
+  ]
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=zdvYqalqL8g",
+  "kind": "video",
+  "title": "Particle Text Disintegration Animation in After Effects (No Plugins)",
+  "author": "Motion Nations",
+  "views": 360393,
+  "likes": 6708,
+  "published": "2023-05-10",
+  "duration_sec": 434,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "particles",
+    "text"
+   ],
+   "scenarios": [
+    "kinetic-type",
+    "titles"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": []
+  },
+  "trick": "Stock Shatter on a precomped title: view Rendered, pattern Glass, Repetition 200 (max), Gravity 0, ambient light 1, then animate Force 1 position and radius across the word so the type breaks into fine shards; play it reversed (or reverse the keys) to make text assemble from dust.",
+  "example": "https://www.youtube.com/watch?v=zdvYqalqL8g&t=66s",
+  "why": "360k-view, no-plugin recipe for the 'AI text materialises from dust' beat that the library lacked; reversing it gives the Linear-style specks-to-text reveal.",
+  "styles": [
+   "tech-black"
+  ]
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=LCOySy_ByV0",
+  "kind": "video",
+  "title": "Text to Sand / Dust Effect (No Plugin)",
+  "author": "Smertimba Graphics",
+  "views": 315541,
+  "likes": 6667,
+  "published": "2021-06-06",
+  "duration_sec": 266,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "particles",
+    "text",
+    "mattes-masks"
+   ],
+   "scenarios": [
+    "kinetic-type",
+    "titles"
+   ],
+   "level": "basic",
+   "impact": "medium",
+   "tools": []
+  },
+  "trick": "Duplicate the text, add CC Composite + CC Particle Systems II with Source Alpha Inheritance so particles are born only from the glyphs; keyframe the producer across the word (radius X 1, radius Y about text height), birth rate 50, longevity 4 s, gravity -0.3, resistance 20, and sync a Linear Wipe (feather 50) on the base text to the producer sweep.",
+  "example": "https://www.youtube.com/watch?v=LCOySy_ByV0&t=23s",
+  "why": "Short (4.4 min) but dense, stock-only alternative giving a softer, specky dust; reversed, it is a second route to the dust-to-text materialise.",
+  "styles": [
+   "tech-black"
+  ]
+ },
+ {
+  "url": "https://developer.apple.com/videos/play/wwdc2017/803/",
+  "kind": "page",
+  "title": "Designing Sound (WWDC17, full transcript)",
+  "author": "Hugo Verweij (Apple)",
+  "type": "article",
+  "approx_chars": 24441,
+  "tags": {
+   "topics": [
+    "sound"
+   ],
+   "scenarios": [
+    "ui-promo"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": []
+  },
+  "trick": "Apple's UI sound designer on restraint: 'silence is golden', UI sounds far quieter and shorter than alerts, transitions that convey depth and direction (forward/back variants), sync to animation or haptics tuned to about 10 ms, trim leading silence and fade tails, and filter out lows small speakers cannot reproduce.",
+  "example": "https://developer.apple.com/videos/play/wwdc2017/803/",
+  "why": "Maker-grade rules for sparse, frame-locked UI foley in a quiet mix, exactly the opposite energy to the loud YouTube SFX advice the library holds.",
+  "styles": [
+   "tech-black",
+   "color-punch"
+  ]
+ },
+ {
+  "url": "https://parallel-minds.studio/products/reverie/blog/ambient-drones-film-sound-design",
+  "kind": "page",
+  "title": "Building Tension: Ambient Drones for Film Sound Design",
+  "author": "William Garrido (Parallel Minds)",
+  "type": "article",
+  "approx_chars": 2968,
+  "tags": {
+   "topics": [
+    "sound"
+   ],
+   "scenarios": [
+    "edit-pacing"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "trick": "Anatomy of an ambient bed: sub layer 30-80 Hz, mid harmonic 200 Hz-2 kHz, shimmer above 5 kHz; a three-stage arc (quiet bed, swell before the hit, low wash after the cut); start from real recordings time-stretched 30-80x; keep crest factor 5-7 dB with 6 dB headroom; and the 'negative drop' (bed cuts out for half a second before a hit).",
+  "example": "https://parallel-minds.studio/products/reverie/blog/ambient-drones-film-sound-design",
+  "why": "Concrete spectral and dynamic numbers for the pad bed and sub swells of a Tech Black score; note the later sections promote the author's tool, the first and last are general craft.",
+  "styles": [
+   "tech-black"
+  ]
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=lHNhxGojFRU",
+  "kind": "video",
+  "title": "Understanding How to Loudness Normalize Your Audio for Video",
+  "author": "Curtis Judd",
+  "views": 76798,
+  "likes": 2528,
+  "published": "2021-01-31",
+  "duration_sec": 721,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "sound",
+    "render-export"
+   ],
+   "scenarios": [],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "trick": "Workflow: mix by ear, bounce a stereo mix, measure integrated loudness and true peak, compress or level only enough to buy headroom, then normalize to -16 LUFS while keeping at least 1.5 dB true-peak headroom, re-measure and bring the mix back to the edit.",
+  "example": "https://www.youtube.com/watch?v=lHNhxGojFRU&t=306s",
+  "why": "Gives the restrained -16 to -18 LUFS master Tech Black wants without crushing the pad bed; loudness practice rather than AE craft, so promo-craft.",
+  "styles": [
+   "tech-black",
+   "color-punch"
+  ],
+  "collection": "promo-craft"
+ },
+ {
+  "url": "https://gradiently.design/guide/holographic-gradients",
+  "kind": "page",
+  "title": "Holographic gradients and iridescence, explained",
+  "author": "Gradiently",
+  "type": "tutorial",
+  "approx_chars": 5478,
+  "tags": {
+   "topics": [
+    "color-finish",
+    "light-glow",
+    "design"
+   ],
+   "scenarios": [
+    "titles",
+    "logo-ident"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "trick": "Build an iridescent sheen as two layers: a pale conic rainbow in strict hue order underneath and a narrow white linear band that slides across once; keep hues pearly rather than saturated, use it on one object (a wordmark or card), over a calm ground, with slow motion triggered by an event.",
+  "example": "https://gradiently.design/guide/holographic-gradients",
+  "why": "The only quality source found for the colour/iridescent sheen sweep on an end card; its restraint rules stop the cheap rainbow-sticker look, and the two-layer build ports to AE (Gradient Ramp/Colorama under a matted white band) or HyperFrames CSS.",
+  "styles": [
+   "tech-black"
+  ]
+ },
+ {
+  "url": "https://cgcookie.com/posts/cinematography-tips-for-cg-artists",
+  "kind": "page",
+  "title": "Cinematography Tips for CG Artists",
+  "author": "CG Cookie",
+  "type": "article",
+  "approx_chars": 7982,
+  "tags": {
+   "topics": [
+    "camera-3d",
+    "design"
+   ],
+   "scenarios": [],
+   "level": "basic",
+   "impact": "medium",
+   "tools": []
+  },
+  "trick": "Choose 50 mm (eye-like) or 85 mm (flattering compression) over the 35 mm default and move the camera back as focal length rises; move the camera only when motivated; when following action be 'sloppy' (trail or lead and overshoot slightly instead of a perfect track-to); establish geography with a wide before the close-ups.",
+  "example": "https://cgcookie.com/posts/cinematography-tips-for-cg-artists",
+  "why": "Short, actionable camera grammar for a normal-lens, gently drifting CG camera, which the library only had piecemeal.",
+  "styles": [
+   "tech-black"
+  ]
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=COwENnPwWJ8",
+  "kind": "video",
+  "title": "Animate Cameras like a Pro (Blender Tutorial)",
+  "author": "CG Boost",
+  "views": 385862,
+  "likes": 12904,
+  "published": "2021-10-22",
+  "duration_sec": 1389,
+  "captions": "manual",
+  "tags": {
+   "topics": [
+    "camera-3d",
+    "easing"
+   ],
+   "scenarios": [
+    "hero-fx",
+    "edit-pacing"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": []
+  },
+  "trick": "Drop default bezier ease on camera keys and use linear interpolation so a move cut to music never starts or stops on screen; drive the camera along a curve with a look-at target for controllable drifts; then 'cut' by switching follow-path constraints between two curves while the camera keeps moving.",
+  "example": "https://www.youtube.com/watch?v=COwENnPwWJ8&t=498s",
+  "why": "Blender, but the principles map 1:1 to AE cameras: a never-stopping linear drift and cutting from one moving shot into another, the exact Tech Black camera grammar that was borderline in the library.",
+  "styles": [
+   "tech-black"
+  ]
+ },
+ {
+  "url": "https://www.toolsforfilm.com/blog/bpm-and-picture-editors-guide",
+  "kind": "page",
+  "title": "BPM and Picture: How Editors Cut to Music Without Losing Their Mind",
+  "author": "Tools for Film",
+  "type": "tutorial",
+  "approx_chars": 14023,
+  "tags": {
+   "topics": [
+    "design",
+    "sound"
+   ],
+   "scenarios": [
+    "edit-pacing"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": []
+  },
+  "trick": "Frames per beat = fps x 60 / BPM (120 BPM at 24 fps = 12 f; 128 BPM = 11.25 f); anchor a marker on bar 1 beat 1 and place cuts from a cumulative frame table so rounding never drifts (64 beats at 11.25 f drift 16 frames); cut every beat only for high-energy montage and every bar for anything that must register; nudge single cuts 1-3 frames for picture.",
+  "example": "https://www.toolsforfilm.com/blog/bpm-and-picture-editors-guide",
+  "why": "Gives agents a numeric beat grid for 110-130 BPM Color Punch cuts plus the drift fix and beat-vs-bar rule; the library had no BPM-to-frames source.",
+  "styles": [
+   "color-punch"
+  ]
+ },
+ {
+  "url": "https://www.vidmoat.com/blog/edit-music-videos",
+  "kind": "page",
+  "title": "Editing Music Videos: Cutting to the Track, Not to the Footage",
+  "author": "Vidmoat",
+  "type": "article",
+  "approx_chars": 19213,
+  "tags": {
+   "topics": [
+    "design",
+    "sound",
+    "text"
+   ],
+   "scenarios": [
+    "edit-pacing",
+    "kinetic-type"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": []
+  },
+  "trick": "Lay the track at 00:00, then beat markers plus a coarser bar grid and structural markers (sections usually turn on multiples of 8 bars) before placing any shot; cut on bars in calm sections and on beats in dense ones, halve shot length at the chorus downbeat, land cuts 1-2 frames before hard transients, use one anticipation cut on the last eighth before a drop, hold over sparse bars, and put words up 2-4 frames (80-150 ms) early.",
+  "example": "https://www.vidmoat.com/blog/edit-music-videos",
+  "why": "The concrete editor rules for beat-paced hype cutting (shot length per section, early cuts, text lead) that the BPM maths alone does not give; a few product mentions, the craft sections are general.",
+  "styles": [
+   "color-punch"
+  ]
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=lHQvi94dpvM",
+  "kind": "video",
+  "title": "After Effects Liquid Gradients Tutorial",
+  "author": "Dope Motions",
+  "views": 337819,
+  "likes": 6635,
+  "published": "2023-08-02",
+  "duration_sec": 534,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "color-finish",
+    "design"
+   ],
+   "scenarios": [
+    "ui-promo"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": []
+  },
+  "trick": "Animated mesh-style colour field with stock effects: 4-Color Gradient with keyframed points over 10 s, Twirl animated (radius/angle), Motion Tile with Mirror Edges to hide borders, Wave Warp (circle preset, wave height ~500) on an adjustment layer, and about 4% Noise to stop banding.",
+  "example": "https://www.youtube.com/watch?v=lHQvi94dpvM&t=75s",
+  "why": "338k-view, plugin-free recipe for the moving saturated brand-colour fields behind Color Punch shots; the library had only static 4-Color Gradients.",
+  "styles": [
+   "color-punch"
+  ]
+ },
+ {
+  "url": "https://www.figma.com/blog/figma-on-figma-evolving-our-visual-language/",
+  "kind": "page",
+  "title": "Figma on Figma: Evolving our visual language",
+  "author": "Figma Brand Studio",
+  "type": "article",
+  "approx_chars": 11352,
+  "tags": {
+   "topics": [
+    "design",
+    "color-finish"
+   ],
+   "scenarios": [
+    "ui-promo"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": []
+  },
+  "trick": "Figma's colour system behind its launch reels: 'tonal vibrancy' (electric pairs of near-equal tone placed edge to edge with no outlines), three hero schemes each built from a vibrant primary pair plus four secondaries with light and dark variants, and motion principles where cursors appear only to explain an action.",
+  "example": "https://www.figma.com/blog/figma-on-figma-evolving-our-visual-language/",
+  "why": "Maker rules for loud-but-coherent flat colour fields that switch per section, the core of Color Punch colour blocking; nothing in the library covered palette rhythm.",
+  "styles": [
+   "color-punch"
+  ]
+ },
+ {
+  "url": "https://helpx.adobe.com/after-effects/desktop/apply-effects-and-animation-presets/list-of-effects/transition-effects.html",
+  "kind": "page",
+  "title": "Transition effects (Card Wipe, Block Dissolve, Gradient Wipe ...)",
+  "author": "Adobe",
+  "type": "doc",
+  "approx_chars": 11611,
+  "tags": {
+   "topics": [
+    "transitions",
+    "mattes-masks"
+   ],
+   "scenarios": [],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "trick": "Reference for the stock grid and pixel wipes: Card Wipe rows/columns, Flip Order from a gradient layer (black flips first), Timing Randomness and jitter, Back Layer; Block Dissolve block width/height; Gradient Wipe driven by any luminance layer; Venetian Blinds and Linear Wipe completion and feather.",
+  "example": "https://helpx.adobe.com/after-effects/desktop/apply-effects-and-animation-presets/list-of-effects/transition-effects.html",
+  "why": "Exact controls for grid/tile/pixel transitions (a Card Wipe with a radial gradient Flip Order is a one-effect grid wipe), which the library had nothing on.",
+  "styles": [
+   "color-punch"
+  ]
+ },
+ {
+  "url": "https://motionarray.com/learn/after-effects/shape-transitions-after-effects/",
+  "kind": "page",
+  "title": "How to Make Animated Shape Transitions in After Effects",
+  "author": "Rebecca Visser (Motion Array)",
+  "type": "tutorial",
+  "approx_chars": 8151,
+  "tags": {
+   "topics": [
+    "transitions",
+    "shapes"
+   ],
+   "scenarios": [],
+   "level": "basic",
+   "impact": "medium",
+   "tools": []
+  },
+  "trick": "Colour-bar wipes from one shape layer: rectangle Size keyed 0 to 1920 x 220 over 30 frames, Repeater (3 copies, position 0,220, scale keyed 0 to 100% in X), a second Repeater rotated 180 for symmetry, duplicates in other brand colours offset 8 frames, and a final copy set to Silhouette Alpha so the stack cuts through to the next shot; plus angular and circular variants.",
+  "example": "https://motionarray.com/learn/after-effects/shape-transitions-after-effects/",
+  "why": "Step-by-step values for the stacked brand-colour bar wipe that Color Punch uses between cuts; the library's only recipe was our own note.",
+  "styles": [
+   "color-punch"
+  ]
+ },
+ {
+  "url": "https://www.figma.com/blog/how-we-shaped-the-visual-identity-for-config-2025/",
+  "kind": "page",
+  "title": "How we shaped the visual identity for Config 2025",
+  "author": "Figma Blog",
+  "type": "article",
+  "approx_chars": 16650,
+  "tags": {
+   "topics": [
+    "design",
+    "text",
+    "sound"
+   ],
+   "scenarios": [
+    "ui-promo",
+    "kinetic-type"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": []
+  },
+  "trick": "The Config 2025 makers on their launch films: motion developed alongside the brand and handed to vendors as a motion library of examples rather than rules, expressive vs functional type motion, the opening film dropped from 60 to 15 fps to feel handmade, and Sounds Like These scoring every launch video from shared sonic palettes.",
+  "example": "https://www.figma.com/blog/how-we-shaped-the-visual-identity-for-config-2025/",
+  "why": "Primary maker account of one of the three Color Punch reference reels; also the strongest 'why' for animating on twos/fours.",
+  "styles": [
+   "color-punch"
+  ]
+ },
+ {
+  "url": "https://review.firstround.com/firsthand-lovable/",
+  "kind": "page",
+  "title": "Firsthand: How I Built a Brand with Heart at Lovable",
+  "author": "Nad Chishtie (Lovable), First Round Review",
+  "type": "article",
+  "approx_chars": 22720,
+  "tags": {
+   "topics": [
+    "story",
+    "design"
+   ],
+   "scenarios": [
+    "ui-promo"
+   ],
+   "level": "basic",
+   "impact": "medium",
+   "tools": []
+  },
+  "trick": "Lovable's founding designer on the brand behind the Lovable 2.0 reel: a pink-gradient heart turned on its side to read as an L, the full-spectrum gradient haze meaning a horizontal, dreamlike product, a brief of three emotions (possibility, empowerment, speed), and the 'no purple' rule.",
+  "example": "https://review.firstround.com/firsthand-lovable/",
+  "why": "Explains why the reference reel's colour punch works so agents can derive a palette from an app's emotions; brand story rather than AE craft, so promo-craft.",
+  "styles": [
+   "color-punch"
+  ],
+  "collection": "promo-craft"
+ },
+ {
+  "url": "https://community.adobe.com/announcements-532/layers-as-materials-now-available-in-after-effects-beta-1640990",
+  "kind": "page",
+  "title": "Layers as Materials - Now Available in After Effects Beta",
+  "author": "Adobe After Effects team",
+  "type": "doc",
+  "approx_chars": 2274,
+  "tags": {
+   "topics": [
+    "camera-3d",
+    "compositing"
+   ],
+   "scenarios": [
+    "ui-promo"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": []
+  },
+  "trick": "AE Beta 27.0x41: assign any layer (animated precomp, video, solid) as the base-colour material of an imported 3D model, parametric mesh or 3D text/shape under Advanced 3D, with keyframeable Opacity, Roughness, Metallic, Emission Colour/Intensity and Ambient Response; no decals yet, so put the screen recording inside a precomp mapped to the screen material slot.",
+  "example": "https://community.adobe.com/announcements-532/layers-as-materials-now-available-in-after-effects-beta-1640990",
+  "why": "The native way to drop a live screen recording onto a GLB laptop's screen (emissive, glossy) in a bright A3D scene without Element 3D; nothing in the library covered a laptop screen insert.",
+  "styles": [
+   "tech-black",
+   "color-punch"
+  ]
+ },
+ {
+  "url": "https://artofstyleframe.com/blog/apple-intelligence-gradient-css/",
+  "kind": "page",
+  "title": "Apple Intelligence Gradient in CSS: The Animated Glow",
+  "author": "Mira Telos (Art of Styleframe)",
+  "type": "tutorial",
+  "approx_chars": 15155,
+  "tags": {
+   "topics": [
+    "light-glow",
+    "shapes"
+   ],
+   "scenarios": [
+    "ui-promo"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": []
+  },
+  "trick": "The AI glow ring: a conic gradient (#0894ff, #c959dd, #ff2e54, #ff9004, back to the first) rotated by a typed @property angle, masked to a 2 px ring outside the card, 1.8 s linear loop; halo = the same gradient on an 8 px band blurred 12 px at 0.6 opacity behind the card; skip the halo on elements under ~200 px.",
+  "example": "https://artofstyleframe.com/blog/apple-intelligence-gradient-css/",
+  "why": "Exact colours, timing and halo ratios for the 2025-26 prompt-bar glow; portable straight into HyperFrames, and the numbers translate to an AE gradient stroke plus blurred copy.",
+  "styles": [
+   "tech-black",
+   "color-punch"
+  ]
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=PZnVDSrJ76c",
+  "kind": "video",
+  "title": "Create Vibrant Edge Glow Animations In After Effects",
+  "author": "RobikFX",
+  "views": 130416,
+  "likes": 3915,
+  "published": "2025-04-20",
+  "duration_sec": 298,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "light-glow",
+    "shapes"
+   ],
+   "scenarios": [
+    "ui-promo"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": []
+  },
+  "trick": "Rounded-rectangle shape with CC Light Sweep (shape Smooth) set to Light Reception: Cutout and sweep intensity 0 so only a lit edge remains, Direction keyed one full revolution so light orbits the border; colour the edge with a 4-Color Gradient whose points carry wiggle(0.5,600), stack two glows (tight, then wide and faint), switch the project to 16 bpc, thin the edge to ~2.5, and put a blurred adjustment 'glass' card behind.",
+  "example": "https://www.youtube.com/watch?v=PZnVDSrJ76c&t=23s",
+  "why": "130k-view, stock-AE build of the rotating gradient edge glow around a UI card or prompt bar, the Color Punch AI-UI signature that was missing.",
+  "styles": [
+   "color-punch"
+  ]
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=duryIPdNVY8",
+  "kind": "video",
+  "title": "How To Edit Sound Effects To Motion Graphics",
+  "author": "SonduckFilm",
+  "views": 67255,
+  "likes": 1119,
+  "published": "2019-08-13",
+  "duration_sec": 568,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "sound"
+   ],
+   "scenarios": [
+    "edit-pacing"
+   ],
+   "level": "basic",
+   "impact": "medium",
+   "tools": []
+  },
+  "trick": "Spot sync points frame by frame and lay one pop per element, then vary repeats with a pitch shifter (+/- semitones) and level offsets so they do not sound cloned; add a low bass hit under the main beat and duck the pops so it reads; lay an ambient bed under everything with constant-power joins and keep it low.",
+  "example": "https://www.youtube.com/watch?v=duryIPdNVY8&t=128s",
+  "why": "Practical click/pop/impact layering locked to motion-graphic events, done inside AE; the base layer for Color Punch hits and for sparse Tech Black UI foley.",
+  "styles": [
+   "tech-black",
+   "color-punch"
+  ]
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=nOzZKEWJ5wk",
+  "kind": "video",
+  "title": "Volume vs Loudness - LUFS & LKFS for Measuring Loudness for Video",
+  "author": "Curtis Judd",
+  "views": 54403,
+  "likes": 3039,
+  "published": "2021-01-03",
+  "duration_sec": 605,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "sound",
+    "platform"
+   ],
+   "scenarios": [],
+   "level": "basic",
+   "impact": "medium",
+   "tools": []
+  },
+  "trick": "Why dB RMS misleads and LUFS/LKFS (ITU BS.1770) measures perceived loudness; broadcast targets (-23 LUFS EU, -24 LKFS US); YouTube turns anything louder than -14 LUFS down and never turns quiet audio up ('stats for nerds' shows the offset); recommended -16/-17 LUFS for speech-led uploads.",
+  "example": "https://www.youtube.com/watch?v=nOzZKEWJ5wk&t=362s",
+  "why": "Explains the platform turn-down so music-led Color Punch masters land around -14 LUFS without over-limiting; loudness policy, so promo-craft.",
+  "styles": [
+   "tech-black",
+   "color-punch"
+  ],
+  "collection": "promo-craft"
+ },
+ {
+  "url": "https://aes2.org/wp-content/uploads/2024/01/AESTD1004_1_15_10.pdf",
+  "kind": "page",
+  "title": "AES TD1004.1.15-10: Recommendation for Loudness of Audio Streaming and Network File Playback",
+  "author": "AES Technical Committee on Transmission and Broadcasting",
+  "type": "doc",
+  "approx_chars": 35706,
+  "tags": {
+   "topics": [
+    "sound",
+    "platform"
+   ],
+   "scenarios": [],
+   "level": "advanced",
+   "impact": "low",
+   "tools": []
+  },
+  "trick": "Streaming loudness spec: target not above -16 LUFS and not below -20 LUFS, short-form (60 s or less) max short-term loudness no more than 5 LU above target, true peak at or below -1 dBTP, prefer high peak-to-loudness ratio over heavy limiting.",
+  "example": "https://aes2.org/wp-content/uploads/2024/01/AESTD1004_1_15_10.pdf",
+  "why": "The defensible reference numbers behind both styles' master specs (quiet Tech Black, punchy-but-not-crushed Color Punch); a standards doc, so promo-craft.",
+  "styles": [
+   "tech-black",
+   "color-punch"
+  ],
+  "collection": "promo-craft"
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=kAyFWTDYrJw",
+  "kind": "video",
+  "title": "You Won't Believe How EASY Rolling Numbers Can Be in After Effects",
+  "author": "MotionBud",
+  "views": 23361,
+  "likes": 365,
+  "published": "2025-03-25",
+  "duration_sec": 309,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "text",
+    "easing"
+   ],
+   "scenarios": [
+    "data-viz"
+   ],
+   "level": "basic",
+   "impact": "medium",
+   "tools": []
+  },
+  "trick": "Odometer from text layers: a vertical 0-9 stack repeated five times (plus a trailing 0) in one text layer, masked to a single-digit window, scrolled by a text-animator Position on the range selector; duplicate per digit and set each column's end value by place value (counting to 15,000: -300, -4500, -6000, -9000, -12000 px), easy ease with the end keys' influence dragged long for a slow settle, motion blur on, 20% noise in Overlay.",
+  "example": "https://www.youtube.com/watch?v=kAyFWTDYrJw&t=92s",
+  "why": "Below the usual view bar (23k, small channel) but the only spoken rolling-digit build found; the library's counters were Source Text only, with no per-digit roll.",
+  "styles": [
+   "color-punch"
+  ]
+ },
+ {
+  "url": "https://www.figma.com/blog/the-story-of-creating-figma-sans/",
+  "kind": "page",
+  "title": "Just our type: The story of creating Figma Sans",
+  "author": "Figma (with Grilli Type)",
+  "type": "article",
+  "approx_chars": 14381,
+  "tags": {
+   "topics": [
+    "text",
+    "design"
+   ],
+   "scenarios": [
+    "kinetic-type"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "trick": "Why Figma Sans works as giant display type: a contemporary grotesque with uppercase drawn wider than usual so all-caps words form solid blocks, an even rhythm of letter widths, and Text/Display plus Condensed Text/Condensed Display optical sizes, with the condensed cut tuned for huge cropped headlines.",
+  "example": "https://www.figma.com/blog/the-story-of-creating-figma-sans/",
+  "why": "Type rules for the giant, cropped, frame-filling words in Color Punch (wide caps, condensed display, optical sizes), a hole the library had nothing on.",
+  "styles": [
+   "color-punch"
+  ]
+ },
+ {
+  "url": "https://www.richarmstrong.net/synthetic-stop-motion-essentials/",
+  "kind": "page",
+  "title": "Synthetic Stop Motion Essentials",
+  "author": "Rich Armstrong",
+  "type": "tutorial",
+  "approx_chars": 3421,
+  "tags": {
+   "topics": [
+    "expressions",
+    "easing"
+   ],
+   "scenarios": [],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "trick": "Handmade cadence in AE: set the comp frame rate before animating so keys land on frames, use posterizeTime(n) per property (or Posterize Time) plus a small wiggle; Posterize Time the effect flattens collapsed 3D precomps, stops shadows on 3D shapes and leaves shadows unstepped, so apply it on a parent precomp or use the expression instead.",
+  "example": "https://www.richarmstrong.net/synthetic-stop-motion-essentials/",
+  "why": "Gives the mechanics and the 3D gotchas of animating on twos/threes, pairing with Figma's 15 fps and basement's on-twos rationale.",
+  "styles": [
+   "color-punch"
+  ]
+ },
+ {
+  "url": "https://tenzen.studio/blog/smooth-zoom-pan-screen-recording/",
+  "kind": "page",
+  "title": "How to add smooth zoom and pan to screen recordings",
+  "author": "Tenzen",
+  "type": "tutorial",
+  "approx_chars": 7380,
+  "tags": {
+   "topics": [
+    "easing",
+    "design"
+   ],
+   "scenarios": [
+    "ui-promo"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": []
+  },
+  "trick": "Every punch-in has four beats: anticipate (start moving before the click), ease in, hold completely still while the click/typing happens, ease out; key scale and position together as one move, pan between nearby targets instead of zooming out and back, never pan during typing, stay at or under about 2x and frame the element plus context.",
+  "example": "https://tenzen.studio/blog/smooth-zoom-pan-screen-recording/",
+  "why": "Turns raw screen recordings into readable, directed punch-ins, a gap the audit flagged; the rules apply equally to Tech Black's hard punch-ins.",
+  "styles": [
+   "tech-black",
+   "color-punch"
+  ]
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=L-fVQ9cG2R8",
+  "kind": "video",
+  "title": "Vox Style Screen Recording Animation in After Effects",
+  "author": "Motion Nations",
+  "views": 33478,
+  "likes": 1368,
+  "published": "2025-07-01",
+  "duration_sec": 742,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "workflow",
+    "design"
+   ],
+   "scenarios": [
+    "ui-promo",
+    "explainer"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "trick": "Make UI sources that survive big punch-ins: in browser DevTools add a custom device at 1920x1080 with device pixel ratio 4, then use Capture screenshot or Capture full size screenshot for a 4x-resolution page; in AE animate eased scale/position pushes into it, add CC Vignette to pull focus, and reuse highlight/annotation shapes that draw over the text.",
+  "example": "https://www.youtube.com/watch?v=L-fVQ9cG2R8&t=36s",
+  "why": "Under 50k but from a top AE tutorial channel; adds the resolution trick that keeps 2x punch-ins on UI sharp, which the timing-focused Tenzen page lacks.",
+  "styles": [
+   "color-punch"
+  ]
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=XN6FcnIU07Y",
+  "kind": "video",
+  "title": "The Best Click Visual Effects Used in SaaS Videos",
+  "author": "MahdiEdits",
+  "views": 112730,
+  "likes": 3833,
+  "published": "2026-09-02",
+  "duration_sec": 483,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "shapes",
+    "transitions"
+   ],
+   "scenarios": [
+    "ui-promo"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": []
+  },
+  "trick": "Three click effects centred exactly on the click point with the speed-graph peak on the click frame: a stroke ripple; a dot-grid burst (30 px dot comp tiled with CC RepeTile, matted by an expanding ellipse with Turbulent Displace, subtle glow); and a circle that grows into a full-screen transition to the next UI screen, broken up with Turbulent Displace and CC Ball Action.",
+  "example": "https://www.youtube.com/watch?v=XN6FcnIU07Y&t=22s",
+  "why": "Current (2026, 113k) cursor-click craft for Color Punch's cursor-driven UI; the library had no click-ripple design.",
+  "styles": [
+   "color-punch"
+  ]
+ },
+ {
+  "url": "https://www.producthunt.com/launch/preparing-for-launch",
+  "kind": "page",
+  "title": "Preparing for launch",
+  "author": "Product Hunt",
+  "type": "doc",
+  "approx_chars": 12270,
+  "text_file": "/home/ran/yt-rag/eval/after-effects/bulk/texts/producthunt-preparing-for-launch.md",
+  "tags": {
+   "topics": [
+    "platform"
+   ],
+   "scenarios": [
+    "ui-promo"
+   ],
+   "level": "basic",
+   "impact": "low",
+   "tools": []
+  },
+  "trick": "Official launch rules: video optional (about 53% of Product of the Day winners since 2021 had one), YouTube full URL only, not private; gallery 1270x760 with at least 2 images; 240x240 thumbnail under 3 MB; GIFs animate only on hover and strobing, quick cuts or unreadable text may be edited by the PH team; tagline max 60 characters.",
+  "example": "https://www.producthunt.com/launch/preparing-for-launch",
+  "why": "Platform constraints every launch cut and its thumbnail must meet; platform rules, so promo-craft.",
+  "styles": [
+   "tech-black",
+   "color-punch"
+  ],
+  "collection": "promo-craft"
+ },
+ {
+  "url": "https://moonjar.ai/blog/product-hunt-launch-video",
+  "kind": "page",
+  "title": "Product Hunt launch video and gallery images: sizes and what to show",
+  "author": "Chris Raroque (Moonjar)",
+  "type": "article",
+  "approx_chars": 16684,
+  "tags": {
+   "topics": [
+    "platform",
+    "design"
+   ],
+   "scenarios": [
+    "ui-promo"
+   ],
+   "level": "basic",
+   "impact": "medium",
+   "tools": []
+  },
+  "trick": "Measured 51 recent launch pages: the video is always the first gallery tile and its YouTube thumbnail is effectively image #1; 32 launch videos ran 21 s to 7:24, median 74 s; gallery exported at 2540x1520 JPEG under 3 MB, headline kept out of the edges, full youtube.com/watch link.",
+  "example": "https://moonjar.ai/blog/product-hunt-launch-video",
+  "why": "Real-world length and thumbnail data for planning a Product Hunt cut; platform practice, so promo-craft.",
+  "styles": [
+   "tech-black",
+   "color-punch"
+  ],
+  "collection": "promo-craft"
+ }
+]
