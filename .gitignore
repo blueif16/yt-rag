@@ -14,5 +14,5 @@ build/
 eval/**/chunks*.jsonl
 eval/**/*_results*.json
 eval/**/*.log
-eval/**/bulk/texts/
-eval/**/bulk/ingest_*.json
+eval/**/texts/
+eval/**/ingest_*.json
