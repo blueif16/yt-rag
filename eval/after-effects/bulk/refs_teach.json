@@ -1,0 +1,1177 @@
+[
+ {
+  "url": "https://www.youtube.com/watch?v=PiecalXI1tw",
+  "kind": "video",
+  "title": "New AE Depth of Field in Advanced 3D — Real Cinematic Focus Pulls in After Effects! 🎥",
+  "author": "WINBUSH",
+  "views": 8879,
+  "likes": 290,
+  "published": "2026-02-27",
+  "duration_sec": 427,
+  "captions": "auto",
+  "refs": [
+   "linear-agent-tilted-doc",
+   "gemini3-ui-card-path"
+  ],
+  "tags": {
+   "topics": [
+    "camera-3d"
+   ],
+   "scenarios": [
+    "ui-promo",
+    "hero-fx"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": []
+  },
+  "trick": "Advanced 3D's in-engine depth of field: switch the comp to Advanced 3D, unlock Near and Far blur so the foreground blurs harder than the background, and use Camera > Link Focus Distance to Layer so the focus plane rides a chosen layer for rack-focus pulls through a layered scene.",
+  "example": "https://www.youtube.com/watch?v=PiecalXI1tw&t=0s",
+  "why": "The native DOF that turns a tilted UI stack into real depth (Linear's narrow focus band, Gemini's defocused foreground keywords); shows the controls Adobe's doc only lists. Niche new feature, 3.3% like ratio."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=GztIZnOVdt0",
+  "kind": "video",
+  "title": "#C4DQuickTip 112: Control Keyframe Animation Using Fields in Cinema 4D",
+  "author": "Maxon Training Team (Noseman)",
+  "views": 10488,
+  "likes": 588,
+  "published": "2023-11-16",
+  "duration_sec": 178,
+  "captions": "auto",
+  "refs": [
+   "copilot-recall-timeline"
+  ],
+  "tags": {
+   "topics": [
+    "expressions"
+   ],
+   "scenarios": [
+    "ui-promo",
+    "hero-fx"
+   ],
+   "level": "advanced",
+   "impact": "high",
+   "tools": [
+    "cinema-4d"
+   ]
+  },
+  "trick": "Keyframe one card once, clone it with a linear Cloner, and drive each clone's Time Offset with a Plain effector masked by a Linear Field; moving the field scrubs the keyed animation across the clones, which produces a travelling ripple through a fanned card deck.",
+  "example": "https://www.youtube.com/watch?v=GztIZnOVdt0&t=71s",
+  "why": "The exact mechanism behind Recall's procedural accordion, from Maxon's own trainer in 3 minutes (5.6% like ratio); the same falloff logic ports to an AE expression where each card's rotation and spacing follow its distance to a knob null."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=T18KvNxN7Yw",
+  "kind": "video",
+  "title": "Stop Lighting Glass Wrong in Redshift",
+  "author": "MographPlus",
+  "views": 2198,
+  "likes": 130,
+  "published": "2026-01-27",
+  "duration_sec": 234,
+  "captions": "auto",
+  "refs": [
+   "galaxy-frosted-cube",
+   "copilot-recall-timeline",
+   "liquid-glass-icon-layers"
+  ],
+  "tags": {
+   "topics": [
+    "light-glow",
+    "design"
+   ],
+   "scenarios": [
+    "hero-fx",
+    "ui-promo"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": [
+    "cinema-4d",
+    "redshift"
+   ]
+  },
+  "trick": "Bright-field glass lighting: hide a single narrow-spread area light and aim it at a white backdrop instead of the object, so light passes through the glass; then narrow the backdrop for negative fill that draws crisp dark outlines; shoot on a 120 mm telephoto to flatten perspective.",
+  "example": "https://www.youtube.com/watch?v=T18KvNxN7Yw&t=0s",
+  "why": "High-key glass that reads as volume rather than a flat reflection: the pastel studio look of the Galaxy cube, Recall's frosted track and Apple's white-studio glass icons. Light-the-background transfers to AE environment lights and backplates. Low views, but a professional training house teaching a canonical product-photography trick."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=2UHR6BbjYoQ",
+  "kind": "video",
+  "title": "How to Light Glass on Black Backgrounds in Redshift for Cinema 4d",
+  "author": "MographPlus",
+  "views": 2196,
+  "likes": 132,
+  "published": "2026-02-03",
+  "duration_sec": 372,
+  "captions": "auto",
+  "refs": [
+   "framer-glass-glyph-lockup",
+   "appletv-glass-logo",
+   "copilot-glyph-flythrough"
+  ],
+  "tags": {
+   "topics": [
+    "light-glow",
+    "design"
+   ],
+   "scenarios": [
+    "hero-fx",
+    "logo-ident"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": [
+    "cinema-4d",
+    "redshift"
+   ]
+  },
+  "trick": "Dark-field glass lighting: a light-trap backdrop (base, specular and transmission at zero), a black flag that blocks the direct light so only light wrapping round the edges reaches the lens, tall strip lights whose size relative to the backdrop sets rim thickness, and a circular ramp on the light graph as a soft front softbox.",
+  "example": "https://www.youtube.com/watch?v=2UHR6BbjYoQ&t=76s",
+  "why": "Symmetric rim highlights on dark glass define the Framer glyphs, the Apple TV ident and Copilot's glossy glyphs; fills the soft-box rim lighting gap in the library."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=XIO_Dv6_Ujk",
+  "kind": "video",
+  "title": "3D UI Card Animation in After Effects (Glassmorphism Style)",
+  "author": "Emmanuel Motions",
+  "views": 7556,
+  "likes": 239,
+  "published": "2026-02-22",
+  "duration_sec": 604,
+  "captions": "auto",
+  "refs": [
+   "copilot-recall-timeline",
+   "galaxy-frosted-cube"
+  ],
+  "tags": {
+   "topics": [
+    "camera-3d",
+    "compositing"
+   ],
+   "scenarios": [
+    "ui-promo"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": []
+  },
+  "trick": "Frosted-glass UI card in stock AE: a texture-driven Compound Blur (max blur about 180) frosts what sits behind it, then an Advanced 3D extruded card (bevel 10, extrusion 20, convex, shininess 80) lit by an environment light at 200, with CC Light Sweep on the edges.",
+  "example": "https://www.youtube.com/watch?v=XIO_Dv6_Ujk&t=48s",
+  "why": "A 2026 AE-only recipe with exact values for frosted glass over content: the Galaxy cube's blur-through-volume cue and Recall's frosted track."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=xU0O0UmlJ9Y",
+  "kind": "video",
+  "title": "Blender 3D - Apple's Liquid Glass Effect",
+  "author": "KennyPhases",
+  "views": 8896,
+  "likes": 375,
+  "published": "2025-06-19",
+  "duration_sec": 582,
+  "captions": "auto",
+  "refs": [
+   "liquid-glass-icon-layers"
+  ],
+  "tags": {
+   "topics": [
+    "light-glow",
+    "design"
+   ],
+   "scenarios": [
+    "ui-promo",
+    "logo-ident"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": [
+    "blender"
+   ]
+  },
+  "trick": "Apple-style glass icon built as real geometry in Blender: thick bevelled glass shapes, reflector cards to shape the highlights, a custom glass shader, and a white-studio camera and composition for the icon render.",
+  "example": "https://www.youtube.com/watch?v=xU0O0UmlJ9Y&t=118s",
+  "why": "Real transmission through stacked glass layers (overlap mixing, coloured shadows on the floor) is what AE fakes worst; this is the 3D route for the Liquid Glass petal shot."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=ermyihQ2nBM",
+  "kind": "video",
+  "title": "How To Create 3D Glass In After Effects",
+  "author": "Motion By Scott",
+  "views": 48033,
+  "likes": 2164,
+  "published": "2026-02-23",
+  "duration_sec": 914,
+  "captions": "auto",
+  "refs": [
+   "appletv-glass-logo",
+   "framer-glass-glyph-lockup",
+   "galaxy-frosted-cube",
+   "io-gemini-material-morph"
+  ],
+  "tags": {
+   "topics": [
+    "camera-3d",
+    "compositing",
+    "color-finish"
+   ],
+   "scenarios": [
+    "logo-ident",
+    "hero-fx"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": []
+  },
+  "trick": "Native AE 3D glass with RGB dispersion: an Advanced 3D extrusion lit by a Poly Haven HDRI, then three Colorama layers cross-fed into Displacement Maps (one per colour channel) and cleaned with Simple Choker for the prism fringe, finished with noise texture and chromatic aberration.",
+  "example": "https://www.youtube.com/watch?v=ermyihQ2nBM&t=204s",
+  "why": "Fills the library's RGB-dispersion gap with a stock-AE method (48k views, 4.5% like ratio, 2026). Dispersion is the signature of the Apple TV glass logo and Framer's glyphs, and gives the crystal state of the I/O star."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=s0yq_9meV_4",
+  "kind": "video",
+  "title": "MKBHD Breaks Down His Biggest Video Ever",
+  "author": "Jon Youshaei",
+  "views": 170457,
+  "likes": 2746,
+  "published": "2026-05-09",
+  "duration_sec": 1026,
+  "captions": "manual",
+  "refs": [
+   "mkbhd-m5-scale-pullback"
+  ],
+  "tags": {
+   "topics": [
+    "design",
+    "workflow"
+   ],
+   "scenarios": [
+    "explainer",
+    "character",
+    "hero-fx"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": [
+    "blender"
+   ]
+  },
+  "trick": "How the M5 scale journey was produced: Marques performed in a marker headband with cameras at 45 degrees for 3D capture, the real studio was scanned so the shot can pull back out of the actual room, scale steps were scripted against familiar objects (a keyboard key, a banana), and the hero pull-back keeps speeding up rather than moving at a constant rate.",
+  "example": "https://www.youtube.com/watch?v=s0yq_9meV_4&t=465s",
+  "why": "The maker's own spoken breakdown of reference B6 (manual captions, 170k views): what was captured, scanned and hand-built, and why the camera accelerates."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=rn9dkV4sVYQ",
+  "kind": "video",
+  "title": "I shrink 10x every 21s until I'm an atom - The Micro Universe",
+  "author": "Epic Spaceman",
+  "views": 4679712,
+  "likes": 170810,
+  "published": "2024-06-17",
+  "duration_sec": 885,
+  "captions": "manual",
+  "refs": [
+   "mkbhd-m5-scale-pullback"
+  ],
+  "tags": {
+   "topics": [
+    "camera-3d",
+    "easing",
+    "design"
+   ],
+   "scenarios": [
+    "explainer",
+    "hero-fx"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": []
+  },
+  "trick": "Exponential versus linear camera speed in a scale journey: shrinking 10x every fixed interval gives each power of ten the same screen time, so every scale step stays readable; replaying the same lift-off at a constant drone-like speed shows how slow true linear scale feels.",
+  "example": "https://www.youtube.com/watch?v=rn9dkV4sVYQ&t=403s",
+  "why": "The artist behind the M5 shot demonstrates the speed law that makes the pull-back work, with a side-by-side replay (4.7M views). It maps directly to AE's Exponential Scale or a log-spaced camera move."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=lGuqzVbzS4I",
+  "kind": "video",
+  "title": "Super Earth Zoom | After Effects CC Tutorial",
+  "author": "Phenomenal Creations",
+  "views": 162249,
+  "likes": 2040,
+  "published": "2016-11-28",
+  "duration_sec": 945,
+  "captions": "auto",
+  "refs": [
+   "mkbhd-m5-scale-pullback"
+  ],
+  "tags": {
+   "topics": [
+    "easing",
+    "transitions",
+    "compositing"
+   ],
+   "scenarios": [
+    "hero-fx",
+    "explainer"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "trick": "Multi-scale zoom from stacked images: align each image to the next at 50% opacity, chain-parent them, scale only the last parent, apply Keyframe Assistant > Exponential Scale so the perceived zoom speed stays even, then feather-mask the seams and add camera drift, atmosphere and shake.",
+  "example": "https://www.youtube.com/watch?v=lGuqzVbzS4I&t=164s",
+  "why": "The stock-AE form of a scale journey (162k views). Old (2016), but Exponential Scale and parent-chaining are unchanged and are what an AE rebuild of the M5 pull-back needs."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=RK4LSQy8N2A",
+  "kind": "video",
+  "title": "Create Easy 3D Glass with Blender & Photoshop!",
+  "author": "Ethan J Design",
+  "views": 43252,
+  "likes": 2188,
+  "published": "2024-07-31",
+  "duration_sec": 659,
+  "captions": "auto",
+  "refs": [
+   "appletv-glass-logo",
+   "framer-glass-glyph-lockup"
+  ],
+  "tags": {
+   "topics": [
+    "light-glow",
+    "design"
+   ],
+   "scenarios": [
+    "logo-ident"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": [
+    "blender",
+    "photoshop"
+   ]
+  },
+  "trick": "True RGB dispersion on an SVG logo: extrude the vector in Blender and render the glass with three slightly different IORs (one per red, green and blue) so the channels separate into a real prism fringe, then finish in Photoshop.",
+  "example": "https://www.youtube.com/watch?v=RK4LSQy8N2A&t=82s",
+  "why": "Physically based dispersion to judge the AE fakes against; shows how the Apple TV logo's colour fringes should behave (43k views, 5.1% like ratio)."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=y5kGht3azTQ",
+  "kind": "video",
+  "title": "Make ANYTHING tiny! // After Effects Tilt-Shift Tutorial",
+  "author": "Jake In Motion",
+  "views": 384143,
+  "likes": 18216,
+  "published": "2023-02-16",
+  "duration_sec": 1601,
+  "captions": "auto",
+  "refs": [
+   "meta-display-lens-pullout"
+  ],
+  "tags": {
+   "topics": [
+    "camera-3d",
+    "compositing",
+    "color-finish"
+   ],
+   "scenarios": [
+    "hero-fx"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": []
+  },
+  "trick": "Optical lens finishing in stock AE: depth-map-driven Camera Lens Blur with cinematic bokeh, an anamorphic crop, vignette in the Lumetri grade, and chromatic aberration that grows toward the frame edge (CC Lens per colour channel).",
+  "example": "https://www.youtube.com/watch?v=y5kGht3azTQ&t=1022s",
+  "why": "The lens cues (edge CA, bokeh, vignette) that sell Meta's through-the-lens point of view, from a top AE educator (384k views, 4.7% like ratio)."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=0eHpsd0HOgs",
+  "kind": "video",
+  "title": "animating an exploded view in C4D and mograph",
+  "author": "gilles dillenseger",
+  "views": 80237,
+  "likes": 3380,
+  "published": "2023-03-10",
+  "duration_sec": 896,
+  "captions": "auto",
+  "refs": [
+   "fold7-exploded-view"
+  ],
+  "tags": {
+   "topics": [
+    "expressions",
+    "design"
+   ],
+   "scenarios": [
+    "ui-promo",
+    "hero-fx",
+    "explainer"
+   ],
+   "level": "advanced",
+   "impact": "high",
+   "tools": [
+    "cinema-4d"
+   ]
+  },
+  "trick": "Choreographed exploded view in C4D MoGraph: fracture the product, set assembled and exploded states, drive the transition with Inheritance and Delay effectors, and group the parts so they leave in stages (screws first, then inner parts, then the shell) along pivots aligned to the polygon normals.",
+  "example": "https://www.youtube.com/watch?v=0eHpsd0HOgs&t=135s",
+  "why": "The staged exploded-view choreography the library lacked (80k views, 4.2% like ratio); this is the Fold7 line-up move."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=JwMx84b9-Lg",
+  "kind": "video",
+  "title": "Cinema 4D Tutorial - Trigger Animation Using Mograph Effectors",
+  "author": "EJ Hassenfratz (eyedesyn)",
+  "views": 222286,
+  "likes": 3269,
+  "published": "2017-01-31",
+  "duration_sec": 1835,
+  "captions": "auto",
+  "refs": [
+   "copilot-recall-timeline"
+  ],
+  "tags": {
+   "topics": [
+    "expressions"
+   ],
+   "scenarios": [
+    "ui-promo",
+    "hero-fx"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": [
+    "cinema-4d"
+   ]
+  },
+  "trick": "Accordion and travelling-trigger animation: a Step effector staggers clone rotation into an accordion, and a Plain effector whose falloff sweeps across the cloner triggers the keyed animation clone by clone; a Random effector adds organic offsets, and a 2D matte is exported for AE.",
+  "example": "https://www.youtube.com/watch?v=JwMx84b9-Lg&t=522s",
+  "why": "EJ Hassenfratz's canonical explanation (222k views) of the effector-trigger pattern behind Recall's rippling screenshot fan. Older C4D, but MoGraph effectors work the same today."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=Ax9GtPLvVIU",
+  "kind": "video",
+  "title": "Creating Bubble Type or Balloon Text Inflation Simulations in Cinema 4D",
+  "author": "EJ Hassenfratz (eyedesyn)",
+  "views": 176647,
+  "likes": 4423,
+  "published": "2023-04-05",
+  "duration_sec": 1689,
+  "captions": "auto",
+  "refs": [
+   "io-gemini-material-morph"
+  ],
+  "tags": {
+   "topics": [
+    "text",
+    "design"
+   ],
+   "scenarios": [
+    "hero-fx",
+    "logo-ident"
+   ],
+   "level": "advanced",
+   "impact": "medium",
+   "tools": [
+    "cinema-4d"
+   ]
+  },
+  "trick": "Inflated balloon type: Volume Builder plus Mesher for rounded text, the C4D 2023.2 Balloon cloth sim and its surface settings, Mix Animation and Vibrate tags, art-directed wrinkles, and inflate/deflate driven by vertex maps.",
+  "example": "https://www.youtube.com/watch?v=Ax9GtPLvVIU&t=432s",
+  "why": "The balloon state of the I/O star's material morph; believable inflation wrinkles need a sim, taught by a top C4D educator (177k views)."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=wfDkDJ0FJVA",
+  "kind": "video",
+  "title": "Animating an Exploded Axonometric Diagram with After Effects",
+  "author": "Upstairs",
+  "views": 157835,
+  "likes": 6843,
+  "published": "2021-01-27",
+  "duration_sec": 1137,
+  "captions": "manual",
+  "refs": [
+   "fold7-exploded-view"
+  ],
+  "tags": {
+   "topics": [
+    "easing",
+    "design"
+   ],
+   "scenarios": [
+    "explainer"
+   ],
+   "level": "basic",
+   "impact": "medium",
+   "tools": []
+  },
+  "trick": "Exploded-diagram choreography in AE: Photoshop-layered parts moved along one axis with staggered position keys (the top part detaches first, inner parts follow and return before it lands), eased for weight, with still holds either side of a roughly 4 s move.",
+  "example": "https://www.youtube.com/watch?v=wfDkDJ0FJVA&t=456s",
+  "why": "Clear lesson in the staging order of an exploded view, the part the Fold7 shot depends on, in native AE (158k views, 4.3% like ratio, manual captions)."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=jHsJb21A-u0",
+  "kind": "video",
+  "title": "10 Tips for Making HUD Displays in After Effects | PremiumBeat.com",
+  "author": "PremiumBeat (Charles Yeager)",
+  "views": 88994,
+  "likes": 3434,
+  "published": "2020-09-17",
+  "duration_sec": 1164,
+  "captions": "auto",
+  "refs": [
+   "meta-display-lens-pullout"
+  ],
+  "tags": {
+   "topics": [
+    "compositing",
+    "color-finish"
+   ],
+   "scenarios": [
+    "ui-promo",
+    "hero-fx"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": []
+  },
+  "trick": "Sci-fi HUD compositing: chromatic aberration, flicker presets, glass displacement from Transform on a matted adjustment layer, Camera Lens Blur bokeh for depth, ghost reflections offset in Z, and reverse Optics Compensation for a wide first-person lens.",
+  "example": "https://www.youtube.com/watch?v=jHsJb21A-u0&t=511s",
+  "why": "Spoken walkthrough of the lens-in-the-eye look Meta's display shot needs (89k views); the written version with settings is a separate entry."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=f7bmVfevF8w",
+  "kind": "video",
+  "title": "84 - Futuristic HUD",
+  "author": "Video Copilot (Andrew Kramer)",
+  "views": 17480,
+  "likes": 175,
+  "published": "2016-11-15",
+  "duration_sec": 2100,
+  "captions": "auto",
+  "refs": [
+   "meta-display-lens-pullout"
+  ],
+  "tags": {
+   "topics": [
+    "camera-3d",
+    "compositing",
+    "expressions"
+   ],
+   "scenarios": [
+    "ui-promo",
+    "hero-fx"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "trick": "A 3D interface seen from inside a helmet: HUD elements built as 3D layers and precomps around the camera, self-animating parts driven by wiggle and parented-rotation expressions, a perspective grid floor, and artificial lighting so the UI reads as projected in front of the face.",
+  "example": "https://www.youtube.com/watch?v=f7bmVfevF8w&t=0s",
+  "why": "Andrew Kramer's canonical inside-the-helmet HUD build. Old (2009, re-uploaded 2016), but staging 3D layers around a point-of-view camera is still how Meta's in-lens view is laid out."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=NWtBPT4CqmQ",
+  "kind": "video",
+  "title": "3D Glass Logo Animation in Cinema 4D + After Effects (No Plugins!) | Greyscalegorilla",
+  "author": "Greyscalegorilla",
+  "views": 55690,
+  "likes": 1315,
+  "published": "2018-08-03",
+  "duration_sec": 2459,
+  "captions": "auto",
+  "refs": [
+   "appletv-glass-logo",
+   "framer-glass-glyph-lockup",
+   "copilot-glyph-flythrough"
+  ],
+  "tags": {
+   "topics": [
+    "light-glow",
+    "camera-3d",
+    "design"
+   ],
+   "scenarios": [
+    "logo-ident",
+    "hero-fx"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": [
+    "cinema-4d"
+   ]
+  },
+  "trick": "Refractive glass logo lit from behind by hidden luminance spheres and particle-driven coloured emitters, so moving colour travels through clear glyphs; an eased camera zoom, then glow and fade added in AE.",
+  "example": "https://www.youtube.com/watch?v=NWtBPT4CqmQ&t=224s",
+  "why": "Shows the core of the Apple TV look: coloured light sources seen through clear refracting glass, not coloured glass. A full C4D + AE pipeline (56k views)."
+ },
+ {
+  "url": "https://helpx.adobe.com/after-effects/desktop/drawing-painting-and-paths/null-controllers/create-nulls-for-positional-properties-and-paths.html",
+  "kind": "page",
+  "type": "doc",
+  "title": "Create Nulls for Positional Properties and Paths",
+  "author": "Adobe",
+  "approx_chars": 6957,
+  "refs": [
+   "gemini3-ui-card-path",
+   "linear-agent-tilted-doc"
+  ],
+  "tags": {
+   "topics": [
+    "expressions",
+    "camera-3d"
+   ],
+   "scenarios": [
+    "ui-promo"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "trick": "Create Nulls From Paths: nulls that control path points or follow them, so a drawn curve can rig a path, and a camera or layer can ride the curve; covers 3D use, effect points and puppet pins.",
+  "example": "https://helpx.adobe.com/after-effects/desktop/drawing-painting-and-paths/null-controllers/create-nulls-for-positional-properties-and-paths.html",
+  "why": "The tool Linear's motion designer names for her camera moves, and the cleanest way to send a camera along Gemini's curved connector line; Adobe's reference for the exact behaviour."
+ },
+ {
+  "url": "https://the-brandidentity.com/project/art-graft-evolves-gemini-from-technical-showcase-to-living-system",
+  "kind": "page",
+  "type": "article",
+  "title": "Art&Graft evolves Gemini from technical showcase to living system",
+  "author": "The Brand Identity",
+  "published": "2026-04-17",
+  "approx_chars": 5862,
+  "refs": [
+   "gemini3-ui-card-path"
+  ],
+  "tags": {
+   "topics": [
+    "particles",
+    "design"
+   ],
+   "scenarios": [
+    "hero-fx",
+    "ui-promo"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "trick": "Gemini 3's particle language as a shoal of fish: dot and pill particles with two behaviour states (quiet ambient drift, and an active state that forms deliberate shapes when the user engages); particles stretch while travelling and contract when they settle; densities tested from stage screens to mobile; four-colour gradient tuned so moving colours don't turn muddy.",
+  "example": "https://the-brandidentity.com/project/art-graft-evolves-gemini-from-technical-showcase-to-living-system",
+  "why": "The makers' own account of the particle behaviour in reference B3, the only source on the shoal-like motion; use it to brief a Particular or Form rebuild."
+ },
+ {
+  "url": "https://www.iamp.at/work/copilotpc-surface-pro",
+  "kind": "page",
+  "type": "article",
+  "title": "Meet the new Microsoft Surface Pro (Recall case study)",
+  "author": "Patrick Flaherty",
+  "published": "2024-06-16",
+  "approx_chars": 3346,
+  "refs": [
+   "copilot-recall-timeline"
+  ],
+  "tags": {
+   "topics": [
+    "design",
+    "workflow"
+   ],
+   "scenarios": [
+    "ui-promo"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "trick": "Recall's sequence was solved in 2D first (UI and pacing), pushed into 3D, rebuilt with art direction when early 3D passes lost readability, and only then converted into the full 3D story that became the base for all three Recall variants.",
+  "example": "https://www.iamp.at/work/copilotpc-surface-pro",
+  "why": "The UI production director's own process for reference B2's UI-to-3D hero shot: lock readability and timing flat before any 3D camera."
+ },
+ {
+  "url": "https://www.premiumbeat.com/blog/video-tutorial-creating-a-3d-timeline-in-after-effects/",
+  "kind": "page",
+  "type": "tutorial",
+  "title": "Video Tutorial: Creating a 3D Timeline in After Effects",
+  "author": "Evan Abrams",
+  "published": "2013-08-14",
+  "approx_chars": 15990,
+  "refs": [
+   "copilot-recall-timeline"
+  ],
+  "tags": {
+   "topics": [
+    "expressions",
+    "camera-3d"
+   ],
+   "scenarios": [
+    "explainer",
+    "ui-promo"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "trick": "A timeline built from small precomp segments laid out by an index-based expression, date markers from shape layers, and a depth-of-field camera travelling along it; content is swapped by replacing each segment's source.",
+  "example": "https://www.premiumbeat.com/blog/video-tutorial-creating-a-3d-timeline-in-after-effects/",
+  "why": "AE-only take on Recall's timeline of cards: index-driven layout plus camera travel. Old (2013), but expressions and the camera are unchanged, and the page carries the full transcript."
+ },
+ {
+  "url": "https://www.linkedin.com/posts/benfryc_you-may-have-seen-some-of-these-glassy-glowy-activity-7488657096171982849-QZ0V",
+  "kind": "page",
+  "type": "article",
+  "title": "Creating Glassy UI Renders with Framer and Cinema4D",
+  "author": "Ben Fryc",
+  "published": "2026-07-30",
+  "approx_chars": 1399,
+  "refs": [
+   "framer-glass-glyph-lockup",
+   "copilot-recall-timeline"
+  ],
+  "tags": {
+   "topics": [
+    "light-glow",
+    "compositing"
+   ],
+   "scenarios": [
+    "ui-promo",
+    "hero-fx"
+   ],
+   "level": "advanced",
+   "impact": "high",
+   "tools": [
+    "cinema-4d",
+    "redshift",
+    "optical-glow",
+    "red-giant-universe"
+   ]
+  },
+  "trick": "Glassy, glowing UI: a 10k UI texture plus SVG containers and icons lined up on a plane in C4D, one shared glass material, area lights with Greyscalegorilla light maps; in AE the glass render twice (Optical Glow underneath, uni.Glow on top in Screen), the raw UI render above in Screen, and a circle with Fast Box Blur as a mask.",
+  "example": "https://www.linkedin.com/posts/benfryc_you-may-have-seen-some-of-these-glassy-glowy-activity-7488657096171982849-QZ0V",
+  "why": "The maker's own glow-stack recipe for the Framer glyph lockup (reference 6), listed in the README as a library gap."
+ },
+ {
+  "url": "https://www.vfxer.com/faster-flawless-glass-renders-in-cinema-4d-redshift/",
+  "kind": "page",
+  "type": "article",
+  "title": "Faster, Flawless Glass Renders In CINEMA 4D Redshift (breakdown of Maxon's Elly Wade session)",
+  "author": "vfxer (Simon)",
+  "published": "2025-04-24",
+  "approx_chars": 4258,
+  "refs": [
+   "galaxy-frosted-cube",
+   "copilot-recall-timeline"
+  ],
+  "tags": {
+   "topics": [
+    "light-glow",
+    "render-export"
+   ],
+   "scenarios": [
+    "hero-fx"
+   ],
+   "level": "advanced",
+   "impact": "medium",
+   "tools": [
+    "cinema-4d",
+    "redshift"
+   ]
+  },
+  "trick": "Redshift glass with OpenPBR: transmission Depth and Scatter Colour for thickness-based absorption (even clear glass gets 1-2 cm depth), correct IORs, lights set to Affected by Refraction: Always, a ramp-shaded procedural softbox and an incandescent cube backdrop, refraction trace depth 16+, and manual sampling to cut render time.",
+  "example": "https://www.vfxer.com/faster-flawless-glass-renders-in-cinema-4d-redshift/",
+  "why": "Exact settings from Maxon's own glass session; transmission depth and scatter are the internal-scatter cue the frosted Galaxy cube needs."
+ },
+ {
+  "url": "https://launchframe.io/guides/liquid-glass-effect-after-effects/",
+  "kind": "page",
+  "type": "tutorial",
+  "title": "How to make Apple's Liquid Glass effect in After Effects (no plugins)",
+  "author": "Spencer Tetik",
+  "published": "2026-10-02",
+  "approx_chars": 13370,
+  "refs": [
+   "liquid-glass-icon-layers",
+   "galaxy-frosted-cube"
+  ],
+  "tags": {
+   "topics": [
+    "compositing",
+    "mattes-masks"
+   ],
+   "scenarios": [
+    "ui-promo",
+    "hero-fx"
+   ],
+   "level": "advanced",
+   "impact": "high",
+   "tools": []
+  },
+  "trick": "Liquid Glass built like a lens: silhouette to blurred height map (precomp), height to slope (refraction) map, negative Displacement Map at the rim, a ~107% Transform magnify first, four Lighten/Darken layers for a red/blue channel split, a Channel Mixer rim light, then frost, tint and opacity; also one-shape glass text.",
+  "example": "https://launchframe.io/guides/liquid-glass-effect-after-effects/",
+  "why": "The most rigorous stock-AE glass refraction guide, with exact values: it bends the background like real glass, which a blur behind a pale box cannot."
+ },
+ {
+  "url": "https://www.toolsformotion.com/docs/liquid-glass",
+  "kind": "page",
+  "type": "doc",
+  "title": "Liquid Glass (plugin docs)",
+  "author": "ToolsForMotion",
+  "approx_chars": 8048,
+  "refs": [
+   "liquid-glass-icon-layers"
+  ],
+  "tags": {
+   "topics": [
+    "compositing"
+   ],
+   "scenarios": [
+    "ui-promo"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": [
+    "toolsformotion-liquid-glass"
+   ]
+  },
+  "trick": "Free one-effect Liquid Glass plugin for AE: parameter reference for refraction, glass body, specular highlights, chromatic aberration, edge and shadow, quality modes, and known issues (source-layer effects not showing through, frame-rate flicker, morph-driven refraction shifts).",
+  "example": "https://www.toolsformotion.com/docs/liquid-glass",
+  "why": "A fast route to the iOS 26 glass look on UI layers, with its gotchas documented; complements the no-plugin build."
+ },
+ {
+  "url": "https://help.maxon.net/r3d/cinema/en-us/Content/html/Caustics%2B-%2BAdvanced.html",
+  "kind": "page",
+  "type": "doc",
+  "title": "Caustics - Production (Redshift)",
+  "author": "Maxon",
+  "approx_chars": 25738,
+  "refs": [
+   "framer-glass-glyph-lockup",
+   "appletv-glass-logo"
+  ],
+  "tags": {
+   "topics": [
+    "light-glow",
+    "render-export"
+   ],
+   "scenarios": [
+    "hero-fx",
+    "logo-ident"
+   ],
+   "level": "advanced",
+   "impact": "medium",
+   "tools": [
+    "cinema-4d",
+    "redshift"
+   ]
+  },
+  "trick": "Rendering real caustics in Redshift: photon versus brute-force caustics, photon count and blur radius, a light that casts only caustics, clamping, conserving reflection energy, and trace depths.",
+  "example": "https://help.maxon.net/r3d/cinema/en-us/Content/html/Caustics%2B-%2BAdvanced.html",
+  "why": "The light streaks thrown through Framer's glass bars and the Apple TV glass are caustics, which only a renderer makes; this is the authoritative settings reference."
+ },
+ {
+  "url": "https://blog.adobe.com/en/publish/2025/02/11/motion-design-made-faster-the-impact-of-native-3d-in-after-effects",
+  "kind": "page",
+  "type": "article",
+  "title": "Motion design made faster: The impact of native 3D in After Effects",
+  "author": "Paul Gresty (Adobe)",
+  "published": "2025-02-11",
+  "approx_chars": 12933,
+  "refs": [
+   "copilot-glyph-flythrough",
+   "fold7-exploded-view"
+  ],
+  "tags": {
+   "topics": [
+    "camera-3d",
+    "workflow"
+   ],
+   "scenarios": [
+    "hero-fx",
+    "ui-promo"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": [
+    "cinema-4d"
+   ]
+  },
+  "trick": "Hybrid C4D-to-AE pipeline: model and texture in Cinema 4D (Substance materials), export textured, animated GLB straight into AE's Advanced 3D, then add depth of field and atmospheric perspective in AE from an extracted depth map.",
+  "example": "https://blog.adobe.com/en/publish/2025/02/11/motion-design-made-faster-the-impact-of-native-3d-in-after-effects",
+  "why": "The production route for big modelled forms (Copilot's glyphs, a phone's exploded parts): heavy modelling in 3D, camera and finishing in AE."
+ },
+ {
+  "url": "https://blenderartists.org/t/worlds-smallest-devices-blender-project/1389553",
+  "kind": "page",
+  "type": "article",
+  "title": "World's Smallest Devices - Blender Project (Branch Education breakdown)",
+  "author": "Branch Education",
+  "published": "2022-07-05",
+  "approx_chars": 3071,
+  "refs": [
+   "mkbhd-m5-scale-pullback"
+  ],
+  "tags": {
+   "topics": [
+    "camera-3d",
+    "workflow"
+   ],
+   "scenarios": [
+    "explainer"
+   ],
+   "level": "advanced",
+   "impact": "medium",
+   "tools": [
+    "blender"
+   ]
+  },
+  "trick": "A scale journey past Blender's micrometre limit: rescale the whole scene at chosen frames mid-shot (visible in the grid floor), a procedural 1:1 ruler built in Geometry Nodes for size callouts, a PCB generator for chip-city surfaces, and disabling off-camera collections to fit GPU memory.",
+  "example": "https://blenderartists.org/t/worlds-smallest-devices-blender-project/1389553",
+  "why": "Practical fixes for the hardest part of an M5-style pull-back across many orders of magnitude."
+ },
+ {
+  "url": "https://www.cartoonbrew.com/educational/epic-spaceman-toby-lockerbie-youtube-science-channel-265274.html",
+  "kind": "page",
+  "type": "article",
+  "title": "Epic Spaceman Uses Animation, VFX To Explain Science. Without AI",
+  "author": "Jamie Lang",
+  "published": "2026-08-06",
+  "approx_chars": 15916,
+  "refs": [
+   "mkbhd-m5-scale-pullback"
+  ],
+  "tags": {
+   "topics": [
+    "design"
+   ],
+   "scenarios": [
+    "explainer",
+    "character"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "trick": "Epic Spaceman's scale method: a motion-captured human protagonist as the unit of measurement, everyday objects (cereal, marbles, pools) as bridges between scales, built in Blender with purchased assets, mocap and compositing.",
+  "example": "https://www.cartoonbrew.com/educational/epic-spaceman-toby-lockerbie-youtube-science-channel-265274.html",
+  "why": "How the artist behind the M5 shot keeps enormous scale changes legible: the human-for-scale rule our scale shots should follow."
+ },
+ {
+  "url": "https://appleinsider.com/articles/25/11/06/forget-liquid-glass-apple-tvs-new-logo-was-shot-with-actual-glass",
+  "kind": "page",
+  "type": "article",
+  "title": "Forget Liquid Glass, Apple TV's new logo was shot with actual glass",
+  "author": "William Gallagher",
+  "published": "2025-11-06",
+  "approx_chars": 1829,
+  "refs": [
+   "appletv-glass-logo"
+  ],
+  "tags": {
+   "topics": [
+    "design",
+    "light-glow"
+   ],
+   "scenarios": [
+    "logo-ident"
+   ],
+   "level": "basic",
+   "impact": "low",
+   "tools": []
+  },
+  "trick": "The Apple TV ident is practical: large cut-glass letters stay still while the camera moves, and a crew member sweeps the lights across the glass by hand.",
+  "example": "https://appleinsider.com/articles/25/11/06/forget-liquid-glass-apple-tvs-new-logo-was-shot-with-actual-glass",
+  "why": "Tells a rebuild what to animate: the camera and the lights, not the logo."
+ },
+ {
+  "url": "https://petapixel.com/2025/11/19/apple-tvs-new-logo-animation-was-handmade-by-human-creatives/",
+  "kind": "page",
+  "type": "article",
+  "title": "Apple TV's New Logo Animation Was Handmade by Human Creatives",
+  "author": "Matt Growcoot",
+  "published": "2025-11-19",
+  "approx_chars": 2392,
+  "refs": [
+   "appletv-glass-logo"
+  ],
+  "tags": {
+   "topics": [
+    "design",
+    "light-glow"
+   ],
+   "scenarios": [
+    "logo-ident"
+   ],
+   "level": "basic",
+   "impact": "low",
+   "tools": []
+  },
+  "trick": "A logo sculpted from solid glass, shot in camera over weeks in a London studio with macro lenses and colour gels; the colours revisit Apple's 1977 six-stripe logo.",
+  "example": "https://petapixel.com/2025/11/19/apple-tvs-new-logo-animation-was-handmade-by-human-creatives/",
+  "why": "Confirms where the colour comes from (gelled light through clear glass, macro optics), which sets the look for an AE or 3D rebuild."
+ },
+ {
+  "url": "https://photography.tutsplus.com/how-to-animate-text-in-after-effects-kinetic-typography--ytc-97c",
+  "kind": "page",
+  "type": "tutorial",
+  "title": "How to animate text in After Effects: kinetic typography",
+  "author": "Tom Graham",
+  "published": "2025-03-26",
+  "approx_chars": 13188,
+  "refs": [
+   "comet-sphere-word-drum"
+  ],
+  "tags": {
+   "topics": [
+    "text",
+    "expressions"
+   ],
+   "scenarios": [
+    "kinetic-type"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "trick": "Fake depth of field on rotating words: text on a circular path, scaled by distance, with Gaussian blur by depth (front about 20%, centre sharp, back about 10%); plus a slider-and-expression rig that animates font weight letter by letter.",
+  "example": "https://photography.tutsplus.com/how-to-animate-text-in-after-effects-kinetic-typography--ytc-97c",
+  "why": "Both of Comet's type cues, the soft off-axis words on the drum and the breathing variable weights, with exact values."
+ },
+ {
+  "url": "https://themanifest.fyi/articles/launching-comet",
+  "kind": "page",
+  "type": "article",
+  "title": "Launching Comet with Perplexity",
+  "author": "The Manifest (interview with Aaron Marks, Studio Freight)",
+  "approx_chars": 9435,
+  "refs": [
+   "comet-sphere-word-drum"
+  ],
+  "tags": {
+   "topics": [
+    "design",
+    "workflow"
+   ],
+   "scenarios": [
+    "ui-promo",
+    "kinetic-type"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "trick": "Studio Freight's Comet process: the browser as a porthole onto space, PP Editorial New with variable weights that expand and contract, planets as vessels for features, and Midjourney imagery finished in Photoshop and AE, with a reverse-loop trick so stitched space-to-Earth footage reads as continuous.",
+  "example": "https://themanifest.fyi/articles/launching-comet",
+  "why": "The makers' account of how reference B2's painterly planets and type were made (AI stills animated in AE, not a 3D shader), which sets the rebuild route."
+ },
+ {
+  "url": "https://www.premiumbeat.com/blog/10-tips-for-creating-sci-fi-huds-in-after-effects/",
+  "kind": "page",
+  "type": "tutorial",
+  "title": "10 Practical Tips for Creating Sci-Fi HUDs in After Effects",
+  "author": "Charles Yeager",
+  "published": "2020-09-17",
+  "approx_chars": 7119,
+  "refs": [
+   "meta-display-lens-pullout"
+  ],
+  "tags": {
+   "topics": [
+    "compositing",
+    "color-finish"
+   ],
+   "scenarios": [
+    "ui-promo",
+    "hero-fx"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": []
+  },
+  "trick": "Written HUD tips with settings: CC Ball Action and CC Block Load builds, blending modes, chromatic aberration, flicker presets, glass displacement, Camera Lens Blur, ghost and mirror reflections, and reverse Optics Compensation at about 70 degrees FOV for a first-person lens.",
+  "example": "https://www.premiumbeat.com/blog/10-tips-for-creating-sci-fi-huds-in-after-effects/",
+  "why": "Exact settings for the in-lens UI look of the Meta display shot; free project file."
+ },
+ {
+  "url": "https://community.adobe.com/announcements-532/new-in-beta-displacement-of-substance-3d-materials-on-parametric-meshes-1551215",
+  "kind": "page",
+  "type": "doc",
+  "title": "New in Beta: Displacement of Substance 3D Materials on Parametric Meshes",
+  "author": "Adobe (Victoria Nece)",
+  "published": "2026-02-23",
+  "approx_chars": 2422,
+  "refs": [
+   "io-gemini-material-morph"
+  ],
+  "tags": {
+   "topics": [
+    "camera-3d"
+   ],
+   "scenarios": [
+    "hero-fx"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "trick": "Substance height-map displacement on AE parametric meshes: animatable Displacement Intensity and Subdivision Count, emissive Substance textures (they glow but cast no light), and depth-map effects (3D Channel Extract, Fog 3D, DOF) on the displaced precomp.",
+  "example": "https://community.adobe.com/announcements-532/new-in-beta-displacement-of-substance-3d-materials-on-parametric-meshes-1551215",
+  "why": "Lets AE build ribbed jelly or cracked surfaces and animate them pulsing or bulging, as in the I/O star's material states."
+ },
+ {
+  "url": "https://community.adobe.com/announcements-532/3d-materials-on-text-shapes-available-now-in-after-effects-beta-1640989",
+  "kind": "page",
+  "type": "doc",
+  "title": "3D Materials on Text & Shapes - Available now in After Effects Beta",
+  "author": "Adobe (Brian Maffitt)",
+  "published": "2026-09-08",
+  "approx_chars": 2609,
+  "refs": [
+   "io-gemini-material-morph",
+   "comet-sphere-word-drum"
+  ],
+  "tags": {
+   "topics": [
+    "camera-3d",
+    "text"
+   ],
+   "scenarios": [
+    "logo-ident",
+    "hero-fx"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "trick": "Substance or layer (animated precomp) materials assigned per face (front, bevel, side, back) on Advanced 3D text and shape layers, with placement, tiling and offset controls; works with Layers as Material Sources.",
+  "example": "https://community.adobe.com/announcements-532/3d-materials-on-text-shapes-available-now-in-after-effects-beta-1640989",
+  "why": "The AE-native way to swap materials on an extruded glyph (the I/O star's crystal, jelly and glitter cuts) and to wrap an animated painterly precomp onto 3D geometry for Comet's sphere."
+ },
+ {
+  "url": "https://blog.google/innovation-and-ai/technology/ai/io-2026-google-ai/",
+  "kind": "page",
+  "type": "article",
+  "title": "How we used Gemini to build Google I/O 2026",
+  "author": "Marvin Chow (Google)",
+  "published": "2026-06-01",
+  "approx_chars": 12015,
+  "refs": [
+   "io-gemini-material-morph"
+  ],
+  "tags": {
+   "topics": [
+    "design",
+    "workflow"
+   ],
+   "scenarios": [
+    "logo-ident"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": [
+    "nano-banana"
+   ]
+  },
+  "trick": "I/O 2026's icon materials came from a texture-transfer prompt: Nano Banana applies the texture and material of one icon image onto the white 3D icon in a second image without changing its form; the post gives the prompt.",
+  "example": "https://blog.google/innovation-and-ai/technology/ai/io-2026-google-ai/",
+  "why": "The makers' account of how the I/O star's material states were designed, with a reusable prompt for generating material frames to cut together in AE."
+ }
+]

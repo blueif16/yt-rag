@@ -1,0 +1,1390 @@
+[
+  {
+    "url": "https://github.com/heygen-com/hyperframes/blob/main/skills/hyperframes-creative/references/story-spine.md",
+    "kind": "page",
+    "title": "Story spine: value-first narrative doctrine (HyperFrames skill reference)",
+    "author": "HeyGen",
+    "type": "article",
+    "approx_chars": 4154,
+    "text_file": "/home/ran/yt-rag/eval/promo-craft/texts/hf-story-spine.md",
+    "tags": {
+      "topics": [
+        "story"
+      ],
+      "scenarios": [
+        "ui-promo",
+        "explainer"
+      ],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": []
+    },
+    "lesson": "Reverse iceberg: the hook speaks outcome language (no feature names, numbers only with stakes); the value claim lands by the second beat and everything after is evidence; self-check by deleting the evidence beats (value must still stand) and the value beats (if it still works it was a feature tour); present the storyboard as a proposal: 'This video tells [audience] that [message]' + a frame table with a Why column traced to the message.",
+    "example": "https://github.com/heygen-com/hyperframes/blob/main/skills/hyperframes-creative/references/story-spine.md#2-reverse-iceberg--value-before-evidence",
+    "why": "The cleanest written rule for keeping a launch film from becoming a feature tour, from the most-used agent video framework."
+  },
+  {
+    "url": "https://github.com/heygen-com/hyperframes/blob/main/skills/product-launch-video/references/story-design.md",
+    "kind": "page",
+    "title": "Story design for product launch videos: arcs, beat roles and the launch script bank (HyperFrames)",
+    "author": "HeyGen",
+    "type": "article",
+    "approx_chars": 33047,
+    "text_file": "/home/ran/yt-rag/eval/promo-craft/texts/hf-plv-story-design.md",
+    "tags": {
+      "topics": [
+        "story",
+        "copy"
+      ],
+      "scenarios": [
+        "ui-promo",
+        "edit-pacing"
+      ],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": []
+    },
+    "lesson": "Extract audience, pain, promise, product role, proof and CTA, then pick one arc (PAS, Future Pacing, Demo Loop, BAB, Feature-Benefit Cascade); one job per beat (hook, pain_point, product_intro, feature_showcase, benefit_highlight, social_proof, branding, cta), each with a persuasion move and a named emotion; a script bank of ~50 golden launch clips reversed into one VO line per role and shot shape; VO written as cue-segmented phrases so reveals land on words; UI demos as 3+ beats on one surface (input -> response -> result -> benefit).",
+    "example": "https://github.com/heygen-com/hyperframes/blob/main/skills/product-launch-video/references/story-design.md#the-script-bank--what-each-beats-vo-sounds-like",
+    "why": "A large bank of real launch-film lines by role, plus the arc menu; useful as a check on our beats and VO shapes."
+  },
+  {
+    "url": "https://github.com/clarkvalberg/studio-video-creator/blob/main/references/frameworks.md",
+    "kind": "page",
+    "title": "Concept film frameworks: five sections and three variants (studio-video-creator)",
+    "author": "clarkvalberg",
+    "type": "article",
+    "approx_chars": 9516,
+    "text_file": "/home/ran/yt-rag/eval/promo-craft/texts/svc-frameworks.md",
+    "tags": {
+      "topics": [
+        "story"
+      ],
+      "scenarios": [
+        "ui-promo",
+        "explainer"
+      ],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": []
+    },
+    "lesson": "Cold open (0:00-0:08) -> problem/context -> insight (the turn: 'but', 'what if') -> product walk (2-3 capabilities that ladder to the insight; the longest section) -> vision close (<= 20 s). Pick customer-led, insight-led or demo-led by where the concept's energy lives, the audience's starting state and what the source material leads with. Frame 0 is the cover frame. ~85 s = ~210 words at 150 wpm. Failures: tells but doesn't show, insight too small, product walk as feature list, grandiose close, even pacing.",
+    "example": "https://github.com/clarkvalberg/studio-video-creator/blob/main/references/frameworks.md#the-three-variants",
+    "why": "Gives an agent a principled way to choose the story variant instead of defaulting to problem-solution."
+  },
+  {
+    "url": "https://github.com/clarkvalberg/studio-video-creator/blob/main/references/script-rules.md",
+    "kind": "page",
+    "title": "Script writing rules for product concept films: word budgets, voice, banned words",
+    "author": "clarkvalberg",
+    "type": "article",
+    "approx_chars": 7812,
+    "text_file": "/home/ran/yt-rag/eval/promo-craft/texts/svc-script-rules.md",
+    "tags": {
+      "topics": [
+        "copy",
+        "story"
+      ],
+      "scenarios": [
+        "ui-promo"
+      ],
+      "level": "basic",
+      "impact": "high",
+      "tools": []
+    },
+    "lesson": "Word budgets at ~130-150 wpm (60 s = 130-150 words; 90 s = 195-220); open on a concrete image, not a category; verbs over adjectives; 'you' sparingly until earned; name the product once or twice; end on one plain sentence; the insight is true even if the product didn't exist; a banned list (revolutionary, seamless, unlock, empower, AI-powered, 'imagine a world where'); fixes for 'feels like an ad', 'not landing', 'not this product', 'flat ending', 'too long'.",
+    "example": "https://github.com/clarkvalberg/studio-video-creator/blob/main/references/script-rules.md#banned-words-and-phrases",
+    "why": "Copy is where launch films read generic first; this is a compact, enforceable rulebook."
+  },
+  {
+    "url": "https://github.com/clarkvalberg/studio-video-creator/blob/main/references/motion-board.md",
+    "kind": "page",
+    "title": "Motion board: every beat as a visible state change (studio-video-creator)",
+    "author": "clarkvalberg",
+    "type": "article",
+    "approx_chars": 5084,
+    "text_file": "/home/ran/yt-rag/eval/promo-craft/texts/svc-motion-board.md",
+    "tags": {
+      "topics": [
+        "story",
+        "design"
+      ],
+      "scenarios": [
+        "ui-promo",
+        "explainer"
+      ],
+      "level": "intermediate",
+      "impact": "medium",
+      "tools": []
+    },
+    "lesson": "Each beat states the visual action, the before state, the after state, the product proof and one motion mode (human-action, object-flow, product-state-change, camera-move, kinetic-type, lockup-hold); the explainer test asks what changed, why, what the product did and what the viewer now understands; causality patterns (input -> interpretation -> output; problem object -> system judgment -> human decision); red flags such as the same composition for 3 beats or the first 10 s only working with audio.",
+    "example": "https://github.com/clarkvalberg/studio-video-creator/blob/main/references/motion-board.md#the-explainer-test",
+    "why": "Turns a script into beats that change the viewer's understanding, which is the fix for 'narrated slides'."
+  },
+  {
+    "url": "https://github.com/AbubakrChan/product-launch-motion/blob/main/references/11-creative-direction.md",
+    "kind": "page",
+    "title": "Creative direction for launch films: dials, three directions, the signature move, anti-sameness",
+    "author": "AbubakrChan",
+    "type": "article",
+    "approx_chars": 17844,
+    "text_file": "/home/ran/yt-rag/eval/promo-craft/texts/plm-creative-direction.md",
+    "tags": {
+      "topics": [
+        "design",
+        "story"
+      ],
+      "scenarios": [
+        "ui-promo",
+        "edit-pacing"
+      ],
+      "level": "advanced",
+      "impact": "high",
+      "tools": []
+    },
+    "lesson": "Write three genuinely different directions and kill two (the obvious one is written and killed); set eleven dials (energy, density, ground, depth, camera, type, texture, colour, product, sound, voice) and differ from the last film on >= 4; sameness hides in structure, so also vary device, arc, turn position (15/40/75 %), climax, ending, opening state, copy placement, human presence and sound dramaturgy; derive the look from the claim's feeling (relief, precision, speed, craft, power, play); one signature move from the product's core verb, repeated 2-3 times, cheap enough to do perfectly.",
+    "example": "https://github.com/AbubakrChan/product-launch-motion/blob/main/references/11-creative-direction.md#sameness-hides-in-structure-not-in-surface",
+    "why": "The best written method for making agent-made launch films distinctive rather than interchangeable."
+  },
+  {
+    "url": "https://github.com/AbubakrChan/product-launch-motion/blob/main/references/02-story-and-truth.md",
+    "kind": "page",
+    "title": "Story and truth for launch films: the one claim, the arc, writing for the ear, approved figures",
+    "author": "AbubakrChan",
+    "type": "article",
+    "approx_chars": 21191,
+    "text_file": "/home/ran/yt-rag/eval/promo-craft/texts/plm-story-and-truth.md",
+    "tags": {
+      "topics": [
+        "story",
+        "copy"
+      ],
+      "scenarios": [
+        "ui-promo"
+      ],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": []
+    },
+    "lesson": "One claim per film, testable as <= 7 words aloud with no conjunction, found in the product's headline, a customer's words or the single before/after; default arc problem 8-10 % / agitate 8-10 % / thesis 5 % / <= 4 product beats 30-35 % / proof 20-25 % / contrast 10 % / CTA 8-10 %, claim inside 10 s; cold-open alternative when the result is self-evident; write for the ear (one clause per beat, numbers as spoken, round down only); an approved-figures whitelist and a negative list; pre-launch proof = the mechanism, not a stat; two grounds as a register map, each flip a story turn.",
+    "example": "https://github.com/AbubakrChan/product-launch-motion/blob/main/references/02-story-and-truth.md#1--the-angle",
+    "why": "Concrete numbers for arc proportions plus the truth discipline that keeps launch films credible."
+  },
+  {
+    "url": "https://github.com/EveryInc/product-launch-video/blob/main/.claude/skills/product-launch-video/SKILL.md",
+    "kind": "page",
+    "title": "Product launch video workflow: storyboard first, real UI copy, four parallel critics (Every)",
+    "author": "Every",
+    "type": "article",
+    "approx_chars": 8239,
+    "text_file": "/home/ran/yt-rag/eval/promo-craft/texts/every-product-launch-video-skill.md",
+    "tags": {
+      "topics": [
+        "story",
+        "copy",
+        "workflow"
+      ],
+      "scenarios": [
+        "ui-promo"
+      ],
+      "level": "basic",
+      "impact": "medium",
+      "tools": []
+    },
+    "lesson": "Lead with the viewer's problem, product on screen within 3 s, before/after as the money shot (land the before for 0.7-1 s, then crash in the after); never invent UI labels; find the one moment only your product can deliver and give it the most screen time; end card = one headline + CTA using the real tagline; review with four parallel critics (design, readability at 720p, narrative/pacing, brand).",
+    "example": "https://github.com/EveryInc/product-launch-video/blob/main/.claude/skills/product-launch-video/SKILL.md#hard-won-lessons",
+    "why": "Short, field-tested lessons from a real media company's launch-video practice."
+  },
+  {
+    "url": "https://advids.co/blog/generative-ai-startup-video-script-map",
+    "kind": "page",
+    "title": "The Generative AI Video Teardown: 82 startup launch scripts timed (Advids Research)",
+    "author": "Advids",
+    "type": "article",
+    "approx_chars": 18899,
+    "published": "2026-09-12",
+    "tags": {
+      "topics": [
+        "story",
+        "copy"
+      ],
+      "scenarios": [
+        "ui-promo",
+        "edit-pacing"
+      ],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": []
+    },
+    "lesson": "Across 82 AI startup launch scripts (2024-2026): first word within 1 s in 58/82; problem stated at a median 0:07; product named at 0:12 (problem-first vs name-first splits 39/31); a number spoken by 0:13 in half; trust line at 0:28; only 28/82 end with a direct ask; 60/82 open on a claim or the name, not a question; median runtime 1:14, 148 words at 127.6 wpm.",
+    "example": "https://advids.co/blog/generative-ai-startup-video-script-map#what-to-do-with-this",
+    "why": "Measured timing of where the name, problem, proof and ask land in real launch scripts."
+  },
+  {
+    "url": "https://speedrun.substack.com/p/how-to-make-a-viral-launch-video",
+    "kind": "page",
+    "title": "How to Make a Viral Launch Video (a16z speedrun, six founder case studies)",
+    "author": "a16z speedrun",
+    "type": "article",
+    "approx_chars": 18256,
+    "published": "2025-08-19",
+    "tags": {
+      "topics": [
+        "story"
+      ],
+      "scenarios": [
+        "ui-promo"
+      ],
+      "level": "basic",
+      "impact": "medium",
+      "tools": []
+    },
+    "lesson": "Founders behind viral launches: work backwards from the perfect launch story three weeks out (the target customer should think 'I can't believe this didn't exist'); show rather than tell; good use cases let the audience imagine with you; one key message repeated (Shortcut: 'superhuman at spreadsheets'); premium production signals the brand; ask viewers to comment for access.",
+    "example": "https://speedrun.substack.com/p/how-to-make-a-viral-launch-video",
+    "why": "First-hand founder reasoning behind launch films that actually spread."
+  },
+  {
+    "url": "https://frame24.app/blog/how-linear-makes-launch-videos",
+    "kind": "page",
+    "title": "How Linear makes its launch videos, and how to copy it (Frame24)",
+    "author": "Frame24",
+    "type": "article",
+    "approx_chars": 6185,
+    "published": "2026-09-20",
+    "tags": {
+      "topics": [
+        "design",
+        "story"
+      ],
+      "scenarios": [
+        "ui-promo",
+        "edit-pacing"
+      ],
+      "level": "basic",
+      "impact": "medium",
+      "tools": []
+    },
+    "lesson": "Linear's release films: one change per film, the product's own interface as the only subject, no presenters or stock, type as narrator (survives muted playback), three motion behaviours repeated, the product's own narrow palette, sparse designed sound, seconds not minutes; copy the grammar (one idea, one subject, few behaviours, long holds), not Linear's colours and type; hold the outcome twice as long as feels right.",
+    "example": "https://frame24.app/blog/how-linear-makes-launch-videos#4-the-version-you-can-make-this-week",
+    "why": "Names the repeatable grammar behind the most-imitated software launch films."
+  },
+  {
+    "url": "https://frame24.app/blog/what-apple-keynotes-teach-product-video",
+    "kind": "page",
+    "title": "What Apple keynotes teach about product video, at a tenth of the budget (Frame24)",
+    "author": "Frame24",
+    "type": "article",
+    "approx_chars": 6745,
+    "published": "2026-09-21",
+    "tags": {
+      "topics": [
+        "design",
+        "copy"
+      ],
+      "scenarios": [
+        "ui-promo",
+        "edit-pacing"
+      ],
+      "level": "basic",
+      "impact": "medium",
+      "tools": []
+    },
+    "lesson": "One held shot per idea; split any shot that shows a feature and its result into two; one deliberate pause before the best reveal; frame software like a physical object worth admiring; cut narration to what the picture can't say; copy the editorial discipline, not the lighting rig.",
+    "example": "https://frame24.app/blog/what-apple-keynotes-teach-product-video#4-the-version-you-can-make-this-week",
+    "why": "The restraint rules that make a product film read as premium, stated as actionable edits."
+  },
+  {
+    "url": "https://businessofstory.com/your-brand-story-is-not-about-what-you-make-but-what-you-make-happen/",
+    "kind": "page",
+    "title": "Your Brand Story Is Not About What You Make, But What You Make Happen (Park Howell on ABT)",
+    "author": "Park Howell",
+    "type": "article",
+    "approx_chars": 43372,
+    "published": "2026-05-29",
+    "tags": {
+      "topics": [
+        "story"
+      ],
+      "scenarios": [
+        "ui-promo",
+        "explainer"
+      ],
+      "level": "basic",
+      "impact": "medium",
+      "tools": []
+    },
+    "lesson": "And-But-Therefore: the And names the audience and what they want (get a nod); the But names the obstacle with its negative emotion (most pitches skip the emotion); the Therefore leads with the audience's transformation and only then introduces the product as the vehicle; an ABT fits in under 15 s and is the DNA every message is built from.",
+    "example": "https://businessofstory.com/your-brand-story-is-not-about-what-you-make-but-what-you-make-happen/",
+    "why": "The compact story engine our insight step uses, from its main teacher."
+  },
+  {
+    "url": "https://admiral.media/video-ad-hooks-mobile-apps/",
+    "kind": "page",
+    "title": "Video Ad Hooks for Mobile Apps: How to Win the First Three Seconds (Admiral Media)",
+    "author": "Admiral Media",
+    "type": "article",
+    "approx_chars": 30248,
+    "published": "2026-10-08",
+    "tags": {
+      "topics": [
+        "story",
+        "platform"
+      ],
+      "scenarios": [
+        "ui-promo",
+        "edit-pacing"
+      ],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": []
+    },
+    "lesson": "A hook combines a visual interrupt, a relevance signal ('this is for me'), a promise and an open loop in the first 1-3 s; six app archetypes (problem call-out, outcome reveal, creator testimonial, product in action, pattern interrupt, sound-led) matched to the download motivation; TikTok: proposition in 3 s, hook within 6 s; mistakes: logo in frame one, the proposition arriving late, ignoring sound-off viewing.",
+    "example": "https://admiral.media/video-ad-hooks-mobile-apps/",
+    "why": "A current, app-specific hook anatomy with platform rules, for writing the first three seconds."
+  },
+  {
+    "url": "https://every.to/podcast/the-browser-company-is-building-a-brand-that-drives-viral-growth",
+    "kind": "page",
+    "title": "The Browser Company Is Building a Brand That Drives Viral Growth (Every podcast notes)",
+    "author": "Every",
+    "type": "article",
+    "approx_chars": 3076,
+    "tags": {
+      "topics": [
+        "story"
+      ],
+      "scenarios": [
+        "ui-promo"
+      ],
+      "level": "basic",
+      "impact": "medium",
+      "tools": []
+    },
+    "lesson": "The Browser Company's storytelling: centre people (team and users), not the product; invert the narrative (Arc Max made AI feel like a QVC knife demo, not world-changing); keep the team surprised so the audience is; be real, not polished; make the brand tangible.",
+    "example": "https://every.to/podcast/the-browser-company-is-building-a-brand-that-drives-viral-growth",
+    "why": "A distinct, people-first approach to launch storytelling that counters the polished-UI default."
+  },
+  {
+    "url": "https://www.moonb.io/blog/product-launch-video",
+    "kind": "page",
+    "title": "12 product launch videos, sorted by format (Moonb)",
+    "author": "Lorenzo Nicolini",
+    "type": "article",
+    "approx_chars": 17833,
+    "published": "2026-09-22",
+    "tags": {
+      "topics": [
+        "story"
+      ],
+      "scenarios": [
+        "ui-promo",
+        "edit-pacing"
+      ],
+      "level": "basic",
+      "impact": "medium",
+      "tools": []
+    },
+    "lesson": "Six launch formats with real examples: hero film with cutdowns (Samsung Fold7, Oura Ring 4), demo walkthrough with the UI full screen and the presenter in a corner (Linear Initiatives), founder announcement, teaser of cropped real-UI fragments (New Raycast, 39 s), motion-design reveal (Figma Motion), character reveal (Duolingo Chess); chapters that double as cutdowns.",
+    "example": "https://www.moonb.io/blog/product-launch-video#the-twelve-at-a-glance",
+    "why": "Helps an agent pick the film format before the story, with a concrete example of each."
+  },
+  {
+    "url": "https://impractical.ai/launch-videos/raycast-its-out",
+    "kind": "page",
+    "title": "The new Raycast, 'It's out': a motion breakdown (Impractical)",
+    "author": "Impractical",
+    "type": "article",
+    "approx_chars": 2560,
+    "published": "2026-05-14",
+    "tags": {
+      "topics": [
+        "design",
+        "transitions"
+      ],
+      "scenarios": [
+        "ui-promo",
+        "edit-pacing"
+      ],
+      "level": "basic",
+      "impact": "medium",
+      "tools": []
+    },
+    "lesson": "Let the product's core value set the edit rhythm: for a speed promise, hard cuts on every beat, tight punch-ins isolating one command, and kinetic type as structure rather than overlay; no crossfades, because the cut mirrors a keyboard shortcut's instant response.",
+    "example": "https://impractical.ai/launch-videos/raycast-its-out",
+    "why": "A clear example of a promise (speed) turned into a structural editing choice."
+  },
+  {
+    "url": "https://medium.com/firm-narrative/pitch-like-moses-87540a85b236",
+    "kind": "page",
+    "title": "Pitch the Promised Land (Andy Raskin, strategic narrative)",
+    "author": "Andy Raskin",
+    "type": "article",
+    "approx_chars": 9000,
+    "published": "2016-07-19",
+    "text_file": "/home/ran/yt-rag/eval/promo-craft/texts/raskin-pitch-the-promised-land.md",
+    "tags": {
+      "topics": [
+        "story"
+      ],
+      "scenarios": [
+        "ui-promo",
+        "explainer"
+      ],
+      "level": "basic",
+      "impact": "medium",
+      "tools": []
+    },
+    "lesson": "Before pitching the product, describe the Promised Land: a desirable, improbable-without-you future, balanced between concrete ('attend the ball') and aspirational ('live happily ever after'); test it for motivation, emotion for the target audience, company alignment, the customer's own words and a differentiated category ('Live there', 'Be less busy'); then present the product as the means of getting there. Canonical (2016) and still the reference for strategic-narrative launches.",
+    "example": "https://medium.com/firm-narrative/pitch-like-moses-87540a85b236#5-questions-for-evaluating-your-promised-land",
+    "why": "The method for new-category launches where viewers don't yet feel the pain."
+  },
+  {
+    "url": "https://www.producthunt.com/launch/preparing-for-launch",
+    "kind": "page",
+    "title": "Prepare for your Product Hunt launch (Launch Guide)",
+    "author": "Product Hunt",
+    "type": "doc",
+    "published": null,
+    "approx_chars": 12294,
+    "text_file": "/home/ran/yt-rag/eval/promo-craft/texts/product-hunt-preparing-for-launch.md",
+    "tags": {
+      "topics": [
+        "platform",
+        "copy"
+      ],
+      "scenarios": [
+        "ui-promo"
+      ],
+      "level": "basic",
+      "impact": "high",
+      "tools": []
+    },
+    "lesson": "Product Hunt's own launch spec: a video is optional, but about 53% of Product of the Day winners since 2021 included one. It must be a public YouTube link given as the full URL (no shortened links). The thumbnail is square (240x240 recommended), under 3 MB, and a GIF thumbnail animates only on hover, so its first frame must work alone; strobing, quick cuts and unreadable text get edited out. The gallery needs 2+ images at 1270x760. The tagline is at most 60 characters, plain and gimmick-free. The maker's first comment sits right under the gallery, and 70% of Product of the Day/Week/Month winners had one.",
+    "example": "https://www.producthunt.com/launch/preparing-for-launch#:~:text=About%2053%25%20of%20products",
+    "why": "This is the platform's own rulebook for the PH gallery video and its surrounding assets, and the PH cut of every launch film has to fit it."
+  },
+  {
+    "url": "https://moonjar.ai/blog/product-hunt-launch-video",
+    "kind": "page",
+    "title": "Product Hunt launch video and gallery images: sizes and what to show",
+    "author": "Moonjar",
+    "type": "article",
+    "published": "2026-09",
+    "approx_chars": 16684,
+    "tags": {
+      "topics": [
+        "platform",
+        "story"
+      ],
+      "scenarios": [
+        "edit-pacing",
+        "ui-promo"
+      ],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": []
+    },
+    "lesson": "A measured study of 51 live PH launch pages (Sept 2026). 32 had a video, and in all 32 it was the FIRST gallery tile, showing the YouTube thumbnail, so that thumbnail is your first impression. The video opens in a 1100x619 viewer with autoplay and mute=0, so it plays with sound. The 32 videos ran 21 s to 7:24 with a median of 74 s; 15 of them were 60 s or shorter (lengths only describe what makers chose). The link preview crops the first image to the middle 2:1, about 8% off top and bottom. Content rule: open on the main job (no logo or title card), show one moment per feature (3-5 in total), put a short caption on each moment, cut the waiting and slow the gestures, and end on the result, not a fade to black. ALSO: Product Hunt: the video is optional, YouTube links only (full URL, not private). In 51 launches measured on 2026-09-18, all 32 galleries with a video put it in the first tile, showing the YouTube thumbnail (1280x720) as its picture; a click opens a 1100x619 YouTube embed with autoplay=1 and mute=0, so it plays with sound once clicked. Timed lengths ran from 21 s to 7:24, median 74 s (15 at 60 s or less, 6 at 1-2 min, 7 at 2-3 min, 4 over 3 min); that describes the sample, not a target. Gallery images are 1270x760 recommended (export 2540x1520), at least 2, each under 3 MB; the og:image crops the first gallery image to 2:1, so keep headlines out of the top and bottom 8%. Product Hunt's own launch guide: about 53% of Product of the Day products since 2021 had a video.",
+    "example": "https://moonjar.ai/blog/product-hunt-launch-video#:~:text=The%20videos%20ran%20from%2021%20seconds",
+    "why": "This is the only measured description of how PH actually displays and plays a launch video, which sets its thumbnail, length and sound decisions."
+  },
+  {
+    "url": "https://services.google.com/fh/files/misc/youtube_google_abcd_reference_guide_en.pdf",
+    "kind": "page",
+    "title": "YouTube and Google ABCD Reference Guide",
+    "author": "Google / YouTube (with Ipsos, Kantar, Nielsen)",
+    "type": "doc",
+    "published": null,
+    "approx_chars": 4599,
+    "tags": {
+      "topics": [
+        "story",
+        "platform",
+        "copy"
+      ],
+      "scenarios": [
+        "edit-pacing",
+        "logo-ident"
+      ],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": []
+    },
+    "lesson": "Google's data-backed ABCD rules for YouTube ads, each tagged by objective. Attract: open with tightly framed people or product and use more than two shots in the first 5 s. Brand: introduce the product or brand within the first 5 s (visual OR audio cue for awareness, visual AND audio for consideration/action). A logo built into the story or the product lifts recall; a logo as super, overlay or persistent watermark in brand colours works for consideration; brand mentions spoken by on-screen people beat plain VO. Connect: one simple, focused message. Direct: a specific CTA ('Visit site', 'Sign up') shown and spoken, via text card or simple animation. Creative drives 49% of sales contribution vs 36% for media.",
+    "example": "https://services.google.com/fh/files/misc/youtube_google_abcd_reference_guide_en.pdf#:~:text=Introduce%20your%20product%20or%20brand%20in%20the%20first%20five%20seconds",
+    "why": "It gives the hard 5-second brand and shot-count rules that any paid cut of a launch film (pre-roll, Shorts ad) should meet, separate from the organic film."
+  },
+  {
+    "url": "https://support.google.com/google-ads/answer/14783551?hl=en",
+    "kind": "page",
+    "title": "About the ABCDs of effective video ads",
+    "author": "Google Ads Help",
+    "type": "doc",
+    "published": null,
+    "approx_chars": 4488,
+    "tags": {
+      "topics": [
+        "story",
+        "platform",
+        "copy"
+      ],
+      "scenarios": [
+        "logo-ident",
+        "ui-promo"
+      ],
+      "level": "intermediate",
+      "impact": "medium",
+      "tools": []
+    },
+    "lesson": "The ABCDs re-cut by objective, which maps film shape to goal. Awareness: put the brand front and centre, make people core to the story, be different yet simple. Consideration: hero the product and show how it works. Action: 'make the product the ad', be exact and tangible, and present the ask AFTER the context is set. Full funnel: start with a mix of branding elements, finish with the product, and use CTAs throughout, more direct as you go. Core rules: jump into the heart of the story, brand early and throughout, focus the message ('avoid doing too much'), and say the CTA in VO as well as on screen. Applying the ABCDs is credited with up to a 30% lift in short-term sales likelihood and 17% in long-term brand contribution (Google/Kantar 2021). For Shorts: talent using the product, audio announces the brand, branding organic to the story.",
+    "example": "https://support.google.com/google-ads/answer/14783551?hl=en#:~:text=ABCDs%20by%20marketing%20objectives",
+    "why": "It tells an agent how the film's shape and CTA timing should change with the goal: awareness film, feature explainer or conversion cut."
+  },
+  {
+    "url": "https://www.facebook.com/business/news/reels-creative-strategies",
+    "kind": "page",
+    "title": "Deconstructing the Power of Reels: How Creative Strategies Can Drive Success",
+    "author": "Meta for Business (study with Toluna)",
+    "type": "doc",
+    "published": "2025-12-02",
+    "approx_chars": 5055,
+    "tags": {
+      "topics": [
+        "story",
+        "platform",
+        "sound"
+      ],
+      "scenarios": [
+        "edit-pacing",
+        "logo-ident"
+      ],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": []
+    },
+    "lesson": "Meta's 2025 coded study of Reels ads, comparing the top 20% with the average. Brand and main message both within the first 5 s: 1.7x more likely to be top-20% for purchase intent. Brand shown more than once in different scenes or positions: 1.8x. Speech plus music together: 2.0x (brand interest). Message delivered in both audio and visuals: 1.8x. For direct-response ads: show the product more than once (2.7x); show the brand but for NO MORE than 25% of the duration (4.8x); add context such as USPs or features to the main message (5.3x); include a visual and/or spoken CTA (1.9x); a hook that uses both visuals and sound (1.5x).",
+    "example": "https://www.facebook.com/business/news/reels-creative-strategies#:~:text=State%20your%20case%20early",
+    "why": "It gives hard numbers for when the logo appears, how often, and for how long (no more than 25% of runtime) in the short vertical cuts of a launch."
+  },
+  {
+    "url": "https://ads.tiktok.com/business/en/blog/creative-best-practices-top-performing-ads",
+    "kind": "page",
+    "title": "Creative Codes: 6 principles for creating on TikTok",
+    "author": "TikTok for Business",
+    "type": "doc",
+    "published": "2024-09-25",
+    "approx_chars": 7757,
+    "tags": {
+      "topics": [
+        "story",
+        "platform",
+        "sound"
+      ],
+      "scenarios": [
+        "edit-pacing"
+      ],
+      "level": "basic",
+      "impact": "medium",
+      "tools": []
+    },
+    "lesson": "TikTok's official short-video structure is hook, body, close. Hook: 90% of ad recall impact is captured in the first 6 s, so state the value proposition early. Body: carry the story with additive branding cues; showing the product on screen gives +65% brand affinity and +25% recall. Close: end on a strong CTA, using CTA cards rather than interrupting the content (+45% recall, +19% likeability). Text overlays raise view time and recall, faster scene changes draw viewers in early, and 88% of users say sound is vital, so design sound-on and shoot vertical inside the UI safe zone.",
+    "example": "https://ads.tiktok.com/business/en/blog/creative-best-practices-top-performing-ads#:~:text=90%25%20of%20ad%20recall%20impact",
+    "why": "It sets the first-6-seconds and CTA-card rules for the vertical TikTok/Reels cut of a launch."
+  },
+  {
+    "url": "https://wistia.com/blog/insights-state-of-video-report",
+    "kind": "page",
+    "title": "Top 5 Insights from Wistia's 2024 State of Video Report",
+    "author": "Sam Balter, Wistia",
+    "type": "article",
+    "published": "2024-04-15",
+    "approx_chars": 9150,
+    "tags": {
+      "topics": [
+        "platform",
+        "story"
+      ],
+      "scenarios": [
+        "ui-promo"
+      ],
+      "level": "basic",
+      "impact": "medium",
+      "tools": []
+    },
+    "lesson": "Data from millions of business videos. Engagement differs little between 1 and 5 minutes and drops sharply past 5 minutes. The highest average engagement rate is about 50%, so put the key points early. 3-5 minute instructional videos hold 74% engagement vs 43% for all 3-5 minute videos. Captioning rose 254% in a year. In-video CTAs converted anywhere from 0% to 24% depending on placement: for videos under 5 minutes put the conversion opportunity at the END, for videos over 5 minutes at the BEGINNING (most businesses wrongly put it at the start). (Wistia's 2025 report adds: under 1 min = 50% engagement, 1-3 min = 46%, 3-5 min = 45%.)",
+    "example": "https://wistia.com/blog/insights-state-of-video-report#:~:text=if%20your%20video%20is%20less%20than%20five%20minutes",
+    "why": "It gives the measured rule for where the CTA goes in a landing-page hero or demo video, and how much length costs in engagement."
+  },
+  {
+    "url": "https://developer.apple.com/app-store/app-previews/",
+    "kind": "page",
+    "title": "Show more with app previews",
+    "author": "Apple Developer",
+    "type": "doc",
+    "published": null,
+    "approx_chars": 6260,
+    "tags": {
+      "topics": [
+        "platform",
+        "copy",
+        "sound"
+      ],
+      "scenarios": [
+        "edit-pacing",
+        "ui-promo"
+      ],
+      "level": "basic",
+      "impact": "high",
+      "tools": []
+    },
+    "lesson": "Apple's rules for App Store preview videos. Each preview is up to 30 s (App Store Connect spec: 15 s minimum, 30 s maximum, default poster frame at 5 s), with up to 3 per language. Previews autoplay MUTED on the product page and in search, so carry the meaning in legible on-screen copy held long enough to read. Plan a cohesive story: the first preview gives the overview and later ones each show something new. Show only in-app footage (no hands or over-the-shoulder device shots), capture at native UI resolution rather than zooming, and use straightforward transitions (dissolves, fades) that don't imply fake functionality. Use one music score throughout plus real UI sound effects. Avoid dates, seasonal references and prices. Disclose in-app purchases in the footage or the end frame. Pick a poster frame that conveys the app's essence, since it shows whenever autoplay is off. ALSO: Previews must show only footage captured on device from inside the app: no people, fingers tapping or over-the-shoulder shots (App Review Guideline 2.3.4: 'previews may only use video screen captures of the app itself'; narration and video or text overlays are allowed; rejections reported for device frames and framing around the capture). They autoplay muted on the product page and in search results, so carry context with legible copy held long enough to read. Up to 3 per language, each up to 30 s: preview 1 is the overview, each further one shows something new. Touch hotspots are allowed; capture native UI resolution rather than zooming; use simple dissolves/fades that do not imply missing features. No prices and no seasonal or dated lines. Disclose in-app purchase, subscription or login in the footage or end frame. One score across the whole preview; UI sound effects allowed; professional VO if any. Pick a compelling poster frame (shown when autoplay is off; changing it on an approved preview means resubmitting).",
+    "example": "https://developer.apple.com/app-store/app-previews/#:~:text=Plan%20your%20story",
+    "why": "The App Store preview is a hard-constrained version of the launch film, and these are the rules it must pass."
+  },
+  {
+    "url": "https://support.google.com/youtube/answer/6388789?hl=en",
+    "kind": "page",
+    "title": "Add end screens to videos",
+    "author": "YouTube Help",
+    "type": "doc",
+    "published": null,
+    "approx_chars": 7742,
+    "tags": {
+      "topics": [
+        "platform"
+      ],
+      "scenarios": [
+        "logo-ident"
+      ],
+      "level": "basic",
+      "impact": "medium",
+      "tools": []
+    },
+    "lesson": "YouTube end screens sit in the LAST 5-20 seconds of a video, and the video must be at least 25 s long to have one. They hold up to 4 elements on 16:9 (video, playlist, subscribe, channel, or an external link for YouTube Partner Program members). Cards and watermarks are suppressed during the end screen, and viewers can hide it. YouTube's advice: leave enough space and time at the end for the end screen ('consider the video's last 20 seconds when editing'), use CTAs for each element, and stagger element timings.",
+    "example": "https://support.google.com/youtube/answer/6388789?hl=en#:~:text=End%20screens%20can%20be%20added%20to%20the%20last%205",
+    "why": "It sets the duration and layout of the logo/CTA end card on the YouTube version of a launch film."
+  },
+  {
+    "url": "https://www.indiehackers.com/post/product-launch-video-7-steps-from-293-x-launches-8ad570fb47",
+    "kind": "page",
+    "title": "Product launch video: 7 steps from 293 X launches",
+    "author": "Indie Hackers (analysis of 293 launches on X)",
+    "type": "article",
+    "published": "2026-08-26",
+    "approx_chars": 9025,
+    "tags": {
+      "topics": [
+        "story",
+        "platform",
+        "copy"
+      ],
+      "scenarios": [
+        "edit-pacing",
+        "ui-promo"
+      ],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": []
+    },
+    "lesson": "293 X launch videos (381M views), all transcribed. High-reach launches (178, median about 1M views) ran a median 83 s (narrated: 96 s); low-reach ones a median 32 s, with 48% under 30 s. 89% of high-reach launches were 16:9 and 1 of 178 was vertical. The most common script shapes were problem then product (30%), vision then product (22%) and story then product (17%); straight feature lists were 4%. 74% named a problem the viewer already had, and 67% did so in the first 10 s. Narrated launches used a median 219 words, about 143 wpm (about 7 words by 3 s, 24 by 10 s, 77 by 30 s). Motion-graphic launches were 21%, with a median 44 s; 82% used large animated words and 64% had no VO. Five-block draft: name and what it is, the viewer's problem, the product doing the job vs today's way, proof (a checked number), then one action, a practical vision, or a clean stop. Caveat: within high-reach launches, none of length, CTA or problem-first predicted more likes per viewer.",
+    "example": "https://www.indiehackers.com/post/product-launch-video-7-steps-from-293-x-launches-8ad570fb47#:~:text=The%20most%20common%20script%20shapes",
+    "why": "It gives measured norms for the organic X launch film's shape, length, aspect ratio and VO density, with honest correlation caveats."
+  },
+  {
+    "url": "https://hub.infinite.fast/research/launch-videos",
+    "kind": "page",
+    "title": "We Studied 194 Startup Launch Videos: What Actually Goes Viral (2026)",
+    "author": "River Tamoor Baig, Infinite",
+    "type": "article",
+    "published": "2026-08-17",
+    "approx_chars": 23085,
+    "tags": {
+      "topics": [
+        "story",
+        "platform"
+      ],
+      "scenarios": [
+        "edit-pacing",
+        "ui-promo"
+      ],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": []
+    },
+    "lesson": "194 hand-verified startup launch videos on X, each scored on about 20 craft traits and joined to views (medians; 155 mature posts). Hook strength was the strongest craft predictor: strong-hook videos had a median 32,119 views vs 345 (decent) and 196 (weak), about 90x. First 5 s: opening on a face (976 median) beat a product demo (332) and a text or title card (164); the title-card open was the worst common move. Differentiation: strongly different 9,385 vs generic 146 (64x). Length: median 52 s, under 15 s was the worst bucket, 90 s+ the best; the top quartile ran 56 s vs 37 s for the bottom. 16:9 beat 9:16 by about 11x. Dynamic pacing beat flat by about 20x. A post with an explicit one-line ask (e.g. 'reply X') had a median 237,228 vs 332. Correlations, not causes.",
+    "example": "https://hub.infinite.fast/research/launch-videos#:~:text=Videos%20that%20open%20on%20a%20face%20beat%20videos%20that%20open%20on%20a%20text%20card",
+    "why": "It is data on organic launch films specifically: don't open on a logo or title card, run long enough to build, ship 16:9, and differentiate."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=jtpXWRIZuGM",
+    "kind": "video",
+    "title": "How I create product launch videos that get 100k+ views",
+    "author": "Renat Gabitov (SaaS Video Marketing)",
+    "views": 8491,
+    "likes": 102,
+    "published": "2025-06-24",
+    "duration_sec": 1280,
+    "captions": "auto",
+    "tags": {
+      "topics": [
+        "story",
+        "copy",
+        "workflow"
+      ],
+      "scenarios": [
+        "explainer",
+        "ui-promo"
+      ],
+      "level": "intermediate",
+      "impact": "medium",
+      "tools": []
+    },
+    "lesson": "A working launch-video maker (clients include Cartesia; his own launch hit #1 Product of the Month on PH) on choosing the film's format and shape. Three formats: (1) UI motion graphics, for established products whose UI won't change (Airtable, and Slack's simplified, de-cluttered UI); (2) text plus abstracted UI, for early YC products whose UI will change (about 50% of the film is type; blur and punch-in to hide clutter); (3) live action or founder (Mighty with an actress; Cartesia CEO on camera). The spine that 'works everywhere' runs problem statement, product as the hero, 2-3 unique use cases or features shown, impact (time or money), then end on the logo OR a CTA. Show, don't tell (Mighty shows speed instead of quoting benchmarks), write short single-clause VO lines, script in two columns (screen | VO | visual refs), and test an animatic with AI VO before production. Compares a 500k-view YC launch with a 16k-view flop: a concept with no new information on screen.",
+    "example": "https://www.youtube.com/watch?v=jtpXWRIZuGM&t=520s",
+    "why": "Under the 20k-view bar, but the speaker makes startup launch films for a living; it maps product maturity to film format and gives the practitioner's default act structure and ending."
+  },
+  {
+    "url": "https://developer.apple.com/help/app-store-connect/reference/app-information/app-preview-specifications",
+    "kind": "page",
+    "type": "doc",
+    "title": "App preview specifications (App Store Connect Help)",
+    "author": "Apple",
+    "published": "undated; current (lists iPhone 17 / iPhone Air and iPad M5), read 2026-10-12",
+    "approx_chars": 10600,
+    "tags": {
+      "topics": [
+        "platform",
+        "render-export"
+      ],
+      "scenarios": [
+        "ui-promo"
+      ],
+      "level": "basic",
+      "impact": "high",
+      "tools": []
+    },
+    "lesson": "App Store app previews: 15-30 s, optional, up to 3 per device size and language; H.264 (.mov/.m4v/.mp4, 10-12 Mbps, progressive, up to High Profile 4.0) or ProRes 422 HQ (.mov, ~220 Mbps VBR); max 30 fps; max 500 MB; stereo audio, AAC 256 kbps (or PCM for ProRes), 44.1/48 kHz. Accepted sizes: iPhone 6.9/6.5/6.3/6.1-inch 886x1920 portrait or 1920x886 landscape, 5.5-inch and 4-inch 1080x1920, 4.7-inch 750x1334; iPad 1200x1600 / 1600x1200 (9.7-inch 900x1200); Mac and Apple TV 1920x1080; Vision Pro 3840x2160; macOS/tvOS/visionOS landscape only. Poster frame defaults to 5 s and is shown on the product page and during install. Previews always appear before screenshots; a preview whose aspect ratio differs from the screenshots moves to the 'A Closer Look' section. Processing takes up to 24 h; deliver only the largest size and it scales down; a missing localized preview falls back to the next best language.",
+    "example": "https://developer.apple.com/help/app-store-connect/reference/app-information/app-preview-specifications#:~:text=Maximum%20length",
+    "why": "Hard delivery limits (length, fps, pixel sizes, poster frame) an agent must hit before it plans an App Store preview cut."
+  },
+  {
+    "url": "https://support.google.com/googleplay/android-developer/answer/9866151?hl=en",
+    "kind": "page",
+    "type": "doc",
+    "title": "Add preview assets to showcase your app (Play Console Help)",
+    "author": "Google Play",
+    "published": "undated; current (covers Android XR videos), read 2026-10-12",
+    "approx_chars": 25000,
+    "tags": {
+      "topics": [
+        "platform",
+        "copy"
+      ],
+      "scenarios": [
+        "ui-promo"
+      ],
+      "level": "basic",
+      "impact": "high",
+      "tools": []
+    },
+    "lesson": "Google Play: one preview video per listing, entered as a full YouTube video URL (no playlist/channel URL, no timecode parameters); public or unlisted, monetization/ads off, not age-restricted, embeddable. It shows before the screenshots with the 1024x500 feature graphic as its cover, may appear on home and search, and may autoplay inline muted for up to 30 s. Show real in-app experience within the first 10 s; at least 80% of the video should represent the user experience (limit title screens, logos, pre-rendered footage); keep it short because only the first 30 s autoplays; no fingers tapping unless use is off-device. Landscape or portrait, no black bars beside a portrait video. Copy for muted viewing is allowed but no 'Best', '#1', 'New', 'Sale' or CTAs like 'Download now'; text must be legible and held long enough; localize UI, taglines and audio; add captions.",
+    "example": "https://support.google.com/googleplay/android-developer/answer/9866151?hl=en#:~:text=first%2010%20seconds",
+    "why": "The Play Store's rules differ from Apple's (YouTube-hosted, 30 s muted autoplay window, 80% real UX, no CTA text), so a Play cut is planned separately."
+  },
+  {
+    "url": "https://web.dev/learn/performance/video-performance",
+    "kind": "page",
+    "type": "doc",
+    "title": "Video performance (web.dev Learn Performance)",
+    "author": "Google Chrome team (web.dev)",
+    "published": "updated 2026-04-02 (page metadata)",
+    "approx_chars": 8200,
+    "tags": {
+      "topics": [
+        "render-export",
+        "platform"
+      ],
+      "scenarios": [
+        "ui-promo"
+      ],
+      "level": "intermediate",
+      "impact": "medium",
+      "tools": []
+    },
+    "lesson": "Landing-page loops: use <video autoplay muted loop playsinline> with WebM and MP4 sources instead of GIFs; strip the audio track (ffmpeg -an) from silent loops to cut file size; the first painted frame of a video is an LCP candidate, so either set a poster (preload it with fetchpriority=high when it is the LCP element) or make the opening frame cheap and meaningful; for click-to-play video use preload=none or metadata plus a poster; lazy-load off-screen videos (IntersectionObserver or loading=lazy). HTTP Archive: about 20% of web videos use autoplay.",
+    "example": "https://web.dev/learn/performance/video-performance#:~:text=autoplay%20muted%20loop%20playsinline",
+    "why": "Tells the agent how a hero loop is actually shipped, which sets its export targets: silent, short, small, with a designed first frame and poster."
+  },
+  {
+    "url": "https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide.html",
+    "kind": "page",
+    "type": "doc",
+    "title": "Understanding Success Criterion 2.2.2: Pause, Stop, Hide (WCAG 2.2)",
+    "author": "W3C WAI",
+    "published": "WCAG 2.2 Recommendation 2023-10 (edition 2024-12-12); read 2026-10-12",
+    "approx_chars": 15800,
+    "text_file": "/home/ran/yt-rag/eval/promo-craft/texts/wcag22-pause-stop-hide.md",
+    "tags": {
+      "topics": [
+        "platform"
+      ],
+      "scenarios": [
+        "ui-promo"
+      ],
+      "level": "basic",
+      "impact": "high",
+      "tools": []
+    },
+    "lesson": "Level A: any moving content that starts automatically (including on hover or on scroll into view), lasts more than 5 seconds and plays alongside other content needs a mechanism to pause, stop or hide it; a pause that only holds while the element is focused or hovered does not count; one control for all moving elements is best practice. Five seconds was chosen as long enough to catch attention but short enough to wait out. Flashing is separate and must stay at 3 flashes per second or fewer (2.3.1). For a hero loop: either stop it within 5 s or ship a visible pause control.",
+    "example": "https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide.html#:~:text=lasts%20more%20than%20five%20seconds",
+    "why": "A legal accessibility floor for every landing-page hero loop: it sets the 5 s threshold and the need for a pause control."
+  },
+  {
+    "url": "https://business.x.com/en/help/campaign-setup/creative-ad-specifications",
+    "kind": "page",
+    "type": "doc",
+    "title": "X Ads creative specs",
+    "author": "X Business",
+    "published": "Wayback snapshot 2026-09-27 (live page blocks fetchers)",
+    "approx_chars": 31400,
+    "text_file": "/home/ran/yt-rag/eval/promo-craft/texts/x-ads-creative-specs.md",
+    "tags": {
+      "topics": [
+        "platform",
+        "render-export"
+      ],
+      "scenarios": [
+        "ui-promo"
+      ],
+      "level": "basic",
+      "impact": "high",
+      "tools": []
+    },
+    "lesson": "X video ads: 15 s or less recommended, up to 2:20 supported (select advertisers up to 10 min, deliver 9:55); MP4 or MOV up to 1 GB but keep under 30 MB; if a logo is used keep it persistent in the upper-left corner, with branding throughout; closed captions or text overlays strongly recommended; videos under 60 s loop. Bitrate 6,000-10,000k for 1080p (6,000k recommended), 5,000-8,000k for 720p; 29.97 or 30 fps (up to 60, never upsample); H.264 Baseline/Main/High 4:2:0, AAC-LC. Aspect ratios: 16:9 1920x1080, 1:1 1080x1080 (1200x1200 recommended), 9:16 1080x1920, 4:5 1440x1800, 2:3 1080x1620, 1.91:1 2064x1080. Amplify pre-roll: 1:1 recommended (takes as much feed height as 9:16), 15 s or less; sponsorship overlays sit top-left and in the bottom corners.",
+    "example": "https://business.x.com/en/help/campaign-setup/creative-ad-specifications#:~:text=15%20seconds%20or%20less%20is%20recommended",
+    "why": "X's own numbers for a launch cut in the feed (15 s, under 30 MB, loop under 60 s, logo top-left, captions), where autoplay is muted."
+  },
+  {
+    "url": "https://www.linkedin.com/help/lms/answer/a424737",
+    "kind": "page",
+    "type": "doc",
+    "title": "Video ads advertising specifications (LinkedIn)",
+    "author": "LinkedIn",
+    "published": "'Last updated: 2 months ago' as read 2026-10-12 (about 2026-08)",
+    "approx_chars": 8600,
+    "tags": {
+      "topics": [
+        "platform",
+        "render-export"
+      ],
+      "scenarios": [
+        "ui-promo"
+      ],
+      "level": "basic",
+      "impact": "medium",
+      "tools": []
+    },
+    "lesson": "LinkedIn video ads: 3 s to 30 min (in-stream up to 90 s), 15-30 s recommended to qualify for every Feed and Audience Network placement; vertical 4:5 is the recommended ratio (720x900, up to 1080x1350), also 16:9 (1920x1080 max), 1:1 (up to 1920x1920), 9:16 (up to 1080x1920); MP4, H.264 or VP8, under 30 fps, AAC or MPEG4 audio, 75 KB-500 MB. Captions must be SRT plain text (no fonts or colours), so styled captions must be burned in. Videos under 30 s loop until 30 s of playback (a 10 s video plays 3 times); longer ones play once. Upload natively, not YouTube/Vimeo links. Show the most impactful content in the first 10 s; headline up to 70 characters, intro text up to 150. ALSO: LinkedIn's official video spec. Length can be 3 s to 30 min, but LinkedIn recommends 15-30 s so the video qualifies for every feed and Audience Network placement; in-stream ads can run up to 90 s. Videos under 30 s loop until 30 s of playback (a 10 s video plays 3 times), which matters for how the ending reads. Show the most impactful content in the first 10 seconds and consider subtitles (SRT, text only). Recommended ratios: 4:5 vertical, plus 1:1, 9:16 and 16:9; under 30 fps; headline up to 70 characters; intro text up to 150 characters to avoid truncation.",
+    "example": "https://www.linkedin.com/help/lms/answer/a424737#:~:text=Videos%20under%2030%20seconds%20will%20loop",
+    "why": "LinkedIn favours 4:5 and loops short videos to 30 s, which changes how a B2B launch cut is framed and ended."
+  },
+  {
+    "url": "https://www.facebook.com/business/ads-guide/update/video/instagram-reels",
+    "kind": "page",
+    "type": "doc",
+    "title": "Meta Ads Guide: Instagram Reels video ads",
+    "author": "Meta",
+    "published": "undated; read 2026-10-12",
+    "approx_chars": 3000,
+    "tags": {
+      "topics": [
+        "platform",
+        "render-export"
+      ],
+      "scenarios": [
+        "titles",
+        "ui-promo"
+      ],
+      "level": "basic",
+      "impact": "high",
+      "tools": []
+    },
+    "lesson": "Instagram Reels ads: 9:16 at 1440x2560 recommended; MP4/MOV, H.264, square pixels, fixed frame rate, progressive, stereo AAC at 128 kbps or more; 0 s to 15 min, up to 4 GB; captions optional but recommended, sound optional but strongly recommended. Leave at least 14% of the top, 35% of the bottom and 6% on each side free of text, logos and key elements (profile icon, caption and CTA overlays, phones taller than 9:16); on 1080x1920 that is about 269 px top, 672 px bottom, 65 px sides. Meta's text-overlay help (business/help/980593475366490) asks for the bottom 40% clear when a Reels ad carries a disclaimer. Primary text 44 characters; no licensed music.",
+    "example": "https://www.facebook.com/business/ads-guide/update/video/instagram-reels#:~:text=at%20least%2014%25%20of%20the%20top",
+    "why": "Gives the vertical safe zone in Meta's own percentages, which decides where captions, logos and the end-card CTA may sit in a 9:16 cut."
+  },
+  {
+    "url": "https://ads.tiktok.com/help/article/creative-best-practices?lang=en",
+    "kind": "page",
+    "type": "doc",
+    "title": "Creative best practices for performance ads (TikTok Ads)",
+    "author": "TikTok for Business",
+    "published": "last updated June 2025, read 2026-10-12",
+    "approx_chars": 4000,
+    "tags": {
+      "topics": [
+        "platform",
+        "story",
+        "copy"
+      ],
+      "scenarios": [
+        "edit-pacing",
+        "ui-promo"
+      ],
+      "level": "basic",
+      "impact": "medium",
+      "tools": []
+    },
+    "lesson": "TikTok basics: sound or music on, vertical 9:16, at least 720p, content kept inside the UI safe zone of the ad spec (TikTok publishes the zone only as downloadable templates whose bottom band grows with caption length). Get the content proposition across in the first 3 s and land the hook within the first 6 s; structure = hook, unique selling points, clear CTA; feature people; use captions or text overlays at TikTok's stated 5-10 words per second; 3-5 distinct creatives per ad group; refresh on fatigue.",
+    "example": "https://ads.tiktok.com/help/article/creative-best-practices?lang=en#:~:text=first%203%20seconds",
+    "why": "TikTok's own first-3-s and first-6-s rules and its sound-on stance for the vertical cut."
+  },
+  {
+    "url": "https://www.facebook.com/business/news/updated-features-for-video-ads",
+    "kind": "page",
+    "type": "article",
+    "title": "Capture Attention with Updated Features for Video Ads",
+    "author": "Meta (Facebook for Business)",
+    "published": "2016-02-10",
+    "approx_chars": 8200,
+    "tags": {
+      "topics": [
+        "story",
+        "platform",
+        "copy"
+      ],
+      "scenarios": [
+        "edit-pacing",
+        "titles"
+      ],
+      "level": "basic",
+      "impact": "high",
+      "tools": []
+    },
+    "lesson": "Facebook/Nielsen data: up to 47% of a video campaign's value is delivered in the first 3 s and up to 74% in the first 10 s; 65% of people who watch the first 3 s watch at least 10 s, and 45% watch 30 s; 80% react negatively (to the platform and the advertiser) when feed video ads play loudly unexpectedly; captioned video ads raised view time by 12% on average in internal tests (A&W Canada: +25% watch time). Make the story work without sound and front-load brand and message.",
+    "example": "https://www.facebook.com/business/news/updated-features-for-video-ads#:~:text=up%20to%2047%25%20of%20the%20value",
+    "why": "The platform's own first-party data for front-loading and captioning; old (2016) but still the most-cited primary source, so agents should quote it with its date."
+  },
+  {
+    "url": "https://www.derek-lieu.com/blog/2019/10/27/guide-for-captions-and-subtitles",
+    "kind": "page",
+    "type": "tutorial",
+    "title": "Guide For Captions and Subtitles",
+    "author": "Derek Lieu (game trailer editor)",
+    "published": "2019-10-27",
+    "approx_chars": 9800,
+    "tags": {
+      "topics": [
+        "text",
+        "copy"
+      ],
+      "scenarios": [
+        "edit-pacing",
+        "titles"
+      ],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": []
+    },
+    "lesson": "Trailer caption rules from a leading game-trailer editor: legibility first, style second; never more than 2 lines (split long lines into separate captions, break at commas or with an ellipsis); about 30-40 characters per line; maximum contrast through colour, outline and a mild drop shadow; leave at least 2 empty frames between consecutive captions at 24-30 fps (4 at 60 fps) so the change registers; start a caption on the first frame of its dialogue (plus or minus a few frames); if that lands in the last frames of a shot, start it on the 3rd frame of the next shot (5th at 60 fps).",
+    "example": "https://www.derek-lieu.com/blog/2019/10/27/guide-for-captions-and-subtitles#:~:text=Rules%20of%20thumb",
+    "why": "Frame-level caption timing against cuts, from a trailer editor, which the BBC and Netflix guides in the DB don't cover. Older (2019) but still the practitioner reference."
+  },
+  {
+    "url": "https://www.forasoft.com/learn/audio-for-video/articles-audio/lufs-targets-per-platform-2026",
+    "kind": "page",
+    "type": "article",
+    "title": "LUFS targets per platform in 2026: Spotify, Apple Music, YouTube, Netflix, broadcast",
+    "author": "Nikolay Sapunov (Fora Soft)",
+    "published": "2026-06-05",
+    "approx_chars": 30500,
+    "tags": {
+      "topics": [
+        "sound",
+        "platform"
+      ],
+      "level": "intermediate",
+      "impact": "medium",
+      "tools": []
+    },
+    "lesson": "Consolidated 2026 loudness table with sources: YouTube normalizes to about -14 LUFS integrated and only turns loud uploads down (quiet ones are not boosted); aim for -1 dBTP. Spotify -14 LUFS (user modes -11/-14/-19); Apple Music -16; Apple Podcasts -16 +/-1; EBU R128 broadcast -23 LUFS +/-0.5 LU, -1 dBTP; ATSC A/85 -24 LKFS (CALM Act for TV ads); Netflix -27 LKFS dialog-gated, -2 dBTP. TikTok, Instagram, Facebook and X publish no target (Meta uses adaptive xHE-AAC loudness), so -14 LUFS with -1 dBTP is the defensible social default. Mastering hotter only gets turned down, and the dynamics are lost.",
+    "example": "https://www.forasoft.com/learn/audio-for-video/articles-audio/lufs-targets-per-platform-2026#:~:text=The%20one%20table",
+    "why": "One sourced table for the final mix level, which says honestly which numbers are published and which are only measured."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=NQmw8eqfd9o",
+    "kind": "video",
+    "title": "Julian Lehr - How to get people excited about your product (Dive Club)",
+    "author": "Dive Club (Ridd) with Julian Lehr, storytelling lead at Linear",
+    "views": 3685,
+    "likes": 108,
+    "published": "2025-07-02",
+    "duration_sec": 3069,
+    "captions": "auto",
+    "tags": {
+      "topics": [
+        "design",
+        "story",
+        "workflow"
+      ],
+      "scenarios": [
+        "ui-promo"
+      ],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": []
+    },
+    "lesson": "Linear's in-house creative studio (6 people) treats launch assets as packaging: decide what the product would feel like if you could touch it (robust, aluminium or durable glass, a little friction) and express that through tilted 3D glass assets. Because the real UI is information-dense, the job is 'simplify, simplify, simplify': abstract the complexity and highlight one thing. For an unfinished feature (the Agents beta) they did not explain it but built one signature metaphor ('Hands of God': humans creating AI teammates). Copy, design and motion are developed together in one Figma doc from day one; expect about two weeks of messy exploration before the idea clicks. In layout, spacing is pacing: a gap is a pause.",
+    "example": "https://www.youtube.com/watch?v=NQmw8eqfd9o&t=829s",
+    "why": "Linear's films are our reference; this is the person who runs Linear's storytelling explaining the reasons behind them (under 20k views, but a top-tier first-hand speaker)."
+  },
+  {
+    "url": "https://launchlinernotes.substack.com/p/the-launch-video-is-dead-with-afterimage",
+    "kind": "page",
+    "type": "article",
+    "title": "The Launch Video is Dead with Afterimage (LINER NOTES interview)",
+    "author": "Katie Chiou interviewing Josh Lee (co-founder of Afterimage; led video and production at The Browser Company 2022-2025)",
+    "published": "2026-07-21",
+    "approx_chars": 19839,
+    "tags": {
+      "topics": [
+        "story",
+        "workflow"
+      ],
+      "scenarios": [
+        "ui-promo"
+      ],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": []
+    },
+    "lesson": "Repeating the launch-video format everyone has seen, then plugging in your raise, no longer moves the needle. Copying that format reads as 'desperation'; premium reads as 'confidence': a story only this company can tell, with a point of view expressed in the form itself. Messaging and strategy decide the film before any script. Afterimage spends the first 'Ethos Weeks' without discussing video concepts, works in 6-8 week sprints, and refuses to proceed until the team names one P0 audience (for example, customers or investors, not both). Don't take 'one tentpole video' at face value: 3-5 commercials, or one hero plus supporting assets, may serve better.",
+    "example": "https://launchlinernotes.substack.com/p/the-launch-video-is-dead-with-afterimage#:~:text=confidence%20vs.%20desperation",
+    "why": "The person behind The Browser Company's films names the premium-vs-average line: original point of view and a single audience, not a borrowed format."
+  },
+  {
+    "url": "https://doomers.ai/guides/launch-video-templates",
+    "kind": "page",
+    "type": "article",
+    "title": "Every AI Launch Video Looks the Same Now",
+    "author": "Damian Player (Doomers)",
+    "published": "2026-08-12",
+    "approx_chars": 5806,
+    "tags": {
+      "topics": [
+        "design",
+        "story"
+      ],
+      "scenarios": [
+        "edit-pacing",
+        "ui-promo"
+      ],
+      "level": "basic",
+      "impact": "high",
+      "tools": []
+    },
+    "lesson": "It names the 2026 template that marks a film as average: 30-60 s, opening on darkness or a slow reveal, an ambient synth with a rising pad, abstract geometry or particles or a wireframe globe, and dark-mode UI always moving and never held long enough to read. Add one-word text cards cut on the beat, a near-whispered VO, then a resolve to white with the logo and a 'future of' tagline. Viewers recognise the genre in about 2 s and leave. The swap test: replace your end logo with a competitor's; if nothing else in the film becomes untrue, you made a category video. Instead, hold the actual screen long enough to read, show a run that fails and recovers, use a real person in their own register, and show 10 s of real workflow rather than 60 s of atmosphere.",
+    "example": "https://doomers.ai/guides/launch-video-templates#:~:text=Replace%20your%20logo%20at%20the%20end",
+    "why": "It names the red flags of the generic 'cinematic' AI-launch look explicitly, plus a one-line test an agent can run on its own storyboard."
+  },
+  {
+    "url": "https://www.trylaunchreel.com/blog/why-your-launch-video-looks-ai-made",
+    "kind": "page",
+    "type": "article",
+    "title": "Why your launch video looks AI-made, and the tells that give it away",
+    "author": "LaunchReel",
+    "published": "2026-08-14",
+    "approx_chars": 4903,
+    "tags": {
+      "topics": [
+        "design",
+        "color-finish"
+      ],
+      "scenarios": [
+        "ui-promo"
+      ],
+      "level": "basic",
+      "impact": "high",
+      "tools": []
+    },
+    "lesson": "It lists seven finish-level tells of a generated or template film, from a frame-by-frame read of about 100 launch videos, each with its premium fix:\n1. A fake browser with glossy red/yellow/green dots and a fat URL pill. Fix: small desaturated dots and a dim plain address.\n2. A celebratory green checkmark. Fix: resolve the task by brightening a row or flipping a status word from WORKING to DONE.\n3. A soft glow behind every dark card. Fix: separate cards by one tonal step plus a 1 px border, and save glow for the logo and end card.\n4. Gradient rule lines under headlines.\n5. Round placeholder numbers ($12,000, 99%). Fix: jagged real figures ($18,432, 240ms).\n6. Body type that scales up with a zoomed card. Fix: keep the type at product size.\n7. Ending on the loudest peak. Fix: end on a calm held frame where the logo is still, motion stops and the music resolves.",
+    "example": "https://www.trylaunchreel.com/blog/why-your-launch-video-looks-ai-made#:~:text=Everything%20ends%20on%20a%20peak",
+    "why": "It gives concrete, checkable UI-recreation rules that separate an authored film from a generated one: exactly the details our builders produce."
+  },
+  {
+    "url": "https://www.composition.agency/insights/saas-launch-video-trends-2026",
+    "kind": "page",
+    "type": "article",
+    "title": "The state of SaaS launch videos in 2026",
+    "author": "Matt Bingham (Composition, London launch-film studio)",
+    "published": "2026-05-26",
+    "approx_chars": 7375,
+    "tags": {
+      "topics": [
+        "story",
+        "platform",
+        "sound"
+      ],
+      "scenarios": [
+        "edit-pacing",
+        "ui-promo"
+      ],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": []
+    },
+    "lesson": "The hero film's sweet spot moved from 90-120 s two years ago to 40-70 s in 2026. A 60-s film with one job beats a 120-s film with four, and every shot does two jobs. Launch as a system planned on one budget: hero, 2-3 social cuts, a 6-s teaser, a founder follow-up and a site explainer. Show the product, not the product tour: six UI shots in a hero kills it. Use AI for cutdowns, variations and styleframes but never for the hero (audiences spot AI motion within about 3 s). Big VO with soaring music is fading in favour of on-screen type, ambient sound or a real founder voice. Sound design now enters at the storyboard stage, often leaning on one product sound as the hook. A hero with a cut pack takes 4-8 weeks (about 6 typical).",
+    "example": "https://www.composition.agency/insights/saas-launch-video-trends-2026#:~:text=Sound%20design%20is%20doing%20more%20of%20the%20work",
+    "why": "A working launch-film studio states current premium norms with numbers (length, deliverable system, VO and sound shift, where AI is acceptable)."
+  },
+  {
+    "url": "https://www.figma.com/blog/how-we-shaped-the-visual-identity-for-config-2025/",
+    "kind": "page",
+    "type": "article",
+    "title": "How We Shaped the Visual Identity for Config 2025",
+    "author": "Figma Brand Studio (Damien Correll, Chad Colby, Ben Hill, Gilles Desmadrille)",
+    "published": "2025-07-03",
+    "approx_chars": 16650,
+    "tags": {
+      "topics": [
+        "design",
+        "sound",
+        "workflow"
+      ],
+      "scenarios": [
+        "kinetic-type",
+        "ui-promo"
+      ],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": []
+    },
+    "lesson": "At Figma, motion starts 'in the front, with everybody on the same level', in parallel with the static identity, not after it locks. The motion team built a motion library and toolkit in Figma (for example, expressive vs functional type treatments) to brief outside partners; Relay animated the opening film. The film's frame rate was dropped from 60 to 15 fps to feel 'tactile and handmade, not so smooth and slick', matching the brand's craft principle even though A/V vendors expected smoothness. Sounds Like These made sonic palettes and motifs used across walk-on music and every product launch video, so the day felt connected: digital-skewed but warm, organic instrumentation. A one-minute ambient 'orchestra warming up' cue replaced the PA announcement.",
+    "example": "https://www.figma.com/blog/how-we-shaped-the-visual-identity-for-config-2025/#:~:text=reduced%20the%20frame%20rate",
+    "why": "An official in-house account of how a top software brand keeps launch films consistent (one motion library, one sonic palette) and makes a deliberate un-slick choice."
+  },
+  {
+    "url": "https://basement.studio/post/behind-the-ship",
+    "kind": "page",
+    "type": "article",
+    "title": "Behind the Ship (Vercel Ship 2025 opening film)",
+    "author": "basement.studio",
+    "published": "2025",
+    "approx_chars": 5897,
+    "tags": {
+      "topics": [
+        "camera-3d",
+        "color-finish",
+        "workflow"
+      ],
+      "scenarios": [
+        "edit-pacing",
+        "hero-fx"
+      ],
+      "level": "advanced",
+      "impact": "medium",
+      "tools": []
+    },
+    "lesson": "Treat a keynote opener like a short film. The pipeline: concept and moodboard (Hackers, Soul and Hey Arnold references, plus visual metaphors for 'prompting reshapes the world'), then full-colour concept art and character design. Next, the animatic is translated into 3D blocking (cameras, scale, a build list), then master keys and poses, then still frames matched to concept art. Full prerender passes come next to retime and add or trim shots; storyboards are not enough. The render goes out as EXR passes with Cryptomatte, followed by a warm grade in Resolve. Everything was animated by hand, pose by pose, with no motion libraries or templates, and 'on twos' (12 fps poses inside 24 fps camera moves) for a graphic, deliberate feel.",
+    "example": "https://basement.studio/post/behind-the-ship#:~:text=animating%20on%20twos",
+    "why": "It shows how Vercel's long-time studio gets a premium tech launch opener: the review gates (animatic, blocking, prerender) and a deliberate frame-rate choice."
+  },
+  {
+    "url": "https://bartlomiejotlowski.com/stripe-treasury-product-animation/",
+    "kind": "page",
+    "type": "article",
+    "title": "Stripe Treasury Product Animation (Stripe Sessions 2026)",
+    "author": "Bartłomiej Otłowski (independent motion designer for Stripe)",
+    "published": "2026-09-08",
+    "approx_chars": 7266,
+    "tags": {
+      "topics": [
+        "story",
+        "design",
+        "workflow"
+      ],
+      "scenarios": [
+        "ui-promo"
+      ],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": []
+    },
+    "lesson": "Stripe's own storyboard opened on company registration. They cut that and started 'much closer to the action' (a payment arriving on mobile), then followed one thing (money) through the product instead of listing features. Let the UI explain: large UI close-ups, and buttons that become almost the entire frame, instead of title cards. Real UI is the base; some elements are simplified for animation and kept consistent by a Stripe designer. One recurring device (gradient outlines) guides attention through transitions. The finale rebuilds the full dashboard for the first time. Because the product changed mid-production, values, tables (driven by expressions) and highlights are built as reusable AE rigs. Review ran in Figma for frames, Docs for story and Frame.io in production.",
+    "example": "https://bartlomiejotlowski.com/stripe-treasury-product-animation/#:~:text=let%20the%20UI%20do%20most%20of%20the%20explaining",
+    "why": "A first-hand account of how a Stripe Sessions launch film stages real UI: one subject, close-ups, one attention device, no feature list."
+  },
+  {
+    "url": "https://advids.co/blog/aha-moment-tech-product-videos",
+    "kind": "page",
+    "type": "article",
+    "title": "What 149 Tech Videos Reveal About Showcasing the Aha Moment",
+    "author": "Jai Ghosh (ADVIDS Research)",
+    "published": "2026-09-14",
+    "approx_chars": 19228,
+    "tags": {
+      "topics": [
+        "story"
+      ],
+      "scenarios": [
+        "edit-pacing",
+        "logo-ident",
+        "ui-promo"
+      ],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": []
+    },
+    "lesson": "Data from 149 tech product videos (124 companies, Jan-Aug 2026; median runtime 1:11):\n- The product appears in 129, at a median 0:12 (78 by 0:15).\n- A result (the product visibly producing an output) appears in only 75, at a median 0:34 (48% in). 54 show the product but never show it work, and 20 never show it.\n- Videos with a result keep the product on screen 55% of runtime vs 31%, and show it being used first (median 2 segments, 0:20) before it delivers.\n- After the result, product shots cover a median 63% of the remaining time.\n- 98 of 149 end on a logo card and none on the result; only 27 put an ask or URL in the closing frame.",
+    "example": "https://advids.co/blog/aha-moment-tech-product-videos#:~:text=98%20of%20149",
+    "why": "It measures the 'show it working' gap that separates convincing launch films from mood pieces, with timings an agent can plan a timeline against."
+  },
+  {
+    "url": "https://www.whatastory.agency/resources/saas-explainer-video-analysis",
+    "kind": "page",
+    "type": "article",
+    "title": "What 1,000+ SaaS explainer videos have in common (2026 analysis)",
+    "author": "Rees Gargi (What a Story)",
+    "published": "2026-07-23",
+    "approx_chars": 20793,
+    "tags": {
+      "topics": [
+        "design",
+        "copy"
+      ],
+      "scenarios": [
+        "edit-pacing",
+        "explainer",
+        "ui-promo"
+      ],
+      "level": "basic",
+      "impact": "medium",
+      "tools": []
+    },
+    "lesson": "Pacing and product-showing distributions from 1,000+ SaaS videos (2015-2026, hand-coded; partly the agency's own library):\n- Scene length: 39% change scenes every 3-5 s, 18% every 1-3 s, 26% every 5-7 s.\n- Narration: 46% run at 120-140 wpm; above 160 wpm, technical comprehension breaks down.\n- UI: 72% show the real product UI, and the most effective show it within the first 15 s. Abstract animation builds interest; real UI builds trust.\n- Length: delivered explainers fell from 115 s (2015) to 45 s (2026). 91% of feature-announcement videos stay under 60 s.\n- Style: motion graphics 48%, screen capture 27%, live action 15%.",
+    "example": "https://www.whatastory.agency/resources/saas-explainer-video-analysis#:~:text=change%20scenes%20every%203%20to%205%20seconds",
+    "why": "It gives baseline shot-length and narration-speed numbers to check a launch animatic against. These are explainer-weighted agency data, so treat them as norms, not the premium ceiling."
+  },
+  {
+    "url": "https://www.bythebooth.com/insights/creative-tangent-wesley-slover-sound-the-invisible-brand-layer",
+    "kind": "page",
+    "type": "article",
+    "title": "Wesley Slover - Sound: The Invisible Brand Layer",
+    "author": "The Booth (Creative Tangent podcast) with Wesley Slover, founder of Sanctus Audio (Discord, Asana sounds)",
+    "published": "",
+    "approx_chars": 7400,
+    "text_file": "/home/ran/yt-rag/eval/promo-craft/texts/booth-wesley-slover.md",
+    "tags": {
+      "topics": [
+        "sound"
+      ],
+      "scenarios": [
+        "logo-ident",
+        "ui-promo"
+      ],
+      "level": "intermediate",
+      "impact": "medium",
+      "tools": []
+    },
+    "lesson": "Start from what the sound must do (capture attention, reduce friction, build confidence, or sit back), not what it should sound like. Avoid leading with temp tracks, because 'demo love can be really hard to break'. Stock vs custom depends on the story arc: library music holds one mood, so go custom (or customised) when the film has a journey (problem, uncertainty, payoff) or precise musical hits. A great library track is fine when you only need an energy bed. Extend the audio logo into product and UX sounds so marketing and product sound like one brand. Chasing a trendy 'cool' sound can read as unserious and cost credibility.",
+    "example": "https://www.bythebooth.com/insights/creative-tangent-wesley-slover-sound-the-invisible-brand-layer#:~:text=Stock%20vs%20custom",
+    "why": "A leading product-sound designer gives a clear rule for the bespoke-score vs licensed-track decision on a launch film. The fetcher returned a partial page, so text_file holds the full text."
+  },
+  {
+    "url": "https://www.antfood.com/labs/creating-sound-that-help-products-thrive",
+    "kind": "page",
+    "type": "article",
+    "title": "Creating Sounds That Help Products Thrive",
+    "author": "Colin Coogan (Antfood)",
+    "published": "2023-07-21",
+    "approx_chars": 20126,
+    "tags": {
+      "topics": [
+        "sound"
+      ],
+      "scenarios": [
+        "logo-ident",
+        "ui-promo"
+      ],
+      "level": "intermediate",
+      "impact": "medium",
+      "tools": []
+    },
+    "lesson": "The first rule of UX and branded sound is 'Do no harm': a branded cue must never add friction, clutter or make the product feel slower. Reserve expressive brand sounds for infrequent, unambiguously positive moments (Instacart's celebratory sounds). Build energy tiers of the same sound family (Instacart's Mild / Medium / Spicy). Avoid category clichés: for PayPal, Antfood used no coin jingles or cash registers but upward movement, shimmery timbres and tactility ('transaction without transactional'). Context decides everything. Eno's Windows 95 start-up sound shows a sonic logo is 'a tiny little jewel' (that brief asked for 3¼ s).",
+    "example": "https://www.antfood.com/labs/creating-sound-that-help-products-thrive#:~:text=Do%20no%20harm",
+    "why": "The leading sonic-branding studio gives rules for product UI sounds and sonic logos that a launch film's foley and sting should follow."
+  },
+  {
+    "url": "https://www.20k.org/episodes/the-sound-of-apple",
+    "kind": "page",
+    "type": "article",
+    "title": "The Sound of Apple: Tritones, Chords & Origins (Twenty Thousand Hertz, with transcript)",
+    "author": "Twenty Thousand Hertz with Apple Design Team (Billy Sorrentino, Hugo Verweij) and Kelly Jacklin",
+    "published": "2024-07-31",
+    "approx_chars": 25708,
+    "tags": {
+      "topics": [
+        "sound"
+      ],
+      "scenarios": [
+        "logo-ident",
+        "ui-promo"
+      ],
+      "level": "intermediate",
+      "impact": "medium",
+      "tools": []
+    },
+    "lesson": "At Apple, sound 'is at the beginning of the design process. It isn't a coat of paint at the end'. Sound designers sit at the table with industrial, 3D, interaction and haptics designers from the first product ideas. Inspiration is the product itself: hardware, materials, how it feels in the hand, then the UI animations, UI colours and haptics. Apple records real instruments (glockenspiel, kalimba) for organic, familiar timbres that make new technology feel comfortable. It builds a palette of about five processed 'instruments' from recordings (reversed, filtered, reverbed) and composes each sound from that palette.",
+    "example": "https://www.20k.org/episodes/the-sound-of-apple#:~:text=Sound%20really%20is%20at%20the%20beginning",
+    "why": "It explains, first-hand from Apple's design team, how premium product sound is derived from the object and its UI motion. That is the basis for UI foley in our launch films."
+  },
+  {
+    "url": "https://artofstyleframe.com/blog/motion-graphics-production-workflow/",
+    "kind": "page",
+    "type": "article",
+    "title": "Motion Graphics Production Workflow: Brief to Delivery",
+    "author": "Art of Styleframe Editorial",
+    "published": "2026-09-18",
+    "approx_chars": 21941,
+    "tags": {
+      "topics": [
+        "workflow"
+      ],
+      "scenarios": [
+        "explainer",
+        "ui-promo"
+      ],
+      "level": "intermediate",
+      "impact": "high",
+      "tools": []
+    },
+    "lesson": "Eight gated stages for a 60-90 s piece, 5-7 weeks in total:\n- Brief: 3-5 days. Names one audience, one message, duration and deliverables, signed by a named decision maker.\n- Script and boards: 4-6 days.\n- Styleframes: 3-5 days, about a week for 3D. 2-3 frames at delivery resolution, each with a note on what will move.\n- Animatic: 2-3 days. Burnt-in timecode; locks shot durations.\n- Animation: 10-15 days.\n- Sound and mix: 3-4 days, only after picture lock.\n- Review rounds: about 5 days budgeted across stages.\n- Delivery: 1-2 days.\nEach stage gets two review rounds (round 2 is polish only), and each gate locks a layer: brief/scope, script/words, boards/structure, styleframes/look, animatic/timing, picture lock/motion, mix/everything. Feedback against a locked layer is a change request. Use a frame-accurate review tool, not emailed timestamps.",
+    "example": "https://artofstyleframe.com/blog/motion-graphics-production-workflow/#:~:text=Every%20gate%20locks%20a%20layer",
+    "why": "It gives explicit approval gates and durations for our agent pipeline (storyboard, styleframe, animatic, picture lock, mix). It is one practitioner's model; its 'change requests tripled' figure is an anecdote, not a study."
+  },
+  {
+    "url": "https://schoolofmotion.com/blog/sono-sanctus-podcast-podcast",
+    "kind": "page",
+    "type": "article",
+    "title": "Sound in Motion: A PODCAST with Sono Sanctus (full transcript)",
+    "author": "School of Motion (Joey Korenman) with Wesley Slover and Trevor Richardson of Sono Sanctus",
+    "published": "2019-08-07",
+    "approx_chars": 103946,
+    "tags": {
+      "topics": [
+        "sound",
+        "workflow"
+      ],
+      "scenarios": [
+        "logo-ident",
+        "ui-promo"
+      ],
+      "level": "intermediate",
+      "impact": "medium",
+      "tools": []
+    },
+    "lesson": "It describes the sound process for a designed motion piece, step by step:\n- Start with the music first, because it shapes everything.\n- Lay several library tracks against the cut and ask what the client likes and dislikes, which yields a tempo range.\n- Then sound-design a ~15-second demo section and treat it like a style frame to agree the palette.\n- Build a project-specific sound library that is harmonious with the music.\n- Sync sounds to on-screen events (a piece with nothing happening on screen gives sound nothing to anchor to).\n- In the final mix, remove more than you add to leave room for the sound design.",
+    "example": "https://schoolofmotion.com/blog/sono-sanctus-podcast-podcast#:~:text=start%20with%20like%20a%20demo%20section",
+    "why": "It is still the canonical case-study breakdown (2019) of how a top motion-graphics sound studio scores a short brand piece; it gives agents a music-first, demo-section workflow."
+  }
+]

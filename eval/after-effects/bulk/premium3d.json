@@ -1,0 +1,1445 @@
+[
+ {
+  "url": "https://www.youtube.com/watch?v=Bw-ucrydyuw",
+  "kind": "video",
+  "title": "Animating a Figma Mockup in After Effects",
+  "author": "Jake In Motion",
+  "views": 43055,
+  "likes": 1649,
+  "published": "2025-02-25",
+  "duration_sec": 3110,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "camera-3d",
+    "shapes",
+    "workflow"
+   ],
+   "scenarios": [
+    "ui-promo"
+   ],
+   "level": "advanced",
+   "impact": "high",
+   "tools": [
+    "overlord"
+   ]
+  },
+  "trick": "Turn a flat Figma app screen into a premium 3D device shot: extruded A3D phone slab with screen layers parented 1 px above it, a 135 mm telephoto camera that compresses perspective, camera-rotation controls on a rig, and UI interactions triggered by markers.",
+  "example": "https://www.youtube.com/watch?v=Bw-ucrydyuw&t=0s",
+  "why": "A top AE educator's full production pipeline (Figma -> AE -> A3D depth -> camera -> UI interaction rig), not a toy example; the telephoto + extruded-slab + parented-screen recipe is exactly what makes app promos read as product films."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=7qsCulUWl3o",
+  "kind": "video",
+  "title": "TRUE 3D in After Effects + Button Rig Download!",
+  "author": "Jake In Motion",
+  "views": 29980,
+  "likes": 1394,
+  "published": "2024-01-10",
+  "duration_sec": 1274,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "camera-3d",
+    "expressions",
+    "shapes"
+   ],
+   "scenarios": [
+    "ui-promo",
+    "explainer"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": []
+  },
+  "trick": "Tactile, pressable 3D UI buttons: flat-shaded A3D extrusions, an expression that ties layer position to extrusion depth so the button pushes in along its own axis, and a long-lens 'almost isometric' camera.",
+  "example": "https://www.youtube.com/watch?v=7qsCulUWl3o&t=0s",
+  "why": "Niche but top-tier (Jake In Motion, ~4.6% like ratio): gives a stock-AE way to make UI elements physically depress and catch light, plus the pseudo-isometric telephoto camera, and covers A3D limitations to avoid; far beyond generic 'make it 3D' tutorials."
+ },
+ {
+  "url": "https://josephnilo.com/blog/how-i-create-mobile-app-demo-videos-in-after-effects/",
+  "kind": "page",
+  "title": "How To Create 3D Mobile App Demo Videos in After Effects",
+  "author": "Joseph Nilo",
+  "type": "tutorial",
+  "approx_chars": 21193,
+  "tags": {
+   "topics": [
+    "camera-3d",
+    "compositing",
+    "workflow"
+   ],
+   "scenarios": [
+    "ui-promo"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": [
+    "element-3d"
+   ]
+  },
+  "trick": "Production app-demo recipe: shadow-catcher floor with AO, DOF linked to the device null so the screen stays sharp while edges fall off, constant subtle -5..+5 degree device rotations so environment reflections glide across the glass, stacked cameras to disguise jump cuts, and a fake-finger tap (80% opacity circle, 100->90% scale pop).",
+  "example": "https://josephnilo.com/blog/how-i-create-mobile-app-demo-videos-in-after-effects/",
+  "why": "Written by a working app-promo producer with exact values and editorial logic (VO-timed screen captures, cut-covering camera moves); the reflection-glide and cut-hiding tricks transfer directly to A3D GLB devices."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=huxh1Vd3Q5w",
+  "kind": "video",
+  "title": "How to Create a Depth Map & 3D Fog in After Effects",
+  "author": "SternFX (Eran Stern)",
+  "views": 17333,
+  "likes": 382,
+  "published": "2024-05-02",
+  "duration_sec": 552,
+  "captions": "manual",
+  "tags": {
+   "topics": [
+    "camera-3d",
+    "compositing"
+   ],
+   "scenarios": [
+    "hero-fx"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "trick": "Pull a depth map out of an Advanced 3D scene with 3D Channel Extract and drive Fog 3D and depth-of-field on the precomp, adding atmospheric perspective that A3D cannot render natively.",
+  "example": "https://www.youtube.com/watch?v=huxh1Vd3Q5w&t=0s",
+  "why": "Niche, from a top Adobe educator with manual captions: atmospheric haze is one of the cheapest ways to make native 3D scenes read as large and cinematic, and the depth-data route is agent-drivable with stock effects."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=vwpYzXOXeuA",
+  "kind": "video",
+  "title": "Animate Screenshots Like A Pro in After Effects",
+  "author": "Editing Empire",
+  "views": 380272,
+  "likes": 15469,
+  "published": "2025-07-20",
+  "duration_sec": 514,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "camera-3d",
+    "mattes-masks"
+   ],
+   "scenarios": [
+    "explainer",
+    "ui-promo"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "trick": "Explode a flat screenshot into separately animated masked elements, rebuild live text/counters over it, then sell it in 3D with a two-node camera flyover, animated focal length + aperture rack focus, CC Vignette and CC Force Motion Blur on adjustment layers.",
+  "example": "https://www.youtube.com/watch?v=vwpYzXOXeuA&t=0s",
+  "why": "The exact tech-YouTuber move for showing articles, tweets and app screens; very popular (4% like ratio) and turns dead screenshots into depth-of-field camera shots with stock tools."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=5OS3DqBNnnU",
+  "kind": "video",
+  "title": "How to Create 3D Depth in After Effects",
+  "author": "Motion Science",
+  "views": 53992,
+  "likes": 2624,
+  "published": "2023-10-05",
+  "duration_sec": 1150,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "camera-3d",
+    "color-finish"
+   ],
+   "scenarios": [
+    "explainer",
+    "hero-fx"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "trick": "Build a cinematic 2.5D 'investigation board' world: texture backdrop, photo and device mockups spaced in Z, a string element threading through depth, point lights with falloff to carve depth, ambient fill, then film emulation for an organic finish.",
+  "example": "https://www.youtube.com/watch?v=5OS3DqBNnnU&t=0s",
+  "why": "Shows how lighting falloff and Z-layout (not effects) create depth in collage-style explainer shots, with a filmic finish; ~4.9% like ratio and directly usable for story beats with photos."
+ },
+ {
+  "url": "https://www.schoolofmotion.com/blog/lessons-motion-designers-learn-from-hollywood-lenses",
+  "kind": "page",
+  "title": "Lessons Motion Designers Learn from Hollywood - Lenses",
+  "author": "School of Motion",
+  "type": "article",
+  "approx_chars": 19375,
+  "tags": {
+   "topics": [
+    "camera-3d",
+    "design"
+   ],
+   "scenarios": [
+    "hero-fx",
+    "ui-promo"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": []
+  },
+  "trick": "Pick the focal length per shot like a cinematographer (wide = energy and distortion, long = compression and isolation for products), and add the character real lenses have that virtual ones lack.",
+  "example": "https://www.schoolofmotion.com/blog/lessons-motion-designers-learn-from-hollywood-lenses",
+  "why": "Camera language rather than camera buttons: the lens choice is the single biggest difference between a cheap-looking and a filmed-looking 3D move, and this explains the why with concrete shot implications."
+ },
+ {
+  "url": "https://quincemedia.com/2026/09/10/apple-3d-product-launch-videos/",
+  "kind": "page",
+  "title": "Why Apple Still Launches in 3D, Not AI",
+  "author": "Djordje Komljenovic (Quince Creative)",
+  "type": "article",
+  "approx_chars": 39587,
+  "tags": {
+   "topics": [
+    "design",
+    "camera-3d",
+    "color-finish"
+   ],
+   "scenarios": [
+    "ui-promo",
+    "hero-fx"
+   ],
+   "level": "advanced",
+   "impact": "medium",
+   "tools": []
+  },
+  "trick": "Shot-by-shot reading of Apple's 2026 launch films: one feature told in three shots (macro, exploded, isolated part), a single dark rim-lit frame as punctuation, orthographic product views locked into type grids, part animation over motion-graphic light streaks, and CG deliberately roughened with grain, chromatic fringing, lens distortion, vignette and haze.",
+  "example": "https://quincemedia.com/2026/09/10/apple-3d-product-launch-videos/",
+  "why": "A studio's current (Sept 2026) breakdown of the benchmark product films, naming the shot grammar and finishing choices that read as premium; gives agents a shot list language, not just software steps. (Overlaps look-dev; use for shot design and finish.)"
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=IsNny5q1erg",
+  "kind": "video",
+  "title": "Advanced Plexus Network - Adobe After Effects Tutorial",
+  "author": "Nodeconnector",
+  "views": 51074,
+  "likes": 1341,
+  "published": "2021-05-05",
+  "duration_sec": 1643,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "particles",
+    "camera-3d"
+   ],
+   "scenarios": [
+    "hero-fx",
+    "explainer"
+   ],
+   "level": "advanced",
+   "impact": "medium",
+   "tools": [
+    "plexus"
+   ]
+  },
+  "trick": "Plexus network built from an OBJ sphere with tuned line distance and opacity, plus AE lights used as Plexus points so labels and layers can ride on exact node positions; animate the distance threshold with scale so lines do not vanish.",
+  "example": "https://www.youtube.com/watch?v=IsNny5q1erg&t=0s",
+  "why": "Goes past the usual random-dots plexus: model-driven structure and trackable nodes make a credible AI/data-network hero shot that callouts can attach to."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=L4E3GKQLnrg",
+  "kind": "video",
+  "title": "Trapcode Particular 3 Training | 06: OBJ Emitters",
+  "author": "Maxon Red Giant (Harry Frank)",
+  "views": 179080,
+  "likes": 1846,
+  "published": "2018-03-19",
+  "duration_sec": 625,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "particles"
+   ],
+   "scenarios": [
+    "hero-fx",
+    "logo-ident"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": [
+    "trapcode-particular"
+   ]
+  },
+  "trick": "Emit particles from a real 3D model's vertices, edges or faces (OBJ or OBJ sequence) so a device or logo can dissolve into, or assemble from, its own true 3D surface.",
+  "example": "https://www.youtube.com/watch?v=L4E3GKQLnrg&t=0s",
+  "why": "Canonical official lesson for the one Particular feature our library lacks (light and layer emitters are already in); model-accurate particle builds read far more premium than flat-layer emitters."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=R3ablyDL__8",
+  "kind": "video",
+  "title": "Recreate a Viral SaaS Animation in After Effects (Box Animation + UI Motion Graphics Tutorial)",
+  "author": "Mhd Labs",
+  "views": 17712,
+  "likes": 1006,
+  "published": "2026-07-16",
+  "duration_sec": 971,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "camera-3d",
+    "easing",
+    "transitions"
+   ],
+   "scenarios": [
+    "ui-promo"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "trick": "SaaS 'never-stop' camera language: a main controller null driving a secondary controller with an overlapping mid-move scale so the frame never comes to a dead stop, UI layers pushed back in Z with small random rotations for depth, one shared steep graph reused at different speeds, CC RepTile to fill exposed edges, and a rounded-box mask transition that expands to full frame.",
+  "example": "https://www.youtube.com/watch?v=R3ablyDL__8&t=0s",
+  "why": "Recreates a current viral SaaS launch shot and explains why each layer of motion exists; 5.7% like ratio. The two-controller overlap is the specific thing that makes 2026 launch videos feel continuous instead of keyframe-to-keyframe."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=7hPdLEsxrh8",
+  "kind": "video",
+  "title": "SEAMLESS 3D Infinite Zoom | After Effects",
+  "author": "Flat Pack FX",
+  "views": 261361,
+  "likes": 10688,
+  "published": "2021-12-13",
+  "duration_sec": 660,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "transitions",
+    "camera-3d",
+    "mattes-masks"
+   ],
+   "scenarios": [
+    "hero-fx",
+    "edit-pacing"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": []
+  },
+  "trick": "Chain scenes as nested 3D 'portals': mask an opening in each frame, place the next scene behind it in Z, and fly one camera continuously through the tunnel so every scene becomes the doorway to the next.",
+  "example": "https://www.youtube.com/watch?v=7hPdLEsxrh8&t=0s",
+  "why": "A widely loved (4.1% like ratio) stock-AE 3D transition that turns a sequence of stills or UI screens into one unbroken camera move, the signature hook move for intros and chapter changes."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=UI0cHx8V2Y0",
+  "kind": "video",
+  "title": "Isometric Projections in Adobe After Effects (SSR Method)",
+  "author": "ECAbrams (Evan Abrams)",
+  "views": 134560,
+  "likes": 3954,
+  "published": "2017-07-08",
+  "duration_sec": 804,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "camera-3d",
+    "shapes"
+   ],
+   "scenarios": [
+    "explainer",
+    "ui-promo"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "trick": "True isometric projection in AE via the scale-skew-rotate (SSR) method, so flat UI, icons and diagrams sit on clean isometric planes that stay correct when animated.",
+  "example": "https://www.youtube.com/watch?v=UI0cHx8V2Y0&t=0s",
+  "why": "Canonical explanation from a top educator; isometric staging is the go-to premium look for tech explainers (servers, devices, app architecture) and this method avoids the perspective drift of camera-faked isometric."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=YzUa-Kr2ntY",
+  "kind": "video",
+  "title": "How to 3D track ANYTHING into your videos! \\ After Effects Tutorial",
+  "author": "Jake In Motion",
+  "views": 84147,
+  "likes": 2914,
+  "published": "2022-11-16",
+  "duration_sec": 813,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "compositing",
+    "camera-3d"
+   ],
+   "scenarios": [
+    "hero-fx",
+    "explainer"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": []
+  },
+  "trick": "3D Camera Tracker solve -> ground plane and target nulls -> 3D text/graphics placed in the real scene so they hold perspective and parallax as the shot moves, with integration touches so they sit in the plate.",
+  "example": "https://www.youtube.com/watch?v=YzUa-Kr2ntY&t=0s",
+  "why": "Putting titles and UI into the room with real B-roll is the biggest premium jump for talking-head tech videos; Jake explains solve quality and placement choices rather than just clicking Track."
+ },
+ {
+  "url": "https://mediascaleup.com/post/blending-graphics-with-live-footage-done-properly-motion",
+  "kind": "page",
+  "title": "Blending Graphics with Live Footage, Done Properly",
+  "author": "Tomas Lindqvist (MediaScaleUp)",
+  "type": "article",
+  "approx_chars": 33715,
+  "tags": {
+   "topics": [
+    "compositing",
+    "motion-blur",
+    "color-finish"
+   ],
+   "scenarios": [
+    "hero-fx",
+    "explainer"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": []
+  },
+  "trick": "Symptom-by-symptom integration checklist for 3D logos, labels and UI over footage: sample and match grain, derive shutter angle (360 x fps x exposure) for matching blur, pull whites/blacks/saturation to the plate, match key-light direction, multiply soft contact shadows, add a thin blurred-background light wrap, sub-pixel softening, and match plate chromatic aberration and vignette order.",
+  "example": "https://mediascaleup.com/post/blending-graphics-with-live-footage-done-properly-motion",
+  "why": "Written with exact formulas and the order of fixes, organised as diagnose -> cause -> fix -> prevention; gives agents a concrete finishing pass for any 3D element dropped onto B-roll."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=llujRqLB1xE",
+  "kind": "video",
+  "title": "Turn ANY Layer into a 3D Material in After Effects",
+  "author": "SternFX (Eran Stern)",
+  "views": 14111,
+  "likes": 281,
+  "published": "2026-09-10",
+  "duration_sec": 674,
+  "captions": "manual",
+  "tags": {
+   "topics": [
+    "camera-3d",
+    "compositing"
+   ],
+   "scenarios": [
+    "ui-promo",
+    "logo-ident",
+    "titles"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": []
+  },
+  "trick": "AE 27 beta Layers-as-Materials and per-face materials: animated precomps and video mapped onto 3D models, parametric meshes and the front/bevel/side faces of extruded text and shapes, finished with a compositing pass in a real project.",
+  "example": "https://www.youtube.com/watch?v=llujRqLB1xE&t=0s",
+  "why": "The newest native route to live UI on a 3D device and to video- or texture-skinned extruded logos without leaving AE; taught by a top Adobe educator with manual captions, in project context rather than as a feature list. Niche because it is one month old."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=gLNl8Lidzk0",
+  "kind": "video",
+  "title": "8 Mistakes to Avoid when Animating Cameras",
+  "author": "CG Boost (Martin, Master Cinematic Storytelling)",
+  "views": 30229,
+  "likes": 2283,
+  "published": "2025-04-23",
+  "duration_sec": 589,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "camera-3d",
+    "easing"
+   ],
+   "scenarios": [
+    "hero-fx",
+    "ui-promo"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": []
+  },
+  "trick": "Camera-move hygiene: no abrupt starts or stops (long eased tails on the null), never ship default ease curves, keep big moves slow, let shots breathe before cutting, do not let the camera anticipate the action, and connect camera moves across cuts.",
+  "example": "https://www.youtube.com/watch?v=gLNl8Lidzk0&t=0s",
+  "why": "Shown in Blender but every rule maps 1:1 to AE camera nulls and the Graph Editor; 7.5% like ratio. These are exactly the tells that make agent-made camera moves look computer-generated."
+ },
+ {
+  "url": "https://www.ireneortegasanz.com/post/important-aspects-of-the-camera-that-you-should-know-if-you-want-to-animate-one",
+  "kind": "page",
+  "title": "Important aspects of the camera that you should know if you want to animate one",
+  "author": "Irene Ortega Sanz (3D layout artist)",
+  "type": "article",
+  "approx_chars": 8866,
+  "tags": {
+   "topics": [
+    "camera-3d",
+    "easing",
+    "design"
+   ],
+   "scenarios": [
+    "hero-fx",
+    "ui-promo"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "trick": "Give the virtual camera weight: it arrives after the action (follow lag), accelerates and brakes, chooses mechanical (crane, dolly) or organic (handheld) language per beat, and 'breathes' with micro-movement even on static shots; lens and f-stop chosen for the story.",
+  "example": "https://www.ireneortegasanz.com/post/important-aspects-of-the-camera-that-you-should-know-if-you-want-to-animate-one",
+  "why": "A film layout artist's rules, in words agents can apply directly to camera-null keyframes; the follow-lag and breathing-camera ideas are what separate filmed-feeling product moves from weightless ones."
+ },
+ {
+  "url": "https://craigkunce.com/3d-can-marketing-video/",
+  "kind": "page",
+  "title": "3D Can - Marketing Video (After Effects Advanced 3D workflow)",
+  "author": "Craig Kunce",
+  "type": "tutorial",
+  "approx_chars": 13102,
+  "tags": {
+   "topics": [
+    "camera-3d",
+    "workflow"
+   ],
+   "scenarios": [
+    "ui-promo",
+    "hero-fx"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "trick": "Native A3D product-film structure: GLTF product in an 'asset comp' with its own orbit-null camera and 3-point lights, then flat or collapsed precomps in the assembly comp; rules for when to switch Collapse Transformations on (shared 3D space and lights) versus off (fast 2D sticker moves).",
+  "example": "https://craigkunce.com/3d-can-marketing-video/",
+  "why": "A complete, current (AE 26) product-marketing build with the pipeline decisions spelled out; the asset-comp vs assembly-comp split is what keeps lighting locked while the edit changes, which agents need for multi-shot device films."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=28dg4dFwn7w",
+  "kind": "video",
+  "title": "Google Earth Studio After Effects Tutorial (10 Tips)",
+  "author": "Javier Mercedes",
+  "views": 189337,
+  "likes": 6064,
+  "published": "2022-07-29",
+  "duration_sec": 611,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "camera-3d",
+    "compositing"
+   ],
+   "scenarios": [
+    "explainer"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": [
+    "google-earth-studio"
+   ]
+  },
+  "trick": "Fly-ins to real locations: animate camera targets in Google Earth Studio, export 3D track points, import the .jsx camera into AE, parent extruded titles and PNG-to-shape icons to the track nulls so they sit in the 3D world, then add motion blur.",
+  "example": "https://www.youtube.com/watch?v=28dg4dFwn7w&t=0s",
+  "why": "The staple premium move of tech-news explainers (zoom from space to the datacenter, HQ or launch site) with labels locked in true 3D; ten practical tips, 3.2% like ratio."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=YiDf3hQRQnI",
+  "kind": "video",
+  "title": "You're Animating 3D Text Wrong",
+  "author": "Motion by Nick (Nick Greenawalt)",
+  "views": 86830,
+  "likes": 4868,
+  "published": "2022-10-19",
+  "duration_sec": 1007,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "text",
+    "camera-3d",
+    "easing"
+   ],
+   "scenarios": [
+    "kinetic-type",
+    "titles",
+    "logo-ident"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": []
+  },
+  "trick": "Drive 3D type with per-character Text Animators (3D rotation, position and anchor offsets with range-selector staggers) instead of separate layers, then layer secondary motion and a restrained camera move so the type tumbles into place with depth; saved as reusable presets.",
+  "example": "https://www.youtube.com/watch?v=YiDf3hQRQnI&t=0s",
+  "why": "5.6% like ratio from a respected motion designer; fixes the common 'rotate the whole layer' approach and gives a clean, art-directable 3D type system that reads premium in titles and idents."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=nE9l37cs8Fs",
+  "kind": "video",
+  "title": "Advanced 3D After Effects Motion Graphics Tutorial",
+  "author": "Stephan Zammit",
+  "views": 732692,
+  "likes": 30277,
+  "published": "2024-09-05",
+  "duration_sec": 1644,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "expressions",
+    "camera-3d",
+    "shapes"
+   ],
+   "scenarios": [
+    "hero-fx",
+    "logo-ident",
+    "ui-promo"
+   ],
+   "level": "advanced",
+   "impact": "high",
+   "tools": []
+  },
+  "trick": "Cinema 4D-style MoGraph effectors natively in AE: a 3D grid of extruded shape layers whose position, scale and colour react to a moving null by proximity expressions, lit with reactive lights and a camera, plus a 2D-to-3D position link for an orb that drives the effect.",
+  "example": "https://www.youtube.com/watch?v=nE9l37cs8Fs&t=0s",
+  "why": "Hugely popular (4.1% like ratio) and genuinely advanced: proximity-driven instancing is the core look of premium tech/brand loops and was thought to need C4D; the expressions are explained, the paid preset is optional."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=qobkYjVL8Og",
+  "kind": "video",
+  "title": "Stunning 3D Glass UI Explainer with Interactive Text - After Effects Tutorial",
+  "author": "Stephan Zammit",
+  "views": 336601,
+  "likes": 12989,
+  "published": "2025-06-19",
+  "duration_sec": 2136,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "camera-3d",
+    "shapes",
+    "compositing"
+   ],
+   "scenarios": [
+    "ui-promo",
+    "explainer"
+   ],
+   "level": "advanced",
+   "impact": "high",
+   "tools": []
+  },
+  "trick": "A3D glass UI panels and cards: material options and placed lights for glass reflections, a background-blur adjustment trick for frosted glass, separate bevelled glass edges, cards that react to a cursor null, hover-triggered text, and a stylised camera move.",
+  "example": "https://www.youtube.com/watch?v=qobkYjVL8Og&t=0s",
+  "why": "The 2025-26 premium SaaS/explainer look built entirely in AE with a storyboard-first approach; 3.9% like ratio over 336k views. Gives agents a native frosted-card recipe where A3D itself has no transmission."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=R2ptKkUjgt0",
+  "kind": "video",
+  "title": "After Effects Advanced 3D Tutorial",
+  "author": "Stephan Zammit",
+  "views": 143652,
+  "likes": 7025,
+  "published": "2024-08-19",
+  "duration_sec": 789,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "camera-3d",
+    "shapes"
+   ],
+   "scenarios": [
+    "hero-fx",
+    "logo-ident"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "trick": "Turn simple shape layers into soft, premium 3D objects in A3D: convex-bevel extrusions shaded only by an environment light, bent 3D objects with tunable bend angle, retimed overlapping animation, and a 3D background warped with CC Lens.",
+  "example": "https://www.youtube.com/watch?v=R2ptKkUjgt0&t=0s",
+  "why": "4.9% like ratio; the convex bevel + HDRI-only shading + bend combination is a fast native way to the soft 'clay/plastic' 3D look used in modern idents and app backgrounds."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=rk0xPt1_A00",
+  "kind": "video",
+  "title": "Turn Footage into 3D Particles with Trapcode Form - After Effects Tutorial",
+  "author": "Nodeconnector (graphicINmotion)",
+  "views": 550684,
+  "likes": 9819,
+  "published": "2016-03-26",
+  "duration_sec": 2660,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "particles",
+    "camera-3d"
+   ],
+   "scenarios": [
+    "hero-fx",
+    "logo-ident"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": [
+    "trapcode-form"
+   ]
+  },
+  "trick": "Rebuild a photo or video as a 3D particle relief: Form layer maps for colour, displacement and size, fractal-field edge distortion, a particle transition, then a camera move with depth of field through the displaced field.",
+  "example": "https://www.youtube.com/watch?v=rk0xPt1_A00&t=0s",
+  "why": "Canonical, very widely watched Form lesson (layer maps are unchanged in current Form); turns product shots or portraits into a premium depth-particle hero moment for intros and AI/data themes."
+ },
+ {
+  "url": "https://007labs.com/blog/how-to-3d-logo-intro/",
+  "kind": "page",
+  "title": "How It's Made: 007 Labs 3D Logo Intro",
+  "author": "Drew (007 Labs)",
+  "type": "article",
+  "approx_chars": 12799,
+  "tags": {
+   "topics": [
+    "camera-3d",
+    "motion-blur",
+    "workflow"
+   ],
+   "scenarios": [
+    "logo-ident"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": [
+    "element-3d"
+   ]
+  },
+  "trick": "Shoot a 3D logo sting like live action: five cameras, each rendered in 3-4 speed/move variations, then cut the best 8 takes in the edit; titanium + circuit-board textures with an animated emissive map, three-point lighting with an up-light instead of a back light, a reflective environment map, 250-degree motion blur and multisample AA to kill the over-sharp CG look.",
+  "example": "https://007labs.com/blog/how-to-3d-logo-intro/",
+  "why": "A first-person breakdown of a finished channel ident with the decisions and numbers behind it; the 'coverage then edit' camera approach and the anti-CG finishing values transfer directly to A3D idents (Element 3D used here)."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=of-Nd8bnnD4",
+  "kind": "video",
+  "title": "Using MOVEMENT to LEVEL UP your Product Videos",
+  "author": "Daniel Schiffer",
+  "views": 386959,
+  "likes": 19786,
+  "published": "2021-01-26",
+  "duration_sec": 459,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "camera-3d",
+    "design"
+   ],
+   "scenarios": [
+    "ui-promo",
+    "hero-fx"
+   ],
+   "level": "basic",
+   "impact": "medium",
+   "tools": []
+  },
+  "trick": "Three ways to make a static product shot alive: move the light across the product (glints travel over the surface), move the product (turntable), and move the camera with a target-locked motion-control head, then combine them.",
+  "example": "https://www.youtube.com/watch?v=of-Nd8bnnD4&t=0s",
+  "why": "The top product videographer's camera language (5.1% like ratio); maps 1:1 to AE as animated light or environment-light rotation, model Y-rotation, and a two-node camera locked on its point of interest, which is how device hero shots stop looking static."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=Xnyc3BvqvMk",
+  "kind": "video",
+  "title": "How to Light Reflective Objects in Redshift",
+  "author": "Lukas Thorup",
+  "views": 67954,
+  "likes": 2846,
+  "published": "2023-05-12",
+  "duration_sec": 1189,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "light-glow",
+    "design"
+   ],
+   "scenarios": [
+    "hero-fx",
+    "ui-promo"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": [
+    "cinema-4d",
+    "redshift"
+   ]
+  },
+  "trick": "Light glass, water and chrome with what they reflect, not with lights: a dome light carrying a 16-bit circular-gradient texture as backdrop, a second noise-masked dome for reflections only (background off), and ramp-textured area lights as softboxes; per-object trace-depth override removes dirty inter-droplet refractions.",
+  "example": "https://www.youtube.com/watch?v=Xnyc3BvqvMk",
+  "why": "Teaches the core of expensive-looking reflective product shots (gradient environments and shaped softbox reflections) with exact node settings, instead of the usual 'add an HDRI' advice."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=eDTvDHIa7TE",
+  "kind": "video",
+  "title": "How To Get That Modern 3D Look in Blender (it's easier than you think)",
+  "author": "Ducky 3D",
+  "views": 132915,
+  "likes": 5683,
+  "published": "2022-12-17",
+  "duration_sec": 1308,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "design",
+    "light-glow"
+   ],
+   "scenarios": [
+    "ui-promo",
+    "hero-fx"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": [
+    "blender"
+   ]
+  },
+  "trick": "Recreates the Microsoft/tech-ad 'modern 3D' look: soft glossy plastic and glass shapes, a huge area light with a noise texture as a gobo for organic light falloff, and deliberate small imperfections (random offsets and rotations) so the perfect shapes stop looking CG.",
+  "example": "https://www.youtube.com/watch?v=eDTvDHIa7TE",
+  "why": "Directly targets the advertising style our AI/app promos imitate, and explains why it reads premium (big soft gobo light plus imperfection), not just which buttons to press."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=KhBaHDvIamw",
+  "kind": "video",
+  "title": "How Apple Makes 3D Wallpapers (Blender Tutorial)",
+  "author": "Ducky 3D",
+  "views": 50010,
+  "likes": 3101,
+  "published": "2026-04-22",
+  "duration_sec": 910,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "design",
+    "light-glow"
+   ],
+   "scenarios": [
+    "hero-fx",
+    "logo-ident"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": [
+    "blender"
+   ]
+  },
+  "trick": "Rebuilds Apple's MacBook Air wallpaper: array-modifier glass cylinders animated in a wave, the glowing highlight shapes built in the shader the way the original Apple artist described (a Layer Weight 'facing' term for a smooth, very subtle edge falloff), and bold type set under the glass.",
+  "example": "https://www.youtube.com/watch?v=KhBaHDvIamw",
+  "why": "A 2026 recreation of a real Apple asset with insider guidance on the highlight shapes, which is exactly the Apple-looking glass our idents and device shots want."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=OGXGVfB2P64",
+  "kind": "video",
+  "title": "Tutorial & Free Project - Creating Colorful Glass with SSS Redshift C4D - Microsoft Office Ad Style",
+  "author": "Derek Kirk (Effectatron)",
+  "views": 59620,
+  "likes": 1864,
+  "published": "2021-11-26",
+  "duration_sec": 546,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "light-glow",
+    "design"
+   ],
+   "scenarios": [
+    "ui-promo",
+    "hero-fx"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": [
+    "cinema-4d",
+    "redshift"
+   ]
+  },
+  "trick": "Microsoft Office 365 ad look: tinted frosted glass/plastic via reflection roughness ~0.45 plus subsurface absorption for coloured depth, a faked window-gobo shadow falling across the set for life, and an over-bright key that is balanced in post.",
+  "example": "https://www.youtube.com/watch?v=OGXGVfB2P64",
+  "why": "Short, value-dense recreation of a famous premium software ad; gives the exact roughness and SSS moves for frosted acrylic UI-style shapes."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=DmeiTnrqp3I",
+  "kind": "video",
+  "title": "Master Redshift Glass Materials Without Complex Settings!",
+  "author": "Derek Kirk (Effectatron)",
+  "views": 97619,
+  "likes": 1958,
+  "published": "2022-04-26",
+  "duration_sec": 1014,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "light-glow"
+   ],
+   "scenarios": [
+    "hero-fx"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": [
+    "cinema-4d",
+    "redshift"
+   ]
+  },
+  "trick": "Uses Standard Material transmission depth, transmission roughness and thin-walled to get waxy multi-colour plastics and clean glass without SSS: depth controls how far light travels, so a two-colour scatter/transmission pair shifts from edge to core as thickness changes.",
+  "example": "https://www.youtube.com/watch?v=DmeiTnrqp3I",
+  "why": "Explains the parameters that make clear plastic and glass look rich instead of flat (depth, thin-walled, scatter colour), which most glass tutorials skip."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=vtdczoXVyvQ",
+  "kind": "video",
+  "title": "Render like a professional in Blender (ACES, View Layers, Passes)",
+  "author": "Robin Squares",
+  "views": 545173,
+  "likes": 25982,
+  "published": "2024-07-09",
+  "duration_sec": 2061,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "compositing",
+    "color-finish",
+    "render-export"
+   ],
+   "scenarios": [
+    "hero-fx"
+   ],
+   "level": "advanced",
+   "impact": "high",
+   "tools": [
+    "blender"
+   ]
+  },
+  "trick": "The studio way: split the scene into view layers, render light passes to linear multilayer EXR, rebuild 'back to beauty' (diffuse/glossy/transmission direct+indirect+colour) in the compositor, then grade each light component separately under an ACES-style view.",
+  "example": "https://www.youtube.com/watch?v=vtdczoXVyvQ",
+  "why": "The clearest explanation of why pros render passes and how the rebuild maths works; the comp is shown in Fusion, but the same linear 32-bpc back-to-beauty applies in AE."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=mrZrNnez4PE",
+  "kind": "video",
+  "title": "My Favourite Lighting | Cinema 4D & Redshift",
+  "author": "Stepan HKA",
+  "views": 96328,
+  "likes": 3408,
+  "published": "2023-07-17",
+  "duration_sec": 1158,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "light-glow",
+    "design"
+   ],
+   "scenarios": [
+    "ui-promo",
+    "hero-fx"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": [
+    "cinema-4d",
+    "redshift"
+   ]
+  },
+  "trick": "A signature product rig with exact numbers: modified three-point lighting where a gobo spotlight (pushed back right, ~150 cm up, target tag) breaks up the backdrop, a back area light gives a thin halo around the silhouette, an HDRI dome fills, and an 85-130 mm lens frames a device on a pedestal.",
+  "example": "https://www.youtube.com/watch?v=mrZrNnez4PE",
+  "why": "A working artist's repeatable 'portfolio look' rig with positions and intensities spelled out, applied to a laptop-on-pedestal product shot; far more transferable than generic three-point explanations."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=ZYk3OOf-gBk",
+  "kind": "video",
+  "title": "8 Lighting Tricks I Wish I Knew Earlier (Blender Product Lighting Tutorial)",
+  "author": "Digitalist",
+  "views": 75280,
+  "likes": 5580,
+  "published": "2025-07-12",
+  "duration_sec": 635,
+  "captions": "manual",
+  "tags": {
+   "topics": [
+    "light-glow",
+    "design"
+   ],
+   "scenarios": [
+    "ui-promo",
+    "hero-fx"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": [
+    "blender"
+   ]
+  },
+  "trick": "Seven years of product lighting condensed: real bevels (not just the bevel shader) so edges catch highlights, elliptical 'sharper' gradient textures inside area lights placed behind glass to draw soft-edged rims, and separate recipes for e-commerce, teaser, metal and glass setups.",
+  "example": "https://www.youtube.com/watch?v=ZYk3OOf-gBk",
+  "why": "2025, very high like ratio (7.4%) and manual captions; packs the specific edge-highlight and glass-rim tricks that separate premium device renders from flat ones."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=LBx0y3ZVwt8",
+  "kind": "video",
+  "title": "How to Light Products like a Pro in Blender",
+  "author": "Denzel Modeste",
+  "views": 86896,
+  "likes": 4218,
+  "published": "2023-02-17",
+  "duration_sec": 662,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "light-glow"
+   ],
+   "scenarios": [
+    "ui-promo",
+    "hero-fx"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": [
+    "blender"
+   ]
+  },
+  "trick": "A product photographer's gradient lighting: emission strip boxes whose gradient slides across the card so a glossy product shows a long graded reflection instead of a flat white bar; the same setup is reused across products.",
+  "example": "https://www.youtube.com/watch?v=LBx0y3ZVwt8",
+  "why": "Taught from real studio photography practice (gradient strip reflections are the signature of expensive product photos), with the reasoning behind each card."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=5UCc3Z_-ibs",
+  "kind": "video",
+  "title": "How to Make Studio Lighting in Blender",
+  "author": "Blender Guru",
+  "views": 997463,
+  "likes": 31733,
+  "published": "2020-05-13",
+  "duration_sec": 1435,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "light-glow",
+    "camera-3d",
+    "design"
+   ],
+   "scenarios": [
+    "hero-fx"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": [
+    "blender"
+   ]
+  },
+  "trick": "Studio product setup from first principles: 50 mm is neutral but a ~100 mm lens keeps product proportions calm, two lamps plus an infinite backdrop, energy set by judging exposure, a backdrop colour chosen for what it says about the product, then a turntable driven by an empty pivot.",
+  "example": "https://www.youtube.com/watch?v=5UCc3Z_-ibs",
+  "why": "The canonical (~1M views) explanation of studio product lighting and turntables; older than 2021 but still accurate and widely referenced."
+ },
+ {
+  "url": "https://mograph.com/2021/09/wearable-works-of-art/",
+  "kind": "page",
+  "type": "article",
+  "title": "Wearable Works of Art (Tendril x Vitaly Grossmann, Hublot Full Sapphire launch film)",
+  "author": "Meleah Maynard (Mograph / Maxon)",
+  "approx_chars": 9800,
+  "text_file": "/home/ran/yt-rag/eval/after-effects/bulk/texts/tendril-hublot-sapphire-mograph.md",
+  "tags": {
+   "topics": [
+    "light-glow",
+    "design",
+    "compositing"
+   ],
+   "scenarios": [
+    "hero-fx"
+   ],
+   "level": "advanced",
+   "impact": "high",
+   "tools": [
+    "cinema-4d",
+    "redshift"
+   ]
+  },
+  "trick": "Clear-crystal product film recipe: long lenses (170 mm+) for graphic compositions, softbox HDRs mapped onto disc-shaped animated area lights with light include/exclude to place highlights exactly, per-shot trace depth for refractive render time, ray-exclusion lists on refractive planes for an in-render split-screen, ACES throughout, cuts at 24 fps locked to the watch tick.",
+  "example": "https://tendril.ca/work/hublotsapphire/",
+  "why": "A top studio's own account of making a transparent luxury product read premium, with specific lighting and lens decisions; the live page is gone, so the faithful text is saved."
+ },
+ {
+  "url": "https://www.maxon.net/en/article/nailed-it",
+  "kind": "page",
+  "type": "article",
+  "title": "Nailed It: Singleframe on creating product hero shots for Essie",
+  "author": "Helena Corvin-Swahn (Maxon)",
+  "approx_chars": 5822,
+  "tags": {
+   "topics": [
+    "light-glow",
+    "compositing",
+    "design"
+   ],
+   "scenarios": [
+    "hero-fx",
+    "logo-ident"
+   ],
+   "level": "advanced",
+   "impact": "medium",
+   "tools": [
+    "cinema-4d",
+    "redshift"
+   ]
+  },
+  "trick": "Hero-product consistency tricks: a separate light rig just for the bottles so they always match brand photos, bottles kept sharp while everything else gets motion blur, counter-animating the product so it holds the brand angle while the camera moves, the logo as displacement plus its own light rig and bevel pass comped over the beauty, AOVs and Takes for AE compositing.",
+  "example": "https://www.maxon.net/en/article/nailed-it",
+  "why": "Explains how a studio keeps a product looking exactly like its brand photography in every shot, a problem every device or logo hero shot has."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=Jwl48psPrxU",
+  "kind": "video",
+  "title": "Tutorial: Rendering Glass in Blender using Cycles X",
+  "author": "Polyfjord",
+  "views": 226501,
+  "likes": 10644,
+  "published": "2022-10-19",
+  "duration_sec": 1824,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "light-glow",
+    "design"
+   ],
+   "scenarios": [
+    "logo-ident",
+    "hero-fx"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": [
+    "blender"
+   ]
+  },
+  "trick": "Abstract hero glass three ways: a twisted, subdivided cube with smooth glow, a rounded cube with Voronoi displacement lit through a spherical gradient backdrop (the gradient is what the glass refracts), and dynamic-paint ripples in glass, finished with an ML upscale to save render time.",
+  "example": "https://www.youtube.com/watch?v=Jwl48psPrxU&t=1765",
+  "why": "Top-tier instructor (226k views, 4.7% likes) showing that abstract glass reads premium because of what it refracts (gradient backdrops) and its displacement detail; directly reusable for idents and hero loops."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=YXQwehMfwFw",
+  "kind": "video",
+  "title": "Thin Film is FINALLY here! Cinema 4D & Redshift 3.5 Tutorial",
+  "author": "Ross Mason",
+  "views": 34907,
+  "likes": 951,
+  "published": "2022-05-08",
+  "duration_sec": 578,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "light-glow"
+   ],
+   "scenarios": [
+    "hero-fx",
+    "logo-ident"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": [
+    "cinema-4d",
+    "redshift"
+   ]
+  },
+  "trick": "Redshift Standard Material thin film: film thickness and film IOR steer the iridescent hue (rose-gold to gold metals by sliding IOR), the same layer on plastic for a subtle oil-slick sheen, and a soap-bubble build with transmission plus thin film on a volume mesh.",
+  "example": "https://www.youtube.com/watch?v=YXQwehMfwFw",
+  "why": "Niche but exact: the native thin-film controls that give iridescent 'Apple-looking' metals and bubbles without OSL hacks; below 50k views because it is a narrow topic."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=_nl4kcb05sQ",
+  "kind": "video",
+  "title": "Product Reveal Animation Blender using Lights",
+  "author": "madebyomkar",
+  "views": 78202,
+  "likes": 2097,
+  "published": "2023-02-13",
+  "duration_sec": 546,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "light-glow",
+    "design"
+   ],
+   "scenarios": [
+    "ui-promo",
+    "hero-fx"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": [
+    "blender"
+   ]
+  },
+  "trick": "The classic opening shot of device launch films: a black world, two mirrored rim/strip lights (one driven by an inverted copy-location constraint) animated from far away inward, so the product's edges are lit first and its form is revealed by light alone; high-contrast view transform.",
+  "example": "https://www.youtube.com/watch?v=_nl4kcb05sQ",
+  "why": "Teaches the single most reused premium product-reveal beat (edges-first light reveal) with a rig that keeps both lights symmetrical; fits AirPods-style device shots directly."
+ },
+ {
+  "url": "https://www.fnord.com/ProEXR/ProEXR_Manual.pdf",
+  "kind": "page",
+  "type": "doc",
+  "title": "ProEXR Manual (EXtractoR, IDentifier, Cryptomatte in After Effects)",
+  "author": "Brendan Bolles (fnord software)",
+  "approx_chars": 50084,
+  "tags": {
+   "topics": [
+    "compositing",
+    "render-export"
+   ],
+   "scenarios": [
+    "hero-fx"
+   ],
+   "level": "advanced",
+   "impact": "low",
+   "tools": []
+  },
+  "trick": "Reference for the multichannel EXR plug-ins that ship with AE: EXtractoR on the footage layer (not a precomp), black/white points to rescale Z-depth and velocity, UnMult for premultiplied renders, re-linearising extracted colour with Color Profile Converter, and Cryptomatte selection from 'Import As Composition' metadata.",
+  "example": "https://www.fnord.com/ProEXR/ProEXR_Manual.pdf",
+  "why": "The authoritative manual for the exact AE mechanics every 3D-to-AE pass comp relies on, including the colour-management and premultiplication gotchas that silently ruin passes."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=oFwIDqiLX5M",
+  "kind": "video",
+  "title": "Do This to Your 3D Renders RIGHT NOW! | Luis Miranda's Workflow Tutorial",
+  "author": "School of Motion (Luis Miranda)",
+  "views": 4959,
+  "likes": 153,
+  "published": "2024-06-05",
+  "duration_sec": 2105,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "compositing",
+    "color-finish",
+    "light-glow"
+   ],
+   "scenarios": [
+    "hero-fx"
+   ],
+   "level": "advanced",
+   "impact": "high",
+   "tools": [
+    "cinema-4d",
+    "redshift"
+   ]
+  },
+  "trick": "Takes a Redshift render 'from 80 to 100%' in AE: AOVs as layers, Cryptomatte-isolated Optical Glow on chosen emitters only, a depth-driven haze layer tinted and unmultiplied, stock smoke slotted between depth layers, chromatic aberration and a final grade.",
+  "example": "https://www.youtube.com/watch?v=oFwIDqiLX5M",
+  "why": "Below the view bar (5k), included because it is the only recent (2024) School of Motion lesson that teaches the whole 3D-to-AE premium finish in AE itself, explaining why each pass is used."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=29hmUGb0384",
+  "kind": "video",
+  "title": "How to Make Perfect Product Animations in Blender",
+  "author": "Aryan",
+  "views": 50685,
+  "likes": 1971,
+  "published": "2025-06-20",
+  "duration_sec": 1576,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "light-glow",
+    "camera-3d",
+    "design"
+   ],
+   "scenarios": [
+    "ui-promo",
+    "hero-fx"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": [
+    "blender"
+   ]
+  },
+  "trick": "A universal product-animation shot set: a gradient made by a light aimed at a backdrop plane, with the light parented to the backdrop so the gradient follows the camera; thin strip lights keyframed to sweep along the product's edges; and a closing 'connect to charger' hero shot with a ripple, each rendered as its own short animation.",
+  "example": "https://www.youtube.com/watch?v=29hmUGb0384",
+  "why": "Shows how premium product films are built from several short, separately lit shots with moving light sweeps rather than one turntable; recent (2025) and practical."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=vemW4ceygRg",
+  "kind": "video",
+  "title": "You Should Make Glass Animations in Blender 5.1",
+  "author": "Ducky 3D",
+  "views": 32884,
+  "likes": 1811,
+  "published": "2026-05-02",
+  "duration_sec": 850,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "light-glow",
+    "design"
+   ],
+   "scenarios": [
+    "logo-ident",
+    "hero-fx"
+   ],
+   "level": "intermediate",
+   "impact": "high",
+   "tools": [
+    "blender"
+   ]
+  },
+  "trick": "The thought process behind six stylised glass loops: choosing shapes that refract well, placing the emissive card deliberately close to or behind the glass (distance changes the whole read), animating the W of a smooth noise-plus-colour-ramp for drifting gradients, and SDF-blended 'metaball' glass.",
+  "example": "https://www.youtube.com/watch?v=vemW4ceygRg",
+  "why": "2026 and explains the why (shape, emitter placement, gradient motion) behind elegant glass loops, which suits idents and abstract hero backgrounds; recent enough to be under 50k views but 5.5% like ratio."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=fEYIInKm6mA",
+  "kind": "video",
+  "title": "Silverwing Quick Tip: Octane Transparent Plastic Shader",
+  "author": "SilverwingVFX (Raphael Rau)",
+  "views": 40626,
+  "likes": 1638,
+  "published": "2023-08-27",
+  "duration_sec": 1096,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "light-glow"
+   ],
+   "scenarios": [
+    "hero-fx",
+    "ui-promo"
+   ],
+   "level": "advanced",
+   "impact": "high",
+   "tools": [
+    "cinema-4d",
+    "octane"
+   ]
+  },
+  "trick": "Clear plastic is not rough glass: real product plastics look foggy because of subsurface scattering (a brighter rim through the thickness), not roughness; so keep transmission sharp, add scattering for the fog, and a weak 3D-projected noise bump (~0.1) for the plastic's low-frequency waviness, compared side by side with real objects.",
+  "example": "https://www.youtube.com/watch?v=fEYIInKm6mA",
+  "why": "Top-tier product-viz instructor separating two materials most tutorials treat as one; the clear-plastic recipe is exactly what device housings, cases and acrylic UI slabs need."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=AMYJwUri7DM",
+  "kind": "video",
+  "title": "Silverwing Quick Tip: Understanding Caustics (Or why caustics are so hard to render)",
+  "author": "SilverwingVFX (Raphael Rau)",
+  "views": 20453,
+  "likes": 831,
+  "published": "2023-01-21",
+  "duration_sec": 974,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "light-glow",
+    "render-export"
+   ],
+   "scenarios": [
+    "hero-fx"
+   ],
+   "level": "advanced",
+   "impact": "medium",
+   "tools": [
+    "octane"
+   ]
+  },
+  "trick": "How a unidirectional path tracer finds caustics (and why HDRI-lit glass gets noisy, dark shadows); 'fake shadows' on the glass material turns off refraction for indirect rays so light passes straight through and is importance-sampled, with the caveat that the smaller the light, the more fake that shadow looks.",
+  "example": "https://www.youtube.com/watch?v=AMYJwUri7DM",
+  "why": "Niche (20k) but from a top instructor; prevents the dark, dirty shadows that make glass products look cheap and explains the trade-off instead of giving a magic setting."
+ },
+ {
+  "url": "https://www.lightmap.co.uk/learning/easy-product-lighting-tutorial/",
+  "kind": "page",
+  "type": "tutorial",
+  "title": "Product 3D Lighting Tutorial",
+  "author": "Lightmap (HDR Light Studio)",
+  "approx_chars": 5018,
+  "tags": {
+   "topics": [
+    "light-glow"
+   ],
+   "scenarios": [
+    "hero-fx",
+    "ui-promo"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": [
+    "cinema-4d",
+    "octane",
+    "hdr-light-studio"
+   ]
+  },
+  "trick": "Light a glossy product purely with an authored HDRI: a sharp-edged gradient key to model a cylinder, near-symmetric side gradients that leave dark outer edges to separate it from a bright background, softbox textures blended in 'amplify' to add photographic imperfection, and a deliberately flat render kept for contrast in post.",
+  "example": "https://www.lightmap.co.uk/learning/easy-product-lighting-tutorial/",
+  "why": "Written step-by-step reasoning for why each reflection is placed (separation edges, imperfect softboxes), which agents can apply with plain area lights too; vendor page, but the principles are general."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=sms_DSANx_s",
+  "kind": "video",
+  "title": "Redshift Light Groups Allow Endless Creativity",
+  "author": "You And Me Academy",
+  "views": 25558,
+  "likes": 1093,
+  "published": "2022-07-15",
+  "duration_sec": 784,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "compositing",
+    "light-glow"
+   ],
+   "scenarios": [
+    "hero-fx"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": [
+    "cinema-4d",
+    "redshift"
+   ]
+  },
+  "trick": "Split the beauty into per-light AOVs (light groups) so key, rim and dome can be re-balanced and re-coloured after rendering, then added back together, turning lighting decisions into comp decisions.",
+  "example": "https://www.youtube.com/watch?v=sms_DSANx_s",
+  "why": "Light groups are how studios fine-tune product highlights in AE without re-rendering; this is a clear, recent walkthrough of setting them up and using them creatively."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=aWXSkXaexo4",
+  "kind": "video",
+  "title": "Blender 5.0, Anodized Metals!",
+  "author": "Christopher 3D",
+  "views": 18707,
+  "likes": 1184,
+  "published": "2025-10-06",
+  "duration_sec": 775,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "light-glow"
+   ],
+   "scenarios": [
+    "hero-fx",
+    "ui-promo"
+   ],
+   "level": "advanced",
+   "impact": "medium",
+   "tools": [
+    "blender"
+   ]
+  },
+  "trick": "Blender 5.0 lets Principled BSDF thin film work in metallic mode: drive film thickness with a gradient mapped to a measured nanometre range (about 125-170 nm for oxide/anodised tints, inverted so blues sit where oxidation is strongest) to get physically plausible anodised and heat-tinted device metals.",
+  "example": "https://www.youtube.com/watch?v=aWXSkXaexo4",
+  "why": "Niche (19k) but precise and current (Oct 2025): explains the physics and gives real thickness values, so iridescent titanium/anodised device finishes look engineered rather than rainbow-tinted."
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=kHkUtx8dS1o",
+  "kind": "video",
+  "title": "Compositing with Render Passes in After Effects | Easy CGI Compositing",
+  "author": "Bryan Holt",
+  "views": 44088,
+  "likes": 870,
+  "published": "2023-09-06",
+  "duration_sec": 612,
+  "captions": "auto",
+  "tags": {
+   "topics": [
+    "compositing",
+    "color-finish"
+   ],
+   "scenarios": [
+    "hero-fx"
+   ],
+   "level": "intermediate",
+   "impact": "medium",
+   "tools": []
+  },
+  "trick": "AE-native back-to-beauty: 32-bpc project with a linearised working space, EXR interpreted as linear light, one EXtractoR layer per AOV (diffuse and specular, direct and indirect) stacked in Add mode, the shadow pass multiplied onto the plate, and values checked in the Info panel against the background.",
+  "example": "https://www.youtube.com/watch?v=kHkUtx8dS1o",
+  "why": "The exact AE settings (linear 32-bpc, Add stacking, shadow multiply) that let an agent grade each light component of a 3D product render inside AE instead of baking the look in 3D."
+ }
+]

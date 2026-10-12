@@ -34,6 +34,10 @@ TOPICS = {
     "workflow": "precomps, project organisation, templates, performance",
     "render-export": "render queue, aerender, codecs, color management, interpreting footage",
     "design": "motion design principles, composition, layout, pacing, storytelling",
+    "story": "story structure, hooks, promise, narrative arc of a promo or launch film",
+    "copy": "on-screen text, VO scripts, headlines, CTA wording, captions copy",
+    "platform": "platform formats and specs: lengths, aspect ratios, autoplay, App Store, Product Hunt",
+    "sound": "music, SFX, mix and loudness, sound design for picture",
 }
 
 SCENARIOS = {
